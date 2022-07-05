@@ -1,0 +1,293 @@
+package Public;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
+
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
+import org.testng.Assert;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.NexustAPIAutomation.java.CommonMethods;
+
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.response.ValidatableResponse;
+
+public class ServiceOrderController {
+
+	public static JsonPath jsonPathEvaluator;
+	public static String ServiceOrderNumber;
+
+	@Test(priority = 1, groups = "ServiceOrder")
+	public void postcreateServiceOrder_v2()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/createServiceOrder";
+		String ver = "2";
+		String payload = "./\\TestData\\serviceOrderv2.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+		String ServiceOrderNumber = jsonPathEvaluator.get("result.ServiceOrderNumber");
+		System.out.println(jsonPathEvaluator.get().toString());
+		System.out.println(ServiceOrderNumber);
+		getServiceOrderdetails_v2(ServiceOrderNumber);
+
+	}
+
+	public void getServiceOrderdetails_v2(String param)
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		System.out.println(param);
+		String uri = "/serviceOrder/getServiceOrderDetail";
+		String ver = "2";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("ServiceOrderNumber", param);
+		params.put("ShowDrillBack", "true");
+
+		Response response = CommonMethods.getMethod(uri, ver, params);
+
+		// To check for sub string presence get the Response body as a String.
+		// Do a String.contains
+		String bodyAsString = response.asString();
+		System.out.println(bodyAsString);
+
+		if (!bodyAsString.contains(param)) {
+			Assert.fail();
+		}
+		System.out.println(response.prettyPrint());
+
+	}
+
+	@Test(priority = 2, groups = "ServiceOrder", dependsOnMethods = "postcreateServiceOrder_v2")
+	public void getServiceOrder_v2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		// rue&ShowStatus_FieldComplete=true&OrderBy=ScheduledDateTime ASC,
+		// ServiceOrderId DESC
+		String uri = "/serviceOrder/getServiceOrders";
+		String ver = "2";
+		String jpath = "./\\TestData\\getserviceordersv2.json";
+
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("LocationId", "WATER002");
+		params.put("ShowStatus_Preparing", "true");
+		params.put("ShowStatus_Pending", "true");
+		params.put("ShowStatus_Preparing", "true");
+		params.put("ShowStatus_InProgress", "true");
+		params.put("ShowStatus_OnHold", "true");
+		params.put("ShowStatus_Delayed", "true");
+		params.put("Showtatus_Billed", "true");
+		params.put("ShowStatus_Canceled", "true");
+		params.put("ShowStatus_Completed", "true");
+		params.put("ShowStatus_WebGenerated", "true");
+		params.put("ShowStatus_FieldInProgress", "true");
+		params.put("ScheduledDateTime", "ScheduledDateTime ASC, ServiceOrderId DESC");
+		params.put("ShowStatus_FieldComplete", "true");
+
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+
+	}
+
+	@Test(priority = 3, groups = "ServiceOrder")
+	public void getServiceOrderRequestDetails_v2()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		// ?RequestID=transfer&ShowOnlyTransfers=true
+		String uri = "/serviceOrderRequestIdDetail/getServiceOrderRequestIdDetail";
+		String ver = "2";
+		String jpath = "./\\TestData\\serviceorderrequestdetailsv2.json";
+
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("RequestID", "transfer");
+		params.put("ShowOnlyTransfers", "true");
+
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+
+	}
+
+	@Test(priority = 4, groups = "ServiceOrder")
+	public void getServiceOrderRequestDetailsbyOptional_v2()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		// ?RequestID=transfer&ShowOnlyTransfers=true
+		String uri = "/serviceOrder/detail";
+		String ver = "2";
+		String jpath = "./\\TestData\\serviceorderrequestdetailsOptionalv2.json";
+
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("LocationId", "ELECWAT003");
+
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+
+	}
+
+	@Test(priority = 5, groups = "ServiceOrder")
+	public void putaddMeterReading_v_2()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/addMeterReading";
+		String ver = "2";
+		String jpath = "./\\TestData\\addMeterReading_v2.json";
+
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		result.assertThat().body(Matchers.containsString("true"));
+		result.assertThat().body(Matchers.containsString("READ"));
+		result.assertThat().body(Matchers.containsString("created"));
+		System.out.println(result.extract().asPrettyString());
+
+	}
+
+	@Test(priority = 6, groups = "ServiceOrder")
+	public void putupdatecomment_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/updateSOComment";
+		String ver = "2";
+		String jpath = "./\\TestData\\putupdatecommentsv2.json";
+
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		result.assertThat().body(Matchers.containsString("true"));
+		result.assertThat().body(Matchers.containsString("Comment updated"));
+		System.out.println(result.extract().asPrettyString());
+
+	}
+
+	@Test(priority = 7, groups = "ServiceOrder")
+	public void putaddMiscCharge_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/addMiscCharge";
+		String ver = "2";
+		String jpath = "./\\TestData\\putaddmiscChargev2.json";
+
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		result.assertThat().body(Matchers.containsString("Batch posted. Misc charge created"));
+		result.assertThat().body(Matchers.containsString("MISC"));
+		result.assertThat().body(Matchers.containsString("true"));
+
+		System.out.println(result.extract().asPrettyString());
+	}
+
+	@Test(priority = 8, groups = "ServiceOrder")
+	public void putswitchMeter_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/switchMeter";
+		String ver = "2";
+		String jpath = "./\\TestData\\meterchangev2.json";
+
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		result.assertThat().body(Matchers.containsString("Meter updated"));
+		result.assertThat().body(Matchers.containsString("true"));
+
+		System.out.println(result.extract().asPrettyString());
+	}
+
+	@Test(priority = 8, groups = "ServiceOrder")
+	public void putTaskComplete_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/putTaskComplete";
+		String ver = "2";
+		String jpath = "./\\TestData\\putaskcompletev2.json";
+
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		result.assertThat().body(Matchers.containsString("Task updated"));
+		result.assertThat().body(Matchers.containsString("true"));
+
+		System.out.println(result.extract().asPrettyString());
+	}
+
+	@Test(priority = 9, groups = "ServiceOrder")
+	public void putTaskCompleteNocharge_v2_3()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/taskCompleteOtherNoCharge";
+		String ver = "2.3";
+		String jpath = "./\\TestData\\putaskcompletenochargev2_3.json";
+
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		result.assertThat().body(Matchers.containsString(
+				"Service Order SORD00000000044 task TASK003 for sequence 1000 has already been completed."));
+		result.assertThat().body(Matchers.containsString("false"));
+		System.out.println(result.extract().asPrettyString());
+	}
+
+	@Test(priority = 10, groups = "ServiceOrder")
+	public static void postcreateServiceOrder_v2_3_1()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder";
+		String ver = "2.3.1";
+		String payload = "./\\TestData\\putcreateserviceOrderv2_3_1.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+
+		String ServiceOrderNumber = jsonPathEvaluator.get("ServiceOrder[0].DocumentNumber");
+		System.out.println("Service order created = " + ServiceOrderNumber);
+		if (ServiceOrderNumber != null) {
+			getServiceOrderdetails_v2_4(ServiceOrderNumber);
+		} else {
+			Assert.fail("Service Order null");
+		}
+
+		Thread.sleep(5000);
+		if (ServiceOrderNumber != null) {
+			putTaskComplete_v_2_4(ServiceOrderNumber);
+		} else {
+			Assert.fail("Service Order " + ServiceOrderNumber + "Not found");
+		}
+
+	}
+
+	public static void getServiceOrderdetails_v2_4(String param)
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		System.out.println(param);
+		String uri = "/serviceOrder/Detail";
+		String ver = "2.4";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("ServiceOrderNumber", param);
+		params.put("ShowDrillBack", "true");
+
+		Response response = CommonMethods.getMethod(uri, ver, params);
+
+		// To check for sub string presence get the Response body as a String.
+		// Do a String.contains
+		String bodyAsString = response.asString();
+		System.out.println(bodyAsString);
+
+		if (!bodyAsString.contains(param)) {
+			Assert.fail();
+		}
+		System.out.println(response.prettyPrint());
+
+	}
+
+	public static void putTaskComplete_v_2_4(String serviceOrderid)
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		// String serviceOrderid ="SORD00000009014";
+		String uri = "/serviceorder/taskcomplete";
+		String ver = "2.4";
+		String jpath = "{\r\n" + "    \"ServiceOrder\": \r\n" + "        {\r\n" + "            \"Id\": \""
+				+ serviceOrderid + "\",\r\n" + "            \"EmployeeId\": \"EMPLOYEE\",\r\n"
+				+ "            \"LocationId\": \"ELECWAT001\",\r\n" + "            \"Task\": {\r\n"
+				+ "                \"Sequence\": 1100\r\n" + "            },\r\n"
+				+ "            \"DocumentNumber\": \"\",\r\n"
+				+ "            \"CompletedDateTime\": \"2019-04-08T11:45:00Z\"\r\n" + "        }\r\n" + "}";
+
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath, "null");
+		result.assertThat().body(Matchers.containsString("\"Success\":true"));
+
+		System.out.println(result.extract().asPrettyString());
+	}
+
+	public static void main(String args[])
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		postcreateServiceOrder_v2_3_1();
+		// putTaskComplete_v_2_4();
+	}
+
+}

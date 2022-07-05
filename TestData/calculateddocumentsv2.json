@@ -1,0 +1,25 @@
+{
+    "SpaCalculate": [
+        {
+            "CustomerId": "CUSTOMER001",
+            "StartDate": "2000-01-31",
+            "NumberOfInstallments": 5,
+            "DueDateInterval": 3,
+            "NumberOfDays": 30,
+		    "OutstandingDocs": [
+		        {
+		            "DocumentType": "MISC",
+		            "DocumentNumber": "MISC00000000264",
+		            "DueDate": "1999-12-08",
+		            "LocationId": "WATER001",
+		            "ServiceAddress": "",
+		            "ServiceCategory": {
+		                "Id": 0,
+		                "Description": ""
+		            },
+		            "OutstandingAmount": "46.00"
+		        }
+        	]
+        }
+    ]
+}

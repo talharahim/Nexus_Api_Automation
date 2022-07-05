@@ -1,0 +1,12 @@
+{
+    "ServiceOrder": [
+        {
+            "Id": "SORD00000000044",
+            "EmployeeId": "EMPLOYEE",
+            "LocationId": "LOCATION003",
+            "Task": {
+                "Sequence": 1000
+            }
+        }
+    ]
+}
