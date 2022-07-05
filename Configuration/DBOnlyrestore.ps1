@@ -145,3 +145,20 @@ Write-Host "Running PostInitialize.sql...."
 Invoke-sqlcmd -inputfile "PostInitializeCompanyDB.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB | Out-File -FilePath "C:\TestSqlCmd.rpt"
 Write-Host "Running PostInitialize.sql....DONE"
 #Read-Host -Prompt "Does that look right? Press <ENTER> to continue or CTRL+C to quit" 
+
+#npm run prod
+Set-Location $Nexus_APIPath
+pm2 start ecosystem.config.js
+pm2 stop csm-web-api
+pm2 start csm-web-api
+pm2 list
+pm2 save
+
+npm run dllLibraries:copyfile
+npm run reportTemplates:copyfile
+npm run apidoc-make-private
+# Restart PM2 service
+
+
+Write-Host "Nexus API should now be up and running."
+}
