@@ -11,7 +11,7 @@ import com.NexustAPIAutomation.java.CommonMethods;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import junit.framework.Assert;
+import org.testng.Assert;
 
 public class searchController {
 

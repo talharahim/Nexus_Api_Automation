@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 
 import org.hamcrest.Matchers;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.NexustAPIAutomation.java.CommonMethods;
@@ -57,7 +57,7 @@ public class createandcancelSpa {
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("READ"));
 		result.assertThat().body(Matchers.containsString("created"));
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 
 	}
 
@@ -77,7 +77,7 @@ public class createandcancelSpa {
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("READ"));
 		result.assertThat().body(Matchers.containsString("created"));
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 
 		System.out.println(res);
 	}

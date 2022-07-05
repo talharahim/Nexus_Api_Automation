@@ -337,10 +337,10 @@ public class CommonMethods {
 
 		ValidatableResponse response = httpRequest.get().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
-		System.out.println(response.extract().asPrettyString());
+		System.out.println(response.extract().asString());
 		System.out.println(response.log());
 
-		return response.extract().asPrettyString();
+		return response.extract().asString();
 
 	}
 
@@ -384,14 +384,14 @@ public class CommonMethods {
 				.queryParams(params).body(jsonDataInFile);
 
 		Response responseTest = httpRequest.put();
-		System.out.println(responseTest.asPrettyString());
+		System.out.println(responseTest.asString());
 		ValidatableResponse response = httpRequest.put().then().assertThat().statusCode(200)
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(responseFile)))));
 		;
-		System.out.println(response.extract().asPrettyString());
+		System.out.println(response.extract().asString());
 		System.out.println(response.log());
 
-		return response.extract().asPrettyString();
+		return response.extract().asString();
 
 	}
 
@@ -539,7 +539,7 @@ public class CommonMethods {
 		// JsonPath jsonPathEvaluator = ((ResponseBodyExtractionOptions)
 		// response).jsonPath();
 		JsonPath jsonPathEvaluator = null;
-		System.out.println(response.extract().asPrettyString());
+		System.out.println(response.extract().asString());
 		// ValidatableResponse response =
 		// httpRequest.get().then().assertThat().statusCode(200).body(Matchers.equalTo(new
 		// String(Files.readAllBytes(jsonDataInFile))));

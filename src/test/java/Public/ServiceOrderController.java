@@ -138,7 +138,7 @@ public class ServiceOrderController {
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("READ"));
 		result.assertThat().body(Matchers.containsString("created"));
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 
 	}
 
@@ -152,7 +152,7 @@ public class ServiceOrderController {
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("Comment updated"));
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 
 	}
 
@@ -168,7 +168,7 @@ public class ServiceOrderController {
 		result.assertThat().body(Matchers.containsString("MISC"));
 		result.assertThat().body(Matchers.containsString("true"));
 
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 	}
 
 	@Test(priority = 8, groups = "ServiceOrder")
@@ -182,7 +182,7 @@ public class ServiceOrderController {
 		result.assertThat().body(Matchers.containsString("Meter updated"));
 		result.assertThat().body(Matchers.containsString("true"));
 
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 	}
 
 	@Test(priority = 8, groups = "ServiceOrder")
@@ -196,7 +196,7 @@ public class ServiceOrderController {
 		result.assertThat().body(Matchers.containsString("Task updated"));
 		result.assertThat().body(Matchers.containsString("true"));
 
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 	}
 
 	@Test(priority = 9, groups = "ServiceOrder")
@@ -211,7 +211,7 @@ public class ServiceOrderController {
 		result.assertThat().body(Matchers.containsString(
 				"Service Order SORD00000000044 task TASK003 for sequence 1000 has already been completed."));
 		result.assertThat().body(Matchers.containsString("false"));
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 	}
 
 	@Test(priority = 10, groups = "ServiceOrder")
@@ -280,7 +280,7 @@ public class ServiceOrderController {
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath, "null");
 		result.assertThat().body(Matchers.containsString("\"Success\":true"));
 
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 	}
 
 	public static void main(String args[])

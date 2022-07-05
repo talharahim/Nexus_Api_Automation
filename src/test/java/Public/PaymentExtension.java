@@ -2,7 +2,7 @@ package Public;
 
 import java.sql.SQLException;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.NexustAPIAutomation.java.CommonMethods;

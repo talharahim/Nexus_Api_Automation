@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import com.NexustAPIAutomation.java.CommonMethods;
 
-import groovyjarjarantlr4.v4.codegen.model.dbg;
+
 import io.restassured.response.ValidatableResponse;
 
 public class spaController {
@@ -97,7 +97,7 @@ public class spaController {
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("SpaCalculated"));
 		result.assertThat().body(Matchers.containsString("Messages"));
-		System.out.println(result.extract().asPrettyString());
+		System.out.println(result.extract().asString());
 
 	}
 
