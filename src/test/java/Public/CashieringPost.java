@@ -28,7 +28,7 @@ public class CashieringPost {
 
 	}
 
-	@Test(priority = 2, groups = "Cashering")
+	@Test(priority = 2, groups = "Cashering", dependsOnMethods ="TC001_RecieptAdjustment" )
 	public void TC002_saveReciept() throws ClassNotFoundException, SQLException, InterruptedException {
 
 		//CommonMethods.CompanyDBRestore();
