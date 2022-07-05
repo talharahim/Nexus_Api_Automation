@@ -9,7 +9,7 @@ import com.NexustAPIAutomation.java.CommonMethods;
 
 public class BaseClass {
 
-	
+	@BeforeClass
 	void BeforeTest() throws ClassNotFoundException, SQLException, InterruptedException {
 		CommonMethods.CompanyDBRestore();
 	}

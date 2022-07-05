@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 05 00:52:51 PDT 2022</td>
+<td>Started on:</td><td>Tue Jul 05 06:07:39 PDT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>12 seconds (12420 ms)</td>
+<tr><td>Total time:</td><td>9 seconds (9310 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,53 +75,9 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Public.spaController.getoutstandingDocuments_v_2()'><b>getoutstandingDocuments_v_2</b><br>Test class: Public.spaController</td>
-<td><div><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;OutstandingDocs\&quot;:[{\&quot;DocumentType\&quot;:\&quot;MISC\&quot;,\&quot;DocumentNumber\&quot;:\&quot;MISC00000000264\&quot;,\&quot;DueDate\&quot;:\&quot;1999-12-08\&quot;,\&quot;LocationId\&quot;:\&quot;WATER001\&quot;,\&quot;ServiceAddress\&quot;:\&quot;12 A Grafton st n APT 4\&quot;,\&quot;ServiceCategory\&quot;:{\&quot;Id\&quot;:0,\&quot;Description\&quot;:\&quot;\&quot;},\&quot;OutstandingAmount\&quot;:\&quot;46.00\&quot;}]}&quot;
-  Actual: {&quot;SPABalances&quot;:[{&quot;Success&quot;:false,&quot;Messages&quot;:[{&quot;Enabled&quot;:1,&quot;Info&quot;:&quot;There are no outstanding documents for customer CUSTOMER001 location All Locations to create Spa.&quot;}]}]}
-
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:339)
-	at Public.spaController.getoutstandingDocuments_v_2(spaController.java:32)
+<td title='Public.CashieringGet.TC007_getAutoApply()'><b>TC007_getAutoApply</b><br>Test class: Public.CashieringGet</td>
+<td><div><pre>java.lang.NullPointerException
+	at Public.CashieringGet.TC007_getAutoApply(CashieringGet.java:158)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -147,53 +103,9 @@ Expected: &quot;{\&quot;OutstandingDocs\&quot;:[{\&quot;DocumentType\&quot;:\&qu
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1618326227", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1618326227'><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;OutstandingDocs\&quot;:[{\&quot;DocumentType\&quot;:\&quot;MISC\&quot;,\&quot;DocumentNumber\&quot;:\&quot;MISC00000000264\&quot;,\&quot;DueDate\&quot;:\&quot;1999-12-08\&quot;,\&quot;LocationId\&quot;:\&quot;WATER001\&quot;,\&quot;ServiceAddress\&quot;:\&quot;12 A Grafton st n APT 4\&quot;,\&quot;ServiceCategory\&quot;:{\&quot;Id\&quot;:0,\&quot;Description\&quot;:\&quot;\&quot;},\&quot;OutstandingAmount\&quot;:\&quot;46.00\&quot;}]}&quot;
-  Actual: {&quot;SPABalances&quot;:[{&quot;Success&quot;:false,&quot;Messages&quot;:[{&quot;Enabled&quot;:1,&quot;Info&quot;:&quot;There are no outstanding documents for customer CUSTOMER001 location All Locations to create Spa.&quot;}]}]}
-
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:339)
-	at Public.spaController.getoutstandingDocuments_v_2(spaController.java:32)
+</pre></div><a href='#' onClick='toggleBox("stack-trace666911607", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace666911607'><pre>java.lang.NullPointerException
+	at Public.CashieringGet.TC007_getAutoApply(CashieringGet.java:158)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -220,8 +132,8 @@ Expected: &quot;{\&quot;OutstandingDocs\&quot;:[{\&quot;DocumentType\&quot;:\&qu
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>7</td>
-<td>Public.spaController@4883b407</td></tr>
+<td>0</td>
+<td>Public.CashieringGet@3967e60c</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -231,35 +143,20 @@ Expected: &quot;{\&quot;OutstandingDocs\&quot;:[{\&quot;DocumentType\&quot;:\&qu
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Public.spaController.getcalculatedocuments_v_2()'><b>getcalculatedocuments_v_2</b><br>Test class: Public.spaController</td>
+<td title='Public.CashieringGet.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGet</td>
 <td></td>
-<td>0</td>
-<td>Public.spaController@4883b407</td></tr>
+<td>6</td>
+<td>Public.CashieringGet@3967e60c</td></tr>
 <tr>
-<td title='Public.spaController.getheaderInfo_v_2()'><b>getheaderInfo_v_2</b><br>Test class: Public.spaController</td>
+<td title='Public.CashieringGet.TC003_getnextReceipt()'><b>TC003_getnextReceipt</b><br>Test class: Public.CashieringGet</td>
 <td></td>
 <td>0</td>
-<td>Public.spaController@4883b407</td></tr>
+<td>Public.CashieringGet@3967e60c</td></tr>
 <tr>
-<td title='Public.spaController.getspaAccountBalances_v_2()'><b>getspaAccountBalances_v_2</b><br>Test class: Public.spaController</td>
+<td title='Public.CashieringGet.TC004_balances()'><b>TC004_balances</b><br>Test class: Public.CashieringGet</td>
 <td></td>
-<td>0</td>
-<td>Public.spaController@4883b407</td></tr>
-<tr>
-<td title='Public.spaController.getspadetails_v_2()'><b>getspadetails_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@4883b407</td></tr>
-<tr>
-<td title='Public.spaController.getspadocuments_v_2()'><b>getspadocuments_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@4883b407</td></tr>
-<tr>
-<td title='Public.spaController.putcalculatedocuments_v_2()'><b>putcalculatedocuments_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@4883b407</td></tr>
+<td>1</td>
+<td>Public.CashieringGet@3967e60c</td></tr>
 </table><p>
 </body>
 </html>
