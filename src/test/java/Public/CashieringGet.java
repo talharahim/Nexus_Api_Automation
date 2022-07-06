@@ -65,7 +65,7 @@ public class CashieringGet {
 
 	}
 
-	 @Test(priority = 3, groups = "Cashering")
+	 @Test(priority = 3, groups = "Cashering", dependsOnMethods = "TC004_balances")
 	public void TC003_getnextReceipt() throws ClassNotFoundException, SQLException, InterruptedException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/receipt/TRREG000001/nextReceipt";
@@ -81,7 +81,7 @@ public class CashieringGet {
 
 	}
 
-	// @Test(priority = 4, groups = "Cashering")
+	@Test(priority = 4, groups = "Cashering", dependsOnMethods = "TC003_getnextReciept")
 	public void TC004_getReceipt() throws ClassNotFoundException, SQLException, InterruptedException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/receipt/004270412000001";
@@ -103,7 +103,7 @@ public class CashieringGet {
 
 	}
 
-	// @Test(priority = 5, groups = "Cashering")
+	@Test(priority = 5, groups = "Cashering", dependsOnMethods = "TC004_getReceipt")
 	public void TC005_getRegisterInfo() throws ClassNotFoundException, SQLException, InterruptedException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/register/TRREG000001/info";
@@ -124,7 +124,7 @@ public class CashieringGet {
 
 	}
 
-	// @Test(priority = 6, groups = "Cashering")
+    @Test(priority = 6, groups = "Cashering", dependsOnMethods = "TC005_getRegisterInfo")
 	public void TC006_gettransactions() throws ClassNotFoundException, SQLException, InterruptedException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/transactions/customer017";
@@ -139,7 +139,7 @@ public class CashieringGet {
 
 	}
 
-	@Test(priority = 7, groups = "Cashering")
+	@Test(priority = 7, groups = "Cashering", dependsOnMethods = "TC006_gettransactions")
 	public void TC007_getAutoApply() throws ClassNotFoundException, SQLException, InterruptedException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/autoApply";
