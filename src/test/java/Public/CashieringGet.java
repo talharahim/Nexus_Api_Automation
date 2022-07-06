@@ -81,7 +81,7 @@ public class CashieringGet {
 
 	}
 
-	@Test(priority = 4, groups = "Cashering", dependsOnMethods = "TC003_getnextReciept")
+	@Test(priority = 4, groups = "Cashering", dependsOnMethods = "TC003_getnextReceipt")
 	public void TC004_getReceipt() throws ClassNotFoundException, SQLException, InterruptedException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/receipt/004270412000001";
@@ -89,15 +89,15 @@ public class CashieringGet {
 		String payload = "";
 		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
 		System.out.println(jsonPathEvaluator.get().toString());
-		String Result = jsonPathEvaluator.get("Receipt.PreviousReceiptNumber");
+		String Result = jsonPathEvaluator.get("Receipt.ReceiptNumber");
 
-		if (!Result.contentEquals("004211025000003")) {
+		if (!Result.contentEquals("004270412000001")) {
 			Assert.fail(Result);
 		}
 
-		Result = jsonPathEvaluator.get("Receipt.ReceiptNumber");
+		Result = jsonPathEvaluator.get("Receipt.PreviousReceiptNumber");
 
-		if (!Result.contentEquals("004270412000001")) {
+		if (Result.contentEquals("")) {
 			Assert.fail(Result);
 		}
 
