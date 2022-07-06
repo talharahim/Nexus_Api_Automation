@@ -70,7 +70,8 @@ public class CommonMethods {
 
 	}
 
-	public static void CompanyDBRestore() {
+	public static boolean  CompanyDBRestore() {
+		
 
 		try {
 			CommonMethods.Delay(10000);
@@ -96,6 +97,7 @@ public class CommonMethods {
 			System.exit(1);
 		}
 		
+		return true;
 		
 
 	}

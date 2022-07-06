@@ -37,7 +37,7 @@ public class CashieringGet {
 
 	}
 
-	 @Test(priority = 2, groups = "Cashering")
+	 @Test(priority = 2, groups = "Cashering", dependsOnMethods = "TC003_getCashin")
 	public void TC004_balances() throws ClassNotFoundException, SQLException, InterruptedException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/balances/customer006/1999-03-24";
