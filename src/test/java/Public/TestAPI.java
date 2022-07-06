@@ -19,25 +19,19 @@ public class TestAPI {
 	public static JsonPath jsonPathEvaluator;
 
 	
+	@Test
+	public void TC001_RecieptAdjustment() throws ClassNotFoundException, SQLException, InterruptedException {
+	//	CommonMethods.CompanyDBRestore();
+		String uri = "/cashiering/receipt/adjust";
+		String ver = "2.4";
+		String payload = "./\\TestData\\recieptAdjust.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Receipt.Success");
+		System.out.println(jsonPathEvaluator.get().toString().toString());
+		if (Result == false) {
+			Assert.fail();
+		}
 
-	@Test(priority = 4,  groups = "SPA")
-	public void recancelSPA_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-
-		String customerId = "500300";
-		String spaIndexfromdb = CommonMethods.getSPAIndex(customerId);
-		System.out.println("SPA Index from DB ="+spaIndexfromdb);
-		Boolean res = CommonMethods.cancelSpa(spaIndexfromdb, customerId);
-
-		
-		String uri = "/spa/calculate";
-		String ver = "2";
-		String jpath = "./\\TestData\\calculateddocumentsv2.json";
-
-		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
-		result.assertThat().body(Matchers.containsString("true"));
-		System.out.println(result.extract().asString());
-
-		System.out.println(res);
 	}
 
 }

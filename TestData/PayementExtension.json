@@ -1,6 +1,13 @@
 {
-   "Receipt":{
-      "ReceiptNumber":"004211025000003",
-      "Comment":"Nexus API adjustment"
-   }
+   "PaymentExtension": {
+        "CustomerId":"500300",
+        "LocationId": "WATER005",
+        "Notice":{
+            "TypeId": 0
+        },
+        "Extension": {
+            "Method": "portal"
+        },
+        "Comment": "Comment added"
+    }
 }

@@ -154,7 +154,7 @@ public class CommonMethods {
 				.body(jsonDataInFile);
 
 		response = httpRequest.post();
-		//System.out.println(response.asPrettyString());
+		System.out.println(response.asString());
 		jsonPathEvaluator = response.jsonPath();
 
 		return jsonPathEvaluator;
