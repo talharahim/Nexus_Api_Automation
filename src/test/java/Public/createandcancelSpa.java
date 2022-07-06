@@ -51,14 +51,13 @@ public class createandcancelSpa {
 
 		String uri = "/spa/calculate";
 		String ver = "2";
-		String jpath = "./\\TestData\\calculateddocumentsv2.json";
+		String jpath = "./\\TestData\\putspacalculatev2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
-		result.assertThat().body(Matchers.containsString("true"));
-		result.assertThat().body(Matchers.containsString("READ"));
-		result.assertThat().body(Matchers.containsString("created"));
+		result.assertThat().body(Matchers.containsString("{\"SpaCalculated\":[{\"Success\":true,\"Messages\":[{\"Enabled\":0,\"Info\":\"\"}]}]}"));
 		System.out.println(result.extract().asString());
 
+		
 	}
 
 	@Test(priority = 4, dependsOnMethods = "putspaCalculate_v_2", groups = "SPA")
@@ -66,17 +65,17 @@ public class createandcancelSpa {
 
 		String customerId = "500300";
 		String spaIndexfromdb = CommonMethods.getSPAIndex(customerId);
-
+		System.out.println("SPA Index from DB ="+spaIndexfromdb);
 		Boolean res = CommonMethods.cancelSpa(spaIndexfromdb, customerId);
-
-		String uri = "/spa/details";
+		
+		String uri = "/spa/calculate";
 		String ver = "2";
 		String jpath = "./\\TestData\\calculateddocumentsv2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		result.assertThat().body(Matchers.containsString("SpaCalculated"));
+		result.assertThat().body(Matchers.containsString("Success"));
 		result.assertThat().body(Matchers.containsString("true"));
-		result.assertThat().body(Matchers.containsString("READ"));
-		result.assertThat().body(Matchers.containsString("created"));
 		System.out.println(result.extract().asString());
 
 		System.out.println(res);

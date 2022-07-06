@@ -154,7 +154,7 @@ public class CashieringGet {
 		System.out.println(jsonPathEvaluator.get().toString());
 		// String Result = jsonPathEvaluator.get("CashieringTransaction.CustomerId");
 		String Result = jsonPathEvaluator.getJsonObject("CashieringTransaction.CustomerId[0]");
-
+ 
 		if (!Result.contentEquals("CUSTOMER010"))
 			Assert.fail(Result);
 			Result = jsonPathEvaluator.get("CashieringTransaction.Document[0].Number[0]");
