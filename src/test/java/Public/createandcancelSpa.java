@@ -67,11 +67,10 @@ public class createandcancelSpa {
 		String spaIndexfromdb = CommonMethods.getSPAIndex(customerId);
 		System.out.println("SPA Index from DB ="+spaIndexfromdb);
 		Boolean res = CommonMethods.cancelSpa(spaIndexfromdb, customerId);
-		
+
 		String uri = "/spa/calculate";
 		String ver = "2";
 		String jpath = "./\\TestData\\calculateddocumentsv2.json";
-
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		result.assertThat().body(Matchers.containsString("SpaCalculated"));
 		result.assertThat().body(Matchers.containsString("Success"));
