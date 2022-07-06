@@ -46,7 +46,7 @@ public class createandcancelSpa {
 
 	}
 
-	@Test(priority = 3, groups = "SPA")
+	@Test(priority = 3, dependsOnMethods = "createSPA_v_2", groups = "SPA")
 	public void putspaCalculate_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/spa/calculate";

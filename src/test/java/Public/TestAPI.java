@@ -29,14 +29,12 @@ public class TestAPI {
 		Boolean res = CommonMethods.cancelSpa(spaIndexfromdb, customerId);
 
 		
-		String uri = "/spa/details";
+		String uri = "/spa/calculate";
 		String ver = "2";
 		String jpath = "./\\TestData\\calculateddocumentsv2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		result.assertThat().body(Matchers.containsString("true"));
-		result.assertThat().body(Matchers.containsString("READ"));
-		result.assertThat().body(Matchers.containsString("created"));
 		System.out.println(result.extract().asString());
 
 		System.out.println(res);
