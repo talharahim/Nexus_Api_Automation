@@ -87,8 +87,8 @@ public class CommonMethods {
 			PowerShellResponse response;
 			Map<String, String> config = new HashMap<String, String>();
 			config.put("maxWait", "200000");
-			response = powerShell.configuration(config).executeScript("./\\Configuration\\DBOnlyrestore.ps1");
-			System.out.println("Script output:" + response.getCommandOutput());
+			//response = powerShell.configuration(config).executeScript("./\\Configuration\\DBOnlyrestore.ps1");
+		//	System.out.println("Script output:" + response.getCommandOutput());
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -252,8 +252,16 @@ public class CommonMethods {
 			httpRequest.queryParam(pair.getKey().toString(), pair.getValue().toString());
 		}
 
-		Response response = httpRequest.get();
-		JsonPath jsonPathEvaluator = response.jsonPath();
+		Response response = null;
+		JsonPath jsonPathEvaluator;
+		try {
+		response = httpRequest.get();
+		}
+		catch (NullPointerException e)
+		{
+			
+		}
+		jsonPathEvaluator = response.jsonPath();
 		return jsonPathEvaluator;
 
 	}

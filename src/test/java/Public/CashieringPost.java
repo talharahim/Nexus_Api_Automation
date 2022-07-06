@@ -15,7 +15,7 @@ public class CashieringPost {
 
 	@Test(priority = 1, groups = "Cashering")
 	public void TC001_RecieptAdjustment() throws ClassNotFoundException, SQLException, InterruptedException {
-		CommonMethods.CompanyDBRestore();
+	//	CommonMethods.CompanyDBRestore();
 		String uri = "/cashiering/receipt/adjust";
 		String ver = "2.4";
 		String payload = "./\\TestData\\recieptAdjust.json";
