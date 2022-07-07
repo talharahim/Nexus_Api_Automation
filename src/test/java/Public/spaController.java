@@ -101,11 +101,11 @@ public class spaController {
 
 	}
 
-	@Test(priority = 6, dependsOnMethods = "putcalculatedocuments_v_2", groups = "SPA")
+	@Test(priority = 6, groups = "SPA", dependsOnMethods = "putcalculatedocuments_v_2")
 	public void getcalculatedocuments_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		String uri = "/spa/Customer001/calculate";
+		String uri = "/spa/CUSTOMER002/documents/1/1";
 		String ver = "2";
 		String jpath = "./\\TestData\\getcalculateddocumentsv2.json";
 

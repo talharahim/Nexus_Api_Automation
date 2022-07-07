@@ -18,21 +18,17 @@ public class TestAPI {
 
 	public static JsonPath jsonPathEvaluator;
 
-	@Test(priority = 3, groups = "CustomerController")
-	public void getlocationsByCustomerv_2_4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	@Test(priority = 6, groups = "SPA")
+	public void getcalculatedocuments_v_2()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		String uri = "/customers/AUTO1001/locationsByCustomer";
-		String ver = "2.4";
-		String jpath = "./\\TestData\\locationsByCustomerv2_4.json";
-				
+		String uri = "/spa/CUSTOMER002/documents/1/1";
+		String ver = "2";
+		String jpath = "./\\TestData\\getcalculateddocumentsv2.json";
+
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("LocationId", "LOCATION008");
-		params.put("NumPerPage", "50");
-		params.put("OrderBy", "status, locationId");
-		params.put("PageNum", "1");
-				
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
-		
+
 	}
 }
