@@ -1,6 +1,6 @@
 {
    "Receipt":{
-      "ReceiptNumber":"004211025000005",
+      "ReceiptNumber":"004220707000002",
       "OriginatingReceiptNumber":"",
       "Void":false,
       "CustomerId":"CUSTOMER008",
@@ -12,13 +12,13 @@
          "Description": " ",
          "Id":""
       },
-      "Cash":0,
+      "Cash":185.42,
       "Check":{
          "Amount":0,
          "Number":""
       },
       "CreditCard": {
-          "Amount": 185.42
+          "Amount": 0
       },
       "Unapplied":{
          "Amount":0,
