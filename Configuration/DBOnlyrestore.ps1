@@ -112,13 +112,13 @@ Write-Host "Running Search_Remove_CSM_DatabaseComponents_v2.5.2.sql...."
 Invoke-sqlcmd -inputfile "Search_Remove_CSM_DatabaseComponents_v2.5.2.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB 
 
 # this will build and create and new entities required - config files need to be set to true
-#Set-Location $Nexus_APIPath
-#npm run build:prod
+Set-Location $Nexus_APIPath
+npm run build:prod
 #npm run pm2:start
 #npm run pm2:stop
 #Read-Host -Prompt "Does that look right? Press any key to continue or CTRL+C to quit" 
 
-#npm run license:copyfile
+npm run license:copyfile
 
 
 
@@ -157,14 +157,14 @@ Write-Host "Running PostInitialize.sql....DONE"
 #npm run prod
 Set-Location $Nexus_APIPath
 pm2 start ecosystem.config.js
-#pm2 stop csm-web-api
-#pm2 start csm-web-api
-#pm2 list
-#pm2 save
+pm2 stop csm-web-api
+pm2 start csm-web-api
+pm2 list
+pm2 save
 
-#npm run dllLibraries:copyfile
-#npm run reportTemplates:copyfile
-#npm run apidoc-make-private
+npm run dllLibraries:copyfile
+npm run reportTemplates:copyfile
+npm run apidoc-make-private
 # Restart PM2 service
 
 
