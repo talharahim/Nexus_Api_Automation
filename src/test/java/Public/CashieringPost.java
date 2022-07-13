@@ -18,12 +18,15 @@ public class CashieringPost {
 
 		
 		JsonPath next = CommonMethods.getMethod("/cashiering/receipt/TRREG000001/nextReceipt", "2.4");
-		Assert.assertEquals(next.get("Receipt[0].ReceiptNumber"), "004220707000001");
+		String nextRecieptNumber =next.get("Receipt[0].ReceiptNumber");
 
 		String uri = "/cashiering/receipt";
 		String ver = "2.4";
-		String payload = "./\\TestData\\saveReciept.json";
-		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+		
+		
+		//String payload = "./\\TestData\\saveReciept.json";
+		String payload = "{\"Receipt\":{\"ReceiptNumber\":\""+nextRecieptNumber+"\",\"OriginatingReceiptNumber\":\"\",\"Void\":false,\"CustomerId\":\"CUSTOMER008\",\"LocationId\":\"LOCATION007\",\"PaymentOrigin\":\"TEST\",\"CheckbookId\":\"FIRSTNATIONAL\",\"PaidBy\":{\"Type\":1,\"Description\":\"\",\"Id\":\"\"},\"Cash\":185.42,\"Check\":{\"Amount\":0,\"Number\":\"\"},\"CreditCard\":{\"Amount\":0},\"Unapplied\":{\"Amount\":0,\"Account\":\"\",\"LocationId\":\"\"},\"Change\":0,\"Comment\":\"ThisisacommenttobesavedintocommentinUMRM102\",\"Document\":[{\"Number\":\"MISC00000000317\",\"LocationId\":\"LOCATION007\",\"StatementNumber\":0,\"ApplyAmount\":185.42,\"OutstandingAmount\":0,\"ReferenceDocumentNumber\":\"\"}]}}";
+		jsonPathEvaluator = CommonMethods.postMethodStringPayload(payload, uri, ver);
 		Boolean Result = jsonPathEvaluator.get("Receipt.Success");
 		System.out.println(jsonPathEvaluator.get().toString().toString());
 		if (Result == false) {
