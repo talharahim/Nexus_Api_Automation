@@ -613,7 +613,7 @@ public class CommonMethods {
 		getSPAIndex("500300");
 	}
 
-	public static JsonPath getMethod(String uri, String version, String pathToResponse)
+	public static ValidatableResponse getMethod(String uri, String version, String pathToResponse)
 			throws InterruptedException, IOException {
 		switch (version) {
 		case "1":
@@ -660,6 +660,7 @@ public class CommonMethods {
 				.body(Matchers.equalTo(new String(Files.readAllBytes(jsonDataInFile))));
 		;
 
+		return response;
 		// JsonPath jsonPathEvaluator = response.jsonPath();
 
 	}
