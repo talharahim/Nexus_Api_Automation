@@ -1,9 +1,9 @@
 {
    "PaymentExtension": {
-        "CustomerId":"500300",
-        "LocationId": "WATER005",
+        "CustomerId":"CUSTOMER007",
+        "LocationId": "ELECWAT001",
         "Notice":{
-            "TypeId": 0
+            "TypeId": 2
         },
         "Extension": {
             "Method": "portal"

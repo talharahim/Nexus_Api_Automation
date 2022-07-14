@@ -1,5 +1,6 @@
 package Public;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import org.testng.Assert;
@@ -12,19 +13,36 @@ import io.restassured.path.json.JsonPath;
 public class PaymentExtension {
 
 	public static JsonPath jsonPathEvaluator;
-
+	
 	@Test(priority = 1, groups = "Cashering")
-	public void PaymentExtension_v2() throws ClassNotFoundException, SQLException, InterruptedException {
+	public void postPaymentv2() throws ClassNotFoundException, SQLException, InterruptedException {
+		String uri = "/payment";
+		String ver = "2";
+		String payload = "./\\TestData\\PostPayment2_1.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("result[0].Success");
+		System.out.println(jsonPathEvaluator.toString());
+		if (Result == false) {
+			Assert.fail();
+		}
+
+	}
+
+	@Test(priority = 2, groups = "Cashering")
+	public void paymentExtensionv2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 	//	CommonMethods.CompanyDBRestore();
 		String uri = "/paymentextension";
-		String ver = "2.0";
+		String ver = "2";
 		String payload = "./\\TestData\\PayementExtension.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		System.out.println(jsonPathEvaluator.get().toString());
-		Boolean Result = jsonPathEvaluator.get("result.Success");
-		System.out.println(jsonPathEvaluator.get().toString());
-		if (Result == false) {
+		String Result = jsonPathEvaluator.get("PaymentExtension.Messages[0].Info");
+		
+		if (Result == "Payment extensions are not allowed. A payment extension already exist or invalid date condition.") {
 			Assert.fail();
+		}
+		else {
+			System.out.println(jsonPathEvaluator.toString());
 		}
 
 	}

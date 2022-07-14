@@ -613,7 +613,7 @@ public class CommonMethods {
 		getSPAIndex("500300");
 	}
 
-	public static void getMethod(String uri, String version, String pathToResponse)
+	public static JsonPath getMethod(String uri, String version, String pathToResponse)
 			throws InterruptedException, IOException {
 		switch (version) {
 		case "1":
