@@ -55,9 +55,7 @@ public class CommonMethods {
 		if (response.path("access_token").toString() == "") {
 			Assert.fail("Austhorisation failed");
 		}
-		// null - has a value
-		// The auth token could then be set to a string variable
-
+        // The auth token could then be set to a string variable
 		String auth_token = response.path("access_token").toString();
 		// System.out.println(auth_token);
 		return auth_token;
@@ -70,8 +68,7 @@ public class CommonMethods {
 
 	}
 
-	public static boolean  CompanyDBRestore() {
-		
+	public static boolean CompanyDBRestore() {
 
 		try {
 			CommonMethods.Delay(10000);
@@ -80,25 +77,20 @@ public class CommonMethods {
 			e1.printStackTrace();
 		}
 
-		
-		try  {
+		try {
 			PowerShell powerShell = PowerShell.openSession();
 			// Execute a command in PowerShell session
 			PowerShellResponse response;
 			Map<String, String> config = new HashMap<String, String>();
 			config.put("maxWait", "200000");
-			//response = powerShell.configuration(config).executeScript("./\\Configuration\\DBOnlyrestore.ps1");
-		//	System.out.println("Script output:" + response.getCommandOutput());
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Scripts got error while rinning DB Scripts, please see logs");
 
 			System.exit(1);
 		}
-		
+
 		return true;
-		
 
 	}
 
@@ -114,8 +106,7 @@ public class CommonMethods {
 	}
 
 	public static JsonPath postMethod(String payload, String uri, String version) throws InterruptedException {
-		
-		
+
 		switch (version) {
 		case "1":
 			RestAssured.baseURI = urlv1;
@@ -144,7 +135,7 @@ public class CommonMethods {
 			break;
 		}
 		File jsonDataInFile = new File(payload);
-		//System.out.println(RestAssured.baseURI);
+		// System.out.println(RestAssured.baseURI);
 		Response response;
 		JsonPath jsonPathEvaluator;
 		RestAssured.baseURI = RestAssured.baseURI + uri;
@@ -160,10 +151,10 @@ public class CommonMethods {
 		return jsonPathEvaluator;
 
 	}
-	
-	public static JsonPath postMethodStringPayload(String payload, String uri, String version) throws InterruptedException {
-		
-		
+
+	public static JsonPath postMethodStringPayload(String payload, String uri, String version)
+			throws InterruptedException {
+
 		switch (version) {
 		case "1":
 			RestAssured.baseURI = urlv1;
@@ -191,8 +182,8 @@ public class CommonMethods {
 			version = "Invalid version";
 			break;
 		}
-		//File jsonDataInFile = new File(payload);
-		//System.out.println(RestAssured.baseURI);
+		// File jsonDataInFile = new File(payload);
+		// System.out.println(RestAssured.baseURI);
 		Response response;
 		JsonPath jsonPathEvaluator;
 		RestAssured.baseURI = RestAssured.baseURI + uri;
@@ -208,7 +199,6 @@ public class CommonMethods {
 		return jsonPathEvaluator;
 
 	}
-
 
 	public static JsonPath getMethod(String uri, String version) throws InterruptedException {
 		switch (version) {
@@ -304,11 +294,9 @@ public class CommonMethods {
 		Response response = null;
 		JsonPath jsonPathEvaluator;
 		try {
-		response = httpRequest.get();
-		}
-		catch (NullPointerException e)
-		{
-			
+			response = httpRequest.get();
+		} catch (NullPointerException e) {
+
 		}
 		jsonPathEvaluator = response.jsonPath();
 		return jsonPathEvaluator;
@@ -496,7 +484,7 @@ public class CommonMethods {
 		return response;
 
 	}
-	
+
 	public static ValidatableResponse putMethod(String uri, String version, String payload, String Message)
 			throws InterruptedException, IOException {
 
@@ -528,7 +516,6 @@ public class CommonMethods {
 			break;
 		}
 
-		
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		System.out.println(RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
@@ -735,12 +722,7 @@ public class CommonMethods {
 				.body(rawbody);
 
 		Response response = httpRequest.put();
-
-		// First get the JsonPath object instance from the Response interface
 		JsonPath jsonPathEvaluator = response.jsonPath();
-
-		// Then simply query the JsonPath object to get a String value of the node
-		// specified by JsonPath: City (Note: You should not put $. in the Java code)
 		Boolean result = true;
 		try {
 			result = jsonPathEvaluator.get("SPACancel[0].Success");
@@ -753,10 +735,6 @@ public class CommonMethods {
 					"Active (Open) special payment arrangement does not exist for customer at " + spaIndexfromdb);
 			return false;
 		}
-
-		//
-//			// Let us print the city variable to see what we got
-//			System.out.println("SPA Cancelled for customer "+ Customer );
 
 		System.out.println("Active (Open) special payment arrangement cancelled for customer at " + spaIndexfromdb);
 		return result;
