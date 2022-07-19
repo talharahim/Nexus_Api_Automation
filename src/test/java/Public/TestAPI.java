@@ -19,7 +19,7 @@ public class TestAPI {
 	public static JsonPath jsonPathEvaluator;
 
 
-	@Test(priority = 1, groups = "Cashering" )
+	//@Test(priority = 1, groups = "Cashering" )
 	public void TC002_saveReciept() throws ClassNotFoundException, SQLException, InterruptedException {
 
 		//CommonMethods.CompanyDBRestore();

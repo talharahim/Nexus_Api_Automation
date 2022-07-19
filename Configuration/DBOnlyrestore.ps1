@@ -118,7 +118,7 @@ npm run build:prod
 #npm run pm2:stop
 #Read-Host -Prompt "Does that look right? Press any key to continue or CTRL+C to quit" 
 
-npm run license:copyfile
+#npm run license:copyfile
 
 
 
