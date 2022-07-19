@@ -16,6 +16,7 @@ public class CashieringPost {
 
 	@Test(priority = 1, groups = "Cashering")
 	public void TC001_saveReciept() throws ClassNotFoundException, SQLException, InterruptedException {
+		CommonMethods.CompanyDBRestore();
 		JsonPath next = CommonMethods.getMethod("/cashiering/receipt/TRREG000001/nextReceipt", "2.4");
 		nextRecieptNumber = next.get("Receipt[0].ReceiptNumber");
 		Thread.sleep(5000);

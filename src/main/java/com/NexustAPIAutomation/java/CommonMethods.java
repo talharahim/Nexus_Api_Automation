@@ -83,6 +83,8 @@ public class CommonMethods {
 			PowerShellResponse response;
 			Map<String, String> config = new HashMap<String, String>();
 			config.put("maxWait", "200000");
+		    response = powerShell.configuration(config).executeScript("./\\Configurations\\DBOnlyrestore.ps1");
+		    System.out.println("Script output:" + response.getCommandOutput());
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Scripts got error while rinning DB Scripts, please see logs");
