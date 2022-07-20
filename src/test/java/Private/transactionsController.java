@@ -48,9 +48,7 @@ public class transactionsController {
 		params.put("Electric", "true");
 		params.put("Water", "true");
 	
-		
-		
-				
+							
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 		
