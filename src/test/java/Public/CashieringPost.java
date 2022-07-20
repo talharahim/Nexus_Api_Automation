@@ -2,6 +2,7 @@ package Public;
 
 import java.sql.SQLException;
 
+import org.apache.http.ConnectionClosedException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,10 +14,44 @@ public class CashieringPost {
 
 	public static JsonPath jsonPathEvaluator;
 	public static String nextRecieptNumber;
+	public static String ConnectionString;
+	// public static String ConnectionString =
+	// "jdbc:sqlserver://RND-BASE-A\\SQL_2017;DB=
+	// databaseName=TWO;user=auto;password=password123;";
+
+	public static void adjustRecieptPre(String recNum) throws ConnectionClosedException, InterruptedException {
+
+		String uri = "/cashiering/receipt/adjust";
+		String ver = "2.4";
+		String payload = "{ \"Receipt\":{\"ReceiptNumber\" : \"" + recNum
+				+ "\", \"Comment\": \" Nexus API adjustment via automation \" } }";
+		jsonPathEvaluator = CommonMethods.postMethodStringPayload(payload, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Receipt.Success");
+		if (Result != null) {
+			if (Result == false) {
+				System.out.println("Unable to adjust or reciept already adjust, check data");
+
+			}
+			System.out.println("Reciept Adjusted =" + recNum);
+			System.out.println(jsonPathEvaluator.prettyPrint());
+		}
+
+	}
 
 	@Test(priority = 1, groups = "Cashering")
-	public void TC001_saveReciept() throws ClassNotFoundException, SQLException, InterruptedException {
-		CommonMethods.CompanyDBRestore();
+	public void TC001_saveReciept()
+			throws ClassNotFoundException, SQLException, InterruptedException, ConnectionClosedException {
+		// CommonMethods.CompanyDBRestore();
+
+		String columnName = "umDocumentNumber";
+		String Command1 = "select top 1 umDocumentNumber from UMRM102 order by umDocumentNumber desc";
+		String Result = "";
+		ConnectionString = "jdbc:sqlserver://RND-BASE-A\\SQL_2017;DB= databaseName=TWO;user=sa;password=cogs;";
+		Result = CommonMethods.selectFromDb(Command1, ConnectionString, columnName);
+		if (Result != "") {
+			adjustRecieptPre(Result);
+		}
+
 		JsonPath next = CommonMethods.getMethod("/cashiering/receipt/TRREG000001/nextReceipt", "2.4");
 		nextRecieptNumber = next.get("Receipt[0].ReceiptNumber");
 		Thread.sleep(5000);
@@ -25,8 +60,8 @@ public class CashieringPost {
 		String payload = "{\"Receipt\":{\"ReceiptNumber\":\"" + nextRecieptNumber
 				+ "\",\"OriginatingReceiptNumber\":\"\",\"Void\":false,\"CustomerId\":\"CUSTOMER008\",\"LocationId\":\"LOCATION007\",\"PaymentOrigin\":\"TEST\",\"CheckbookId\":\"FIRST NATIONAL\",\"PaidBy\":{\"Type\":1,\"Description\":\"\",\"Id\":\"\"},\"Cash\":185.42,\"Check\":{\"Amount\":0,\"Number\":\"\"},\"CreditCard\":{\"Amount\":0},\"Unapplied\":{\"Amount\":0,\"Account\":\"\",\"LocationId\":\"\"},\"Change\":0,\"Comment\":\"ThisisacommenttobesavedintocommentinUMRM102\",\"Document\":[{\"Number\":\"MISC00000000317\",\"LocationId\":\"LOCATION007\",\"StatementNumber\":0,\"ApplyAmount\":185.42,\"OutstandingAmount\":0,\"ReferenceDocumentNumber\":\"\"}]}}";
 		jsonPathEvaluator = CommonMethods.postMethodStringPayload(payload, uri, ver);
-		Boolean Result = jsonPathEvaluator.get("Receipt[0].Success");
-		if (Result == false) {
+		Boolean Result1 = jsonPathEvaluator.get("Receipt[0].Success");
+		if (Result1 == false) {
 			Assert.fail();
 		} else {
 			System.out.println(jsonPathEvaluator.toString());

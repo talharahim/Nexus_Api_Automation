@@ -108,8 +108,8 @@ foreach ($s in $scripts)
 
 
 Set-Location  $Nexus_APIPathToSQL 
-Write-Host "Running Search_Remove_CSM_DatabaseComponents_v2.5.2.sql...."
-Invoke-sqlcmd -inputfile "Search_Remove_CSM_DatabaseComponents_v2.5.2.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB 
+Write-Host "Running Search_Remove_CSM_DatabaseComponents.sql...."
+Invoke-sqlcmd -inputfile "Search_Remove_CSM_DatabaseComponents.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB 
 
 # this will build and create and new entities required - config files need to be set to true
 Set-Location $Nexus_APIPath
@@ -129,17 +129,17 @@ Invoke-Command {cmd.exe /c BuildInstallScript.bat}
 Start-Sleep -s 5
 #Read-Host -Prompt "Did the batch file complete successfully? Press <ENTER> to continue or CTRL+C to quit" 
 Write-Host "Updating COMPANY procedures...."
-Invoke-sqlcmd -inputfile "InstallCsmApiDatabaseComponents_v2.5.2.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB | Out-File -FilePath "C:\TestSqlCmd.rpt"
+Invoke-sqlcmd -inputfile "InstallCsmApiDatabaseComponents.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB | Out-File -FilePath "C:\TestSqlCmd.rpt"
 Write-Host "Updating COMPANY procedures....DONE"
 #Read-Host -Prompt "Does that look right? Press <ENTER> to continue or CTRL+C to quit" 
 
 # SQL Search database components
 Write-Host "Running search to install into Nexus Api Database...."
-Invoke-sqlcmd -inputfile "Search_Install_Api_DatabaseComponents_v2.5.2.sql" -serverinstance $SQLServerInstance -database $SQLApiDB
+Invoke-sqlcmd -inputfile "Search_Install_Api_DatabaseComponents.sql" -serverinstance $SQLServerInstance -database $SQLApiDB
 Write-Host "....DONE"
 #Read-Host -Prompt "Does that look right? Press <ENTER> to continue or CTRL+C to quit" 
 Write-Host "Running search to install into CSM Database...."
-Invoke-sqlcmd -inputfile "Search_Install_CSM_DatabaseComponents_v2.5.2.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB
+Invoke-sqlcmd -inputfile "Search_Install_CSM_DatabaseComponents.sql" -serverinstance $SQLServerInstance -database $SQLCompanyDB
 Write-Host "....DONE"
 #Read-Host -Prompt "Does that look right? Press <ENTER> to continue or CTRL+C to quit"
 
@@ -166,7 +166,6 @@ npm run dllLibraries:copyfile
 npm run reportTemplates:copyfile
 npm run apidoc-make-private
 # Restart PM2 service
-
 
 Write-Host "Nexus API should now be up and running."
 }
