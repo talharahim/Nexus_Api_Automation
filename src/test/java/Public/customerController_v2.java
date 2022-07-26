@@ -185,7 +185,7 @@ public class customerController_v2 {
 		String jpath = "./\\TestData\\putcustomersaddressv2.json";
 		String jrpath = "./\\TestData\\putcustomersaddressrespv2.json";
 		ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath, jrpath);
-//		System.out.println(result.log());
+		System.out.println(result.log());
 
 	}
 	
@@ -196,7 +196,7 @@ public class customerController_v2 {
 		String jpath = "./\\TestData\\putcustomersbillingOptionsv2.json";
 		String jrpath = "./\\TestData\\putcustomersbillingOptionsrespv2.json";
 		ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath, jrpath);
-//		System.out.println(result.log());
+		System.out.println(result.log());
 
 	}
 	
@@ -207,7 +207,7 @@ public class customerController_v2 {
 		String jpath = "./\\TestData\\putcustomerscollectionsOptionsv2.json";
 		String jrpath = "./\\TestData\\putcustomerscollectionsOptionsrespv2.json";
 		ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath, jrpath);
-//		System.out.println(result.log());
+		System.out.println(result.log());
 
 	}
 	
@@ -218,7 +218,18 @@ public class customerController_v2 {
 		String jpath = "./\\TestData\\putcustomersotherOptionsv2.json";
 		String jrpath = "./\\TestData\\putcustomersotherOptionsrespv2.json";
 		ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath, jrpath);
-//		System.out.println(result.log());
+		System.out.println(result.log());
+
+	}
+	
+	@Test(priority = 14, groups = "CustomerController")
+	public void putcustomersrolldownAddressCodev2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/customers/rolldownAddressCode";
+		String ver = "2";
+		String jpath = "./\\TestData\\putcustomersrolldownAddressCodev2.json";
+		String jrpath = "./\\TestData\\putcustomersrolldownAddressCoderespv2.json";
+		ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath, jrpath);
+		System.out.println(result.log());
 
 	}
 
