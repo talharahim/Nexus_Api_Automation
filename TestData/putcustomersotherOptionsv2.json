@@ -1,0 +1,29 @@
+{
+    "CustomerOtherOptions": [
+        {
+            "CustomerId": "CUSTOMER003",
+            "Other": {
+                "AdditionalInformation": "",
+                "ThirdPartyDevice": 0,
+                "ExcludeLGPrintStatement": 0,
+                "TaxExempt": {
+                    "Number": "",
+                    "ExpiryDate": "1900-01-01T00:00:00"
+                },
+                "ContractorLicense": {
+                    "Enabled": 0,
+                    "Id": "",
+                    "Document": "",
+                    "ExpiryDate": "1900-01-01T00:00:00"
+                }
+            },
+            "Success": true,
+            "Messages": [
+                {
+                    "Enabled": 0,
+                    "Info": ""
+                }
+            ]
+        }
+    ]
+}

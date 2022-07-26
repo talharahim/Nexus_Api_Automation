@@ -55,7 +55,7 @@ public class CommonMethods {
 		if (response.path("access_token").toString() == "") {
 			Assert.fail("Austhorisation failed");
 		}
-        // The auth token could then be set to a string variable
+		// The auth token could then be set to a string variable
 		String auth_token = response.path("access_token").toString();
 		// System.out.println(auth_token);
 		return auth_token;
@@ -83,8 +83,8 @@ public class CommonMethods {
 			PowerShellResponse response;
 			Map<String, String> config = new HashMap<String, String>();
 			config.put("maxWait", "200000");
-		    response = powerShell.configuration(config).executeScript("./\\Configuration\\DBOnlyrestore.ps1");
-		    System.out.println("Script output:" + response.getCommandOutput());
+			response = powerShell.configuration(config).executeScript("./\\Configuration\\DBOnlyrestore.ps1");
+			System.out.println("Script output:" + response.getCommandOutput());
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Scripts got error while rinning DB Scripts, please see logs");
@@ -481,8 +481,53 @@ public class CommonMethods {
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(jsonDataInFile);
+		System.out.println(httpRequest.put().prettyPrint());
+		ValidatableResponse response = null;
+		// response = httpRequest.put().then().assertThat().statusCode(200);
+		return response;
 
-		ValidatableResponse response = httpRequest.put().then().assertThat().statusCode(200);
+	}
+
+	public static ValidatableResponse putMethodvalidate(String uri, String version, String payload, String fresponse)
+			throws InterruptedException, IOException {
+
+		switch (version) {
+		case "1":
+			RestAssured.baseURI = urlv1;
+			break;
+		case "2":
+			RestAssured.baseURI = urlv2;
+			break;
+		case "2.1":
+			RestAssured.baseURI = urlv210;
+			break;
+		case "2.2":
+			RestAssured.baseURI = urlv220;
+			break;
+		case "2.3":
+			RestAssured.baseURI = urlv230;
+			break;
+		case "2.3.1":
+			RestAssured.baseURI = urlv231;
+			break;
+		case "2.4":
+			RestAssured.baseURI = urlv240;
+			break;
+
+		default:
+			version = "Invalid version";
+			break;
+		}
+
+		File jsonDataInFile = new File(payload);
+		RestAssured.baseURI = RestAssured.baseURI + uri;
+		System.out.println(RestAssured.baseURI.toString());
+		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
+				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
+				.body(jsonDataInFile);
+		System.out.println(httpRequest.put().prettyPrint());
+		ValidatableResponse response = httpRequest.put().then().assertThat()
+				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(fresponse))))).assertThat().statusCode(200);
 		return response;
 
 	}
