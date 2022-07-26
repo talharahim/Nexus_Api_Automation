@@ -18,7 +18,7 @@ public class createandcancelSpa {
 	public static JsonPath jsonPathEvaluator;
 
 	@Test(priority = 1, groups = "SPA")
-	public void cancelSPA_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void cancelSPA_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String customerId = "500300";
 		String spaIndexfromdb = CommonMethods.getSPAIndex(customerId);
@@ -54,10 +54,10 @@ public class createandcancelSpa {
 		String jpath = "./\\TestData\\putspacalculatev2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
-		result.assertThat().body(Matchers.containsString("{\"SpaCalculated\":[{\"Success\":true,\"Messages\":[{\"Enabled\":0,\"Info\":\"\"}]}]}"));
+		result.assertThat().body(Matchers.containsString(
+				"{\"SpaCalculated\":[{\"Success\":true,\"Messages\":[{\"Enabled\":0,\"Info\":\"\"}]}]}"));
 		System.out.println(result.extract().asString());
 
-		
 	}
 
 	@Test(priority = 4, dependsOnMethods = "putspaCalculate_v_2", groups = "SPA")
@@ -65,7 +65,7 @@ public class createandcancelSpa {
 
 		String customerId = "500300";
 		String spaIndexfromdb = CommonMethods.getSPAIndex(customerId);
-		System.out.println("SPA Index from DB ="+spaIndexfromdb);
+		System.out.println("SPA Index from DB =" + spaIndexfromdb);
 		Boolean res = CommonMethods.cancelSpa(spaIndexfromdb, customerId);
 
 		String uri = "/spa/calculate";
@@ -78,6 +78,12 @@ public class createandcancelSpa {
 		System.out.println(result.extract().asString());
 
 		System.out.println(res);
+	}
+
+	public static void main(String args[])
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		cancelSPA_v_2();
 	}
 
 }

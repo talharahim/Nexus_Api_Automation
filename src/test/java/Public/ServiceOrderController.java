@@ -285,7 +285,7 @@ public class ServiceOrderController {
 
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		putTaskCompleteNocharge_v2_3();
+		putaddMeterReading_v_2();
 		
 		// putTaskComplete_v_2_4();
 	}

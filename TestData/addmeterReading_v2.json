@@ -1,6 +1,6 @@
 {
-    "LocationId": "ELECWAT003",
-    "EquipmentId": "EQUIP-GAS-2",
+    "LocationId": "LOC@0001",
+    "EquipmentId": "163598645",
     "Reading": 1335,
     "EmployeeId": "sa"
 }
