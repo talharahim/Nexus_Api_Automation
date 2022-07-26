@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>15/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>14/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 26 03:01:25 PDT 2022</td>
+<td>Started on:</td><td>Tue Jul 26 05:37:35 PDT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21209 ms)</td>
+<tr><td>Total time:</td><td>24 seconds (24340 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,154 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Public.createandcancelSpa.cancelSPA_v_2()'><b>cancelSPA_v_2</b><br>Test class: Public.createandcancelSpa</td>
+<td><div><pre>com.microsoft.sqlserver.jdbc.SQLServerException: The connection string contains a badly formed name or value.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:226)
+	at com.microsoft.sqlserver.jdbc.Util.parseUrl(Util.java:344)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.parseAndMergeProperties(SQLServerDriver.java:711)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:693)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.NexustAPIAutomation.java.CommonMethods.selectFromDb(CommonMethods.java:722)
+	at com.NexustAPIAutomation.java.CommonMethods.getSPAIndex(CommonMethods.java:707)
+	at Public.createandcancelSpa.cancelSPA_v_2(createandcancelSpa.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace504634946", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace504634946'><pre>com.microsoft.sqlserver.jdbc.SQLServerException: The connection string contains a badly formed name or value.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:226)
+	at com.microsoft.sqlserver.jdbc.Util.parseUrl(Util.java:344)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.parseAndMergeProperties(SQLServerDriver.java:711)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:693)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.NexustAPIAutomation.java.CommonMethods.selectFromDb(CommonMethods.java:722)
+	at com.NexustAPIAutomation.java.CommonMethods.getSPAIndex(CommonMethods.java:707)
+	at Public.createandcancelSpa.cancelSPA_v_2(createandcancelSpa.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Public.createandcancelSpa@5c30a9b0</td></tr>
+<tr>
+<td title='Public.PaymentExtension.postPaymentv2()'><b>postPaymentv2</b><br>Test class: Public.PaymentExtension</td>
+<td><div><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at Public.PaymentExtension.postPaymentv2(PaymentExtension.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2013853240", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2013853240'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at Public.PaymentExtension.postPaymentv2(PaymentExtension.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Public.PaymentExtension@635eaaf1</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,80 +223,75 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Public.customerController_v2.getCollectionsoptions_v2()'><b>getCollectionsoptions_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.CashieringPost.TC001_saveReciept()'><b>TC001_saveReciept</b><br>Test class: Public.CashieringPost</td>
 <td></td>
-<td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>9</td>
+<td>Public.CashieringPost@1700915</td></tr>
 <tr>
-<td title='Public.customerController_v2.getCustomerBillingOptions_v2()'><b>getCustomerBillingOptions_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.CashieringGet.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGet</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.CashieringGet@c267ef4</td></tr>
 <tr>
-<td title='Public.customerController_v2.getCustomerDetail_v2()'><b>getCustomerDetail_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.searchController.elascticsearchcreateindex_v_2()'><b>elascticsearchcreateindex_v_2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>5</td>
+<td>Public.searchController@7e0b85f9</td></tr>
+<tr>
+<td title='Public.GetAccountBalances.getAccountBalancesV2()'><b>getAccountBalancesV2</b><br>Test class: Public.GetAccountBalances</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.GetAccountBalances@21de60b4</td></tr>
+<tr>
+<td title='Public.searchController.getAccountsAdvanced_v_2()'><b>getAccountsAdvanced_v_2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>1</td>
+<td>Public.searchController@7e0b85f9</td></tr>
+<tr>
+<td title='Public.searchController.getAccounts_v_2()'><b>getAccounts_v_2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>1</td>
+<td>Public.searchController@7e0b85f9</td></tr>
 <tr>
 <td title='Public.customerController_v2.getCustomerDetail_v_2()'><b>getCustomerDetail_v_2</b><br>Test class: Public.customerController_v2</td>
 <td></td>
-<td>7</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>0</td>
+<td>Public.customerController_v2@30ee2816</td></tr>
 <tr>
-<td title='Public.customerController_v2.getCustomerbylocation_v_2()'><b>getCustomerbylocation_v_2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.searchController.getCustomer_v2()'><b>getCustomer_v2</b><br>Test class: Public.searchController</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.searchController@7e0b85f9</td></tr>
 <tr>
-<td title='Public.customerController_v2.getLocationsByCustomer_v2()'><b>getLocationsByCustomer_v2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>3</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
-<tr>
-<td title='Public.customerController_v2.getOtheroptions_v2()'><b>getOtheroptions_v2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>2</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
-<tr>
-<td title='Public.customerController_v2.getinfolabels_v2()'><b>getinfolabels_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.ServiceLocation.getServicesByLocation_v_2()'><b>getServicesByLocation_v_2</b><br>Test class: Public.ServiceLocation</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.ServiceLocation@63355449</td></tr>
 <tr>
-<td title='Public.customerController_v2.getnextCustomerId_v2()'><b>getnextCustomerId_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Private.transactionsController.getTransactions_v_2()'><b>getTransactions_v_2</b><br>Test class: Private.transactionsController</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Private.transactionsController@1ddf84b8</td></tr>
 <tr>
-<td title='Public.customerController_v2.getpreauthorizepaymentplan_v2()'><b>getpreauthorizepaymentplan_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.consumptionHistoryController.getconsumptionHistoryController()'><b>getconsumptionHistoryController</b><br>Test class: Public.consumptionHistoryController</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.consumptionHistoryController@48ae9b55</td></tr>
 <tr>
-<td title='Public.customerController_v2.putcustomerbillingoptionv2()'><b>putcustomerbillingoptionv2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.searchController.getindex_v2()'><b>getindex_v2</b><br>Test class: Public.searchController</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.searchController@7e0b85f9</td></tr>
 <tr>
-<td title='Public.customerController_v2.putcustomersaddressv2()'><b>putcustomersaddressv2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.spaController.getoutstandingDocuments_v_2()'><b>getoutstandingDocuments_v_2</b><br>Test class: Public.spaController</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.spaController@31d7b7bf</td></tr>
 <tr>
-<td title='Public.customerController_v2.putcustomerscollectionsOptionsv2()'><b>putcustomerscollectionsOptionsv2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.ServiceOrderController.postcreateServiceOrder_v2()'><b>postcreateServiceOrder_v2</b><br>Test class: Public.ServiceOrderController</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
-<tr>
-<td title='Public.customerController_v2.putcustomersotherOptionsv2()'><b>putcustomersotherOptionsv2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
-<tr>
-<td title='Public.customerController_v2.putcustomersrolldownAddressCodev2()'><b>putcustomersrolldownAddressCodev2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@769f71a9</td></tr>
+<td>Public.ServiceOrderController@6a28ffa4</td></tr>
 </table><p>
 </body>
 </html>

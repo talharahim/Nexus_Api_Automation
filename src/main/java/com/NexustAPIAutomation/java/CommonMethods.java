@@ -482,8 +482,7 @@ public class CommonMethods {
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(jsonDataInFile);
 		System.out.println(httpRequest.put().prettyPrint());
-		ValidatableResponse response = null;
-		// response = httpRequest.put().then().assertThat().statusCode(200);
+		ValidatableResponse response = httpRequest.put().then().assertThat().statusCode(200);
 		return response;
 
 	}
@@ -527,7 +526,8 @@ public class CommonMethods {
 				.body(jsonDataInFile);
 		System.out.println(httpRequest.put().prettyPrint());
 		ValidatableResponse response = httpRequest.put().then().assertThat()
-				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(fresponse))))).assertThat().statusCode(200);
+				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(fresponse))))).assertThat()
+				.statusCode(200);
 		return response;
 
 	}

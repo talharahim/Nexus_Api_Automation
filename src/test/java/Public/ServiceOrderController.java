@@ -23,7 +23,7 @@ public class ServiceOrderController {
 	public static String ServiceOrderNumber;
 
 	@Test(priority = 1, groups = "ServiceOrder")
-	public void postcreateServiceOrder_v2()
+	public static void postcreateServiceOrder_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/createServiceOrder";
@@ -37,7 +37,7 @@ public class ServiceOrderController {
 
 	}
 
-	public void getServiceOrderdetails_v2(String param)
+	public static void getServiceOrderdetails_v2(String param)
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		System.out.println(param);
@@ -62,7 +62,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 2, groups = "ServiceOrder", dependsOnMethods = "postcreateServiceOrder_v2")
-	public void getServiceOrder_v2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void getServiceOrder_v2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		// rue&ShowStatus_FieldComplete=true&OrderBy=ScheduledDateTime ASC,
 		// ServiceOrderId DESC
@@ -92,7 +92,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 3, groups = "ServiceOrder")
-	public void getServiceOrderRequestDetails_v2()
+	public static void getServiceOrderRequestDetails_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		// ?RequestID=transfer&ShowOnlyTransfers=true
@@ -110,7 +110,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 4, groups = "ServiceOrder")
-	public void getServiceOrderRequestDetailsbyOptional_v2()
+	public static void getServiceOrderRequestDetailsbyOptional_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		// ?RequestID=transfer&ShowOnlyTransfers=true
@@ -127,7 +127,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 5, groups = "ServiceOrder")
-	public void putaddMeterReading_v_2()
+	public static void putaddMeterReading_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/addMeterReading";
@@ -143,7 +143,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 6, groups = "ServiceOrder")
-	public void putupdatecomment_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void putupdatecomment_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/updateSOComment";
 		String ver = "2";
@@ -157,7 +157,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 7, groups = "ServiceOrder")
-	public void putaddMiscCharge_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void putaddMiscCharge_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/addMiscCharge";
 		String ver = "2";
@@ -172,7 +172,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 8, groups = "ServiceOrder")
-	public void putswitchMeter_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void putswitchMeter_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/switchMeter";
 		String ver = "2";
@@ -186,7 +186,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 8, groups = "ServiceOrder")
-	public void putTaskComplete_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void putTaskComplete_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/putTaskComplete";
 		String ver = "2";
@@ -200,7 +200,7 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 9, groups = "ServiceOrder")
-	public void putTaskCompleteNocharge_v2_3()
+	public static void putTaskCompleteNocharge_v2_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/taskCompleteOtherNoCharge";
@@ -285,8 +285,8 @@ public class ServiceOrderController {
 
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-
-		postcreateServiceOrder_v2_3_1();
+		putTaskCompleteNocharge_v2_3();
+		
 		// putTaskComplete_v_2_4();
 	}
 
