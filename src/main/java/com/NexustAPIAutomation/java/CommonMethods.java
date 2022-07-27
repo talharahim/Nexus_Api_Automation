@@ -45,6 +45,7 @@ public class CommonMethods {
 	public static String urlv230 = Read.ReadFile("urlv230");
 	public static String urlv231 = Read.ReadFile("urlv231");
 	public static String urlv240 = Read.ReadFile("urlv240");
+	public static String urlv3 = Read.ReadFile("urlv3");
 
 	public static String getToken() throws InterruptedException {
 		String url = keycloakurl + "/auth/realms/nexus-portal/protocol/openid-connect/token";
@@ -131,6 +132,9 @@ public class CommonMethods {
 		case "2.4":
 			RestAssured.baseURI = urlv240;
 			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
+			break;
 
 		default:
 			version = "Invalid version";
@@ -178,6 +182,9 @@ public class CommonMethods {
 			break;
 		case "2.4":
 			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
 			break;
 
 		default:
@@ -231,6 +238,9 @@ public class CommonMethods {
 		case "2.4":
 			RestAssured.baseURI = urlv240;
 			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
+			break;
 
 		default:
 			version = "Invalid version";
@@ -274,6 +284,9 @@ public class CommonMethods {
 		case "2.4":
 			RestAssured.baseURI = urlv240;
 			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
+			break;
 
 		default:
 			version = "Invalid version";
@@ -301,6 +314,7 @@ public class CommonMethods {
 
 		}
 		jsonPathEvaluator = response.jsonPath();
+		System.out.print(response.prettyPrint());
 		return jsonPathEvaluator;
 
 	}
@@ -328,6 +342,9 @@ public class CommonMethods {
 			break;
 		case "2.4":
 			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
 			break;
 
 		default:
@@ -371,6 +388,9 @@ public class CommonMethods {
 			break;
 		case "2.4":
 			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
 			break;
 
 		default:
@@ -417,6 +437,9 @@ public class CommonMethods {
 			break;
 		case "2.4":
 			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
 			break;
 
 		default:
@@ -469,6 +492,9 @@ public class CommonMethods {
 		case "2.4":
 			RestAssured.baseURI = urlv240;
 			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
+			break;
 
 		default:
 			version = "Invalid version";
@@ -511,6 +537,9 @@ public class CommonMethods {
 			break;
 		case "2.4":
 			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
 			break;
 
 		default:
@@ -557,6 +586,9 @@ public class CommonMethods {
 		case "2.4":
 			RestAssured.baseURI = urlv240;
 			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
+			break;
 
 		default:
 			version = "Invalid version";
@@ -598,6 +630,9 @@ public class CommonMethods {
 			break;
 		case "2.4":
 			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
 			break;
 
 		default:
@@ -670,6 +705,9 @@ public class CommonMethods {
 			break;
 		case "2.4":
 			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
 			break;
 
 		default:

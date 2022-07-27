@@ -17,7 +17,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.response.ValidatableResponse;
 
-public class ServiceOrderController {
+public class ServiceOrderControllerV3 {
 
 	public static JsonPath jsonPathEvaluator;
 	public static String ServiceOrderNumber;
