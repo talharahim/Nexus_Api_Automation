@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>21/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 27 05:55:05 PDT 2022</td>
+<td>Started on:</td><td>Wed Jul 27 06:46:35 PDT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>6 seconds (6664 ms)</td>
+<tr><td>Total time:</td><td>35 seconds (35802 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,9 +75,46 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Public.CashieringGetv3.TC007_getAutoApply()'><b>TC007_getAutoApply</b><br>Test class: Public.CashieringGetv3</td>
-<td><div><pre>java.lang.NullPointerException
-	at Public.CashieringGetv3.TC007_getAutoApply(CashieringGetv3.java:158)
+<td title='Public.GetAccountBalancesV3.getAccountBalancesV2()'><b>getAccountBalancesV2</b><br>Test class: Public.GetAccountBalancesV3</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;35.26\&quot;,\&quot;CurrentBalance\&quot;:\&quot;120.00\&quot;,\&quot;UnpostedBalance\&quot;:\&quot;0.00\&quot;,\&quot;AmountDue\&quot;:\&quot;75.26\&quot;,\&quot;AccountBalance\&quot;:\&quot;212.50\&quot;,\&quot;OverShort\&quot;:\&quot;57.24\&quot;,\&quot;DepositAmount\&quot;:\&quot;0.00\&quot;,\&quot;DepositOutstandingAmount\&quot;:\&quot;0.00\&quot;,\&quot;InstallmentBudget\&quot;:\&quot;50.00\&quot;,\&quot;InstallmentSPA\&quot;:\&quot;120.00\&quot;}]&quot;
+  Actual: [{&quot;PastDue&quot;:&quot;35.26&quot;,&quot;CurrentBalance&quot;:&quot;120.00&quot;,&quot;UnpostedBalance&quot;:&quot;0.00&quot;,&quot;AmountDue&quot;:&quot;75.26&quot;,&quot;AccountBalance&quot;:&quot;212.50&quot;,&quot;OverShort&quot;:&quot;57.24&quot;,&quot;DepositAmount&quot;:&quot;0.00&quot;,&quot;DepositOutstandingAmount&quot;:&quot;0.00&quot;,&quot;InstallmentBudget&quot;:&quot;50.00&quot;,&quot;InstallmentSPA&quot;:&quot;120.00&quot;,&quot;LastPaymentDate&quot;:&quot;2027-04-12&quot;,&quot;LastDueDate&quot;:&quot;2019-08-22&quot;}]
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:408)
+	at Public.GetAccountBalancesV3.getAccountBalancesV2(GetAccountBalancesV3.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -103,9 +140,46 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace521746054", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace521746054'><pre>java.lang.NullPointerException
-	at Public.CashieringGetv3.TC007_getAutoApply(CashieringGetv3.java:158)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1485179287", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1485179287'><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;35.26\&quot;,\&quot;CurrentBalance\&quot;:\&quot;120.00\&quot;,\&quot;UnpostedBalance\&quot;:\&quot;0.00\&quot;,\&quot;AmountDue\&quot;:\&quot;75.26\&quot;,\&quot;AccountBalance\&quot;:\&quot;212.50\&quot;,\&quot;OverShort\&quot;:\&quot;57.24\&quot;,\&quot;DepositAmount\&quot;:\&quot;0.00\&quot;,\&quot;DepositOutstandingAmount\&quot;:\&quot;0.00\&quot;,\&quot;InstallmentBudget\&quot;:\&quot;50.00\&quot;,\&quot;InstallmentSPA\&quot;:\&quot;120.00\&quot;}]&quot;
+  Actual: [{&quot;PastDue&quot;:&quot;35.26&quot;,&quot;CurrentBalance&quot;:&quot;120.00&quot;,&quot;UnpostedBalance&quot;:&quot;0.00&quot;,&quot;AmountDue&quot;:&quot;75.26&quot;,&quot;AccountBalance&quot;:&quot;212.50&quot;,&quot;OverShort&quot;:&quot;57.24&quot;,&quot;DepositAmount&quot;:&quot;0.00&quot;,&quot;DepositOutstandingAmount&quot;:&quot;0.00&quot;,&quot;InstallmentBudget&quot;:&quot;50.00&quot;,&quot;InstallmentSPA&quot;:&quot;120.00&quot;,&quot;LastPaymentDate&quot;:&quot;2027-04-12&quot;,&quot;LastDueDate&quot;:&quot;2019-08-22&quot;}]
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:408)
+	at Public.GetAccountBalancesV3.getAccountBalancesV2(GetAccountBalancesV3.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -133,7 +207,471 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Public.CashieringGetv3@49b0b76</td></tr>
+<td>Public.GetAccountBalancesV3@1725dc0f</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getCustomerDetail_v_2()'><b>getCustomerDetail_v_2</b><br>Test class: Public.customerControllerV3</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;{\&quot;result\&quot;:[{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;DISCONNECTTEST\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;},{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;LOC@0009\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;},{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;LOCEMP-1\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;},{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;WATER003\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;}]}&quot;
+  Actual: {&quot;result&quot;:[{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;DISCONNECTTEST&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;},{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;LOC@0009&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;},{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;LOCEMP-1&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;},{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;WATER003&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;}]}
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:408)
+	at Public.customerControllerV3.getCustomerDetail_v_2(customerControllerV3.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1917149817", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1917149817'><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;{\&quot;result\&quot;:[{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;DISCONNECTTEST\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;},{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;LOC@0009\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;},{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;LOCEMP-1\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;},{\&quot;CustomerID\&quot;:\&quot;CUSTOMER003\&quot;,\&quot;LocationBasedMailingAddressID\&quot;:\&quot;WATER003\&quot;,\&quot;CustomerType\&quot;:1,\&quot;CustomerName\&quot;:\&quot;Miss Jeannie K Bernard \&quot;,\&quot;CustomerTitle\&quot;:\&quot;Miss\&quot;,\&quot;CustomerFirstName\&quot;:\&quot;Jeannie\&quot;,\&quot;CustomerMiddleName\&quot;:\&quot;K\&quot;,\&quot;CustomerLastName\&quot;:\&quot;Bernard\&quot;,\&quot;MailingAddress.Line1\&quot;:\&quot;6 JIM\&quot;,\&quot;MailingAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;MailingAddress.State\&quot;:\&quot;NY\&quot;,\&quot;MailingAddress.ZipCode\&quot;:\&quot;65422\&quot;,\&quot;MailingAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;PhoneNumber\&quot;:[{\&quot;Number\&quot;:\&quot;90289241000000\&quot;,\&quot;TypeID\&quot;:\&quot;1\&quot;,\&quot;Description\&quot;:\&quot;Phone 1\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;2\&quot;,\&quot;Description\&quot;:\&quot;Phone 2\&quot;},{\&quot;Number\&quot;:\&quot;\&quot;,\&quot;TypeID\&quot;:\&quot;3\&quot;,\&quot;Description\&quot;:\&quot;Phone 3\&quot;}],\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;SSN\&quot;:\&quot;2310587\&quot;,\&quot;DateOfBirth\&quot;:\&quot;\&quot;,\&quot;DriversLicense\&quot;:\&quot;\&quot;,\&quot;AlternateIDValue\&quot;:\&quot;\&quot;,\&quot;CreditRating\&quot;:\&quot;EXCELLEN\&quot;,\&quot;CreditRatingIcon\&quot;:\&quot;credit-great\&quot;,\&quot;EBilling\&quot;:\&quot;Not Enrolled\&quot;}]}&quot;
+  Actual: {&quot;result&quot;:[{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;DISCONNECTTEST&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;},{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;LOC@0009&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;},{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;LOCEMP-1&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;},{&quot;CustomerID&quot;:&quot;CUSTOMER003&quot;,&quot;LocationBasedMailingAddressID&quot;:&quot;WATER003&quot;,&quot;CustomerType&quot;:1,&quot;CustomerName&quot;:&quot;Miss Jeannie K Bernard &quot;,&quot;CustomerTitle&quot;:&quot;Miss&quot;,&quot;CustomerFirstName&quot;:&quot;Jeannie&quot;,&quot;CustomerMiddleName&quot;:&quot;K&quot;,&quot;CustomerLastName&quot;:&quot;Bernard&quot;,&quot;MailingAddress.Line1&quot;:&quot;6 JIM&quot;,&quot;MailingAddress.City&quot;:&quot;NEW YORK&quot;,&quot;MailingAddress.State&quot;:&quot;NY&quot;,&quot;MailingAddress.ZipCode&quot;:&quot;65422&quot;,&quot;MailingAddress.Country&quot;:&quot;USA&quot;,&quot;PhoneNumber&quot;:[{}],&quot;EmailAddress&quot;:&quot;&quot;,&quot;ssn&quot;:&quot;2310587&quot;,&quot;DateOfBirth&quot;:&quot;&quot;,&quot;DriversLicense&quot;:&quot;&quot;,&quot;AlternateIDValue&quot;:&quot;&quot;,&quot;CreditRating&quot;:&quot;EXCELLEN&quot;,&quot;CreditRatingIcon&quot;:&quot;credit-great&quot;,&quot;EBilling&quot;:&quot;Not Enrolled&quot;}]}
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:408)
+	at Public.customerControllerV3.getCustomerDetail_v_2(customerControllerV3.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Public.customerControllerV3@3d74bf60</td></tr>
+<tr>
+<td title='Public.ServiceLocationV3.getServicesByLocation_v_3()'><b>getServicesByLocation_v_3</b><br>Test class: Public.ServiceLocationV3</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;{\&quot;ServiceByLocation\&quot;:[{\&quot;LocationID\&quot;:\&quot;WATER002\&quot;,\&quot;Connection\&quot;:\&quot;1\&quot;,\&quot;EquipmentId\&quot;:\&quot;WATEREQUIP002\&quot;,\&quot;ServiceCategory\&quot;:\&quot;2\&quot;,\&quot;ServiceCategoryDescription\&quot;:\&quot;Water\&quot;,\&quot;ServiceType\&quot;:\&quot;WATER\&quot;,\&quot;RateId\&quot;:\&quot;WATERMETERED\&quot;,\&quot;HasMultipleRates\&quot;:0,\&quot;HasMultipleDials\&quot;:1,\&quot;Multiplier\&quot;:\&quot;1.00000\&quot;,\&quot;RouteId\&quot;:\&quot;ROUTEW001\&quot;,\&quot;CycleId\&quot;:\&quot;BIMONTHLY\&quot;,\&quot;SequenceNumber\&quot;:\&quot;401\&quot;,\&quot;ConnectionDate\&quot;:\&quot;1997-07-16\&quot;,\&quot;DisconnectionDate\&quot;:\&quot;\&quot;,\&quot;ConnectionStatus\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusGraphic\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusDescription\&quot;:\&quot;Active\&quot;,\&quot;RemoteId\&quot;:\&quot;\&quot;,\&quot;ReadingDate\&quot;:\&quot;2000-02-29T00:00:00\&quot;,\&quot;Reading\&quot;:43640,\&quot;Consumption\&quot;:10,\&quot;Alternate\&quot;:0,\&quot;Subtract\&quot;:\&quot;\&quot;,\&quot;Discount\&quot;:\&quot;\&quot;,\&quot;MeterGroup\&quot;:\&quot;\&quot;,\&quot;UDF\&quot;:{\&quot;1\&quot;:{\&quot;Label\&quot;:\&quot;Conn 001\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;},\&quot;2\&quot;:{\&quot;Label\&quot;:\&quot;Conn 002\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;}},\&quot;ConnectionTaxSchedule\&quot;:\&quot;\&quot;,\&quot;drillBackURL\&quot;:\&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=1&amp;CogsDrillback=1\&quot;,\&quot;EquipmentAttribute\&quot;:{\&quot;IsSmartMeter\&quot;:false,\&quot;AllowSubmitMeterReadEnabled\&quot;:false,\&quot;AutoConnectDisconnectEnabled\&quot;:false,\&quot;UnitOfMeasure\&quot;:\&quot;Kwh,Kva\&quot;}},{\&quot;LocationID\&quot;:\&quot;WATER002\&quot;,\&quot;Connection\&quot;:\&quot;2\&quot;,\&quot;EquipmentId\&quot;:\&quot;WATEREQUIP002\&quot;,\&quot;ServiceCategory\&quot;:\&quot;3\&quot;,\&quot;ServiceCategoryDescription\&quot;:\&quot;Sewer\&quot;,\&quot;ServiceType\&quot;:\&quot;SEWER\&quot;,\&quot;RateId\&quot;:\&quot;SEWERMETERED\&quot;,\&quot;HasMultipleRates\&quot;:0,\&quot;HasMultipleDials\&quot;:1,\&quot;Multiplier\&quot;:\&quot;1.00000\&quot;,\&quot;RouteId\&quot;:\&quot;ROUTEW001\&quot;,\&quot;CycleId\&quot;:\&quot;BIMONTHLY\&quot;,\&quot;SequenceNumber\&quot;:\&quot;0\&quot;,\&quot;ConnectionDate\&quot;:\&quot;1997-07-16\&quot;,\&quot;DisconnectionDate\&quot;:\&quot;\&quot;,\&quot;ConnectionStatus\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusGraphic\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusDescription\&quot;:\&quot;Active\&quot;,\&quot;RemoteId\&quot;:\&quot;\&quot;,\&quot;ReadingDate\&quot;:\&quot;1900-01-01T00:00:00\&quot;,\&quot;Reading\&quot;:0,\&quot;Consumption\&quot;:0,\&quot;Alternate\&quot;:1,\&quot;Subtract\&quot;:\&quot;\&quot;,\&quot;Discount\&quot;:\&quot;\&quot;,\&quot;MeterGroup\&quot;:\&quot;\&quot;,\&quot;UDF\&quot;:{\&quot;1\&quot;:{\&quot;Label\&quot;:\&quot;Conn 001\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;},\&quot;2\&quot;:{\&quot;Label\&quot;:\&quot;Conn 002\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;}},\&quot;ConnectionTaxSchedule\&quot;:\&quot;\&quot;,\&quot;drillBackURL\&quot;:\&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=2&amp;CogsDrillback=1\&quot;,\&quot;EquipmentAttribute\&quot;:{\&quot;IsSmartMeter\&quot;:false,\&quot;AllowSubmitMeterReadEnabled\&quot;:false,\&quot;AutoConnectDisconnectEnabled\&quot;:false,\&quot;UnitOfMeasure\&quot;:\&quot;Kwh,Kva\&quot;}},{\&quot;LocationID\&quot;:\&quot;WATER002\&quot;,\&quot;Connection\&quot;:\&quot;3\&quot;,\&quot;EquipmentId\&quot;:\&quot;\&quot;,\&quot;ServiceCategory\&quot;:\&quot;6\&quot;,\&quot;ServiceCategoryDescription\&quot;:\&quot;Refuse\&quot;,\&quot;ServiceType\&quot;:\&quot;REFUSE\&quot;,\&quot;RateId\&quot;:\&quot;RRES\&quot;,\&quot;HasMultipleRates\&quot;:0,\&quot;HasMultipleDials\&quot;:0,\&quot;Multiplier\&quot;:\&quot;1.00000\&quot;,\&quot;RouteId\&quot;:\&quot;ROUTEW001\&quot;,\&quot;CycleId\&quot;:\&quot;BIMONTHLY\&quot;,\&quot;SequenceNumber\&quot;:\&quot;0\&quot;,\&quot;ConnectionDate\&quot;:\&quot;1999-01-01\&quot;,\&quot;DisconnectionDate\&quot;:\&quot;\&quot;,\&quot;ConnectionStatus\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusGraphic\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusDescription\&quot;:\&quot;Active\&quot;,\&quot;RemoteId\&quot;:\&quot;\&quot;,\&quot;ReadingDate\&quot;:\&quot;1900-01-01T00:00:00\&quot;,\&quot;Reading\&quot;:0,\&quot;Consumption\&quot;:0,\&quot;Alternate\&quot;:0,\&quot;Subtract\&quot;:\&quot;\&quot;,\&quot;Discount\&quot;:\&quot;\&quot;,\&quot;MeterGroup\&quot;:\&quot;\&quot;,\&quot;UDF\&quot;:{\&quot;1\&quot;:{\&quot;Label\&quot;:\&quot;Conn 001\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;},\&quot;2\&quot;:{\&quot;Label\&quot;:\&quot;Conn 002\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;}},\&quot;ConnectionTaxSchedule\&quot;:\&quot;\&quot;,\&quot;drillBackURL\&quot;:\&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=&amp;ConnectionSequence=3&amp;CogsDrillback=1\&quot;,\&quot;EquipmentAttribute\&quot;:{\&quot;IsSmartMeter\&quot;:false,\&quot;AllowSubmitMeterReadEnabled\&quot;:false,\&quot;AutoConnectDisconnectEnabled\&quot;:false,\&quot;UnitOfMeasure\&quot;:\&quot;\&quot;}}]}&quot;
+  Actual: {&quot;ServiceByLocation&quot;:[{&quot;LocationID&quot;:&quot;WATER002&quot;,&quot;Connection&quot;:&quot;1&quot;,&quot;EquipmentId&quot;:&quot;WATEREQUIP002&quot;,&quot;ServiceCategory&quot;:&quot;2&quot;,&quot;ServiceCategoryDescription&quot;:&quot;Water&quot;,&quot;ServiceType&quot;:&quot;WATER&quot;,&quot;RateId&quot;:&quot;WATERMETERED&quot;,&quot;HasMultipleRates&quot;:0,&quot;HasMultipleDials&quot;:1,&quot;Multiplier&quot;:&quot;1.00000&quot;,&quot;RouteId&quot;:&quot;ROUTEW001&quot;,&quot;CycleId&quot;:&quot;BIMONTHLY&quot;,&quot;SequenceNumber&quot;:&quot;401&quot;,&quot;ConnectionDate&quot;:&quot;1997-07-16&quot;,&quot;DisconnectionDate&quot;:&quot;&quot;,&quot;ConnectionStatus&quot;:&quot;2&quot;,&quot;ConnectionStatusGraphic&quot;:&quot;2&quot;,&quot;ConnectionStatusDescription&quot;:&quot;Active&quot;,&quot;RemoteId&quot;:&quot;&quot;,&quot;ReadingDate&quot;:&quot;2000-02-29T00:00:00&quot;,&quot;Reading&quot;:43640,&quot;Consumption&quot;:10,&quot;Alternate&quot;:0,&quot;Subtract&quot;:&quot;&quot;,&quot;Discount&quot;:&quot;&quot;,&quot;MeterGroup&quot;:&quot;&quot;,&quot;UDF&quot;:{&quot;1&quot;:{&quot;Label&quot;:&quot;Conn 001&quot;,&quot;UserDefined&quot;:&quot;&quot;},&quot;2&quot;:{&quot;Label&quot;:&quot;Conn 002&quot;,&quot;UserDefined&quot;:&quot;&quot;}},&quot;ConnectionTaxSchedule&quot;:&quot;&quot;,&quot;drillBackURL&quot;:&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=1&amp;CogsDrillback=1&quot;,&quot;Equipment&quot;:{&quot;IsSmartMeter&quot;:false,&quot;AllowSubmitMeterReadEnabled&quot;:false,&quot;AutoConnectDisconnectEnabled&quot;:false,&quot;UnitOfMeasure&quot;:&quot;&quot;}},{&quot;LocationID&quot;:&quot;WATER002&quot;,&quot;Connection&quot;:&quot;2&quot;,&quot;EquipmentId&quot;:&quot;WATEREQUIP002&quot;,&quot;ServiceCategory&quot;:&quot;3&quot;,&quot;ServiceCategoryDescription&quot;:&quot;Sewer&quot;,&quot;ServiceType&quot;:&quot;SEWER&quot;,&quot;RateId&quot;:&quot;SEWERMETERED&quot;,&quot;HasMultipleRates&quot;:0,&quot;HasMultipleDials&quot;:1,&quot;Multiplier&quot;:&quot;1.00000&quot;,&quot;RouteId&quot;:&quot;ROUTEW001&quot;,&quot;CycleId&quot;:&quot;BIMONTHLY&quot;,&quot;SequenceNumber&quot;:&quot;0&quot;,&quot;ConnectionDate&quot;:&quot;1997-07-16&quot;,&quot;DisconnectionDate&quot;:&quot;&quot;,&quot;ConnectionStatus&quot;:&quot;2&quot;,&quot;ConnectionStatusGraphic&quot;:&quot;2&quot;,&quot;ConnectionStatusDescription&quot;:&quot;Active&quot;,&quot;RemoteId&quot;:&quot;&quot;,&quot;ReadingDate&quot;:&quot;1900-01-01T00:00:00&quot;,&quot;Reading&quot;:0,&quot;Consumption&quot;:0,&quot;Alternate&quot;:1,&quot;Subtract&quot;:&quot;&quot;,&quot;Discount&quot;:&quot;&quot;,&quot;MeterGroup&quot;:&quot;&quot;,&quot;UDF&quot;:{&quot;1&quot;:{&quot;Label&quot;:&quot;Conn 001&quot;,&quot;UserDefined&quot;:&quot;&quot;},&quot;2&quot;:{&quot;Label&quot;:&quot;Conn 002&quot;,&quot;UserDefined&quot;:&quot;&quot;}},&quot;ConnectionTaxSchedule&quot;:&quot;&quot;,&quot;drillBackURL&quot;:&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=2&amp;CogsDrillback=1&quot;,&quot;Equipment&quot;:{&quot;IsSmartMeter&quot;:false,&quot;AllowSubmitMeterReadEnabled&quot;:false,&quot;AutoConnectDisconnectEnabled&quot;:false,&quot;UnitOfMeasure&quot;:&quot;&quot;}},{&quot;LocationID&quot;:&quot;WATER002&quot;,&quot;Connection&quot;:&quot;3&quot;,&quot;EquipmentId&quot;:&quot;&quot;,&quot;ServiceCategory&quot;:&quot;6&quot;,&quot;ServiceCategoryDescription&quot;:&quot;Refuse&quot;,&quot;ServiceType&quot;:&quot;REFUSE&quot;,&quot;RateId&quot;:&quot;RRES&quot;,&quot;HasMultipleRates&quot;:0,&quot;HasMultipleDials&quot;:0,&quot;Multiplier&quot;:&quot;1.00000&quot;,&quot;RouteId&quot;:&quot;ROUTEW001&quot;,&quot;CycleId&quot;:&quot;BIMONTHLY&quot;,&quot;SequenceNumber&quot;:&quot;0&quot;,&quot;ConnectionDate&quot;:&quot;1999-01-01&quot;,&quot;DisconnectionDate&quot;:&quot;&quot;,&quot;ConnectionStatus&quot;:&quot;2&quot;,&quot;ConnectionStatusGraphic&quot;:&quot;2&quot;,&quot;ConnectionStatusDescription&quot;:&quot;Active&quot;,&quot;RemoteId&quot;:&quot;&quot;,&quot;ReadingDate&quot;:&quot;1900-01-01T00:00:00&quot;,&quot;Reading&quot;:0,&quot;Consumption&quot;:0,&quot;Alternate&quot;:0,&quot;Subtract&quot;:&quot;&quot;,&quot;Discount&quot;:&quot;&quot;,&quot;MeterGroup&quot;:&quot;&quot;,&quot;UDF&quot;:{&quot;1&quot;:{&quot;Label&quot;:&quot;Conn 001&quot;,&quot;UserDefined&quot;:&quot;&quot;},&quot;2&quot;:{&quot;Label&quot;:&quot;Conn 002&quot;,&quot;UserDefined&quot;:&quot;&quot;}},&quot;ConnectionTaxSchedule&quot;:&quot;&quot;,&quot;drillBackURL&quot;:&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=&amp;ConnectionSequence=3&amp;CogsDrillback=1&quot;,&quot;Equipment&quot;:{&quot;IsSmartMeter&quot;:false,&quot;AllowSubmitMeterReadEnabled&quot;:false,&quot;AutoConnectDisconnectEnabled&quot;:false,&quot;UnitOfMeasure&quot;:&quot;&quot;}}]}
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:408)
+	at Public.ServiceLocationV3.getServicesByLocation_v_3(ServiceLocationV3.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace688113407", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace688113407'><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;{\&quot;ServiceByLocation\&quot;:[{\&quot;LocationID\&quot;:\&quot;WATER002\&quot;,\&quot;Connection\&quot;:\&quot;1\&quot;,\&quot;EquipmentId\&quot;:\&quot;WATEREQUIP002\&quot;,\&quot;ServiceCategory\&quot;:\&quot;2\&quot;,\&quot;ServiceCategoryDescription\&quot;:\&quot;Water\&quot;,\&quot;ServiceType\&quot;:\&quot;WATER\&quot;,\&quot;RateId\&quot;:\&quot;WATERMETERED\&quot;,\&quot;HasMultipleRates\&quot;:0,\&quot;HasMultipleDials\&quot;:1,\&quot;Multiplier\&quot;:\&quot;1.00000\&quot;,\&quot;RouteId\&quot;:\&quot;ROUTEW001\&quot;,\&quot;CycleId\&quot;:\&quot;BIMONTHLY\&quot;,\&quot;SequenceNumber\&quot;:\&quot;401\&quot;,\&quot;ConnectionDate\&quot;:\&quot;1997-07-16\&quot;,\&quot;DisconnectionDate\&quot;:\&quot;\&quot;,\&quot;ConnectionStatus\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusGraphic\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusDescription\&quot;:\&quot;Active\&quot;,\&quot;RemoteId\&quot;:\&quot;\&quot;,\&quot;ReadingDate\&quot;:\&quot;2000-02-29T00:00:00\&quot;,\&quot;Reading\&quot;:43640,\&quot;Consumption\&quot;:10,\&quot;Alternate\&quot;:0,\&quot;Subtract\&quot;:\&quot;\&quot;,\&quot;Discount\&quot;:\&quot;\&quot;,\&quot;MeterGroup\&quot;:\&quot;\&quot;,\&quot;UDF\&quot;:{\&quot;1\&quot;:{\&quot;Label\&quot;:\&quot;Conn 001\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;},\&quot;2\&quot;:{\&quot;Label\&quot;:\&quot;Conn 002\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;}},\&quot;ConnectionTaxSchedule\&quot;:\&quot;\&quot;,\&quot;drillBackURL\&quot;:\&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=1&amp;CogsDrillback=1\&quot;,\&quot;EquipmentAttribute\&quot;:{\&quot;IsSmartMeter\&quot;:false,\&quot;AllowSubmitMeterReadEnabled\&quot;:false,\&quot;AutoConnectDisconnectEnabled\&quot;:false,\&quot;UnitOfMeasure\&quot;:\&quot;Kwh,Kva\&quot;}},{\&quot;LocationID\&quot;:\&quot;WATER002\&quot;,\&quot;Connection\&quot;:\&quot;2\&quot;,\&quot;EquipmentId\&quot;:\&quot;WATEREQUIP002\&quot;,\&quot;ServiceCategory\&quot;:\&quot;3\&quot;,\&quot;ServiceCategoryDescription\&quot;:\&quot;Sewer\&quot;,\&quot;ServiceType\&quot;:\&quot;SEWER\&quot;,\&quot;RateId\&quot;:\&quot;SEWERMETERED\&quot;,\&quot;HasMultipleRates\&quot;:0,\&quot;HasMultipleDials\&quot;:1,\&quot;Multiplier\&quot;:\&quot;1.00000\&quot;,\&quot;RouteId\&quot;:\&quot;ROUTEW001\&quot;,\&quot;CycleId\&quot;:\&quot;BIMONTHLY\&quot;,\&quot;SequenceNumber\&quot;:\&quot;0\&quot;,\&quot;ConnectionDate\&quot;:\&quot;1997-07-16\&quot;,\&quot;DisconnectionDate\&quot;:\&quot;\&quot;,\&quot;ConnectionStatus\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusGraphic\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusDescription\&quot;:\&quot;Active\&quot;,\&quot;RemoteId\&quot;:\&quot;\&quot;,\&quot;ReadingDate\&quot;:\&quot;1900-01-01T00:00:00\&quot;,\&quot;Reading\&quot;:0,\&quot;Consumption\&quot;:0,\&quot;Alternate\&quot;:1,\&quot;Subtract\&quot;:\&quot;\&quot;,\&quot;Discount\&quot;:\&quot;\&quot;,\&quot;MeterGroup\&quot;:\&quot;\&quot;,\&quot;UDF\&quot;:{\&quot;1\&quot;:{\&quot;Label\&quot;:\&quot;Conn 001\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;},\&quot;2\&quot;:{\&quot;Label\&quot;:\&quot;Conn 002\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;}},\&quot;ConnectionTaxSchedule\&quot;:\&quot;\&quot;,\&quot;drillBackURL\&quot;:\&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=2&amp;CogsDrillback=1\&quot;,\&quot;EquipmentAttribute\&quot;:{\&quot;IsSmartMeter\&quot;:false,\&quot;AllowSubmitMeterReadEnabled\&quot;:false,\&quot;AutoConnectDisconnectEnabled\&quot;:false,\&quot;UnitOfMeasure\&quot;:\&quot;Kwh,Kva\&quot;}},{\&quot;LocationID\&quot;:\&quot;WATER002\&quot;,\&quot;Connection\&quot;:\&quot;3\&quot;,\&quot;EquipmentId\&quot;:\&quot;\&quot;,\&quot;ServiceCategory\&quot;:\&quot;6\&quot;,\&quot;ServiceCategoryDescription\&quot;:\&quot;Refuse\&quot;,\&quot;ServiceType\&quot;:\&quot;REFUSE\&quot;,\&quot;RateId\&quot;:\&quot;RRES\&quot;,\&quot;HasMultipleRates\&quot;:0,\&quot;HasMultipleDials\&quot;:0,\&quot;Multiplier\&quot;:\&quot;1.00000\&quot;,\&quot;RouteId\&quot;:\&quot;ROUTEW001\&quot;,\&quot;CycleId\&quot;:\&quot;BIMONTHLY\&quot;,\&quot;SequenceNumber\&quot;:\&quot;0\&quot;,\&quot;ConnectionDate\&quot;:\&quot;1999-01-01\&quot;,\&quot;DisconnectionDate\&quot;:\&quot;\&quot;,\&quot;ConnectionStatus\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusGraphic\&quot;:\&quot;2\&quot;,\&quot;ConnectionStatusDescription\&quot;:\&quot;Active\&quot;,\&quot;RemoteId\&quot;:\&quot;\&quot;,\&quot;ReadingDate\&quot;:\&quot;1900-01-01T00:00:00\&quot;,\&quot;Reading\&quot;:0,\&quot;Consumption\&quot;:0,\&quot;Alternate\&quot;:0,\&quot;Subtract\&quot;:\&quot;\&quot;,\&quot;Discount\&quot;:\&quot;\&quot;,\&quot;MeterGroup\&quot;:\&quot;\&quot;,\&quot;UDF\&quot;:{\&quot;1\&quot;:{\&quot;Label\&quot;:\&quot;Conn 001\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;},\&quot;2\&quot;:{\&quot;Label\&quot;:\&quot;Conn 002\&quot;,\&quot;UserDefined\&quot;:\&quot;\&quot;}},\&quot;ConnectionTaxSchedule\&quot;:\&quot;\&quot;,\&quot;drillBackURL\&quot;:\&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=&amp;ConnectionSequence=3&amp;CogsDrillback=1\&quot;,\&quot;EquipmentAttribute\&quot;:{\&quot;IsSmartMeter\&quot;:false,\&quot;AllowSubmitMeterReadEnabled\&quot;:false,\&quot;AutoConnectDisconnectEnabled\&quot;:false,\&quot;UnitOfMeasure\&quot;:\&quot;\&quot;}}]}&quot;
+  Actual: {&quot;ServiceByLocation&quot;:[{&quot;LocationID&quot;:&quot;WATER002&quot;,&quot;Connection&quot;:&quot;1&quot;,&quot;EquipmentId&quot;:&quot;WATEREQUIP002&quot;,&quot;ServiceCategory&quot;:&quot;2&quot;,&quot;ServiceCategoryDescription&quot;:&quot;Water&quot;,&quot;ServiceType&quot;:&quot;WATER&quot;,&quot;RateId&quot;:&quot;WATERMETERED&quot;,&quot;HasMultipleRates&quot;:0,&quot;HasMultipleDials&quot;:1,&quot;Multiplier&quot;:&quot;1.00000&quot;,&quot;RouteId&quot;:&quot;ROUTEW001&quot;,&quot;CycleId&quot;:&quot;BIMONTHLY&quot;,&quot;SequenceNumber&quot;:&quot;401&quot;,&quot;ConnectionDate&quot;:&quot;1997-07-16&quot;,&quot;DisconnectionDate&quot;:&quot;&quot;,&quot;ConnectionStatus&quot;:&quot;2&quot;,&quot;ConnectionStatusGraphic&quot;:&quot;2&quot;,&quot;ConnectionStatusDescription&quot;:&quot;Active&quot;,&quot;RemoteId&quot;:&quot;&quot;,&quot;ReadingDate&quot;:&quot;2000-02-29T00:00:00&quot;,&quot;Reading&quot;:43640,&quot;Consumption&quot;:10,&quot;Alternate&quot;:0,&quot;Subtract&quot;:&quot;&quot;,&quot;Discount&quot;:&quot;&quot;,&quot;MeterGroup&quot;:&quot;&quot;,&quot;UDF&quot;:{&quot;1&quot;:{&quot;Label&quot;:&quot;Conn 001&quot;,&quot;UserDefined&quot;:&quot;&quot;},&quot;2&quot;:{&quot;Label&quot;:&quot;Conn 002&quot;,&quot;UserDefined&quot;:&quot;&quot;}},&quot;ConnectionTaxSchedule&quot;:&quot;&quot;,&quot;drillBackURL&quot;:&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=1&amp;CogsDrillback=1&quot;,&quot;Equipment&quot;:{&quot;IsSmartMeter&quot;:false,&quot;AllowSubmitMeterReadEnabled&quot;:false,&quot;AutoConnectDisconnectEnabled&quot;:false,&quot;UnitOfMeasure&quot;:&quot;&quot;}},{&quot;LocationID&quot;:&quot;WATER002&quot;,&quot;Connection&quot;:&quot;2&quot;,&quot;EquipmentId&quot;:&quot;WATEREQUIP002&quot;,&quot;ServiceCategory&quot;:&quot;3&quot;,&quot;ServiceCategoryDescription&quot;:&quot;Sewer&quot;,&quot;ServiceType&quot;:&quot;SEWER&quot;,&quot;RateId&quot;:&quot;SEWERMETERED&quot;,&quot;HasMultipleRates&quot;:0,&quot;HasMultipleDials&quot;:1,&quot;Multiplier&quot;:&quot;1.00000&quot;,&quot;RouteId&quot;:&quot;ROUTEW001&quot;,&quot;CycleId&quot;:&quot;BIMONTHLY&quot;,&quot;SequenceNumber&quot;:&quot;0&quot;,&quot;ConnectionDate&quot;:&quot;1997-07-16&quot;,&quot;DisconnectionDate&quot;:&quot;&quot;,&quot;ConnectionStatus&quot;:&quot;2&quot;,&quot;ConnectionStatusGraphic&quot;:&quot;2&quot;,&quot;ConnectionStatusDescription&quot;:&quot;Active&quot;,&quot;RemoteId&quot;:&quot;&quot;,&quot;ReadingDate&quot;:&quot;1900-01-01T00:00:00&quot;,&quot;Reading&quot;:0,&quot;Consumption&quot;:0,&quot;Alternate&quot;:1,&quot;Subtract&quot;:&quot;&quot;,&quot;Discount&quot;:&quot;&quot;,&quot;MeterGroup&quot;:&quot;&quot;,&quot;UDF&quot;:{&quot;1&quot;:{&quot;Label&quot;:&quot;Conn 001&quot;,&quot;UserDefined&quot;:&quot;&quot;},&quot;2&quot;:{&quot;Label&quot;:&quot;Conn 002&quot;,&quot;UserDefined&quot;:&quot;&quot;}},&quot;ConnectionTaxSchedule&quot;:&quot;&quot;,&quot;drillBackURL&quot;:&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=WATEREQUIP002&amp;ConnectionSequence=2&amp;CogsDrillback=1&quot;,&quot;Equipment&quot;:{&quot;IsSmartMeter&quot;:false,&quot;AllowSubmitMeterReadEnabled&quot;:false,&quot;AutoConnectDisconnectEnabled&quot;:false,&quot;UnitOfMeasure&quot;:&quot;&quot;}},{&quot;LocationID&quot;:&quot;WATER002&quot;,&quot;Connection&quot;:&quot;3&quot;,&quot;EquipmentId&quot;:&quot;&quot;,&quot;ServiceCategory&quot;:&quot;6&quot;,&quot;ServiceCategoryDescription&quot;:&quot;Refuse&quot;,&quot;ServiceType&quot;:&quot;REFUSE&quot;,&quot;RateId&quot;:&quot;RRES&quot;,&quot;HasMultipleRates&quot;:0,&quot;HasMultipleDials&quot;:0,&quot;Multiplier&quot;:&quot;1.00000&quot;,&quot;RouteId&quot;:&quot;ROUTEW001&quot;,&quot;CycleId&quot;:&quot;BIMONTHLY&quot;,&quot;SequenceNumber&quot;:&quot;0&quot;,&quot;ConnectionDate&quot;:&quot;1999-01-01&quot;,&quot;DisconnectionDate&quot;:&quot;&quot;,&quot;ConnectionStatus&quot;:&quot;2&quot;,&quot;ConnectionStatusGraphic&quot;:&quot;2&quot;,&quot;ConnectionStatusDescription&quot;:&quot;Active&quot;,&quot;RemoteId&quot;:&quot;&quot;,&quot;ReadingDate&quot;:&quot;1900-01-01T00:00:00&quot;,&quot;Reading&quot;:0,&quot;Consumption&quot;:0,&quot;Alternate&quot;:0,&quot;Subtract&quot;:&quot;&quot;,&quot;Discount&quot;:&quot;&quot;,&quot;MeterGroup&quot;:&quot;&quot;,&quot;UDF&quot;:{&quot;1&quot;:{&quot;Label&quot;:&quot;Conn 001&quot;,&quot;UserDefined&quot;:&quot;&quot;},&quot;2&quot;:{&quot;Label&quot;:&quot;Conn 002&quot;,&quot;UserDefined&quot;:&quot;&quot;}},&quot;ConnectionTaxSchedule&quot;:&quot;&quot;,&quot;drillBackURL&quot;:&quot;cogsDrillback://DGPB/?Db=SQL_2017&amp;Srv=RND-BASE-A&amp;Cmp=TWO&amp;Prod=229&amp;Act=OPEN&amp;Func=ConnectionDetail&amp;LocationID=WATER002&amp;EquipmentID=&amp;ConnectionSequence=3&amp;CogsDrillback=1&quot;,&quot;Equipment&quot;:{&quot;IsSmartMeter&quot;:false,&quot;AllowSubmitMeterReadEnabled&quot;:false,&quot;AutoConnectDisconnectEnabled&quot;:false,&quot;UnitOfMeasure&quot;:&quot;&quot;}}]}
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:408)
+	at Public.ServiceLocationV3.getServicesByLocation_v_3(ServiceLocationV3.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>1</td>
+<td>Public.ServiceLocationV3@15c43bd9</td></tr>
+<tr>
+<td title='Public.PaymentExtension.postPaymentv2()'><b>postPaymentv2</b><br>Test class: Public.PaymentExtension</td>
+<td><div><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at Public.PaymentExtension.postPaymentv2(PaymentExtension.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2144282958", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2144282958'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at Public.PaymentExtension.postPaymentv2(PaymentExtension.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Public.PaymentExtension@31368b99</td></tr>
+<tr>
+<td title='Public.PaymentExtensionV3.postPaymentv3()'><b>postPaymentv3</b><br>Test class: Public.PaymentExtensionV3</td>
+<td><div><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at Public.PaymentExtensionV3.postPaymentv3(PaymentExtensionV3.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1020632821", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1020632821'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at Public.PaymentExtensionV3.postPaymentv3(PaymentExtensionV3.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Public.PaymentExtensionV3@50a638b5</td></tr>
+<tr>
+<td title='Public.ServiceOrderControllerV3.postcreateServiceOrder_v3()'><b>postcreateServiceOrder_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td><div><pre>java.lang.NullPointerException
+	at java.lang.String.contains(Unknown Source)
+	at Public.ServiceOrderControllerV3.getServiceOrderdetails_v3(ServiceOrderControllerV3.java:57)
+	at Public.ServiceOrderControllerV3.postcreateServiceOrder_v3(ServiceOrderControllerV3.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1865982601", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1865982601'><pre>java.lang.NullPointerException
+	at java.lang.String.contains(Unknown Source)
+	at Public.ServiceOrderControllerV3.getServiceOrderdetails_v3(ServiceOrderControllerV3.java:57)
+	at Public.ServiceOrderControllerV3.postcreateServiceOrder_v3(ServiceOrderControllerV3.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Public.ServiceOrderControllerV3@4facf68f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -143,35 +681,110 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Public.CashieringGetv3.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGetv3</td>
+<td title='Public.CashieringPostV3.TC001_saveReciept()'><b>TC001_saveReciept</b><br>Test class: Public.CashieringPostV3</td>
 <td></td>
-<td>3</td>
-<td>Public.CashieringGetv3@49b0b76</td></tr>
+<td>7</td>
+<td>Public.CashieringPostV3@5e82df6a</td></tr>
 <tr>
-<td title='Public.CashieringGetv3.TC003_getnextReceipt()'><b>TC003_getnextReceipt</b><br>Test class: Public.CashieringGetv3</td>
+<td title='Public.CashieringPost.TC001_saveReciept()'><b>TC001_saveReciept</b><br>Test class: Public.CashieringPost</td>
+<td></td>
+<td>6</td>
+<td>Public.CashieringPost@4f209819</td></tr>
+<tr>
+<td title='Public.CashieringGetV3.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGetV3</td>
 <td></td>
 <td>0</td>
-<td>Public.CashieringGetv3@49b0b76</td></tr>
+<td>Public.CashieringGetV3@636be97c</td></tr>
 <tr>
-<td title='Public.CashieringGetv3.TC004_balances()'><b>TC004_balances</b><br>Test class: Public.CashieringGetv3</td>
+<td title='Public.CashieringGet.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGet</td>
 <td></td>
 <td>0</td>
-<td>Public.CashieringGetv3@49b0b76</td></tr>
+<td>Public.CashieringGet@6ca8564a</td></tr>
 <tr>
-<td title='Public.CashieringGetv3.TC004_getReceipt()'><b>TC004_getReceipt</b><br>Test class: Public.CashieringGetv3</td>
+<td title='Public.createandcancelSpa.cancelSPA_v_2()'><b>cancelSPA_v_2</b><br>Test class: Public.createandcancelSpa</td>
 <td></td>
 <td>0</td>
-<td>Public.CashieringGetv3@49b0b76</td></tr>
+<td>Public.createandcancelSpa@3911c2a7</td></tr>
 <tr>
-<td title='Public.CashieringGetv3.TC005_getRegisterInfo()'><b>TC005_getRegisterInfo</b><br>Test class: Public.CashieringGetv3</td>
+<td title='Public.createandcancelSpaV3.cancelSPA_v_2()'><b>cancelSPA_v_2</b><br>Test class: Public.createandcancelSpaV3</td>
 <td></td>
 <td>0</td>
-<td>Public.CashieringGetv3@49b0b76</td></tr>
+<td>Public.createandcancelSpaV3@2145b572</td></tr>
 <tr>
-<td title='Public.CashieringGetv3.TC006_gettransactions()'><b>TC006_gettransactions</b><br>Test class: Public.CashieringGetv3</td>
+<td title='Public.searchController.elascticsearchcreateindex_v_2()'><b>elascticsearchcreateindex_v_2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>4</td>
+<td>Public.searchController@5c30a9b0</td></tr>
+<tr>
+<td title='Public.searchControllerV3.elascticsearchcreateindex_v_3()'><b>elascticsearchcreateindex_v_3</b><br>Test class: Public.searchControllerV3</td>
 <td></td>
 <td>0</td>
-<td>Public.CashieringGetv3@49b0b76</td></tr>
+<td>Public.searchControllerV3@41e36e46</td></tr>
+<tr>
+<td title='Public.GetAccountBalances.getAccountBalancesV2()'><b>getAccountBalancesV2</b><br>Test class: Public.GetAccountBalances</td>
+<td></td>
+<td>0</td>
+<td>Public.GetAccountBalances@1817d444</td></tr>
+<tr>
+<td title='Public.searchController.getAccountsAdvanced_v_2()'><b>getAccountsAdvanced_v_2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>1</td>
+<td>Public.searchController@5c30a9b0</td></tr>
+<tr>
+<td title='Public.searchController.getAccounts_v_2()'><b>getAccounts_v_2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>1</td>
+<td>Public.searchController@5c30a9b0</td></tr>
+<tr>
+<td title='Public.customerController_v2.getCustomerDetail_v_2()'><b>getCustomerDetail_v_2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@50b472aa</td></tr>
+<tr>
+<td title='Public.searchController.getCustomer_v2()'><b>getCustomer_v2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>0</td>
+<td>Public.searchController@5c30a9b0</td></tr>
+<tr>
+<td title='Public.ServiceLocation.getServicesByLocation_v_2()'><b>getServicesByLocation_v_2</b><br>Test class: Public.ServiceLocation</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceLocation@1139b2f3</td></tr>
+<tr>
+<td title='Private.transactionsController.getTransactions_v_2()'><b>getTransactions_v_2</b><br>Test class: Private.transactionsController</td>
+<td></td>
+<td>0</td>
+<td>Private.transactionsController@39529185</td></tr>
+<tr>
+<td title='Public.consumptionHistoryControllerV3.getconsumptionHistoryController()'><b>getconsumptionHistoryController</b><br>Test class: Public.consumptionHistoryControllerV3</td>
+<td></td>
+<td>1</td>
+<td>Public.consumptionHistoryControllerV3@1ddf84b8</td></tr>
+<tr>
+<td title='Public.consumptionHistoryController.getconsumptionHistoryController()'><b>getconsumptionHistoryController</b><br>Test class: Public.consumptionHistoryController</td>
+<td></td>
+<td>0</td>
+<td>Public.consumptionHistoryController@3f197a46</td></tr>
+<tr>
+<td title='Public.searchController.getindex_v2()'><b>getindex_v2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>0</td>
+<td>Public.searchController@5c30a9b0</td></tr>
+<tr>
+<td title='Public.spaController.getoutstandingDocuments_v_2()'><b>getoutstandingDocuments_v_2</b><br>Test class: Public.spaController</td>
+<td></td>
+<td>0</td>
+<td>Public.spaController@15eb5ee5</td></tr>
+<tr>
+<td title='Public.spaControllerV3.getoutstandingDocuments_v_3()'><b>getoutstandingDocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@4ac3c60d</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.postcreateServiceOrder_v2()'><b>postcreateServiceOrder_v2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>1</td>
+<td>Public.ServiceOrderController@76508ed1</td></tr>
 </table><p>
 </body>
 </html>

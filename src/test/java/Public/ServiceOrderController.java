@@ -23,26 +23,26 @@ public class ServiceOrderController {
 	public static String ServiceOrderNumber;
 
 	@Test(priority = 1, groups = "ServiceOrder")
-	public static void postcreateServiceOrder_v3()
+	public static void postcreateServiceOrder_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/createServiceOrder";
-		String ver = "3.0";
+		String ver = "2";
 		String payload = "./\\TestData\\serviceOrderv2.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		String ServiceOrderNumber = jsonPathEvaluator.get("result.ServiceOrderNumber");
 		System.out.println(jsonPathEvaluator.get().toString());
 		System.out.println(ServiceOrderNumber);
-		getServiceOrderdetails_v3(ServiceOrderNumber);
+		getServiceOrderdetails_v2(ServiceOrderNumber);
 
 	}
 
-	public static void getServiceOrderdetails_v3(String param)
+	public static void getServiceOrderdetails_v2(String param)
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		System.out.println(param);
 		String uri = "/serviceOrder/getServiceOrderDetail";
-		String ver = "3.0";
+		String ver = "2";
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("ServiceOrderNumber", param);
 		params.put("ShowDrillBack", "true");
@@ -62,13 +62,13 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 2, groups = "ServiceOrder", dependsOnMethods = "postcreateServiceOrder_v2")
-	public static void getServiceOrder_v3()
+	public static void getServiceOrder_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		// rue&ShowStatus_FieldComplete=true&OrderBy=ScheduledDateTime ASC,
 		// ServiceOrderId DESC
 		String uri = "/serviceOrder/getServiceOrders";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\getserviceordersv2.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
@@ -93,12 +93,12 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 3, groups = "ServiceOrder")
-	public static void getServiceOrderRequestDetails_v3()
+	public static void getServiceOrderRequestDetails_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		// ?RequestID=transfer&ShowOnlyTransfers=true
 		String uri = "/serviceOrderRequestIdDetail/getServiceOrderRequestIdDetail";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\serviceorderrequestdetailsv2.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
@@ -111,12 +111,12 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 4, groups = "ServiceOrder")
-	public static void getServiceOrderRequestDetailsbyOptional_v3()
+	public static void getServiceOrderRequestDetailsbyOptional_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		// ?RequestID=transfer&ShowOnlyTransfers=true
 		String uri = "/serviceOrder/detail";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\serviceorderrequestdetailsOptionalv2.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
@@ -128,11 +128,11 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 5, groups = "ServiceOrder")
-	public static void putaddMeterReading_v_3()
+	public static void putaddMeterReading_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/addMeterReading";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\addMeterReading_v2.json";
 		// String fresponse = "./\\TestData\\addMeterReadingresp_v2.json";
 		// ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath,fresponse);
@@ -145,11 +145,11 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 6, groups = "ServiceOrder")
-	public static void putupdatecomment_v_3()
+	public static void putupdatecomment_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/updateSOComment";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\putupdatecommentsv2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
@@ -160,11 +160,11 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 7, groups = "ServiceOrder")
-	public static void putaddMiscCharge_v_3()
+	public static void putaddMiscCharge_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/addMiscCharge";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\putaddmiscChargev2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
@@ -176,11 +176,11 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 8, groups = "ServiceOrder")
-	public static void putswitchMeter_v_3()
+	public static void putswitchMeter_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/switchMeter";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\meterchangev2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
@@ -191,11 +191,11 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 8, groups = "ServiceOrder")
-	public static void putTaskComplete_v_3()
+	public static void putTaskComplete_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/putTaskComplete";
-		String ver = "3.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\putaskcompletev2.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
@@ -210,7 +210,7 @@ public class ServiceOrderController {
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/taskCompleteOtherNoCharge";
-		String ver = "3.0";
+		String ver = "2.3";
 		String jpath = "./\\TestData\\putaskcompletenochargev2_3.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
@@ -225,7 +225,7 @@ public class ServiceOrderController {
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder";
-		String ver = "3.0";
+		String ver = "2.3.1";
 		String payload = "./\\TestData\\putcreateserviceOrderv2_3_1.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 
@@ -239,20 +239,20 @@ public class ServiceOrderController {
 
 		Thread.sleep(5000);
 		if (ServiceOrderNumber != null) {
-			putTaskComplete_v_3_4(ServiceOrderNumber);
+			putTaskComplete_v_2_4(ServiceOrderNumber);
 		} else {
 			Assert.fail("Service Order " + ServiceOrderNumber + "Not found");
 		}
 
 	}
 
-	@Test(priority = 11, groups = "ServiceOrder")
+	
 	public static void getServiceOrderdetails_v2_4(String param)
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		System.out.println(param);
 		String uri = "/serviceOrder/Detail";
-		String ver = "3.0";
+		String ver = "2.4";
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("ServiceOrderNumber", param);
 		params.put("ShowDrillBack", "true");
@@ -271,13 +271,13 @@ public class ServiceOrderController {
 
 	}
 
-	@Test(priority = 12, groups = "ServiceOrder")
-	public static void putTaskComplete_v_3_4(String serviceOrderid)
+	
+	public static void putTaskComplete_v_2_4(String serviceOrderid)
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		// String serviceOrderid ="SORD00000009014";
 		String uri = "/serviceorder/taskcomplete";
-		String ver = "3.0";
+		String ver = "2.4";
 		String jpath = "{\r\n" + "    \"ServiceOrder\": \r\n" + "        {\r\n" + "            \"Id\": \""
 				+ serviceOrderid + "\",\r\n" + "            \"EmployeeId\": \"EMPLOYEE\",\r\n"
 				+ "            \"LocationId\": \"ELECWAT001\",\r\n" + "            \"Task\": {\r\n"
@@ -292,7 +292,7 @@ public class ServiceOrderController {
 
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		putaddMeterReading_v_3();
+		putaddMeterReading_v_2();
 		// putTaskComplete_v_3_4();
 	}
 

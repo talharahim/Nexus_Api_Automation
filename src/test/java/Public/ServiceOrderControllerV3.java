@@ -61,7 +61,7 @@ public class ServiceOrderControllerV3 {
 
 	}
 
-	@Test(priority = 2, groups = "ServiceOrder", dependsOnMethods = "postcreateServiceOrder_v2")
+	@Test(priority = 2, groups = "ServiceOrder", dependsOnMethods = "postcreateServiceOrder_v3")
 	public static void getServiceOrder_v3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
