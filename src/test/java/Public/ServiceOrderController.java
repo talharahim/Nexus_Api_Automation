@@ -133,12 +133,13 @@ public class ServiceOrderController {
 		String uri = "/serviceOrder/addMeterReading";
 		String ver = "2";
 		String jpath = "./\\TestData\\addMeterReading_v2.json";
+		String fresponse = "./\\TestData\\addMeterReadingresp_v2.json";
 
-		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
-		result.assertThat().body(Matchers.containsString("true"));
-		result.assertThat().body(Matchers.containsString("READ"));
-		result.assertThat().body(Matchers.containsString("created"));
-		System.out.println(result.extract().asString());
+		ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath, fresponse);
+	//	result.assertThat().body(Matchers.containsString("true"));
+	//	result.assertThat().body(Matchers.containsString("READ"));
+	//	result.assertThat().body(Matchers.containsString("created"));
+	//	System.out.println(result.extract().asString());
 
 	}
 
