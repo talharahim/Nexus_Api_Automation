@@ -26,15 +26,23 @@ public class ServiceOrderControllerV3 {
 	public static void postcreateServiceOrder_v3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		String uri = "/serviceOrder/createServiceOrder";
+		String uri = "/serviceOrder";
 		String ver = "3.0";
-		String payload = "./\\TestData\\serviceOrderv2.json";
+		String payload = "./\\TestData\\serviceOrderv3.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
-		String ServiceOrderNumber = jsonPathEvaluator.get("result.ServiceOrderNumber");
+		String ServiceOrderNumber = jsonPathEvaluator.get("ServiceOrder[0].DocumentNumber");
 		System.out.println(jsonPathEvaluator.get().toString());
 		System.out.println(ServiceOrderNumber);
-		getServiceOrderdetails_v3(ServiceOrderNumber);
+		if(ServiceOrderNumber=="")
+		{
+			Assert.fail("Service Order not created");
+		
+		}
+		else {
+			getServiceOrderdetails_v3(ServiceOrderNumber);	
+		}
 
+		
 	}
 
 	public static void getServiceOrderdetails_v3(String param)
@@ -117,11 +125,10 @@ public class ServiceOrderControllerV3 {
 		// ?RequestID=transfer&ShowOnlyTransfers=true
 		String uri = "/serviceOrder/detail";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\serviceorderrequestdetailsOptionalv2.json";
-
+		String jpath = "./\\TestData\\serviceorderrequestdetailsOptionalv3.json";
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("LocationId", "ELECWAT003");
-
+		params.put("ServiceOrderNumber", "SORD00000000002");
+		params.put("ShowDrillBack", "true");
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 
@@ -196,7 +203,7 @@ public class ServiceOrderControllerV3 {
 
 		String uri = "/serviceOrder/putTaskComplete";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\putaskcompletev2.json";
+		String jpath = "./\\TestData\\putaskcompletev3.json";
 
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		result.assertThat().body(Matchers.containsString("Task updated"));
@@ -206,7 +213,7 @@ public class ServiceOrderControllerV3 {
 	}
 
 	@Test(priority = 9, groups = "ServiceOrder")
-	public static void putTaskCompleteNocharge_v2_3()
+	public static void putTaskCompleteNocharge_v3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/taskCompleteOtherNoCharge";
@@ -220,79 +227,12 @@ public class ServiceOrderControllerV3 {
 		System.out.println(result.extract().asString());
 	}
 
-	@Test(priority = 10, groups = "ServiceOrder")
-	public static void postcreateServiceOrder_v2_3_1()
-			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		
 
-		String uri = "/serviceOrder";
-		String ver = "3.0";
-		String payload = "./\\TestData\\putcreateserviceOrderv2_3_1.json";
-		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
-
-		String ServiceOrderNumber = jsonPathEvaluator.get("ServiceOrder[0].DocumentNumber");
-		System.out.println("Service order created = " + ServiceOrderNumber);
-		if (ServiceOrderNumber != null) {
-			getServiceOrderdetails_v2_4(ServiceOrderNumber);
-		} else {
-			Assert.fail("Service Order null");
-		}
-
-		Thread.sleep(5000);
-		if (ServiceOrderNumber != null) {
-			putTaskComplete_v_3_4(ServiceOrderNumber);
-		} else {
-			Assert.fail("Service Order " + ServiceOrderNumber + "Not found");
-		}
-
-	}
-
-	@Test(priority = 11, groups = "ServiceOrder")
-	public static void getServiceOrderdetails_v2_4(String param)
-			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-
-		System.out.println(param);
-		String uri = "/serviceOrder/Detail";
-		String ver = "3.0";
-		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("ServiceOrderNumber", param);
-		params.put("ShowDrillBack", "true");
-
-		Response response = CommonMethods.getMethod(uri, ver, params);
-
-		// To check for sub string presence get the Response body as a String.
-		// Do a String.contains
-		String bodyAsString = response.asString();
-		System.out.println(bodyAsString);
-
-		if (!bodyAsString.contains(param)) {
-			Assert.fail();
-		}
-		System.out.println(response.prettyPrint());
-
-	}
-
-	@Test(priority = 12, groups = "ServiceOrder")
-	public static void putTaskComplete_v_3_4(String serviceOrderid)
-			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-
-		// String serviceOrderid ="SORD00000009014";
-		String uri = "/serviceorder/taskcomplete";
-		String ver = "3.0";
-		String jpath = "{\r\n" + "    \"ServiceOrder\": \r\n" + "        {\r\n" + "            \"Id\": \""
-				+ serviceOrderid + "\",\r\n" + "            \"EmployeeId\": \"EMPLOYEE\",\r\n"
-				+ "            \"LocationId\": \"ELECWAT001\",\r\n" + "            \"Task\": {\r\n"
-				+ "                \"Sequence\": 1100\r\n" + "            },\r\n"
-				+ "            \"DocumentNumber\": \"\",\r\n"
-				+ "            \"CompletedDateTime\": \"2019-04-08T11:45:00Z\"\r\n" + "        }\r\n" + "}";
-		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath, "null");
-		result.assertThat().body(Matchers.containsString("\"Success\":true"));
-
-		System.out.println(result.extract().asString());
-	}
-
+	
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		putaddMeterReading_v_3();
+		getServiceOrderRequestDetailsbyOptional_v3();
 		// putTaskComplete_v_3_4();
 	}
 

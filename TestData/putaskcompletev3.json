@@ -1,0 +1,15 @@
+{
+    "ServiceOrder": 
+        {
+            "Id": "SORD00000004282",
+            "EmployeeId": "EMPLOYEE001",
+            "LocationId": "invalidLocation",
+            "Task": {
+                "Sequence": 1000
+            },
+            "DocumentNumber": "0",
+            "CompletedDateTime": "2019-04-08T11:45:00Z"
+
+        }
+
+}

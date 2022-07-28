@@ -18,7 +18,7 @@ public class ServiceLocationV3{
 
 		String uri = "/servicesByLocation/getServicesByLocation";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\servicesbylocationv2.json";
+		String jpath = "./\\TestData\\servicesbylocationv3.json";
 				
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("CustomerId", "CUSTOMER014");

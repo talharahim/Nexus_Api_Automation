@@ -10,7 +10,7 @@ import com.NexustAPIAutomation.java.CommonMethods;
 
 import io.restassured.response.ValidatableResponse;
 
-public class ServiceLocation{
+public class ServiceLocationv2{
 
 	
 	@Test(priority = 1, groups = "ServiceLocation")
