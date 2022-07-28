@@ -41,7 +41,7 @@ public class customerControllerV3 {
 
 		String uri = "/customer/getCustomerDetail";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\customerDetailsv2.json";
+		String jpath = "./\\TestData\\customerDetailsv3.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("CustomerId", "customer003");
@@ -119,14 +119,14 @@ public class customerControllerV3 {
 	}
 
 	@Test(priority = 7, groups = "CustomerController")
-	public void getLocationsByCustomer_v2()
+	public void getLocationsByCustomer_v3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		String uri = "/customer/getLocationsByCustomer";
+		String uri = "/customers/CUSTOMER009/locationsByCustomer";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\getLocationsByCustomerv2.json";
+		String jpath = "./\\TestData\\getLocationsByCustomerv3.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("CustomerId", "AUTO1001");
+		//params.put("CustomerId", "CUSTOMER009");
 		params.put("LocationId", "LOCATION008");
 		params.put("PageSize", "50");
 		params.put("PageSelected", "1");
@@ -165,10 +165,10 @@ public class customerControllerV3 {
 	}
 
 	@Test(priority = 8, groups = "CustomerController")
-	public void getCustomerDetail_v2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public void getCustomerDetail_v3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		String uri = "/customer/getCustomerDetail";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\getCustomerDetailv2.json";
+		String jpath = "./\\TestData\\getCustomerDetailsv3.json";
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("CustomerId", "customer003");
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
