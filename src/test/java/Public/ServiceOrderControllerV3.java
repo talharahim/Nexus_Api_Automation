@@ -129,6 +129,7 @@ public class ServiceOrderControllerV3 {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("ServiceOrderNumber", "SORD00000000002");
 		params.put("ShowDrillBack", "true");
+		params.put("IncludeHistory", "true");
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 

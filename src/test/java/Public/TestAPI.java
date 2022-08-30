@@ -18,45 +18,20 @@ public class TestAPI {
 
 	public static JsonPath jsonPathEvaluator;
 
-	// @Test(priority = 1, groups = "Cashering" )
-	public void TC002_saveReciept() throws ClassNotFoundException, SQLException, InterruptedException {
+	
+	@Test(priority = 5, groups = "ServiceOrder")
+	public static void putaddMeterReading_v_2()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		// CommonMethods.CompanyDBRestore();
-		String uri = "/cashiering/receipt";
-		String ver = "2.4";
-		String payload = "./\\TestData\\saveReciept.json";
-		CommonMethods.postMethod(payload, uri, ver);
-		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
-		Boolean Result = jsonPathEvaluator.get("Receipt.Success");
-		System.out.println(jsonPathEvaluator.get().toString().toString());
-		if (Result == false) {
-			Assert.fail();
-		}
-
+		String uri = "/serviceOrder/detail";
+		String ver = "3.0";
+		String jpath = "./\\TestData\\serviceorderrequestdetailsOptionalv3.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("ServiceOrderNumber", "SORD00000000002");
+		params.put("ShowDrillBack", "true");
+		params.put("IncludeHistory", "true");
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
 	}
-
-	public static void main(String args[]) {
-
-		String str = "Find the in this string the. the the their the the the the";
-		String find = "the";
-		int j = 0;
-		int result = 0;
-		for (int i = 0; i < str.length(); i++) {
-			if (find.charAt(j) == str.charAt(i)) {
-				j++;
-				i++;
-				if (find.charAt(j) == str.charAt(i)) {
-					j++;
-					i++;
-					if (find.charAt(j) == str.charAt(i)) {
-						result++;
-					}
-				}
-			}
-			j = 0;
-			//System.out.println(i);
-		}
-		result--;
-		System.out.println("String " + find + " found " + result + " times");
-	}
+	
 }
