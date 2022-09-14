@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1343751450\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-956394499\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.TestAPI" hash-for-method="putaddMeterReading_v_2">putaddMeterReading_v_2</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Private.DepositsControllerV3" hash-for-method="getdeposit_v_3">getdeposit_v_3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Private.DepositsControllerV3" hash-for-method="getdepositpaymentPlan_v_3">getdepositpaymentPlan_v_3</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -122,14 +127,21 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Public.TestAPI</span>
+              <span class="class-name">Private.DepositsControllerV3</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="putaddMeterReading_v_2">
-                  </a> <!-- putaddMeterReading_v_2 -->
-                  <span class="method-name">putaddMeterReading_v_2</span>
+                  <a name="getdeposit_v_3">
+                  </a> <!-- getdeposit_v_3 -->
+                  <span class="method-name">getdeposit_v_3</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getdepositpaymentPlan_v_3">
+                  </a> <!-- getdepositpaymentPlan_v_3 -->
+                  <span class="method-name">getdepositpaymentPlan_v_3</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +149,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1343751450\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-956394499\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +158,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Public.TestAPI&quot;/&gt;
+      &lt;class name=&quot;Private.DepositsControllerV3&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -171,10 +183,14 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">ServiceOrder</span>
+              <span class="test-group-name">Deposits</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">putaddMeterReading_v_2</span>
+                <span class="method-in-group-name">getdeposit_v_3</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">getdepositpaymentPlan_v_3</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -194,16 +210,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'putaddMeterReading_v_2')
-data.setCell(0, 2, 'Public.TestAPI')
-data.setCell(0, 3, 6109);
+data.setCell(0, 1, 'getdeposit_v_3')
+data.setCell(0, 2, 'Private.DepositsControllerV3')
+data.setCell(0, 3, 11290);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'getdepositpaymentPlan_v_3')
+data.setCell(1, 2, 'Private.DepositsControllerV3')
+data.setCell(1, 3, 1158);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -229,10 +249,14 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Public.TestAPI</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Private.DepositsControllerV3</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">putaddMeterReading_v_2</span>
+                <span class="method-name">getdeposit_v_3</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getdepositpaymentPlan_v_3</span>
+                <span class="method-start">11600 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

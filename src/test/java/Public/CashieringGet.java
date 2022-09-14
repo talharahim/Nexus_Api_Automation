@@ -36,6 +36,22 @@ public class CashieringGet {
 		}
 
 	}
+	
+	@Test(priority = 1, groups = "Cashering")
+	public void TC003_1_getCashin() throws ClassNotFoundException, SQLException, InterruptedException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/cashiering/cashIn";
+		String ver = "2.4";
+		String payload = "";
+		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
+		System.out.println(jsonPathEvaluator.get().toString());
+		Boolean Result = jsonPathEvaluator.get("CashedIn[0].IsCashedIn");
+
+		if (Result == false) {
+			Assert.fail();
+		}
+
+	}
 
 	 @Test(priority = 2, groups = "Cashering", dependsOnMethods = "TC003_getCashin")
 	public void TC004_balances() throws ClassNotFoundException, SQLException, InterruptedException {
