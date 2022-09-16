@@ -16,6 +16,7 @@ public class PaymentExtensionV3 {
 	
 	@Test(priority = 1, groups = "Cashering")
 	public void postPaymentv3() throws ClassNotFoundException, SQLException, InterruptedException {
+		//CommonMethods.CompanyDBRestore();
 		String uri = "/payment";
 		String ver = "3.0";
 		String payload = "./\\TestData\\PostPayment2_1.json";

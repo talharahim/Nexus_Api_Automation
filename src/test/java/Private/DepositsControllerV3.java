@@ -39,4 +39,20 @@ public class DepositsControllerV3 {
 
 	}
 
+	@Test(priority = 3, groups = "Deposits")
+	public void lookupDepositId_v_3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/lookupDepositId";
+		String ver = "3.0";
+		String jpath = "./\\TestData\\lookupDepositIdV2.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("OrderBy", "description");
+		params.put("PageNum", "1");
+		params.put("NumPerPage", "32000");
+		params.put("ServiceCategory", "electric");
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+
+	}
+
 }

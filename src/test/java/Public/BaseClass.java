@@ -12,7 +12,7 @@ public class BaseClass {
 
 	//@BeforeAll
 	void BeforeTest() throws ClassNotFoundException, SQLException, InterruptedException {
-		//CommonMethods.CompanyDBRestore();
+		
 		Thread.sleep(25000);
 	}
 }
