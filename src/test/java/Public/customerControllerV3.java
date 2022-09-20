@@ -40,8 +40,8 @@ public class customerControllerV3 {
 	public void getCustomerDetail_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/customer/getCustomerDetail";
-		String ver = "3.0";
-		String jpath = "./\\TestData\\customerDetailsv3.json";
+		String ver = "2";
+		String jpath = "./\\TestData\\customerDetailsv2.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("CustomerId", "customer003");
@@ -168,7 +168,7 @@ public class customerControllerV3 {
 	public void getCustomerDetail_v3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		String uri = "/customer/getCustomerDetail";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\getCustomerDetailsv3.json";
+		String jpath = "./\\TestData\\CustomerDetailsv3.json";
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("CustomerId", "customer003");
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
