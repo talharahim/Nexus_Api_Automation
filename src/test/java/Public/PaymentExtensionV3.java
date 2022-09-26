@@ -19,7 +19,7 @@ public class PaymentExtensionV3 {
 		//CommonMethods.CompanyDBRestore();
 		String uri = "/payment";
 		String ver = "3.0";
-		String payload = "./\\TestData\\PostPayment2_1.json";
+		String payload = "./\\TestData\\PostPaymentv3.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		Boolean Result = jsonPathEvaluator.get("result[0].Success");
 		System.out.println(jsonPathEvaluator.toString());
