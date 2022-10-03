@@ -18,20 +18,25 @@ public class TestAPI {
 
 	public static JsonPath jsonPathEvaluator;
 
-	@Test(priority = 5, groups = "ServiceOrder")
-	public static void putaddMeterReading_v_3()
+	@Test(priority = 3, groups = "Search")
+	public void getAccountsAdvanced_v_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		String uri = "/serviceOrder/addMeterReading";
+		String uri = "/search/getAccountsAdvanced";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\addMeterReading_v2.json";
-		// String fresponse = "./\\TestData\\addMeterReadingresp_v2.json";
-		// ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath,fresponse);
-		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
-		result.assertThat().body(Matchers.containsString("true"));
-		result.assertThat().body(Matchers.containsString("READ"));
-		result.assertThat().body(Matchers.containsString("created"));
-		//System.out.println(result.extract().asString());
+
+		String jpath = "./\\TestData\\getAccountsAdvancedv2.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("SearchCustomerName", "sally");
+		params.put("SearchAccountNumber", "");
+		params.put("SearchPhoneNumber", "");
+		params.put("SearchEmailAddress", "");
+		params.put("SortOrder", "1");
+		params.put("SortDescending", "0");
+		params.put("ShowAll", "0");
+
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
 
 	}
 

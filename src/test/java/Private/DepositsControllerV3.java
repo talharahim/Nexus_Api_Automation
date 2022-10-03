@@ -29,11 +29,11 @@ public class DepositsControllerV3 {
 	public void getdepositpaymentPlan_v_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		String uri = "/deposit/paymentPlan";
+		String uri = "/deposit/DEPS00000000026/paymentPlan";
 		String ver = "3.0";
 		String jpath = "./\\TestData\\depositsPaymentPlanv3.json";
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("DocumentNumber", "DEPS00000000026");
+		//params.put("DocumentNumber", "DEPS00000000026");
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 
