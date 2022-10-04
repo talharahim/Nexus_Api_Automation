@@ -18,23 +18,15 @@ public class TestAPI {
 
 	public static JsonPath jsonPathEvaluator;
 
-	@Test(priority = 3, groups = "Search")
-	public void getAccountsAdvanced_v_3()
+	@Test(priority = 2, groups = "Deposits")
+	public void getdepositpaymentPlan_v_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		String uri = "/search/getAccountsAdvanced";
+		String uri = "/deposit/DEPS00000000026/paymentPlan";
 		String ver = "3.0";
-
-		String jpath = "./\\TestData\\getAccountsAdvancedv2.json";
+		String jpath = "./\\TestData\\depositsPaymentPlanv3.json";
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("SearchCustomerName", "sally");
-		params.put("SearchAccountNumber", "");
-		params.put("SearchPhoneNumber", "");
-		params.put("SearchEmailAddress", "");
-		params.put("SortOrder", "1");
-		params.put("SortDescending", "0");
-		params.put("ShowAll", "0");
-
+		//params.put("DocumentNumber", "DEPS00000000026");
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 
