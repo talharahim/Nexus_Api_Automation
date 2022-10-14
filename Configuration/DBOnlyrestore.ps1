@@ -10,7 +10,7 @@
 
 param (
 
-	[string]$DbBackup_Path_FileVersion = "D:\DatabaseBackup\TWO_2020R2.bak", # Path to SQL in Nexus_Api folder
+	[string]$DbBackup_Path_FileVersion = "D:\DatabaseBackup\TWO_2022R3.bak", # Path to SQL in Nexus_Api folder
     [string]$Nexus_APIPath = "C:\Program Files (x86)\Jenkins\workspace\NexusAPIBuild\", # Path to Nexus_Api
 	[string]$BackupDestination = "C:\Program Files (x86)\Jenkins\workspace\Backup\", # Path to Nexus_Api backup
     [string]$Nexus_APIDistPathToDelete = $Nexus_APIPath+"dist\server\*", # Path to DIST folder for Nexus_Api
