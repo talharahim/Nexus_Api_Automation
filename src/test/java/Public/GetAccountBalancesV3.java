@@ -52,5 +52,18 @@ public class GetAccountBalancesV3 {
 		System.out.println(result);
 	}
 	
+	
+	@Test(priority = 4, groups = "Account Balances")
+	public void getAccountBalancesPortalv3Paymentatwork() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/accountBalance/getAccountBalances";
+		String ver = "3.0";
+		String jpath = "./TestData\\accountBalancev3OpenWork.json";
+
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("LocationId", "ELECWAT001");
+		params.put("CustomerId", "CUSTOMER007");
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
 
 }
