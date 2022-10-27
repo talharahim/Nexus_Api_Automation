@@ -1,0 +1,15 @@
+{
+	"LocationId":"ELECWAT001",
+	"CustomerId":"CUSTOMER007",
+	"RequestId":"TRANSFER",
+	"Description":"",
+	"RequestedDateTime":"2019-04-08T12:00:00Z",
+	"ScheduledDateTime":"",
+	"Udf":[{
+            "Label": "TEST1", 
+            "Value": "udfval1ue1" 
+        }
+	],
+	"UserId": "sa",
+	"ShowDrillBack": "true"
+}

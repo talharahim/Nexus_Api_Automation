@@ -36,6 +36,28 @@ public class customerControllerV3 {
 	}
 	
 	
+	@Test(priority = 6, groups = "CustomerController")
+	public static void getlocationsByCustomerv_2_4_ExcludeFormer()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/customers/TESTCUSTOMER2/locationsByCustomer";
+		String ver = "3.0";
+		String jpath = "./\\TestData\\customerbyLocationv2_4ExcludeFormer.json";
+
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("LocationId", "TESTLOCATION03");
+		params.put("NumPerPage", "50");
+		params.put("OrderBy", "status, locationId");
+		params.put("PageNum", "1");
+		params.put("ExcludeFormerLocationsWithZeroBalance", "1");
+		
+
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+
+	}
+	
+	
 	@Test(priority = 1, groups = "CustomerController")
 	public void getCustomerDetail_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
@@ -249,5 +271,9 @@ public class customerControllerV3 {
 	}
 
 
+	public static void main(String args[]) throws ClassNotFoundException, SQLException, InterruptedException, IOException
+	{
+		 getlocationsByCustomerv_2_4_ExcludeFormer();
+	}
 
 }

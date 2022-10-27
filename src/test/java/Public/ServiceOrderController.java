@@ -290,9 +290,24 @@ public class ServiceOrderController {
 		System.out.println(result.extract().asString());
 	}
 
+	
+	@Test(priority = 1, groups = "ServiceOrder")
+	public static void postcreateServiceOrder_v2_ERROR()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder/createServiceOrder";
+		String ver = "2.3.1";
+		String payload = "./\\TestData\\serviceOrderv2_3_1.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+		String ServiceOrderNumber = jsonPathEvaluator.get("result.ServiceOrderNumber");
+		System.out.println(jsonPathEvaluator.get().toString());
+		System.out.println(ServiceOrderNumber);
+		getServiceOrderdetails_v2(ServiceOrderNumber);
+
+	}
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		putaddMeterReading_v_2();
+		 postcreateServiceOrder_v2_ERROR();
 		// putTaskComplete_v_3_4();
 	}
 
