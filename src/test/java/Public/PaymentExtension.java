@@ -48,6 +48,20 @@ public class PaymentExtension {
 	}
 
 	
+	@Test(priority = 3, groups = "Cashering")
+	public void postPaymentv2_2() throws ClassNotFoundException, SQLException, InterruptedException {
+		String uri = "/payment";
+		String ver = "2";
+		String payload = "./\\TestData\\PostPayment2_1.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("result[0].Success");
+		System.out.println(jsonPathEvaluator.toString());
+		if (Result != false) {
+			Assert.fail();
+		}
+
+	}
+	
 	
 	
 }
