@@ -135,12 +135,13 @@ public class ServiceOrderController {
 		String ver = "2";
 		String jpath = "./\\TestData\\addMeterReading_v2.json";
 		// String fresponse = "./\\TestData\\addMeterReadingresp_v2.json";
-		// ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath,fresponse);
+		// ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver,
+		// jpath,fresponse);
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("READ"));
 		result.assertThat().body(Matchers.containsString("created"));
-		//System.out.println(result.extract().asString());
+		// System.out.println(result.extract().asString());
 
 	}
 
@@ -246,7 +247,6 @@ public class ServiceOrderController {
 
 	}
 
-	
 	public static void getServiceOrderdetails_v2_4(String param)
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
@@ -271,7 +271,6 @@ public class ServiceOrderController {
 
 	}
 
-	
 	public static void putTaskComplete_v_2_4(String serviceOrderid)
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
@@ -290,24 +289,27 @@ public class ServiceOrderController {
 		System.out.println(result.extract().asString());
 	}
 
-	
 	@Test(priority = 1, groups = "ServiceOrder")
 	public static void postcreateServiceOrder_v2_ERROR()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/serviceOrder/createServiceOrder";
-		String ver = "2.3.1";
+		String ver = "2";
 		String payload = "./\\TestData\\serviceOrderv2_3_1.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		String ServiceOrderNumber = jsonPathEvaluator.get("result.ServiceOrderNumber");
+		if (ServiceOrderNumber == null || ServiceOrderNumber.equalsIgnoreCase("")) {
+			Assert.fail();
+		}
 		System.out.println(jsonPathEvaluator.get().toString());
 		System.out.println(ServiceOrderNumber);
 		getServiceOrderdetails_v2(ServiceOrderNumber);
 
 	}
+
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		 postcreateServiceOrder_v2_ERROR();
+		postcreateServiceOrder_v2_ERROR();
 		// putTaskComplete_v_3_4();
 	}
 

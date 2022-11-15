@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--69840412\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-1666679429\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">12 methods, 2 failed,   10 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="postcreateServiceOrder_v2_ERROR">postcreateServiceOrder_v2_ERROR</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="putaddMeterReading_v_2">putaddMeterReading_v_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +123,52 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.PaymentExtensionV3" hash-for-method="paymentExtensionv3">paymentExtensionv3</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="getServiceOrderRequestDetails_v2">getServiceOrderRequestDetails_v2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.PaymentExtensionV3" hash-for-method="postPaymentv3">postPaymentv3</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="getServiceOrderRequestDetailsbyOptional_v2">getServiceOrderRequestDetailsbyOptional_v2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="getServiceOrder_v2">getServiceOrder_v2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="postcreateServiceOrder_v2">postcreateServiceOrder_v2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="postcreateServiceOrder_v2_3_1">postcreateServiceOrder_v2_3_1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="putTaskCompleteNocharge_v2_3">putTaskCompleteNocharge_v2_3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="putTaskComplete_v_2">putTaskComplete_v_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="putaddMiscCharge_v_2">putaddMiscCharge_v_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="putswitchMeter_v_2">putswitchMeter_v_2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.ServiceOrderController" hash-for-method="putupdatecomment_v_2">putupdatecomment_v_2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -124,24 +183,212 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Public.PaymentExtensionV3</span>
+              <img src="failed.png"/>
+              <span class="class-name">Public.ServiceOrderController</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="paymentExtensionv3">
-                  </a> <!-- paymentExtensionv3 -->
-                  <span class="method-name">paymentExtensionv3</span>
+                  <a name="postcreateServiceOrder_v2_ERROR">
+                  </a> <!-- postcreateServiceOrder_v2_ERROR -->
+                  <span class="method-name">postcreateServiceOrder_v2_ERROR</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at java.lang.String.contains(String.java:2133)
+	at Public.ServiceOrderController.getServiceOrderdetails_v2(ServiceOrderController.java:57)
+	at Public.ServiceOrderController.postcreateServiceOrder_v2_ERROR(ServiceOrderController.java:305)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="postPaymentv3">
-                  </a> <!-- postPaymentv3 -->
-                  <span class="method-name">postPaymentv3</span>
+                  <a name="putaddMeterReading_v_2">
+                  </a> <!-- putaddMeterReading_v_2 -->
+                  <span class="method-name">putaddMeterReading_v_2</span>
+                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:156)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:156)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at com.NexustAPIAutomation.java.CommonMethods.putMethod(CommonMethods.java:511)
+	at Public.ServiceOrderController.putaddMeterReading_v_2(ServiceOrderController.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Public.ServiceOrderController</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getServiceOrderRequestDetails_v2">
+                  </a> <!-- getServiceOrderRequestDetails_v2 -->
+                  <span class="method-name">getServiceOrderRequestDetails_v2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getServiceOrderRequestDetailsbyOptional_v2">
+                  </a> <!-- getServiceOrderRequestDetailsbyOptional_v2 -->
+                  <span class="method-name">getServiceOrderRequestDetailsbyOptional_v2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getServiceOrder_v2">
+                  </a> <!-- getServiceOrder_v2 -->
+                  <span class="method-name">getServiceOrder_v2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="postcreateServiceOrder_v2">
+                  </a> <!-- postcreateServiceOrder_v2 -->
+                  <span class="method-name">postcreateServiceOrder_v2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="postcreateServiceOrder_v2_3_1">
+                  </a> <!-- postcreateServiceOrder_v2_3_1 -->
+                  <span class="method-name">postcreateServiceOrder_v2_3_1</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="putTaskCompleteNocharge_v2_3">
+                  </a> <!-- putTaskCompleteNocharge_v2_3 -->
+                  <span class="method-name">putTaskCompleteNocharge_v2_3</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="putTaskComplete_v_2">
+                  </a> <!-- putTaskComplete_v_2 -->
+                  <span class="method-name">putTaskComplete_v_2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="putaddMiscCharge_v_2">
+                  </a> <!-- putaddMiscCharge_v_2 -->
+                  <span class="method-name">putaddMiscCharge_v_2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="putswitchMeter_v_2">
+                  </a> <!-- putswitchMeter_v_2 -->
+                  <span class="method-name">putswitchMeter_v_2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="putupdatecomment_v_2">
+                  </a> <!-- putupdatecomment_v_2 -->
+                  <span class="method-name">putupdatecomment_v_2</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,7 +396,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--69840412\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-1666679429\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -158,7 +405,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Public.PaymentExtensionV3&quot;/&gt;
+      &lt;class name=&quot;Public.ServiceOrderController&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -183,14 +430,54 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Cashering</span>
+              <span class="test-group-name">ServiceOrder</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">paymentExtensionv3</span>
+                <span class="method-in-group-name">getServiceOrderRequestDetails_v2</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">postPaymentv3</span>
+                <span class="method-in-group-name">getServiceOrderRequestDetailsbyOptional_v2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">getServiceOrder_v2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">postcreateServiceOrder_v2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">postcreateServiceOrder_v2_3_1</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">postcreateServiceOrder_v2_ERROR</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">putTaskCompleteNocharge_v2_3</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">putTaskComplete_v_2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">putaddMeterReading_v_2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">putaddMiscCharge_v_2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">putswitchMeter_v_2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">putupdatecomment_v_2</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -210,20 +497,60 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'postPaymentv3')
-data.setCell(0, 2, 'Public.PaymentExtensionV3')
-data.setCell(0, 3, 6276);
+data.setCell(0, 1, 'postcreateServiceOrder_v2_3_1')
+data.setCell(0, 2, 'Public.ServiceOrderController')
+data.setCell(0, 3, 7190);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'paymentExtensionv3')
-data.setCell(1, 2, 'Public.PaymentExtensionV3')
-data.setCell(1, 3, 772);
+data.setCell(1, 1, 'postcreateServiceOrder_v2')
+data.setCell(1, 2, 'Public.ServiceOrderController')
+data.setCell(1, 3, 6307);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'getServiceOrder_v2')
+data.setCell(2, 2, 'Public.ServiceOrderController')
+data.setCell(2, 3, 1106);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'postcreateServiceOrder_v2_ERROR')
+data.setCell(3, 2, 'Public.ServiceOrderController')
+data.setCell(3, 3, 998);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'putaddMiscCharge_v_2')
+data.setCell(4, 2, 'Public.ServiceOrderController')
+data.setCell(4, 3, 775);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'putTaskCompleteNocharge_v2_3')
+data.setCell(5, 2, 'Public.ServiceOrderController')
+data.setCell(5, 3, 591);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'getServiceOrderRequestDetailsbyOptional_v2')
+data.setCell(6, 2, 'Public.ServiceOrderController')
+data.setCell(6, 3, 576);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'putupdatecomment_v_2')
+data.setCell(7, 2, 'Public.ServiceOrderController')
+data.setCell(7, 3, 558);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'getServiceOrderRequestDetails_v2')
+data.setCell(8, 2, 'Public.ServiceOrderController')
+data.setCell(8, 3, 549);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'putswitchMeter_v_2')
+data.setCell(9, 2, 'Public.ServiceOrderController')
+data.setCell(9, 3, 543);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'putTaskComplete_v_2')
+data.setCell(10, 2, 'Public.ServiceOrderController')
+data.setCell(10, 3, 534);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'putaddMeterReading_v_2')
+data.setCell(11, 2, 'Public.ServiceOrderController')
+data.setCell(11, 3, 516);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 20 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -249,14 +576,58 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Public.PaymentExtensionV3</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Public.ServiceOrderController</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">postPaymentv3</span>
+                <span class="method-name">postcreateServiceOrder_v2</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">paymentExtensionv3</span>
-                <span class="method-start">6474 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">postcreateServiceOrder_v2_ERROR</span>
+                <span class="method-start">6479 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getServiceOrder_v2</span>
+                <span class="method-start">7496 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getServiceOrderRequestDetails_v2</span>
+                <span class="method-start">8610 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getServiceOrderRequestDetailsbyOptional_v2</span>
+                <span class="method-start">9166 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">putaddMeterReading_v_2</span>
+                <span class="method-start">9748 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">putupdatecomment_v_2</span>
+                <span class="method-start">10277 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">putaddMiscCharge_v_2</span>
+                <span class="method-start">10840 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">putswitchMeter_v_2</span>
+                <span class="method-start">11621 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">putTaskComplete_v_2</span>
+                <span class="method-start">12179 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">putTaskCompleteNocharge_v2_3</span>
+                <span class="method-start">12719 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">postcreateServiceOrder_v2_3_1</span>
+                <span class="method-start">13318 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
