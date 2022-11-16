@@ -507,8 +507,8 @@ public class CommonMethods {
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(jsonDataInFile);
-		//System.out.println(httpRequest.put().prettyPrint());
-		ValidatableResponse response = httpRequest.put().then().assertThat().statusCode(200);
+		System.out.println(httpRequest.toString());
+		ValidatableResponse response = httpRequest.put().then().log().all();
 		return response;
 
 	}

@@ -309,7 +309,7 @@ public class ServiceOrderController {
 
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		postcreateServiceOrder_v2_ERROR();
+		putaddMeterReading_v_2();
 		// putTaskComplete_v_3_4();
 	}
 

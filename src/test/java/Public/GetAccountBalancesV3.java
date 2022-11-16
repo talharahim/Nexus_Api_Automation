@@ -55,6 +55,7 @@ public class GetAccountBalancesV3 {
 	
 	@Test(priority = 4, groups = "Account Balances")
 	public void getAccountBalancesPortalv3Paymentatwork() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		
 		String uri = "/accountBalance/getAccountBalances";
 		String ver = "3.0";
 		String jpath = "./TestData\\accountBalancev3OpenWork.json";
