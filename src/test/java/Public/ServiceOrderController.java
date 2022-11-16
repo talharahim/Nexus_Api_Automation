@@ -138,9 +138,8 @@ public class ServiceOrderController {
 		// ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver,
 		// jpath,fresponse);
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
-		result.assertThat().body(Matchers.containsString("true"));
-		result.assertThat().body(Matchers.containsString("READ"));
-		result.assertThat().body(Matchers.containsString("created"));
+		result.assertThat().body(Matchers.containsString("false"));
+		result.assertThat().body(Matchers.containsString("Error: Meter reading already in work"));
 		// System.out.println(result.extract().asString());
 
 	}
