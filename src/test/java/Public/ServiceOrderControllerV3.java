@@ -139,7 +139,7 @@ public class ServiceOrderControllerV3 {
 
 		String uri = "/serviceOrder/addMeterReading";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\addMeterReading_v2.json";
+		String jpath = "./\\TestData\\addMeterReading_v3.json";
 		// String fresponse = "./\\TestData\\addMeterReadingresp_v2.json";
 		// ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath,fresponse);
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
@@ -231,7 +231,7 @@ public class ServiceOrderControllerV3 {
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		//putaddMeterReading_v_3();
-		putTaskComplete_v_3();
+		putaddMeterReading_v_3();
 		// putTaskComplete_v_3_4();
 	}
 
