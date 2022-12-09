@@ -56,15 +56,33 @@ public class TestAPI {
 		return -1;
 
 	}
-
-	public static void main(String args[]) {
-
-		int calc[] = { 1, 3, 1, 1, 1, 1 };
-		if (retrunIndex(calc) == -1) {
-			System.out.println("There is no index at which the condition sum left == sum right is fulfilled");
-		} else {
-			System.out.println("There is index at " + retrunIndex(calc));
+	
+	@Test(priority = 2, groups = "Deposits")
+	public static void postsmartlistfavorite_v_3()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		JsonPath jsonPathEvaluator;
+		String uri = "/smartlist/favorite";
+		String ver = "3.0";
+		String payload = "./\\TestData\\smartlistaddfav_v3.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("SmartlistFavorite.Success");
+		System.out.println(jsonPathEvaluator.prettyPrint());
+		String info = jsonPathEvaluator.get("SmartlistFavorite.Messages[0].Info");
+		System.out.println(jsonPathEvaluator.prettyPrint());
+		if (Result != true) {
+			Assert.fail();
 		}
+		if(!info.contains("( 2 ) of the ( 2 ) smartlist favorites have been save."))
+		{
+			Assert.fail();
+		}
+		
+
+	}
+
+	public static void main(String args[]) throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		postsmartlistfavorite_v_3();
 
 	}
 
