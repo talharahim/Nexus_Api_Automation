@@ -32,6 +32,7 @@ public class searchControllerV3 {
 	@Test(priority = 2, groups = "Search")
 	public void getAccounts_v_3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
+		Assert.fail("Bug Reported");
 		String uri = "/search/getAccounts";
 		String ver = "3.0";
 
@@ -52,6 +53,8 @@ public class searchControllerV3 {
 	public void getAccountsAdvanced_v_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
+		//bug()
+		Assert.fail("Bug Reported");
 		String uri = "/search/getAccountsAdvanced";
 		String ver = "3.0";
 

@@ -82,7 +82,7 @@ public class TestAPI {
 
 	public static void main(String args[]) throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		postsmartlistfavorite_v_3();
+//		postsmartlistfavorite_v_3();
 
 	}
 
