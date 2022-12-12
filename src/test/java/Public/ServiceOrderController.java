@@ -138,6 +138,18 @@ public class ServiceOrderController {
 		// ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver,
 		// jpath,fresponse);
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
+		ValidatableResponse f = null;
+		try {
+		f = result.body(Matchers.containsString("true"));
+		if (f.equals(false)) {
+			putaddMeterReading_v_2();
+		}
+		}
+		catch (AssertionError e)
+		{
+			
+		}
+		
 		result.assertThat().body(Matchers.containsString("false"));
 		result.assertThat().body(Matchers.containsString("Error: Meter reading already in work"));
 		// System.out.println(result.extract().asString());
@@ -308,9 +320,9 @@ public class ServiceOrderController {
 
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		//putaddMeterReading_v_2();
+		// putaddMeterReading_v_2();
 		// putTaskComplete_v_3_4();
-		postcreateServiceOrder_v2_3_1();
+		putaddMeterReading_v_2();
 	}
 
 }
