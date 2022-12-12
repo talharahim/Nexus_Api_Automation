@@ -14,7 +14,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class SmartlistControllerV3 {
 
-	@Test(priority = 1, groups = "SmartList")
+	//@Test(priority = 1, groups = "SmartList")
 	public void getsmartList_v_3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/smartlist";
