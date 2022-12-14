@@ -139,19 +139,9 @@ public class ServiceOrderController {
 		// jpath,fresponse);
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		ValidatableResponse f = null;
-		try {
-		f = result.body(Matchers.containsString("true"));
-		if (f.equals(false)) {
-			putaddMeterReading_v_2();
-		}
-		}
-		catch (AssertionError e)
-		{
-			
-		}
-		
-		result.assertThat().body(Matchers.containsString("false"));
-		result.assertThat().body(Matchers.containsString("Error: Meter reading already in work"));
+
+		result.assertThat().body(Matchers.containsString("true"));
+		result.assertThat().body(Matchers.containsString("created"));
 		// System.out.println(result.extract().asString());
 
 	}

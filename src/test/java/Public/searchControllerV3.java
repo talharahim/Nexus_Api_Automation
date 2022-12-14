@@ -29,6 +29,7 @@ public class searchControllerV3 {
 	}
 
 	// This will create elastic search index if not already
+	//Depreciated
 	@Test(priority = 2, groups = "Search")
 	public void getAccounts_v_3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
@@ -49,6 +50,7 @@ public class searchControllerV3 {
 
 	// {{urlv2}}/search/getAccountsAdvanced?SearchCustomerName=sally&SearchAccountNumber=&SearchServiceAddress=&SearchPhoneNumber=&SearchEmailAddress=&SortOrder=1&SortDescending=0&ShowAll=0
 	// This will create elastic search index if not already
+	//Depreciated
 	@Test(priority = 3, groups = "Search")
 	public void getAccountsAdvanced_v_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {

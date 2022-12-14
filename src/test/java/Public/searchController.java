@@ -29,10 +29,11 @@ public class searchController {
 	}
 
 	// This will create elastic search index if not already
-	@Test(priority = 1, groups = "Search")
+	//Depreciated
+	//@Test(priority = 1, groups = "Search")
 	public void getAccounts_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		Assert.fail("Bug Reported");
+		Assert.fail("Bug Reported 8700");
 		String uri = "/search/getAccounts";
 		String ver = "2";
 
@@ -49,11 +50,12 @@ public class searchController {
 
 	// {{urlv2}}/search/getAccountsAdvanced?SearchCustomerName=sally&SearchAccountNumber=&SearchServiceAddress=&SearchPhoneNumber=&SearchEmailAddress=&SortOrder=1&SortDescending=0&ShowAll=0
 	// This will create elastic search index if not already
-	@Test(priority = 1, groups = "Search")
+	//Depreciated
+	//@Test(priority = 1, groups = "Search")
 	public void getAccountsAdvanced_v_2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		Assert.fail("Bug Reported");
+		Assert.fail("Bug Reported 8700");
 		String uri = "/search/getAccountsAdvanced";
 		String ver = "2";
 
