@@ -78,7 +78,7 @@ public class customerControllerV3 {
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/customer/getCustomersByLocation";
-		String ver = "2.0";
+		String ver = "2";
 		String jpath = "./\\TestData\\customerbylocationv2.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
