@@ -2,6 +2,7 @@ package com.NexustAPIAutomation.java;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,8 +12,10 @@ import java.sql.ResultSet;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -407,8 +410,9 @@ public class CommonMethods {
 
 		ValidatableResponse response = httpRequest.get().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
+		
+		
 		System.out.println(response.extract().asString());
-
 		return response.extract().asString();
 
 	}

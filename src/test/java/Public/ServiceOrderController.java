@@ -223,6 +223,32 @@ public class ServiceOrderController {
 	}
 
 	@Test(priority = 10, groups = "ServiceOrder")
+	public static void postcreateServiceOrder_v2_3_1_fal()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/serviceOrder";
+		String ver = "2.3.1";
+		String payload = "./\\TestData\\putcreateserviceOrderv2_3_1.json";
+		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
+
+		String ServiceOrderNumber = jsonPathEvaluator.get("ServiceOrder[0].DocumentNumber");
+		System.out.println("Service order created = " + ServiceOrderNumber);
+		if (ServiceOrderNumber != null) {
+			getServiceOrderdetails_v2_4(ServiceOrderNumber);
+			Assert.fail("Service Order null");
+		}
+
+		Thread.sleep(5000);
+		if (ServiceOrderNumber != null) {
+			putTaskComplete_v_2_4(ServiceOrderNumber);
+		} else {
+			Assert.fail("Service Order " + ServiceOrderNumber + "Not found");
+		}
+
+	}
+	
+	
+	@Test(priority = 10, groups = "ServiceOrder")
 	public static void postcreateServiceOrder_v2_3_1()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
@@ -313,7 +339,7 @@ public class ServiceOrderController {
 		// putaddMeterReading_v_2();
 		// putTaskComplete_v_3_4();
 		//putaddMeterReading_v_2();
-		postcreateServiceOrder_v2_3_1();
+		//postcreateServiceOrder_v2_3_1();
 		ServiceOrderControllerV3.postcreateServiceOrder_v3();
 		
 	}
