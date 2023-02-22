@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Nexus Api Test Automation Regression Suit</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>114/13/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>120/7/1</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 22 03:16:57 PST 2023</td>
+<td>Started on:</td><td>Wed Feb 22 06:01:20 PST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>133 seconds (133423 ms)</td>
+<tr><td>Total time:</td><td>197 seconds (197079 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,69 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Public.PaymentExtensionV3.postPaymentv3()'><b>postPaymentv3</b><br>Test class: Public.PaymentExtensionV3</td>
-<td><div><pre>java.lang.AssertionError: null
-	at Public.PaymentExtensionV3.postPaymentv3(PaymentExtensionV3.java:27)
+<td title='Public.customerController_v1.getlocationsByCustomerv_1()'><b>getlocationsByCustomerv_1</b><br>Test class: Public.customerController_v1</td>
+<td><div><pre>java.nio.file.NoSuchFileException: .\TestData\locationsByCustomerv1.json
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230)
+	at java.nio.file.Files.newByteChannel(Files.java:361)
+	at java.nio.file.Files.newByteChannel(Files.java:407)
+	at java.nio.file.Files.readAllBytes(Files.java:3152)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
+	at Public.customerController_v1.getlocationsByCustomerv_1(customerController_v1.java:31)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace971415207", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace971415207'><pre>java.lang.AssertionError: null
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1144499207", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1144499207'><pre>java.nio.file.NoSuchFileException: .\TestData\locationsByCustomerv1.json
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230)
+	at java.nio.file.Files.newByteChannel(Files.java:361)
+	at java.nio.file.Files.newByteChannel(Files.java:407)
+	at java.nio.file.Files.readAllBytes(Files.java:3152)
+	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
+	at Public.customerController_v1.getlocationsByCustomerv_1(customerController_v1.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Public.customerController_v1@5c33f1a9</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.postcreateServiceOrder_v2_3_1()'><b>postcreateServiceOrder_v2_3_1</b><br>Test class: Public.ServiceOrderController</td>
+<td><div><pre>java.lang.AssertionError: Service Order null
+	at Public.ServiceOrderController.postcreateServiceOrder_v2_3_1(ServiceOrderController.java:265)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace572137576", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace572137576'><pre>java.lang.AssertionError: Service Order null
 	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.fail(Assert.java:106)
-	at Public.PaymentExtensionV3.postPaymentv3(PaymentExtensionV3.java:27)
+	at Public.ServiceOrderController.postcreateServiceOrder_v2_3_1(ServiceOrderController.java:265)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -114,571 +168,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Public.PaymentExtensionV3@223191a6</td></tr>
-<tr>
-<td title='Public.ServiceOrderControllerV3.putaddMeterReading_v_3()'><b>putaddMeterReading_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
-<td><div><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: a string containing &quot;true&quot;
-  Actual: {&quot;result&quot;:{&quot;Success&quot;:false,&quot;Message&quot;:&quot;Error: Meter reading already in work&quot;}}
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at Public.ServiceOrderControllerV3.putaddMeterReading_v_3(ServiceOrderControllerV3.java:146)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2041504298", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2041504298'><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: a string containing &quot;true&quot;
-  Actual: {&quot;result&quot;:{&quot;Success&quot;:false,&quot;Message&quot;:&quot;Error: Meter reading already in work&quot;}}
-
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.GeneratedMethodAccessor207.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at sun.reflect.GeneratedMethodAccessor206.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at Public.ServiceOrderControllerV3.putaddMeterReading_v_3(ServiceOrderControllerV3.java:146)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
-<tr>
-<td title='Public.ServiceOrderControllerV3.postcreateServiceOrder_v3()'><b>postcreateServiceOrder_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
-<td><div><pre>java.lang.AssertionError: Service Order not created
-	at Public.ServiceOrderControllerV3.postcreateServiceOrder_v3(ServiceOrderControllerV3.java:37)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace619621481", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace619621481'><pre>java.lang.AssertionError: Service Order not created
-	at org.testng.Assert.fail(Assert.java:99)
-	at Public.ServiceOrderControllerV3.postcreateServiceOrder_v3(ServiceOrderControllerV3.java:37)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.putaddMeterReading_v_2()'><b>putaddMeterReading_v_2</b><br>Test class: Public.ServiceOrderController</td>
-<td><div><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: a string containing &quot;true&quot;
-  Actual: {&quot;result&quot;:{&quot;Success&quot;:false,&quot;Message&quot;:&quot;Error: Meter reading already in work&quot;}}
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at Public.ServiceOrderController.putaddMeterReading_v_2(ServiceOrderController.java:143)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1506217195", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1506217195'><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: a string containing &quot;true&quot;
-  Actual: {&quot;result&quot;:{&quot;Success&quot;:false,&quot;Message&quot;:&quot;Error: Meter reading already in work&quot;}}
-
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.GeneratedMethodAccessor207.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at sun.reflect.GeneratedMethodAccessor206.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at Public.ServiceOrderController.putaddMeterReading_v_2(ServiceOrderController.java:143)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
 <td>Public.ServiceOrderController@1b7cc17c</td></tr>
-<tr>
-<td title='Public.customerController_v2.getLocationsByCustomer_v2()'><b>getLocationsByCustomer_v2</b><br>Test class: Public.customerController_v2</td>
-<td><div><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;result\&quot;:[{\&quot;PageNumber\&quot;:\&quot;1\&quot;,\&quot;TotalPages\&quot;:\&quot;1\&quot;,\&quot;STATUS\&quot;:\&quot;Landlord\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION008\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER009\&quot;,\&quot;CustomerType\&quot;:\&quot;Primary\&quot;,\&quot;CustomerName\&quot;:\&quot;Contour\&quot;,\&quot;Title\&quot;:\&quot;Mr.\&quot;,\&quot;FirstName\&quot;:\&quot;Anthony\&quot;,\&quot;MiddleName\&quot;:\&quot;W\&quot;,\&quot;LastName\&quot;:\&quot;Bendetto\&quot;,\&quot;LocationClass\&quot;:\&quot;\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water st UNIT 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12311\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;AccountBalance\&quot;:\&quot;21.52000\&quot;,\&quot;MasterIncluded\&quot;:\&quot;1\&quot;,\&quot;MoveInDate\&quot;:\&quot;\&quot;,\&quot;MoveOutDate\&quot;:\&quot;\&quot;,\&quot;ZoneID\&quot;:\&quot;2\&quot;,\&quot;RouteID\&quot;:\&quot;ROUTEE001\&quot;,\&quot;CycleID\&quot;:\&quot;TESTCYCLEQUART\&quot;,\&quot;Customer1\&quot;:\&quot;Owner ID: CUSTOMER009 - Contour\&quot;,\&quot;Customer2\&quot;:\&quot;Tenant: CUSTOMER009 - Contour\&quot;,\&quot;Customer3\&quot;:\&quot;\&quot;,\&quot;PrimaryCustomerId\&quot;:\&quot;CUSTOMER009\&quot;},{\&quot;PageNumber\&quot;:\&quot;1\&quot;,\&quot;TotalPages\&quot;:\&quot;1\&quot;,\&quot;STATUS\&quot;:\&quot;Move In\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION008\&quot;,\&quot;CustomerId\&quot;:\&quot;AUTO1001\&quot;,\&quot;CustomerType\&quot;:\&quot;Primary\&quot;,\&quot;CustomerName\&quot;:\&quot;Mr. Auto Former\&quot;,\&quot;Title\&quot;:\&quot;Mr.\&quot;,\&quot;FirstName\&quot;:\&quot;Auto\&quot;,\&quot;MiddleName\&quot;:\&quot;\&quot;,\&quot;LastName\&quot;:\&quot;Former\&quot;,\&quot;LocationClass\&quot;:\&quot;\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water st UNIT 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12311\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;AccountBalance\&quot;:\&quot;0.00000\&quot;,\&quot;MasterIncluded\&quot;:\&quot;0\&quot;,\&quot;MoveInDate\&quot;:\&quot;\&quot;,\&quot;MoveOutDate\&quot;:\&quot;\&quot;,\&quot;ZoneID\&quot;:\&quot;2\&quot;,\&quot;RouteID\&quot;:\&quot;ROUTEE001\&quot;,\&quot;CycleID\&quot;:\&quot;TESTCYCLEQUART\&quot;,\&quot;Customer1\&quot;:\&quot;Owner ID: CUSTOMER009 - Contour\&quot;,\&quot;Customer2\&quot;:\&quot;Tenant: AUTO1001 - Mr. Auto Former\&quot;,\&quot;Customer3\&quot;:\&quot;\&quot;,\&quot;PrimaryCustomerId\&quot;:\&quot;AUTO1001\&quot;}]}&quot;
-  Actual: {&quot;result&quot;:[{&quot;PageNumber&quot;:&quot;1&quot;,&quot;TotalPages&quot;:&quot;1&quot;,&quot;STATUS&quot;:&quot;Move In&quot;,&quot;LocationId&quot;:&quot;LOCATION008&quot;,&quot;CustomerId&quot;:&quot;AUTO1001&quot;,&quot;CustomerType&quot;:&quot;Primary&quot;,&quot;CustomerName&quot;:&quot;Mr. Auto Former&quot;,&quot;Title&quot;:&quot;Mr.&quot;,&quot;FirstName&quot;:&quot;Auto&quot;,&quot;MiddleName&quot;:&quot;&quot;,&quot;LastName&quot;:&quot;Former&quot;,&quot;LocationClass&quot;:&quot;&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water st UNIT 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12311&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;AccountBalance&quot;:0,&quot;MasterIncluded&quot;:&quot;0&quot;,&quot;MoveInDate&quot;:&quot;&quot;,&quot;MoveOutDate&quot;:&quot;&quot;,&quot;ZoneID&quot;:&quot;2&quot;,&quot;RouteID&quot;:&quot;ROUTEE001&quot;,&quot;CycleID&quot;:&quot;TESTCYCLEQUART&quot;,&quot;Customer1&quot;:&quot;Owner ID: CUSTOMER009 - Contour&quot;,&quot;Customer2&quot;:&quot;Tenant: AUTO1001 - Mr. Auto Former&quot;,&quot;Customer3&quot;:&quot;&quot;,&quot;PrimaryCustomerId&quot;:&quot;AUTO1001&quot;}]}
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.customerController_v2.getLocationsByCustomer_v2(customerController_v2.java:120)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace102185114", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace102185114'><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;result\&quot;:[{\&quot;PageNumber\&quot;:\&quot;1\&quot;,\&quot;TotalPages\&quot;:\&quot;1\&quot;,\&quot;STATUS\&quot;:\&quot;Landlord\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION008\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER009\&quot;,\&quot;CustomerType\&quot;:\&quot;Primary\&quot;,\&quot;CustomerName\&quot;:\&quot;Contour\&quot;,\&quot;Title\&quot;:\&quot;Mr.\&quot;,\&quot;FirstName\&quot;:\&quot;Anthony\&quot;,\&quot;MiddleName\&quot;:\&quot;W\&quot;,\&quot;LastName\&quot;:\&quot;Bendetto\&quot;,\&quot;LocationClass\&quot;:\&quot;\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water st UNIT 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12311\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;AccountBalance\&quot;:\&quot;21.52000\&quot;,\&quot;MasterIncluded\&quot;:\&quot;1\&quot;,\&quot;MoveInDate\&quot;:\&quot;\&quot;,\&quot;MoveOutDate\&quot;:\&quot;\&quot;,\&quot;ZoneID\&quot;:\&quot;2\&quot;,\&quot;RouteID\&quot;:\&quot;ROUTEE001\&quot;,\&quot;CycleID\&quot;:\&quot;TESTCYCLEQUART\&quot;,\&quot;Customer1\&quot;:\&quot;Owner ID: CUSTOMER009 - Contour\&quot;,\&quot;Customer2\&quot;:\&quot;Tenant: CUSTOMER009 - Contour\&quot;,\&quot;Customer3\&quot;:\&quot;\&quot;,\&quot;PrimaryCustomerId\&quot;:\&quot;CUSTOMER009\&quot;},{\&quot;PageNumber\&quot;:\&quot;1\&quot;,\&quot;TotalPages\&quot;:\&quot;1\&quot;,\&quot;STATUS\&quot;:\&quot;Move In\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION008\&quot;,\&quot;CustomerId\&quot;:\&quot;AUTO1001\&quot;,\&quot;CustomerType\&quot;:\&quot;Primary\&quot;,\&quot;CustomerName\&quot;:\&quot;Mr. Auto Former\&quot;,\&quot;Title\&quot;:\&quot;Mr.\&quot;,\&quot;FirstName\&quot;:\&quot;Auto\&quot;,\&quot;MiddleName\&quot;:\&quot;\&quot;,\&quot;LastName\&quot;:\&quot;Former\&quot;,\&quot;LocationClass\&quot;:\&quot;\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water st UNIT 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12311\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;AccountBalance\&quot;:\&quot;0.00000\&quot;,\&quot;MasterIncluded\&quot;:\&quot;0\&quot;,\&quot;MoveInDate\&quot;:\&quot;\&quot;,\&quot;MoveOutDate\&quot;:\&quot;\&quot;,\&quot;ZoneID\&quot;:\&quot;2\&quot;,\&quot;RouteID\&quot;:\&quot;ROUTEE001\&quot;,\&quot;CycleID\&quot;:\&quot;TESTCYCLEQUART\&quot;,\&quot;Customer1\&quot;:\&quot;Owner ID: CUSTOMER009 - Contour\&quot;,\&quot;Customer2\&quot;:\&quot;Tenant: AUTO1001 - Mr. Auto Former\&quot;,\&quot;Customer3\&quot;:\&quot;\&quot;,\&quot;PrimaryCustomerId\&quot;:\&quot;AUTO1001\&quot;}]}&quot;
-  Actual: {&quot;result&quot;:[{&quot;PageNumber&quot;:&quot;1&quot;,&quot;TotalPages&quot;:&quot;1&quot;,&quot;STATUS&quot;:&quot;Move In&quot;,&quot;LocationId&quot;:&quot;LOCATION008&quot;,&quot;CustomerId&quot;:&quot;AUTO1001&quot;,&quot;CustomerType&quot;:&quot;Primary&quot;,&quot;CustomerName&quot;:&quot;Mr. Auto Former&quot;,&quot;Title&quot;:&quot;Mr.&quot;,&quot;FirstName&quot;:&quot;Auto&quot;,&quot;MiddleName&quot;:&quot;&quot;,&quot;LastName&quot;:&quot;Former&quot;,&quot;LocationClass&quot;:&quot;&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water st UNIT 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12311&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;AccountBalance&quot;:0,&quot;MasterIncluded&quot;:&quot;0&quot;,&quot;MoveInDate&quot;:&quot;&quot;,&quot;MoveOutDate&quot;:&quot;&quot;,&quot;ZoneID&quot;:&quot;2&quot;,&quot;RouteID&quot;:&quot;ROUTEE001&quot;,&quot;CycleID&quot;:&quot;TESTCYCLEQUART&quot;,&quot;Customer1&quot;:&quot;Owner ID: CUSTOMER009 - Contour&quot;,&quot;Customer2&quot;:&quot;Tenant: AUTO1001 - Mr. Auto Former&quot;,&quot;Customer3&quot;:&quot;&quot;,&quot;PrimaryCustomerId&quot;:&quot;AUTO1001&quot;}]}
-
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.GeneratedMethodAccessor207.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at sun.reflect.GeneratedMethodAccessor206.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.customerController_v2.getLocationsByCustomer_v2(customerController_v2.java:120)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.PaymentExtension.postPaymentv2()'><b>postPaymentv2</b><br>Test class: Public.PaymentExtension</td>
-<td><div><pre>java.lang.AssertionError: null
-	at Public.PaymentExtension.postPaymentv2(PaymentExtension.java:26)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1984317333", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1984317333'><pre>java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.fail(Assert.java:106)
-	at Public.PaymentExtension.postPaymentv2(PaymentExtension.java:26)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Public.PaymentExtension@4ec4f3a0</td></tr>
-<tr>
-<td title='Public.searchControllerV3.getAccounts_v_3()'><b>getAccounts_v_3</b><br>Test class: Public.searchControllerV3</td>
-<td><div><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
-  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.searchControllerV3.getAccounts_v_3(searchControllerV3.java:46)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1681730990", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1681730990'><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
-  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
-
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.GeneratedMethodAccessor207.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at sun.reflect.GeneratedMethodAccessor206.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.searchControllerV3.getAccounts_v_3(searchControllerV3.java:46)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
-<td>Public.searchControllerV3@9597028</td></tr>
-<tr>
-<td title='Public.searchControllerV3.getAccountsAdvanced_v_3()'><b>getAccountsAdvanced_v_3</b><br>Test class: Public.searchControllerV3</td>
-<td><div><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;75.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/04/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;46.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/02/20\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;100.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;1998/01/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
-  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;LastPaymentAmount&quot;:&quot;75.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/04/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;LastPaymentAmount&quot;:&quot;46.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/02/20&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;LastPaymentAmount&quot;:&quot;100.00&quot;,&quot;LastPaymentDate&quot;:&quot;1998/01/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.searchControllerV3.getAccountsAdvanced_v_3(searchControllerV3.java:73)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1261545224", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1261545224'><pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn&apos;t match expectation.
-Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;75.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/04/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;46.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/02/20\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;100.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;1998/01/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
-  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;LastPaymentAmount&quot;:&quot;75.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/04/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;LastPaymentAmount&quot;:&quot;46.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/02/20&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;LastPaymentAmount&quot;:&quot;100.00&quot;,&quot;LastPaymentDate&quot;:&quot;1998/01/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
-
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at sun.reflect.GeneratedMethodAccessor207.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
-	at sun.reflect.GeneratedMethodAccessor206.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
-	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.searchControllerV3.getAccountsAdvanced_v_3(searchControllerV3.java:73)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>1</td>
-<td>Public.searchControllerV3@9597028</td></tr>
 <tr>
 <td title='Public.ServiceOrderController.postcreateServiceOrder_v2_3_1_fal()'><b>postcreateServiceOrder_v2_3_1_fal</b><br>Test class: Public.ServiceOrderController</td>
 <td><div><pre>java.lang.AssertionError: Service Order nullNot found
 	at Public.ServiceOrderController.postcreateServiceOrder_v2_3_1_fal(ServiceOrderController.java:245)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1589640004", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1589640004'><pre>java.lang.AssertionError: Service Order nullNot found
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace765551203", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace765551203'><pre>java.lang.AssertionError: Service Order nullNot found
 	at org.testng.Assert.fail(Assert.java:99)
 	at Public.ServiceOrderController.postcreateServiceOrder_v2_3_1_fal(ServiceOrderController.java:245)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -741,8 +238,8 @@ Expected: &quot;{\&quot;LocationsByCustomer\&quot;:[{\&quot;PageNumber\&quot;:1,
 	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
 	at Public.customerControllerV3.getLocationsByCustomer_v3(customerControllerV3.java:157)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1798636297", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1798636297'><pre>java.lang.AssertionError: 1 expectation failed.
+... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1242969461", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1242969461'><pre>java.lang.AssertionError: 1 expectation failed.
 Response body doesn&apos;t match expectation.
 Expected: &quot;{\&quot;LocationsByCustomer\&quot;:[{\&quot;PageNumber\&quot;:1,\&quot;TotalPages\&quot;:1,\&quot;Customer\&quot;:[{\&quot;Id\&quot;:\&quot;CUSTOMER009\&quot;,\&quot;Type\&quot;:\&quot;Primary\&quot;,\&quot;Name\&quot;:\&quot;Contour\&quot;,\&quot;Title\&quot;:\&quot;Mr.\&quot;,\&quot;FirstName\&quot;:\&quot;Anthony\&quot;,\&quot;MiddleName\&quot;:\&quot;W\&quot;,\&quot;LastName\&quot;:\&quot;Bendetto\&quot;}],\&quot;Location\&quot;:[{\&quot;Id\&quot;:\&quot;LOCATION008\&quot;,\&quot;STATUS\&quot;:\&quot;Current\&quot;,\&quot;Class\&quot;:\&quot;\&quot;,\&quot;ServiceAddress\&quot;:[{\&quot;Line1\&quot;:\&quot;4 Water st UNIT 145\&quot;,\&quot;City\&quot;:\&quot;NEW YORK\&quot;,\&quot;State\&quot;:\&quot;NY\&quot;,\&quot;ZipCode\&quot;:\&quot;12311\&quot;,\&quot;Country\&quot;:\&quot;USA\&quot;}],\&quot;PrimaryCustomerId\&quot;:\&quot;CUSTOMER009\&quot;,\&quot;FinanciallyResponsible\&quot;:true,\&quot;AccountBalance\&quot;:21.52,\&quot;MasterIncluded\&quot;:\&quot;1\&quot;,\&quot;MoveInDate\&quot;:\&quot;\&quot;,\&quot;MoveOutDate\&quot;:\&quot;\&quot;,\&quot;ZoneId\&quot;:\&quot;2\&quot;,\&quot;RouteId\&quot;:\&quot;ROUTEE001\&quot;,\&quot;CycleId\&quot;:\&quot;TESTCYCLEQUART\&quot;,\&quot;RelatedCustomers\&quot;:[{\&quot;Label\&quot;:\&quot;Owner ID                      \&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER009\&quot;,\&quot;CustomerName\&quot;:\&quot;Contour\&quot;},{\&quot;Label\&quot;:\&quot;Tenant                        \&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER009\&quot;,\&quot;CustomerName\&quot;:\&quot;Contour\&quot;},{\&quot;Label\&quot;:\&quot;Landlord                      \&quot;,\&quot;CustomerId\&quot;:\&quot;\&quot;,\&quot;CustomerName\&quot;:\&quot;\&quot;}]}]}]}&quot;
   Actual: {&quot;LocationsByCustomer&quot;:[{&quot;PageNumber&quot;:1,&quot;TotalPages&quot;:1,&quot;Customer&quot;:[{&quot;Id&quot;:&quot;CUSTOMER009&quot;,&quot;Type&quot;:&quot;Primary&quot;,&quot;Name&quot;:&quot;Contour&quot;,&quot;Title&quot;:&quot;Mr.&quot;,&quot;FirstName&quot;:&quot;Anthony&quot;,&quot;MiddleName&quot;:&quot;W&quot;,&quot;LastName&quot;:&quot;Bendetto&quot;}],&quot;Location&quot;:[{&quot;Id&quot;:&quot;LOCATION008&quot;,&quot;STATUS&quot;:&quot;Current&quot;,&quot;Class&quot;:&quot;&quot;,&quot;ServiceAddress&quot;:[{&quot;Line1&quot;:&quot;4 Water st UNIT 145&quot;,&quot;City&quot;:&quot;NEW YORK&quot;,&quot;State&quot;:&quot;NY&quot;,&quot;ZipCode&quot;:&quot;12311&quot;,&quot;Country&quot;:&quot;USA&quot;}],&quot;PrimaryCustomerId&quot;:&quot;CUSTOMER009&quot;,&quot;FinanciallyResponsible&quot;:true,&quot;AccountBalance&quot;:0,&quot;MasterIncluded&quot;:&quot;1&quot;,&quot;MoveInDate&quot;:&quot;&quot;,&quot;MoveOutDate&quot;:&quot;&quot;,&quot;ZoneId&quot;:&quot;2&quot;,&quot;RouteId&quot;:&quot;ROUTEE001&quot;,&quot;CycleId&quot;:&quot;TESTCYCLEQUART&quot;,&quot;RelatedCustomers&quot;:[{&quot;Label&quot;:&quot;Owner ID                      &quot;,&quot;CustomerId&quot;:&quot;CUSTOMER009&quot;,&quot;CustomerName&quot;:&quot;Contour&quot;},{&quot;Label&quot;:&quot;Tenant                        &quot;,&quot;CustomerId&quot;:&quot;CUSTOMER009&quot;,&quot;CustomerName&quot;:&quot;Contour&quot;},{&quot;Label&quot;:&quot;Landlord                      &quot;,&quot;CustomerId&quot;:&quot;&quot;,&quot;CustomerName&quot;:&quot;&quot;}]}]}]}
@@ -813,14 +310,14 @@ Expected: &quot;{\&quot;LocationsByCustomer\&quot;:[{\&quot;PageNumber\&quot;:1,
 <td>0</td>
 <td>Public.customerControllerV3@7f0eb4b4</td></tr>
 <tr>
-<td title='Public.ServiceOrderController.postcreateServiceOrder_v2_3_1()'><b>postcreateServiceOrder_v2_3_1</b><br>Test class: Public.ServiceOrderController</td>
-<td><div><pre>java.lang.AssertionError: Service Order null
-	at Public.ServiceOrderController.postcreateServiceOrder_v2_3_1(ServiceOrderController.java:265)
+<td title='Public.ServiceOrderControllerV3.postcreateServiceOrder_v3()'><b>postcreateServiceOrder_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td><div><pre>java.lang.AssertionError: Service Order not created
+	at Public.ServiceOrderControllerV3.postcreateServiceOrder_v3(ServiceOrderControllerV3.java:37)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2143559864", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2143559864'><pre>java.lang.AssertionError: Service Order null
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1787913218", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1787913218'><pre>java.lang.AssertionError: Service Order not created
 	at org.testng.Assert.fail(Assert.java:99)
-	at Public.ServiceOrderController.postcreateServiceOrder_v2_3_1(ServiceOrderController.java:265)
+	at Public.ServiceOrderControllerV3.postcreateServiceOrder_v3(ServiceOrderControllerV3.java:37)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -851,13 +348,13 @@ Expected: &quot;{\&quot;LocationsByCustomer\&quot;:[{\&quot;PageNumber\&quot;:1,
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
 <tr>
-<td title='Public.GetAccountBalancesV3.getAccountBalancesPortalv3Paymentatwork()'><b>getAccountBalancesPortalv3Paymentatwork</b><br>Test class: Public.GetAccountBalancesV3</td>
+<td title='Public.searchControllerV3.getAccountsAdvanced_v_3()'><b>getAccountsAdvanced_v_3</b><br>Test class: Public.searchControllerV3</td>
 <td><div><pre>java.lang.AssertionError: 1 expectation failed.
 Response body doesn&apos;t match expectation.
-Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance\&quot;:\&quot;350.71\&quot;,\&quot;UnpostedBalance\&quot;:\&quot;-272.97\&quot;,\&quot;AmountDue\&quot;:\&quot;77.74\&quot;,\&quot;AccountBalance\&quot;:\&quot;547.41\&quot;,\&quot;OverShort\&quot;:\&quot;469.67\&quot;,\&quot;DepositAmount\&quot;:\&quot;165.00\&quot;,\&quot;DepositOutstandingAmount\&quot;:\&quot;0.00\&quot;,\&quot;InstallmentBudget\&quot;:\&quot;0.00\&quot;,\&quot;InstallmentSPA\&quot;:\&quot;0.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000-04-15\&quot;,\&quot;LastDueDate\&quot;:\&quot;2019-10-05\&quot;}]&quot;
-  Actual: [{&quot;PastDue&quot;:&quot;0.00&quot;,&quot;CurrentBalance&quot;:&quot;350.71&quot;,&quot;UnpostedBalance&quot;:&quot;-454.95&quot;,&quot;AmountDue&quot;:&quot;-104.24&quot;,&quot;AccountBalance&quot;:&quot;365.43&quot;,&quot;OverShort&quot;:&quot;469.67&quot;,&quot;DepositAmount&quot;:&quot;165.00&quot;,&quot;DepositOutstandingAmount&quot;:&quot;0.00&quot;,&quot;InstallmentBudget&quot;:&quot;0.00&quot;,&quot;InstallmentSPA&quot;:&quot;0.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000-04-15&quot;,&quot;LastDueDate&quot;:&quot;2019-10-05&quot;}]
+Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;75.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/04/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;46.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/02/20\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;100.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;1998/01/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
+  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;LastPaymentAmount&quot;:&quot;75.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/04/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;LastPaymentAmount&quot;:&quot;46.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/02/20&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;LastPaymentAmount&quot;:&quot;100.00&quot;,&quot;LastPaymentDate&quot;:&quot;1998/01/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
 
 	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
@@ -877,13 +374,13 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
 	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
 	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.GetAccountBalancesV3.getAccountBalancesPortalv3Paymentatwork(GetAccountBalancesV3.java:66)
+	at Public.searchControllerV3.getAccountsAdvanced_v_3(searchControllerV3.java:73)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace912440831", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace912440831'><pre>java.lang.AssertionError: 1 expectation failed.
+... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1518868172", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1518868172'><pre>java.lang.AssertionError: 1 expectation failed.
 Response body doesn&apos;t match expectation.
-Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance\&quot;:\&quot;350.71\&quot;,\&quot;UnpostedBalance\&quot;:\&quot;-272.97\&quot;,\&quot;AmountDue\&quot;:\&quot;77.74\&quot;,\&quot;AccountBalance\&quot;:\&quot;547.41\&quot;,\&quot;OverShort\&quot;:\&quot;469.67\&quot;,\&quot;DepositAmount\&quot;:\&quot;165.00\&quot;,\&quot;DepositOutstandingAmount\&quot;:\&quot;0.00\&quot;,\&quot;InstallmentBudget\&quot;:\&quot;0.00\&quot;,\&quot;InstallmentSPA\&quot;:\&quot;0.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000-04-15\&quot;,\&quot;LastDueDate\&quot;:\&quot;2019-10-05\&quot;}]&quot;
-  Actual: [{&quot;PastDue&quot;:&quot;0.00&quot;,&quot;CurrentBalance&quot;:&quot;350.71&quot;,&quot;UnpostedBalance&quot;:&quot;-454.95&quot;,&quot;AmountDue&quot;:&quot;-104.24&quot;,&quot;AccountBalance&quot;:&quot;365.43&quot;,&quot;OverShort&quot;:&quot;469.67&quot;,&quot;DepositAmount&quot;:&quot;165.00&quot;,&quot;DepositOutstandingAmount&quot;:&quot;0.00&quot;,&quot;InstallmentBudget&quot;:&quot;0.00&quot;,&quot;InstallmentSPA&quot;:&quot;0.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000-04-15&quot;,&quot;LastDueDate&quot;:&quot;2019-10-05&quot;}]
+Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;75.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/04/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;46.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;2000/02/20\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;LastPaymentAmount\&quot;:\&quot;100.00\&quot;,\&quot;LastPaymentDate\&quot;:\&quot;1998/01/15\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
+  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;LastPaymentAmount&quot;:&quot;75.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/04/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;LastPaymentAmount&quot;:&quot;46.00&quot;,&quot;LastPaymentDate&quot;:&quot;2000/02/20&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;LastPaymentAmount&quot;:&quot;100.00&quot;,&quot;LastPaymentDate&quot;:&quot;1998/01/15&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
 
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -916,7 +413,7 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
 	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
 	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.GetAccountBalancesV3.getAccountBalancesPortalv3Paymentatwork(GetAccountBalancesV3.java:66)
+	at Public.searchControllerV3.getAccountsAdvanced_v_3(searchControllerV3.java:73)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -946,32 +443,73 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>Public.GetAccountBalancesV3@4550bb58</td></tr>
+<td>1</td>
+<td>Public.searchControllerV3@9597028</td></tr>
 <tr>
-<td title='Public.customerController_v1.getlocationsByCustomerv_1()'><b>getlocationsByCustomerv_1</b><br>Test class: Public.customerController_v1</td>
-<td><div><pre>java.nio.file.NoSuchFileException: .\TestData\locationsByCustomerv1.json
-	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
-	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
-	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
-	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230)
-	at java.nio.file.Files.newByteChannel(Files.java:361)
-	at java.nio.file.Files.newByteChannel(Files.java:407)
-	at java.nio.file.Files.readAllBytes(Files.java:3152)
+<td title='Public.searchControllerV3.getAccounts_v_3()'><b>getAccounts_v_3</b><br>Test class: Public.searchControllerV3</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
+  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
 	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.customerController_v1.getlocationsByCustomerv_1(customerController_v1.java:31)
+	at Public.searchControllerV3.getAccounts_v_3(searchControllerV3.java:46)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1966787205", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1966787205'><pre>java.nio.file.NoSuchFileException: .\TestData\locationsByCustomerv1.json
-	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
-	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
-	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
-	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230)
-	at java.nio.file.Files.newByteChannel(Files.java:361)
-	at java.nio.file.Files.newByteChannel(Files.java:407)
-	at java.nio.file.Files.readAllBytes(Files.java:3152)
+... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace403094604", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace403094604'><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: &quot;{\&quot;result\&quot;:[{\&quot;AccountNumber\&quot;:\&quot;ELECWAT001-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;ELECWAT001\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;12 A GRAFTON n 4\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12123\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;77.74\&quot;,\&quot;DueDate\&quot;:\&quot;2019/10/05\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;LOCATION006-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;LOCATION006\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Current\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;4 Water 145\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;12121\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;48.30\&quot;,\&quot;DueDate\&quot;:\&quot;2000/05/01\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;},{\&quot;AccountNumber\&quot;:\&quot;WATER002-CUSTOMER007\&quot;,\&quot;CustomerId\&quot;:\&quot;CUSTOMER007\&quot;,\&quot;LocationId\&quot;:\&quot;WATER002\&quot;,\&quot;CustomerName\&quot;:\&quot;MacKenzie, Sally E\&quot;,\&quot;CustomerStatus\&quot;:\&quot;Former\&quot;,\&quot;CustomerType\&quot;:\&quot;Individual\&quot;,\&quot;ServiceAddress.Line1\&quot;:\&quot;100 Water\&quot;,\&quot;ServiceAddress.City\&quot;:\&quot;NEW YORK\&quot;,\&quot;ServiceAddress.State\&quot;:\&quot;NY\&quot;,\&quot;ServiceAddress.ZipCode\&quot;:\&quot;32541\&quot;,\&quot;ServiceAddress.Country\&quot;:\&quot;USA\&quot;,\&quot;EmailAddress\&quot;:\&quot;\&quot;,\&quot;PhoneNumber\&quot;:\&quot;90289481380000\&quot;,\&quot;AccountBalance\&quot;:\&quot;368.77\&quot;,\&quot;DueDate\&quot;:\&quot;1997/08/14\&quot;,\&quot;PrimaryCustomerID\&quot;:\&quot;CUSTOMER007\&quot;}]}&quot;
+  Actual: {&quot;result&quot;:[{&quot;AccountNumber&quot;:&quot;ELECWAT001-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;ELECWAT001&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;12 A GRAFTON n 4&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12123&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;-104.24&quot;,&quot;DueDate&quot;:&quot;2019/10/05&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;LOCATION006-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;LOCATION006&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Current&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;4 Water 145&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;12121&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;48.30&quot;,&quot;DueDate&quot;:&quot;2000/05/01&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;},{&quot;AccountNumber&quot;:&quot;WATER002-CUSTOMER007&quot;,&quot;CustomerId&quot;:&quot;CUSTOMER007&quot;,&quot;LocationId&quot;:&quot;WATER002&quot;,&quot;CustomerName&quot;:&quot;MacKenzie, Sally E&quot;,&quot;CustomerStatus&quot;:&quot;Former&quot;,&quot;CustomerType&quot;:&quot;Individual&quot;,&quot;ServiceAddress.Line1&quot;:&quot;100 Water&quot;,&quot;ServiceAddress.City&quot;:&quot;NEW YORK&quot;,&quot;ServiceAddress.State&quot;:&quot;NY&quot;,&quot;ServiceAddress.ZipCode&quot;:&quot;32541&quot;,&quot;ServiceAddress.Country&quot;:&quot;USA&quot;,&quot;EmailAddress&quot;:&quot;&quot;,&quot;PhoneNumber&quot;:&quot;90289481380000&quot;,&quot;AccountBalance&quot;:&quot;368.77&quot;,&quot;DueDate&quot;:&quot;1997/08/14&quot;,&quot;PrimaryCustomerID&quot;:&quot;CUSTOMER007&quot;}]}
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.GeneratedMethodAccessor207.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:98)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.GeneratedMethodAccessor206.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:293)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
 	at com.NexustAPIAutomation.java.CommonMethods.getMethod(CommonMethods.java:412)
-	at Public.customerController_v1.getlocationsByCustomerv_1(customerController_v1.java:31)
+	at Public.searchControllerV3.getAccounts_v_3(searchControllerV3.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1001,8 +539,8 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>Public.customerController_v1@5c33f1a9</td></tr>
+<td>2</td>
+<td>Public.searchControllerV3@9597028</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -1014,8 +552,18 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 <tr>
 <td title='Public.createandcancelSpa.recancelSPA_v_2()'><b>recancelSPA_v_2</b><br>Test class: Public.createandcancelSpa</td>
 <td></td>
-<td>1</td>
+<td>3</td>
 <td>Public.createandcancelSpa@57a3af25</td></tr>
+<tr>
+<td title='Public.customerControllerV3.putcustomerscollectionsOptionsv2()'><b>putcustomerscollectionsOptionsv2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>1</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.PaymentExtension.paymentExtensionv2()'><b>paymentExtensionv2</b><br>Test class: Public.PaymentExtension</td>
+<td></td>
+<td>1</td>
+<td>Public.PaymentExtension@4ec4f3a0</td></tr>
 <tr>
 <td title='Public.CashieringPostV3.TC001_saveReciept()'><b>TC001_saveReciept</b><br>Test class: Public.CashieringPostV3</td>
 <td></td>
@@ -1027,149 +575,219 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 <td>0</td>
 <td>Public.CashieringPostV3@158d2680</td></tr>
 <tr>
-<td title='Public.customerControllerV3.getCustomerDetail_v3()'><b>getCustomerDetail_v3</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
-<td>1</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.customerController_v2.putcustomerbillingoptionv2()'><b>putcustomerbillingoptionv2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.ServiceOrderControllerV3.getServiceOrderRequestDetails_v3()'><b>getServiceOrderRequestDetails_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
 <td></td>
 <td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
 <tr>
 <td title='Public.customerControllerV3.getCollectionsoptions_v2()'><b>getCollectionsoptions_v2</b><br>Test class: Public.customerControllerV3</td>
 <td></td>
 <td>0</td>
 <td>Public.customerControllerV3@7f0eb4b4</td></tr>
 <tr>
-<td title='Public.searchController.getCustomer_v2()'><b>getCustomer_v2</b><br>Test class: Public.searchController</td>
+<td title='Public.TestAPI.postsmartlistfavorite_v_3()'><b>postsmartlistfavorite_v_3</b><br>Test class: Public.TestAPI</td>
 <td></td>
 <td>0</td>
-<td>Public.searchController@49139829</td></tr>
-<tr>
-<td title='Public.CashieringPost.TC002_RecieptAdjustment()'><b>TC002_RecieptAdjustment</b><br>Test class: Public.CashieringPost</td>
-<td></td>
-<td>0</td>
-<td>Public.CashieringPost@131774fe</td></tr>
-<tr>
-<td title='Public.customerControllerV3.putcustomerscollectionsOptionsv2()'><b>putcustomerscollectionsOptionsv2</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.customerController_v2.getCustomerDetail_v2()'><b>getCustomerDetail_v2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.CashieringGet.TC003_getnextReceipt()'><b>TC003_getnextReceipt</b><br>Test class: Public.CashieringGet</td>
-<td></td>
-<td>0</td>
-<td>Public.CashieringGet@3febb011</td></tr>
-<tr>
-<td title='Public.CashieringGetV3.TC007_getAutoApply()'><b>TC007_getAutoApply</b><br>Test class: Public.CashieringGetV3</td>
-<td></td>
-<td>1</td>
-<td>Public.CashieringGetV3@10e31a9a</td></tr>
-<tr>
-<td title='Public.customerController_v2.getnextCustomerId_v2()'><b>getnextCustomerId_v2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.customerController_v2.getCustomerbylocation_v_2()'><b>getCustomerbylocation_v_2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.customerControllerV3.putcustomersotherOptionsv2()'><b>putcustomersotherOptionsv2</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.GetAccountBalancesV3.getAccountBalancesPortalv3()'><b>getAccountBalancesPortalv3</b><br>Test class: Public.GetAccountBalancesV3</td>
-<td></td>
-<td>1</td>
-<td>Public.GetAccountBalancesV3@4550bb58</td></tr>
-<tr>
-<td title='Public.consumptionHistoryController.getconsumptionHistoryController()'><b>getconsumptionHistoryController</b><br>Test class: Public.consumptionHistoryController</td>
-<td></td>
-<td>2</td>
-<td>Public.consumptionHistoryController@77847718</td></tr>
-<tr>
-<td title='Public.customerControllerV3.getpreauthorizepaymentplan_v2()'><b>getpreauthorizepaymentplan_v2</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.postcreateServiceOrder_v2()'><b>postcreateServiceOrder_v2</b><br>Test class: Public.ServiceOrderController</td>
-<td></td>
-<td>1</td>
-<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<td>Public.TestAPI@1a482e36</td></tr>
 <tr>
 <td title='Public.customerController_v2.getinfolabels_v2()'><b>getinfolabels_v2</b><br>Test class: Public.customerController_v2</td>
 <td></td>
 <td>0</td>
 <td>Public.customerController_v2@1623b78d</td></tr>
 <tr>
-<td title='Public.consumptionHistoryControllerV3.getconsumptionHistoryController()'><b>getconsumptionHistoryController</b><br>Test class: Public.consumptionHistoryControllerV3</td>
+<td title='Public.ServiceOrderController.getServiceOrderRequestDetailsbyOptional_v2()'><b>getServiceOrderRequestDetailsbyOptional_v2</b><br>Test class: Public.ServiceOrderController</td>
 <td></td>
-<td>1</td>
-<td>Public.consumptionHistoryControllerV3@7f3b84b8</td></tr>
-<tr>
-<td title='Public.ServiceOrderControllerV3.getServiceOrderRequestDetailsbyOptional_v3()'><b>getServiceOrderRequestDetailsbyOptional_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
-<tr>
-<td title='Public.spaControllerV3.getheaderInfo_v_3()'><b>getheaderInfo_v_3</b><br>Test class: Public.spaControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.spaControllerV3@67c27493</td></tr>
-<tr>
-<td title='Public.spaControllerV3.getspadocuments_v_3()'><b>getspadocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.spaControllerV3@67c27493</td></tr>
-<tr>
-<td title='Public.spaControllerV3.putcalculatedocuments_v_3()'><b>putcalculatedocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.spaControllerV3@67c27493</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.getServiceOrderRequestDetails_v2()'><b>getServiceOrderRequestDetails_v2</b><br>Test class: Public.ServiceOrderController</td>
-<td></td>
-<td>0</td>
+<td>2</td>
 <td>Public.ServiceOrderController@1b7cc17c</td></tr>
 <tr>
-<td title='Public.customerControllerV3.getCustomerBillingOptions_v2()'><b>getCustomerBillingOptions_v2</b><br>Test class: Public.customerControllerV3</td>
+<td title='Public.customerController_v2.getCustomerDetail_v2()'><b>getCustomerDetail_v2</b><br>Test class: Public.customerController_v2</td>
 <td></td>
 <td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.createandcancelSpa.cancelSPA_v_2()'><b>cancelSPA_v_2</b><br>Test class: Public.createandcancelSpa</td>
-<td></td>
-<td>0</td>
-<td>Public.createandcancelSpa@57a3af25</td></tr>
-<tr>
-<td title='Public.createandcancelSpaV3.createSPA_v_2()'><b>createSPA_v_2</b><br>Test class: Public.createandcancelSpaV3</td>
-<td></td>
-<td>0</td>
-<td>Public.createandcancelSpaV3@2b662a77</td></tr>
+<td>Public.customerController_v2@1623b78d</td></tr>
 <tr>
 <td title='Public.customerControllerV3.getinfolabels_v2()'><b>getinfolabels_v2</b><br>Test class: Public.customerControllerV3</td>
 <td></td>
 <td>0</td>
 <td>Public.customerControllerV3@7f0eb4b4</td></tr>
 <tr>
-<td title='Public.customerController_v2.putcustomersrolldownAddressCodev2()'><b>putcustomersrolldownAddressCodev2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.customerControllerV3.putcustomerbillingoptionv2()'><b>putcustomerbillingoptionv2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>1</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.GetAccountBalances.getAccountBalancesV2()'><b>getAccountBalancesV2</b><br>Test class: Public.GetAccountBalances</td>
+<td></td>
+<td>8</td>
+<td>Public.GetAccountBalances@6adbc9d</td></tr>
+<tr>
+<td title='Public.customerController_v2.getCustomerbylocation_v_2()'><b>getCustomerbylocation_v_2</b><br>Test class: Public.customerController_v2</td>
 <td></td>
 <td>0</td>
 <td>Public.customerController_v2@1623b78d</td></tr>
 <tr>
-<td title='Public.CashieringGet.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGet</td>
+<td title='Public.customerController_v2.getCollectionsoptions_v2()'><b>getCollectionsoptions_v2</b><br>Test class: Public.customerController_v2</td>
 <td></td>
 <td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.customerController_v2.getLocationsByCustomer_v2()'><b>getLocationsByCustomer_v2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.CashieringGet.TC003_getnextReceipt()'><b>TC003_getnextReceipt</b><br>Test class: Public.CashieringGet</td>
+<td></td>
+<td>1</td>
+<td>Public.CashieringGet@3febb011</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.postcreateServiceOrder_v2()'><b>postcreateServiceOrder_v2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>4</td>
+<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getpreauthorizepaymentplan_v2()'><b>getpreauthorizepaymentplan_v2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>1</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.CashieringGetV3.TC007_getAutoApply()'><b>TC007_getAutoApply</b><br>Test class: Public.CashieringGetV3</td>
+<td></td>
+<td>1</td>
+<td>Public.CashieringGetV3@10e31a9a</td></tr>
+<tr>
+<td title='Public.customerController_v2.getOtheroptions_v2()'><b>getOtheroptions_v2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.customerController_v2.getpreauthorizepaymentplan_v2()'><b>getpreauthorizepaymentplan_v2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.PaymentExtensionV3.paymentExtensionv3()'><b>paymentExtensionv3</b><br>Test class: Public.PaymentExtensionV3</td>
+<td></td>
+<td>0</td>
+<td>Public.PaymentExtensionV3@223191a6</td></tr>
+<tr>
+<td title='Public.customerController_v2.putcustomersaddressv2()'><b>putcustomersaddressv2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>1</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.spaControllerV3.putcalculatedocuments_v_3()'><b>putcalculatedocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@67c27493</td></tr>
+<tr>
+<td title='Public.consumptionHistoryController.getconsumptionHistoryController()'><b>getconsumptionHistoryController</b><br>Test class: Public.consumptionHistoryController</td>
+<td></td>
+<td>3</td>
+<td>Public.consumptionHistoryController@77847718</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.getServiceOrder_v2()'><b>getServiceOrder_v2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<tr>
+<td title='Public.TestAPI.getdepositpaymentPlan_v_3()'><b>getdepositpaymentPlan_v_3</b><br>Test class: Public.TestAPI</td>
+<td></td>
+<td>0</td>
+<td>Public.TestAPI@1a482e36</td></tr>
+<tr>
+<td title='Public.consumptionHistoryControllerV3.getconsumptionHistoryController()'><b>getconsumptionHistoryController</b><br>Test class: Public.consumptionHistoryControllerV3</td>
+<td></td>
+<td>2</td>
+<td>Public.consumptionHistoryControllerV3@7f3b84b8</td></tr>
+<tr>
+<td title='Public.PaymentExtension.postPaymentv2()'><b>postPaymentv2</b><br>Test class: Public.PaymentExtension</td>
+<td></td>
+<td>5</td>
+<td>Public.PaymentExtension@4ec4f3a0</td></tr>
+<tr>
+<td title='Public.spaController.getspaAccountBalances_v_2()'><b>getspaAccountBalances_v_2</b><br>Test class: Public.spaController</td>
+<td></td>
+<td>0</td>
+<td>Public.spaController@77fbd92c</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.putswitchMeter_v_2()'><b>putswitchMeter_v_2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>2</td>
+<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<tr>
+<td title='Public.customerController_v2.putcustomerscollectionsOptionsv2()'><b>putcustomerscollectionsOptionsv2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.ServiceOrderControllerV3.getServiceOrderRequestDetailsbyOptional_v3()'><b>getServiceOrderRequestDetailsbyOptional_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getnextCustomerId_v2()'><b>getnextCustomerId_v2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.spaController.getspadetails_v_2()'><b>getspadetails_v_2</b><br>Test class: Public.spaController</td>
+<td></td>
+<td>0</td>
+<td>Public.spaController@77fbd92c</td></tr>
+<tr>
+<td title='Public.GetAccountBalancesV3.getAccountBalancesPortalv3Paymentatwork()'><b>getAccountBalancesPortalv3Paymentatwork</b><br>Test class: Public.GetAccountBalancesV3</td>
+<td></td>
+<td>0</td>
+<td>Public.GetAccountBalancesV3@4550bb58</td></tr>
+<tr>
+<td title='Public.ServiceOrderControllerV3.putTaskComplete_v_3()'><b>putTaskComplete_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getCustomerBillingOptions_v2()'><b>getCustomerBillingOptions_v2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.spaController.putcalculatedocuments_v_2()'><b>putcalculatedocuments_v_2</b><br>Test class: Public.spaController</td>
+<td></td>
+<td>0</td>
+<td>Public.spaController@77fbd92c</td></tr>
+<tr>
+<td title='Public.createandcancelSpa.cancelSPA_v_2()'><b>cancelSPA_v_2</b><br>Test class: Public.createandcancelSpa</td>
+<td></td>
+<td>0</td>
+<td>Public.createandcancelSpa@57a3af25</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getlocationsByCustomerv_2_4_ExcludeFormer()'><b>getlocationsByCustomerv_2_4_ExcludeFormer</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.createandcancelSpaV3.createSPA_v_2()'><b>createSPA_v_2</b><br>Test class: Public.createandcancelSpaV3</td>
+<td></td>
+<td>0</td>
+<td>Public.createandcancelSpaV3@2b662a77</td></tr>
+<tr>
+<td title='Public.PaymentExtension.postPaymentv2_2()'><b>postPaymentv2_2</b><br>Test class: Public.PaymentExtension</td>
+<td></td>
+<td>0</td>
+<td>Public.PaymentExtension@4ec4f3a0</td></tr>
+<tr>
+<td title='Public.ServiceOrderControllerV3.putaddMiscCharge_v_3()'><b>putaddMiscCharge_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
+<tr>
+<td title='Public.spaControllerV3.getoutstandingDocuments_v_3()'><b>getoutstandingDocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@67c27493</td></tr>
+<tr>
+<td title='Public.CashieringGet.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGet</td>
+<td></td>
+<td>1</td>
 <td>Public.CashieringGet@3febb011</td></tr>
 <tr>
 <td title='Public.CashieringGet.TC003_1_getCashin()'><b>TC003_1_getCashin</b><br>Test class: Public.CashieringGet</td>
@@ -1177,79 +795,64 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 <td>0</td>
 <td>Public.CashieringGet@3febb011</td></tr>
 <tr>
+<td title='Public.spaControllerV3.getspadocuments_v_3()'><b>getspadocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@67c27493</td></tr>
+<tr>
 <td title='Public.createandcancelSpaV3.putspaCalculate_v_2()'><b>putspaCalculate_v_2</b><br>Test class: Public.createandcancelSpaV3</td>
 <td></td>
 <td>0</td>
 <td>Public.createandcancelSpaV3@2b662a77</td></tr>
+<tr>
+<td title='Public.spaController.getheaderInfo_v_2()'><b>getheaderInfo_v_2</b><br>Test class: Public.spaController</td>
+<td></td>
+<td>0</td>
+<td>Public.spaController@77fbd92c</td></tr>
+<tr>
+<td title='Public.searchControllerV3.getCustomer_v3()'><b>getCustomer_v3</b><br>Test class: Public.searchControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.searchControllerV3@9597028</td></tr>
+<tr>
+<td title='Public.CashieringGet.TC004_balances()'><b>TC004_balances</b><br>Test class: Public.CashieringGet</td>
+<td></td>
+<td>2</td>
+<td>Public.CashieringGet@3febb011</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getlocationsByCustomerv_2_4()'><b>getlocationsByCustomerv_2_4</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>1</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.customerController_v2.putcustomersrolldownAddressCodev2()'><b>putcustomersrolldownAddressCodev2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.ServiceOrderControllerV3.putupdatecomment_v_3()'><b>putupdatecomment_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
 <tr>
 <td title='Public.customerControllerV3.getOtheroptions_v2()'><b>getOtheroptions_v2</b><br>Test class: Public.customerControllerV3</td>
 <td></td>
 <td>0</td>
 <td>Public.customerControllerV3@7f0eb4b4</td></tr>
 <tr>
-<td title='Public.customerControllerV3.getnextCustomerId_v2()'><b>getnextCustomerId_v2</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.GetAccountBalances.getAccountBalancesV2()'><b>getAccountBalancesV2</b><br>Test class: Public.GetAccountBalances</td>
-<td></td>
-<td>3</td>
-<td>Public.GetAccountBalances@6adbc9d</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.putTaskComplete_v_2()'><b>putTaskComplete_v_2</b><br>Test class: Public.ServiceOrderController</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderController@1b7cc17c</td></tr>
-<tr>
-<td title='Public.PaymentExtensionV3.paymentExtensionv3()'><b>paymentExtensionv3</b><br>Test class: Public.PaymentExtensionV3</td>
-<td></td>
-<td>0</td>
-<td>Public.PaymentExtensionV3@223191a6</td></tr>
-<tr>
-<td title='Public.spaControllerV3.getoutstandingDocuments_v_3()'><b>getoutstandingDocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.spaControllerV3@67c27493</td></tr>
-<tr>
-<td title='Public.CashieringGet.TC004_balances()'><b>TC004_balances</b><br>Test class: Public.CashieringGet</td>
-<td></td>
-<td>1</td>
-<td>Public.CashieringGet@3febb011</td></tr>
-<tr>
-<td title='Public.ServiceOrderControllerV3.putswitchMeter_v_3()'><b>putswitchMeter_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
-<tr>
-<td title='Public.customerControllerV3.getlocationsByCustomerv_2_4_ExcludeFormer()'><b>getlocationsByCustomerv_2_4_ExcludeFormer</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.searchControllerV3.elascticsearchcreateindex_v_3()'><b>elascticsearchcreateindex_v_3</b><br>Test class: Public.searchControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.searchControllerV3@9597028</td></tr>
-<tr>
-<td title='Public.customerController_v2.putcustomerscollectionsOptionsv2()'><b>putcustomerscollectionsOptionsv2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.spaController.getcalculatedocuments_v_2()'><b>getcalculatedocuments_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@77fbd92c</td></tr>
-<tr>
 <td title='Public.customerControllerV3.getCustomerDetail_v_2()'><b>getCustomerDetail_v_2</b><br>Test class: Public.customerControllerV3</td>
 <td></td>
-<td>0</td>
+<td>3</td>
 <td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.ServiceLocationv2.getServicesByLocation_v_2()'><b>getServicesByLocation_v_2</b><br>Test class: Public.ServiceLocationv2</td>
+<td></td>
+<td>1</td>
+<td>Public.ServiceLocationv2@6069db50</td></tr>
 <tr>
 <td title='Public.createandcancelSpa.putspaCalculate_v_2()'><b>putspaCalculate_v_2</b><br>Test class: Public.createandcancelSpa</td>
 <td></td>
-<td>0</td>
+<td>1</td>
 <td>Public.createandcancelSpa@57a3af25</td></tr>
 <tr>
 <td title='Public.ServiceOrderControllerV3.putTaskCompleteNocharge_v3()'><b>putTaskCompleteNocharge_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
@@ -1267,262 +870,122 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 <td>1</td>
 <td>Private.SmartlistControllerV3@36902638</td></tr>
 <tr>
-<td title='Public.customerControllerV3.putcustomersrolldownAddressCodev2()'><b>putcustomersrolldownAddressCodev2</b><br>Test class: Public.customerControllerV3</td>
+<td title='Private.transactionsController.getTransactions_v_2()'><b>getTransactions_v_2</b><br>Test class: Private.transactionsController</td>
 <td></td>
-<td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<td>2</td>
+<td>Private.transactionsController@223d2c72</td></tr>
 <tr>
 <td title='Public.createandcancelSpaV3.cancelSPA_v_2()'><b>cancelSPA_v_2</b><br>Test class: Public.createandcancelSpaV3</td>
 <td></td>
 <td>0</td>
 <td>Public.createandcancelSpaV3@2b662a77</td></tr>
 <tr>
-<td title='Private.transactionsController.getTransactions_v_2()'><b>getTransactions_v_2</b><br>Test class: Private.transactionsController</td>
-<td></td>
-<td>1</td>
-<td>Private.transactionsController@223d2c72</td></tr>
-<tr>
-<td title='Public.searchControllerV3.getCustomer_v3()'><b>getCustomer_v3</b><br>Test class: Public.searchControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.searchControllerV3@9597028</td></tr>
-<tr>
 <td title='Private.DepositsControllerV3.lookupDepositId_v_3()'><b>lookupDepositId_v_3</b><br>Test class: Private.DepositsControllerV3</td>
 <td></td>
-<td>0</td>
-<td>Private.DepositsControllerV3@38c6f217</td></tr>
-<tr>
-<td title='Public.CashieringGet.TC005_getRegisterInfo()'><b>TC005_getRegisterInfo</b><br>Test class: Public.CashieringGet</td>
-<td></td>
-<td>0</td>
-<td>Public.CashieringGet@3febb011</td></tr>
-<tr>
-<td title='Public.customerControllerV3.putcustomersaddressv2()'><b>putcustomersaddressv2</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
 <td>1</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.customerController_v2.getCustomerDetail_v_2()'><b>getCustomerDetail_v_2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.CashieringGetV3.TC003_getnextReceipt()'><b>TC003_getnextReceipt</b><br>Test class: Public.CashieringGetV3</td>
-<td></td>
-<td>0</td>
-<td>Public.CashieringGetV3@10e31a9a</td></tr>
-<tr>
-<td title='Public.CashieringGet.TC004_getReceipt()'><b>TC004_getReceipt</b><br>Test class: Public.CashieringGet</td>
-<td></td>
-<td>1</td>
-<td>Public.CashieringGet@3febb011</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.putswitchMeter_v_2()'><b>putswitchMeter_v_2</b><br>Test class: Public.ServiceOrderController</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderController@1b7cc17c</td></tr>
-<tr>
-<td title='Public.CashieringPost.TC001_saveReciept()'><b>TC001_saveReciept</b><br>Test class: Public.CashieringPost</td>
-<td></td>
-<td>9</td>
-<td>Public.CashieringPost@131774fe</td></tr>
-<tr>
-<td title='Private.DepositsControllerV3.getdeposit_v_3()'><b>getdeposit_v_3</b><br>Test class: Private.DepositsControllerV3</td>
-<td></td>
-<td>7</td>
 <td>Private.DepositsControllerV3@38c6f217</td></tr>
-<tr>
-<td title='Public.ServiceOrderControllerV3.putTaskComplete_v_3()'><b>putTaskComplete_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
-<tr>
-<td title='Public.spaControllerV3.getcalculatedocuments_v_3()'><b>getcalculatedocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.spaControllerV3@67c27493</td></tr>
-<tr>
-<td title='Public.spaController.getoutstandingDocuments_v_2()'><b>getoutstandingDocuments_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@77fbd92c</td></tr>
 <tr>
 <td title='Public.spaController.getspadocuments_v_2()'><b>getspadocuments_v_2</b><br>Test class: Public.spaController</td>
 <td></td>
 <td>0</td>
 <td>Public.spaController@77fbd92c</td></tr>
 <tr>
-<td title='Public.CashieringGet.TC007_getAutoApply()'><b>TC007_getAutoApply</b><br>Test class: Public.CashieringGet</td>
+<td title='Public.CashieringGet.TC005_getRegisterInfo()'><b>TC005_getRegisterInfo</b><br>Test class: Public.CashieringGet</td>
 <td></td>
-<td>3</td>
+<td>0</td>
 <td>Public.CashieringGet@3febb011</td></tr>
-<tr>
-<td title='Public.createandcancelSpa.createSPA_v_2()'><b>createSPA_v_2</b><br>Test class: Public.createandcancelSpa</td>
-<td></td>
-<td>0</td>
-<td>Public.createandcancelSpa@57a3af25</td></tr>
-<tr>
-<td title='Public.spaController.getheaderInfo_v_2()'><b>getheaderInfo_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@77fbd92c</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.getServiceOrderRequestDetailsbyOptional_v2()'><b>getServiceOrderRequestDetailsbyOptional_v2</b><br>Test class: Public.ServiceOrderController</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderController@1b7cc17c</td></tr>
-<tr>
-<td title='Public.spaController.getspaAccountBalances_v_2()'><b>getspaAccountBalances_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@77fbd92c</td></tr>
-<tr>
-<td title='Public.TestAPI.getdepositpaymentPlan_v_3()'><b>getdepositpaymentPlan_v_3</b><br>Test class: Public.TestAPI</td>
-<td></td>
-<td>0</td>
-<td>Public.TestAPI@1a482e36</td></tr>
-<tr>
-<td title='Public.customerController_v2.putcustomersotherOptionsv2()'><b>putcustomersotherOptionsv2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.spaController.getspadetails_v_2()'><b>getspadetails_v_2</b><br>Test class: Public.spaController</td>
-<td></td>
-<td>0</td>
-<td>Public.spaController@77fbd92c</td></tr>
-<tr>
-<td title='Public.spaControllerV3.getspaAccountBalances_v_3()'><b>getspaAccountBalances_v_3</b><br>Test class: Public.spaControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.spaControllerV3@67c27493</td></tr>
-<tr>
-<td title='Public.createandcancelSpaV3.recancelSPA_v_2()'><b>recancelSPA_v_2</b><br>Test class: Public.createandcancelSpaV3</td>
-<td></td>
-<td>1</td>
-<td>Public.createandcancelSpaV3@2b662a77</td></tr>
-<tr>
-<td title='Public.customerControllerV3.getlocationsByCustomerv_2_4()'><b>getlocationsByCustomerv_2_4</b><br>Test class: Public.customerControllerV3</td>
-<td></td>
-<td>1</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
-<tr>
-<td title='Public.customerController_v2.getCustomerBillingOptions_v2()'><b>getCustomerBillingOptions_v2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.CashieringGetV3.TC004_balances()'><b>TC004_balances</b><br>Test class: Public.CashieringGetV3</td>
-<td></td>
-<td>1</td>
-<td>Public.CashieringGetV3@10e31a9a</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.postcreateServiceOrder_v2_ERROR()'><b>postcreateServiceOrder_v2_ERROR</b><br>Test class: Public.ServiceOrderController</td>
-<td></td>
-<td>1</td>
-<td>Public.ServiceOrderController@1b7cc17c</td></tr>
 <tr>
 <td title='Public.ServiceLocationV3.getServicesByLocation_v_3()'><b>getServicesByLocation_v_3</b><br>Test class: Public.ServiceLocationV3</td>
 <td></td>
 <td>1</td>
 <td>Public.ServiceLocationV3@4efbca5a</td></tr>
 <tr>
-<td title='Public.customerControllerV3.getCustomerbylocation_v_2()'><b>getCustomerbylocation_v_2</b><br>Test class: Public.customerControllerV3</td>
+<td title='Public.CashieringGetV3.TC003_getnextReceipt()'><b>TC003_getnextReceipt</b><br>Test class: Public.CashieringGetV3</td>
 <td></td>
 <td>0</td>
-<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<td>Public.CashieringGetV3@10e31a9a</td></tr>
 <tr>
-<td title='Public.ServiceOrderController.getServiceOrder_v2()'><b>getServiceOrder_v2</b><br>Test class: Public.ServiceOrderController</td>
+<td title='Public.ServiceOrderController.putTaskCompleteNocharge_v2_3()'><b>putTaskCompleteNocharge_v2_3</b><br>Test class: Public.ServiceOrderController</td>
 <td></td>
 <td>0</td>
 <td>Public.ServiceOrderController@1b7cc17c</td></tr>
 <tr>
-<td title='Public.spaController.putcalculatedocuments_v_2()'><b>putcalculatedocuments_v_2</b><br>Test class: Public.spaController</td>
+<td title='Public.CashieringGet.TC004_getReceipt()'><b>TC004_getReceipt</b><br>Test class: Public.CashieringGet</td>
 <td></td>
-<td>0</td>
-<td>Public.spaController@77fbd92c</td></tr>
-<tr>
-<td title='Public.searchController.getindex_v2()'><b>getindex_v2</b><br>Test class: Public.searchController</td>
-<td></td>
-<td>0</td>
-<td>Public.searchController@49139829</td></tr>
-<tr>
-<td title='Public.customerController_v2.getpreauthorizepaymentplan_v2()'><b>getpreauthorizepaymentplan_v2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.PaymentExtension.paymentExtensionv2()'><b>paymentExtensionv2</b><br>Test class: Public.PaymentExtension</td>
-<td></td>
-<td>0</td>
-<td>Public.PaymentExtension@4ec4f3a0</td></tr>
-<tr>
-<td title='Public.CashieringGetV3.TC006_gettransactions()'><b>TC006_gettransactions</b><br>Test class: Public.CashieringGetV3</td>
-<td></td>
-<td>0</td>
-<td>Public.CashieringGetV3@10e31a9a</td></tr>
+<td>1</td>
+<td>Public.CashieringGet@3febb011</td></tr>
 <tr>
 <td title='Public.searchControllerV3.getindex_v3()'><b>getindex_v3</b><br>Test class: Public.searchControllerV3</td>
 <td></td>
 <td>0</td>
 <td>Public.searchControllerV3@9597028</td></tr>
 <tr>
-<td title='Private.DepositsControllerV3.getdepositpaymentPlan_v_3()'><b>getdepositpaymentPlan_v_3</b><br>Test class: Private.DepositsControllerV3</td>
+<td title='Public.ServiceOrderControllerV3.putaddMeterReading_v_3()'><b>putaddMeterReading_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
 <td></td>
 <td>0</td>
-<td>Private.DepositsControllerV3@38c6f217</td></tr>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
 <tr>
-<td title='Public.spaControllerV3.getspadetails_v_3()'><b>getspadetails_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td title='Public.spaController.getoutstandingDocuments_v_2()'><b>getoutstandingDocuments_v_2</b><br>Test class: Public.spaController</td>
 <td></td>
-<td>0</td>
-<td>Public.spaControllerV3@67c27493</td></tr>
+<td>1</td>
+<td>Public.spaController@77fbd92c</td></tr>
 <tr>
-<td title='Public.ServiceOrderController.putupdatecomment_v_2()'><b>putupdatecomment_v_2</b><br>Test class: Public.ServiceOrderController</td>
+<td title='Public.ServiceOrderController.getServiceOrderRequestDetails_v2()'><b>getServiceOrderRequestDetails_v2</b><br>Test class: Public.ServiceOrderController</td>
 <td></td>
 <td>0</td>
 <td>Public.ServiceOrderController@1b7cc17c</td></tr>
 <tr>
-<td title='Public.customerController_v2.getOtheroptions_v2()'><b>getOtheroptions_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Private.DepositsControllerV3.getdeposit_v_3()'><b>getdeposit_v_3</b><br>Test class: Private.DepositsControllerV3</td>
+<td></td>
+<td>8</td>
+<td>Private.DepositsControllerV3@38c6f217</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.putaddMiscCharge_v_2()'><b>putaddMiscCharge_v_2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>15</td>
+<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<tr>
+<td title='Public.PaymentExtensionV3.postPaymentv3()'><b>postPaymentv3</b><br>Test class: Public.PaymentExtensionV3</td>
+<td></td>
+<td>0</td>
+<td>Public.PaymentExtensionV3@223191a6</td></tr>
+<tr>
+<td title='Public.CashieringPost.TC001_saveReciept()'><b>TC001_saveReciept</b><br>Test class: Public.CashieringPost</td>
+<td></td>
+<td>13</td>
+<td>Public.CashieringPost@131774fe</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.putTaskComplete_v_2()'><b>putTaskComplete_v_2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<tr>
+<td title='Public.ServiceOrderControllerV3.putswitchMeter_v_3()'><b>putswitchMeter_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
+<tr>
+<td title='Public.customerController_v2.putcustomerbillingoptionv2()'><b>putcustomerbillingoptionv2</b><br>Test class: Public.customerController_v2</td>
 <td></td>
 <td>0</td>
 <td>Public.customerController_v2@1623b78d</td></tr>
 <tr>
-<td title='Public.TestAPI.postsmartlistfavorite_v_3()'><b>postsmartlistfavorite_v_3</b><br>Test class: Public.TestAPI</td>
+<td title='Public.CashieringGet.TC007_getAutoApply()'><b>TC007_getAutoApply</b><br>Test class: Public.CashieringGet</td>
 <td></td>
-<td>0</td>
-<td>Public.TestAPI@1a482e36</td></tr>
-<tr>
-<td title='Public.GetAccountBalances.getAccountBalancesV24()'><b>getAccountBalancesV24</b><br>Test class: Public.GetAccountBalances</td>
-<td></td>
-<td>0</td>
-<td>Public.GetAccountBalances@6adbc9d</td></tr>
-<tr>
-<td title='Public.PaymentExtension.postPaymentv2_2()'><b>postPaymentv2_2</b><br>Test class: Public.PaymentExtension</td>
-<td></td>
-<td>0</td>
-<td>Public.PaymentExtension@4ec4f3a0</td></tr>
-<tr>
-<td title='Public.CashieringGetV3.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGetV3</td>
-<td></td>
-<td>0</td>
-<td>Public.CashieringGetV3@10e31a9a</td></tr>
-<tr>
-<td title='Public.customerController_v2_4.getlocationsByCustomerv_2_4()'><b>getlocationsByCustomerv_2_4</b><br>Test class: Public.customerController_v2_4</td>
-<td></td>
-<td>1</td>
-<td>Public.customerController_v2_4@c8c12ac</td></tr>
-<tr>
-<td title='Public.GetAccountBalances.getAccountBalancesPortalv2_4()'><b>getAccountBalancesPortalv2_4</b><br>Test class: Public.GetAccountBalances</td>
-<td></td>
-<td>1</td>
-<td>Public.GetAccountBalances@6adbc9d</td></tr>
-<tr>
-<td title='Public.CashieringGet.TC006_gettransactions()'><b>TC006_gettransactions</b><br>Test class: Public.CashieringGet</td>
-<td></td>
-<td>1</td>
+<td>5</td>
 <td>Public.CashieringGet@3febb011</td></tr>
 <tr>
-<td title='Public.customerController_v2.getCollectionsoptions_v2()'><b>getCollectionsoptions_v2</b><br>Test class: Public.customerController_v2</td>
+<td title='Public.createandcancelSpa.createSPA_v_2()'><b>createSPA_v_2</b><br>Test class: Public.createandcancelSpa</td>
+<td></td>
+<td>1</td>
+<td>Public.createandcancelSpa@57a3af25</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getCustomerDetail_v3()'><b>getCustomerDetail_v3</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.customerController_v2.getCustomerDetail_v_2()'><b>getCustomerDetail_v_2</b><br>Test class: Public.customerController_v2</td>
 <td></td>
 <td>0</td>
 <td>Public.customerController_v2@1623b78d</td></tr>
@@ -1532,55 +995,160 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 <td>0</td>
 <td>Public.GetAccountBalancesV3@4550bb58</td></tr>
 <tr>
+<td title='Public.spaController.getcalculatedocuments_v_2()'><b>getcalculatedocuments_v_2</b><br>Test class: Public.spaController</td>
+<td></td>
+<td>0</td>
+<td>Public.spaController@77fbd92c</td></tr>
+<tr>
+<td title='Public.customerController_v2.getnextCustomerId_v2()'><b>getnextCustomerId_v2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.createandcancelSpaV3.recancelSPA_v_2()'><b>recancelSPA_v_2</b><br>Test class: Public.createandcancelSpaV3</td>
+<td></td>
+<td>1</td>
+<td>Public.createandcancelSpaV3@2b662a77</td></tr>
+<tr>
+<td title='Public.spaControllerV3.getheaderInfo_v_3()'><b>getheaderInfo_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@67c27493</td></tr>
+<tr>
+<td title='Public.CashieringGetV3.TC004_balances()'><b>TC004_balances</b><br>Test class: Public.CashieringGetV3</td>
+<td></td>
+<td>0</td>
+<td>Public.CashieringGetV3@10e31a9a</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.putupdatecomment_v_2()'><b>putupdatecomment_v_2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>0</td>
+<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<tr>
+<td title='Public.spaControllerV3.getcalculatedocuments_v_3()'><b>getcalculatedocuments_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@67c27493</td></tr>
+<tr>
+<td title='Public.customerControllerV3.getCustomerbylocation_v_2()'><b>getCustomerbylocation_v_2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.customerController_v2.putcustomersotherOptionsv2()'><b>putcustomersotherOptionsv2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.customerController_v2.getCustomerBillingOptions_v2()'><b>getCustomerBillingOptions_v2</b><br>Test class: Public.customerController_v2</td>
+<td></td>
+<td>0</td>
+<td>Public.customerController_v2@1623b78d</td></tr>
+<tr>
+<td title='Public.GetAccountBalances.getAccountBalancesV24()'><b>getAccountBalancesV24</b><br>Test class: Public.GetAccountBalances</td>
+<td></td>
+<td>0</td>
+<td>Public.GetAccountBalances@6adbc9d</td></tr>
+<tr>
+<td title='Public.spaControllerV3.getspadetails_v_3()'><b>getspadetails_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@67c27493</td></tr>
+<tr>
+<td title='Public.GetAccountBalancesV3.getAccountBalancesPortalv3()'><b>getAccountBalancesPortalv3</b><br>Test class: Public.GetAccountBalancesV3</td>
+<td></td>
+<td>1</td>
+<td>Public.GetAccountBalancesV3@4550bb58</td></tr>
+<tr>
+<td title='Public.CashieringGetV3.TC006_gettransactions()'><b>TC006_gettransactions</b><br>Test class: Public.CashieringGetV3</td>
+<td></td>
+<td>1</td>
+<td>Public.CashieringGetV3@10e31a9a</td></tr>
+<tr>
+<td title='Public.customerControllerV3.putcustomersotherOptionsv2()'><b>putcustomersotherOptionsv2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Private.DepositsControllerV3.getdepositpaymentPlan_v_3()'><b>getdepositpaymentPlan_v_3</b><br>Test class: Private.DepositsControllerV3</td>
+<td></td>
+<td>1</td>
+<td>Private.DepositsControllerV3@38c6f217</td></tr>
+<tr>
+<td title='Public.GetAccountBalances.getAccountBalancesPortalv2_4()'><b>getAccountBalancesPortalv2_4</b><br>Test class: Public.GetAccountBalances</td>
+<td></td>
+<td>2</td>
+<td>Public.GetAccountBalances@6adbc9d</td></tr>
+<tr>
+<td title='Public.searchController.getCustomer_v2()'><b>getCustomer_v2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>0</td>
+<td>Public.searchController@49139829</td></tr>
+<tr>
+<td title='Public.searchController.getindex_v2()'><b>getindex_v2</b><br>Test class: Public.searchController</td>
+<td></td>
+<td>0</td>
+<td>Public.searchController@49139829</td></tr>
+<tr>
+<td title='Public.customerControllerV3.putcustomersaddressv2()'><b>putcustomersaddressv2</b><br>Test class: Public.customerControllerV3</td>
+<td></td>
+<td>2</td>
+<td>Public.customerControllerV3@7f0eb4b4</td></tr>
+<tr>
+<td title='Public.CashieringGetV3.TC003_getCashin()'><b>TC003_getCashin</b><br>Test class: Public.CashieringGetV3</td>
+<td></td>
+<td>1</td>
+<td>Public.CashieringGetV3@10e31a9a</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.putaddMeterReading_v_2()'><b>putaddMeterReading_v_2</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>1</td>
+<td>Public.ServiceOrderController@1b7cc17c</td></tr>
+<tr>
+<td title='Public.CashieringGet.TC006_gettransactions()'><b>TC006_gettransactions</b><br>Test class: Public.CashieringGet</td>
+<td></td>
+<td>2</td>
+<td>Public.CashieringGet@3febb011</td></tr>
+<tr>
+<td title='Public.spaControllerV3.getspaAccountBalances_v_3()'><b>getspaAccountBalances_v_3</b><br>Test class: Public.spaControllerV3</td>
+<td></td>
+<td>0</td>
+<td>Public.spaControllerV3@67c27493</td></tr>
+<tr>
 <td title='Public.searchController.elascticsearchcreateindex_v_2()'><b>elascticsearchcreateindex_v_2</b><br>Test class: Public.searchController</td>
 <td></td>
 <td>0</td>
 <td>Public.searchController@49139829</td></tr>
 <tr>
-<td title='Public.ServiceOrderController.putaddMiscCharge_v_2()'><b>putaddMiscCharge_v_2</b><br>Test class: Public.ServiceOrderController</td>
+<td title='Public.CashieringPost.TC002_RecieptAdjustment()'><b>TC002_RecieptAdjustment</b><br>Test class: Public.CashieringPost</td>
 <td></td>
 <td>0</td>
+<td>Public.CashieringPost@131774fe</td></tr>
+<tr>
+<td title='Public.ServiceOrderController.postcreateServiceOrder_v2_ERROR()'><b>postcreateServiceOrder_v2_ERROR</b><br>Test class: Public.ServiceOrderController</td>
+<td></td>
+<td>1</td>
 <td>Public.ServiceOrderController@1b7cc17c</td></tr>
 <tr>
-<td title='Public.ServiceOrderControllerV3.putupdatecomment_v_3()'><b>putupdatecomment_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
-<tr>
-<td title='Public.customerControllerV3.putcustomerbillingoptionv2()'><b>putcustomerbillingoptionv2</b><br>Test class: Public.customerControllerV3</td>
+<td title='Public.customerControllerV3.putcustomersrolldownAddressCodev2()'><b>putcustomersrolldownAddressCodev2</b><br>Test class: Public.customerControllerV3</td>
 <td></td>
 <td>0</td>
 <td>Public.customerControllerV3@7f0eb4b4</td></tr>
 <tr>
-<td title='Public.ServiceOrderControllerV3.getServiceOrderRequestDetails_v3()'><b>getServiceOrderRequestDetails_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
+<td title='Public.customerController_v2_4.getlocationsByCustomerv_2_4()'><b>getlocationsByCustomerv_2_4</b><br>Test class: Public.customerController_v2_4</td>
+<td></td>
+<td>2</td>
+<td>Public.customerController_v2_4@c8c12ac</td></tr>
+<tr>
+<td title='Public.searchControllerV3.elascticsearchcreateindex_v_3()'><b>elascticsearchcreateindex_v_3</b><br>Test class: Public.searchControllerV3</td>
 <td></td>
 <td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
-<tr>
-<td title='Public.ServiceLocationv2.getServicesByLocation_v_2()'><b>getServicesByLocation_v_2</b><br>Test class: Public.ServiceLocationv2</td>
-<td></td>
-<td>1</td>
-<td>Public.ServiceLocationv2@6069db50</td></tr>
-<tr>
-<td title='Public.customerController_v2.putcustomersaddressv2()'><b>putcustomersaddressv2</b><br>Test class: Public.customerController_v2</td>
-<td></td>
-<td>0</td>
-<td>Public.customerController_v2@1623b78d</td></tr>
-<tr>
-<td title='Public.ServiceOrderControllerV3.putaddMiscCharge_v_3()'><b>putaddMiscCharge_v_3</b><br>Test class: Public.ServiceOrderControllerV3</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderControllerV3@59662a0b</td></tr>
+<td>Public.searchControllerV3@9597028</td></tr>
 <tr>
 <td title='Public.CashieringGetV3.TC004_getReceipt()'><b>TC004_getReceipt</b><br>Test class: Public.CashieringGetV3</td>
 <td></td>
-<td>1</td>
+<td>2</td>
 <td>Public.CashieringGetV3@10e31a9a</td></tr>
-<tr>
-<td title='Public.ServiceOrderController.putTaskCompleteNocharge_v2_3()'><b>putTaskCompleteNocharge_v2_3</b><br>Test class: Public.ServiceOrderController</td>
-<td></td>
-<td>0</td>
-<td>Public.ServiceOrderController@1b7cc17c</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -1593,8 +1161,8 @@ Expected: &quot;[{\&quot;PastDue\&quot;:\&quot;0.00\&quot;,\&quot;CurrentBalance
 <td title='Public.ServiceOrderControllerV3.getServiceOrder_v3()'><b>getServiceOrder_v3</b><br>Test class: Public.ServiceOrderControllerV3</td>
 <td><div><pre>java.lang.Throwable: Method ServiceOrderControllerV3.getServiceOrder_v3()[pri:2, instance:Public.ServiceOrderControllerV3@59662a0b] depends on not successfully finished methods
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1955566523", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1955566523'><pre>java.lang.Throwable: Method ServiceOrderControllerV3.getServiceOrder_v3()[pri:2, instance:Public.ServiceOrderControllerV3@59662a0b] depends on not successfully finished methods
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1831478624", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1831478624'><pre>java.lang.Throwable: Method ServiceOrderControllerV3.getServiceOrder_v3()[pri:2, instance:Public.ServiceOrderControllerV3@59662a0b] depends on not successfully finished methods
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
