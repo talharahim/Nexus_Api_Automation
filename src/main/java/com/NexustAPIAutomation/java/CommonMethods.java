@@ -410,8 +410,7 @@ public class CommonMethods {
 
 		ValidatableResponse response = httpRequest.get().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
-		
-		
+				
 		System.out.println(response.extract().asString());
 		return response.extract().asString();
 
