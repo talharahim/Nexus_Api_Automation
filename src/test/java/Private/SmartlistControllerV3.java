@@ -14,19 +14,20 @@ import io.restassured.response.ValidatableResponse;
 
 public class SmartlistControllerV3 {
 
-	//@Test(priority = 1, groups = "SmartList")
+	@Test(priority = 2, groups = "SmartList")
 	public void getsmartList_v_3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/smartlist";
 		String ver = "3.0";
 		String jpath = "./\\TestData\\getsmartlistv3.json";
 		HashMap<String, String> params = new HashMap<String, String>();
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		//String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 
 	}
 
-	@Test(priority = 2, groups = "SmartList")
+	@Test(priority = 1, groups = "SmartList")
 	public void postsmartlistfavorite_v_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		JsonPath jsonPathEvaluator;
@@ -47,6 +48,9 @@ public class SmartlistControllerV3 {
 		}
 		
 	}
+	
+
+	
 
 
 }

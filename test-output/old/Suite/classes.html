@@ -171,12 +171,12 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>TC003_getCashin</td>
+<td>TC006_gettransactions</td>
 <td>Cashering </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>TC006_gettransactions</td>
+<td>TC003_getCashin</td>
 <td>Cashering </td>
 </tr>
 <tr>
@@ -211,6 +211,77 @@
 <td>&nbsp;</td>
 <td>getdepositpaymentPlan_v_3</td>
 <td>Deposits </td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeClass</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterClass</td>
+</tr>
+<tr>
+<td>Private.transactionsControllerv2</td>
+<td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@Test</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>getTransactions_v_2</td>
+<td>Transaction </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>getrecentTransactions_v_2</td>
+<td>Transaction </td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeClass</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterClass</td>
+</tr>
+<tr>
+<td>Private.transactionsControllerv3</td>
+<td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@Test</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>getBillInquirychargeSummary_v_3</td>
+<td>Transaction </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>getBillInquiry_v_3</td>
+<td>Transaction </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>getTransactions_v_3</td>
+<td>Transaction </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>getBillInquirydistribution_v_3</td>
+<td>Transaction </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>getrecentTransactions_v_3</td>
+<td>Transaction </td>
 </tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -364,12 +435,12 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>TC003_getCashin</td>
+<td>TC006_gettransactions</td>
 <td>Cashering </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>TC006_gettransactions</td>
+<td>TC003_getCashin</td>
 <td>Cashering </td>
 </tr>
 <tr>
@@ -417,12 +488,12 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getOtheroptions_v2</td>
+<td>getCustomerBillingOptions_v2</td>
 <td>CustomerController </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getCustomerBillingOptions_v2</td>
+<td>getOtheroptions_v2</td>
 <td>CustomerController </td>
 </tr>
 <tr>
@@ -495,12 +566,12 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>postPaymentv2_2</td>
+<td>paymentExtensionv2</td>
 <td>Cashering </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>paymentExtensionv2</td>
+<td>postPaymentv2_2</td>
 <td>Cashering </td>
 </tr>
 <tr>
@@ -622,12 +693,12 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getoutstandingDocuments_v_3</td>
+<td>getheaderInfo_v_3</td>
 <td>SPA </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getheaderInfo_v_3</td>
+<td>getoutstandingDocuments_v_3</td>
 <td>SPA </td>
 </tr>
 <tr>
@@ -637,12 +708,12 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getspaAccountBalances_v_3</td>
+<td>getspadetails_v_3</td>
 <td>SPA </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getspadetails_v_3</td>
+<td>getspaAccountBalances_v_3</td>
 <td>SPA </td>
 </tr>
 <tr>
@@ -743,22 +814,22 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getServiceOrder_v2</td>
-<td>ServiceOrder </td>
-</tr>
-<tr>
-<td>&nbsp;</td>
 <td>putTaskComplete_v_2</td>
 <td>ServiceOrder </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>putaddMeterReading_v_2</td>
+<td>getServiceOrder_v2</td>
 <td>ServiceOrder </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
 <td>postcreateServiceOrder_v2_ERROR</td>
+<td>ServiceOrder </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>putaddMeterReading_v_2</td>
 <td>ServiceOrder </td>
 </tr>
 <tr>
@@ -773,12 +844,12 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>getServiceOrderRequestDetails_v2</td>
+<td>putswitchMeter_v_2</td>
 <td>ServiceOrder </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>putswitchMeter_v_2</td>
+<td>getServiceOrderRequestDetails_v2</td>
 <td>ServiceOrder </td>
 </tr>
 <tr>
@@ -930,17 +1001,17 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
+<td>getCustomerBillingOptions_v2</td>
+<td>CustomerController </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
 <td>getOtheroptions_v2</td>
 <td>CustomerController </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
 <td>getCustomerDetail_v3</td>
-<td>CustomerController </td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>getCustomerBillingOptions_v2</td>
 <td>CustomerController </td>
 </tr>
 <tr>
@@ -1023,17 +1094,17 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
+<td>getspaAccountBalances_v_2</td>
+<td>SPA </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
 <td>getspadetails_v_2</td>
 <td>SPA </td>
 </tr>
 <tr>
 <td>&nbsp;</td>
 <td>putcalculatedocuments_v_2</td>
-<td>SPA </td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>getspaAccountBalances_v_2</td>
 <td>SPA </td>
 </tr>
 <tr>
@@ -1073,29 +1144,6 @@
 <td>&nbsp;</td>
 <td>cancelSPA_v_2</td>
 <td>SPA </td>
-</tr>
-<tr>
-<td align='center' colspan='3'>@BeforeClass</td>
-</tr>
-<tr>
-<td align='center' colspan='3'>@BeforeMethod</td>
-</tr>
-<tr>
-<td align='center' colspan='3'>@AfterMethod</td>
-</tr>
-<tr>
-<td align='center' colspan='3'>@AfterClass</td>
-</tr>
-<tr>
-<td>Private.transactionsController</td>
-<td>&nbsp;</td><td>&nbsp;</td></tr>
-<tr>
-<td align='center' colspan='3'>@Test</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>getTransactions_v_2</td>
-<td>Transaction </td>
 </tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
