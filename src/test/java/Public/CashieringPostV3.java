@@ -39,7 +39,7 @@ public class CashieringPostV3 {
 	}
 
 	@Test(priority = 1, groups = "Cashering")
-	public void TC001_saveReciept()
+	public void saveReciept_v_3()
 			throws ClassNotFoundException, SQLException, InterruptedException, ConnectionClosedException {
 		// CommonMethods.CompanyDBRestore();
 
@@ -70,7 +70,7 @@ public class CashieringPostV3 {
 
 	}
 
-	@Test(priority = 2, groups = "Cashering", dependsOnMethods = "TC001_saveReciept")
+	@Test(priority = 2, groups = "Cashering", dependsOnMethods = "saveReciept_v_3")
 	public void TC002_RecieptAdjustment() throws ClassNotFoundException, SQLException, InterruptedException {
 		String uri = "/cashiering/receipt/adjust";
 		String ver = "3.0";
