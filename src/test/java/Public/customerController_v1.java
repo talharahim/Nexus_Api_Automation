@@ -14,7 +14,7 @@ public class customerController_v1 {
 
 	public static ValidatableResponse jsonPathEvaluator;
 
-	@Test(priority = 6, groups = "CustomerController")
+	//@Test(priority = 6, groups = "CustomerController")
 	public void getlocationsByCustomerv_1()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 

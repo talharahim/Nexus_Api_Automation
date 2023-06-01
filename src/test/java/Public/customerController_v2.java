@@ -104,7 +104,7 @@ public class customerController_v2 {
 	}
 
 	@Test(priority = 7, groups = "CustomerController")
-	public void getLocationsByCustomer_v2()
+	public static void getLocationsByCustomer_v2()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		String uri = "/customer/getLocationsByCustomer";
 		String ver = "2";
@@ -150,7 +150,7 @@ public class customerController_v2 {
 	}
 
 	@Test(priority = 8, groups = "CustomerController")
-	public void getCustomerDetail_v2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void getCustomerDetail_v2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		String uri = "/customer/getCustomerDetail";
 		String ver = "2";
 		String jpath = "./\\TestData\\getCustomerDetailv2.json";
@@ -231,6 +231,12 @@ public class customerController_v2 {
 		ValidatableResponse result = CommonMethods.putMethodvalidate(uri, ver, jpath, jrpath);
 		System.out.println(result.log());
 
+	}
+	
+	public static void main (String args[]) throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		
+		getLocationsByCustomer_v2();
+		getCustomerDetail_v2();
 	}
 
 
