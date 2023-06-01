@@ -454,14 +454,10 @@ public class CommonMethods {
 		}
 
 		RestAssured.baseURI = RestAssured.baseURI + uri;
-		System.out.println(RestAssured.baseURI.toString());
+		System.out.println("Tesing URI:"+RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.queryParams(params);
-
-		
-		
-	//	
 		
 		File jsonDataInFile = new File(jpath);
 		   try (FileReader reader = new FileReader(jsonDataInFile))
@@ -469,9 +465,9 @@ public class CommonMethods {
 		       //Read JSON file
 			   JSONParser jsonParser = new JSONParser();
 		       Object obj = jsonParser.parse(reader);
-		       JSONObject bodycontent = (JSONObject) obj;
 		       String expected = obj.toString();
-		       System.out.println("Expected Response : "+expected);
+		       System.out.println("Expected Response as in file : "+jpath);
+		       System.out.println(expected);
 		       
 		 				
 		        } catch (FileNotFoundException e) {
@@ -487,8 +483,6 @@ public class CommonMethods {
 				
 			}
 		   ValidatableResponse response = httpRequest.get().then().assertThat().body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
-			//String responseText = httpRequest.get().thenReturn().asString();
-			
 			System.out.println(response);
 	
 		//}
