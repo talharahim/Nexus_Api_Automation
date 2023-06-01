@@ -188,11 +188,9 @@ public class ServiceOrderControllerV3 {
 		String uri = "/serviceOrder/switchMeter";
 		String ver = "3.0";
 		String jpath = "./\\TestData\\meterchangev2.json";
-
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		result.assertThat().body(Matchers.containsString("Meter updated"));
 		result.assertThat().body(Matchers.containsString("true"));
-
 		System.out.println(result.extract().asString());
 	}
 

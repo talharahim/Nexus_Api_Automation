@@ -59,7 +59,7 @@ public class customerControllerV3 {
 	
 	
 	@Test(priority = 1, groups = "CustomerController")
-	public void getCustomerDetail_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void getCustomerDetail_v_2() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/customer/getCustomerDetail";
 		String ver = "2";
@@ -271,9 +271,9 @@ public class customerControllerV3 {
 	}
 
 
-	public static void main(String args[]) throws ClassNotFoundException, SQLException, InterruptedException, IOException
+	public static void main(String args[]) throws ClassNotFoundException,StackOverflowError, SQLException, InterruptedException, IOException
 	{
-		 getlocationsByCustomerv_2_4_ExcludeFormer();
+		 getCustomerDetail_v_2();
 	}
 
 }
