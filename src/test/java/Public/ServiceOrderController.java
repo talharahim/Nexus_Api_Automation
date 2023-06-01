@@ -231,7 +231,7 @@ public class ServiceOrderController {
 
 		String uri = "/serviceOrder";
 		String ver = "2.3.1";
-		String payload = "./\\TestData\\putcreateserviceOrderv2_3_1.json";
+		String payload = "./\\TestData\\postcreateserviceOrderv2_3_1.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 
 		String ServiceOrderNumber = jsonPathEvaluator.get("ServiceOrder[0].DocumentNumber");
@@ -317,7 +317,7 @@ public class ServiceOrderController {
 		// putTaskComplete_v_3_4();
 		//putaddMeterReading_v_2();
 		//postcreateServiceOrder_v2_3_1();
-		ServiceOrderControllerV3.postcreateServiceOrder_v3();
+		 postcreateServiceOrder_v2_3_1();
 		
 	}
 
