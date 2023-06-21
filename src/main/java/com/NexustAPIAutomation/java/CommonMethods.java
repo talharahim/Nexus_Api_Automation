@@ -58,6 +58,7 @@ public class CommonMethods {
 	public static String urlv231 = Read.ReadFile("urlv231");
 	public static String urlv240 = Read.ReadFile("urlv240");
 	public static String urlv3 = Read.ReadFile("urlv3");
+	public static String urlv4 = Read.ReadFile("urlv4");
 
 	public static String getToken() throws InterruptedException {
 		String url = keycloakurl + "/auth/realms/nexus-portal/protocol/openid-connect/token";
@@ -446,6 +447,9 @@ public class CommonMethods {
 		case "3.0":
 			RestAssured.baseURI = urlv3;
 			break;
+		case "4.0":
+			RestAssured.baseURI = urlv4;
+			break;
 
 		default:
 			version = "Invalid version";
@@ -667,6 +671,9 @@ public class CommonMethods {
 			break;
 		case "3.0":
 			RestAssured.baseURI = urlv3;
+			break;
+		case "4.0":
+			RestAssured.baseURI = urlv4;
 			break;
 
 		default:

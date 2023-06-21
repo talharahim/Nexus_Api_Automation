@@ -1,0 +1,8 @@
+{
+    "ServiceOrderNumber": "SORD00000000044",
+    "TaskId": "TASK022",
+    "LocationId": "LOCATION009",
+    "CustomerId": "CUSTOMER010",
+    "MiscChargeAmount": 10.00,
+    "AutoPost": 1
+}
