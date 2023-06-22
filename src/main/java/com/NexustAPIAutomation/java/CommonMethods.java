@@ -450,51 +450,35 @@ public class CommonMethods {
 		case "4.0":
 			RestAssured.baseURI = urlv4;
 			break;
-
 		default:
 			version = "Invalid version";
 			Assert.fail("Invalid version");
 			break;
 		}
-
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		System.out.println("Tesing URI:"+RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.queryParams(params);
-		
 		File jsonDataInFile = new File(jpath);
-		   try (FileReader reader = new FileReader(jsonDataInFile))
-		     {
-		       //Read JSON file
+		   try (FileReader reader = new FileReader(jsonDataInFile))		     {
 			   JSONParser jsonParser = new JSONParser();
-		       Object obj = jsonParser.parse(reader);
-		       String expected = obj.toString();
+		       JSONObject obj = (JSONObject) jsonParser.parse(reader);
+		       String expected = obj.toJSONString();
 		       System.out.println("Expected Response as in file : "+jpath);
 		       System.out.println(expected);
-		       
-		 				
-		        } catch (FileNotFoundException e) {
+		     		        } catch (FileNotFoundException e) {
 		            e.printStackTrace();
 		        } catch (IOException e) {
 		            e.printStackTrace();
 		        } catch (ParseException e) {
 		            e.printStackTrace();
 		        } catch (ClassCastException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				
-				
-			}
-		   ValidatableResponse response = httpRequest.get().then().assertThat().body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
-			System.out.println(response);
-	
-		//}
-	
-		return response.extract().asString();
-		
-
-	}
+		     		e.printStackTrace();
+				}
+	   ValidatableResponse response = httpRequest.get().then().assertThat().body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
+	   return response.extract().asString();
+}
 
 	public static String putMethod(String uri, String version, HashMap<String, String> params, String payload,
 			String responseFile) throws InterruptedException, IOException {
@@ -524,6 +508,10 @@ public class CommonMethods {
 		case "3.0":
 			RestAssured.baseURI = urlv3;
 			break;
+		case "4.0":
+			RestAssured.baseURI = urlv4;
+			break;
+
 
 		default:
 			version = "Invalid version";
