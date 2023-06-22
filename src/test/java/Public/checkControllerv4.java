@@ -24,7 +24,6 @@ public class checkControllerv4 {
 		String jpath = "./\\TestData\\getCheckv4.json";
 		HashMap<String, String> params = new HashMap<String, String>();
 		//params.put("SearchQuery", "sally");
-
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 

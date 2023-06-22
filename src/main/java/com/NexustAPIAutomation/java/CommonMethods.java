@@ -30,6 +30,7 @@ import org.json.JSONException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.mortbay.util.ajax.JSON;
 import org.testng.Assert;
 
 import com.google.gson.Gson;
@@ -153,31 +154,29 @@ public class CommonMethods {
 			version = "Invalid version";
 			break;
 		}
- 	File jsonDataInFile = new File(payload);
-	   try (FileReader reader = new FileReader(jsonDataInFile))
-	     {
-	       //Read JSON file
-			 JSONParser jsonParser = new JSONParser();
-	       Object obj = jsonParser.parse(reader);
-	       JSONObject bodycontent = (JSONObject) obj;
-	 	
-		System.out.println("Posting uri :"+RestAssured.baseURI.toString());
-		System.out.println("with Body Content  ="+ bodycontent.toString() );
-	        } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        } catch (ParseException e) {
-	            e.printStackTrace();
-	        } catch (ClassCastException e) {
+		File jsonDataInFile = new File(payload);
+		try (FileReader reader = new FileReader(jsonDataInFile)) {
+			// Read JSON file
+			JSONParser jsonParser = new JSONParser();
+			Object obj = jsonParser.parse(reader);
+			JSONObject bodycontent = (JSONObject) obj;
+
+			System.out.println("Posting uri :" + RestAssured.baseURI.toString());
+			System.out.println("with Body Content  =" + bodycontent.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (ClassCastException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-  
-	   
-	        Response response;
-			JsonPath jsonPathEvaluator;
-			RestAssured.baseURI = RestAssured.baseURI + uri;
+
+		Response response;
+		JsonPath jsonPathEvaluator;
+		RestAssured.baseURI = RestAssured.baseURI + uri;
 		RequestSpecification httpRequest = RestAssured.given()
 				.headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON, "Accept", "*/*",
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
@@ -186,7 +185,6 @@ public class CommonMethods {
 		response = httpRequest.post();
 		System.out.println(response.asString());
 		jsonPathEvaluator = response.jsonPath();
-		
 
 		return jsonPathEvaluator;
 
@@ -235,26 +233,25 @@ public class CommonMethods {
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(payload);
 		File jsonDataInFile = new File(payload);
-		   try (FileReader reader = new FileReader(jsonDataInFile))
-		     {
-		       //Read JSON file
-				 JSONParser jsonParser = new JSONParser();
-		       Object obj = jsonParser.parse(reader);
-		       JSONObject bodycontent = (JSONObject) obj;
-		 	
-			System.out.println("Posting uri :"+RestAssured.baseURI.toString());
-			System.out.println("with Body Content  ="+ bodycontent.toString() );
-		     } catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		   
+		try (FileReader reader = new FileReader(jsonDataInFile)) {
+			// Read JSON file
+			JSONParser jsonParser = new JSONParser();
+			Object obj = jsonParser.parse(reader);
+			JSONObject bodycontent = (JSONObject) obj;
+
+			System.out.println("Posting uri :" + RestAssured.baseURI.toString());
+			System.out.println("with Body Content  =" + bodycontent.toString());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		response = httpRequest.post();
 		System.out.println(response.asString());
 		jsonPathEvaluator = response.jsonPath();
@@ -303,7 +300,7 @@ public class CommonMethods {
 		// File jsonDataInFile = new File(payload);
 		System.out.println(RestAssured.baseURI);
 		RestAssured.baseURI = RestAssured.baseURI + uri;
-		System.out.println("Get URI :"+RestAssured.baseURI);
+		System.out.println("Get URI :" + RestAssured.baseURI);
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Accept", "*/*", "Connection", "keep-alive", "Accept-Encoding",
 				"gzip, deflate, br", "Cache-Control", "no-cache", "urlEncodingEnabled", "false");
@@ -456,29 +453,27 @@ public class CommonMethods {
 			break;
 		}
 		RestAssured.baseURI = RestAssured.baseURI + uri;
-		System.out.println("Tesing URI:"+RestAssured.baseURI.toString());
+		System.out.println("Tesing URI:" + RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.queryParams(params);
-		File jsonDataInFile = new File(jpath);
-		   try (FileReader reader = new FileReader(jsonDataInFile))		     {
-			   JSONParser jsonParser = new JSONParser();
-		       JSONObject obj = (JSONObject) jsonParser.parse(reader);
-		       String expected = obj.toJSONString();
-		       System.out.println("Expected Response as in file : "+jpath);
-		       System.out.println(expected);
-		     		        } catch (FileNotFoundException e) {
-		            e.printStackTrace();
-		        } catch (IOException e) {
-		            e.printStackTrace();
-		        } catch (ParseException e) {
-		            e.printStackTrace();
-		        } catch (ClassCastException e) {
-		     		e.printStackTrace();
-				}
-	   ValidatableResponse response = httpRequest.get().then().assertThat().body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
-	   return response.extract().asString();
-}
+		/*
+		 * File jsonDataInFile = new File(jpath); try (FileReader reader = new
+		 * FileReader(jsonDataInFile)) { JSONParser jsonParser = new JSONParser();
+		 * Object obj = JSON.parse(reader); String expected = obj.toString();
+		 * System.out.println("Expected Response as in file : "+jpath);
+		 * System.out.println(expected); } catch (FileNotFoundException e) {
+		 * e.printStackTrace(); } catch (IOException e) { e.printStackTrace(); } catch
+		 * (ClassCastException e) { e.printStackTrace(); }/
+		 */
+
+		String expe = new String(Files.readAllBytes(Paths.get(jpath)));
+		System.out.println("Expected Response as in file : " + jpath);
+		System.out.println(expe);
+		ValidatableResponse response = httpRequest.get().then().assertThat()
+				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
+		return response.extract().asString();
+	}
 
 	public static String putMethod(String uri, String version, HashMap<String, String> params, String payload,
 			String responseFile) throws InterruptedException, IOException {
@@ -512,7 +507,6 @@ public class CommonMethods {
 			RestAssured.baseURI = urlv4;
 			break;
 
-
 		default:
 			version = "Invalid version";
 			break;
@@ -525,7 +519,8 @@ public class CommonMethods {
 				.given().headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON,
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.queryParams(params).body(jsonDataInFile);
-
+		String expe = new String(Files.readAllBytes(Paths.get(responseFile)));
+		System.out.println("Expected Response as in file : " + expe);
 		Response responseTest = httpRequest.put();
 		System.out.println(responseTest.asString());
 		ValidatableResponse response = httpRequest.put().then().assertThat().statusCode(200)
@@ -624,6 +619,8 @@ public class CommonMethods {
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(jsonDataInFile);
+		String expe = new String(Files.readAllBytes(Paths.get(fresponse)));
+		System.out.println("Expected Response as in file : " + expe);
 		System.out.println(httpRequest.put().prettyPrint());
 		ValidatableResponse response = httpRequest.put().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(fresponse))))).assertThat()
@@ -798,6 +795,8 @@ public class CommonMethods {
 		// "gzip, deflate, br").when().get().then().assertThat()
 		// .statusCode(200).body(Matchers.equalTo(new
 		// String(Files.readAllBytes(jsonDataInFile))));
+		String expe = new String(Files.readAllBytes(Paths.get(pathToResponse)));
+		System.out.println("Expected Response as in file : " + expe);
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br");
@@ -941,62 +940,62 @@ public class CommonMethods {
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.queryParams(params);
 
+	
 		ValidatableResponse response;
 		String validate = new String(Files.readAllBytes(Paths.get(jpath)));
-		System.out.println("Veriying String ="+ validate);
+		System.out.println("Veriying String =" + validate);
 
 		response = httpRequest.get().then().assertThat().body(Matchers.containsString(validate));
 
 		System.out.println(response.extract().asString());
 		return response.extract().asString();
 	}
-	
-	
+
 	/**
-     * Returns a minimal set of characters that have to be removed from (or added to) the respective
-     * strings to make the strings equal.
-     */
-    public static Pair<String> diff(String a, String b) {
-        return diffHelper(a, b, new HashMap<>());
-    }
+	 * Returns a minimal set of characters that have to be removed from (or added
+	 * to) the respective strings to make the strings equal.
+	 */
+	public static Pair<String> diff(String a, String b) {
+		return diffHelper(a, b, new HashMap<>());
+	}
 
-    /**
-     * Recursively compute a minimal set of characters while remembering already computed substrings.
-     * Runs in O(n^2).
-     */
-    private static Pair<String> diffHelper(String a, String b, Map<Long, Pair<String>> lookup) {
-        long key = ((long) a.length()) << 32 | b.length();
-        if (!lookup.containsKey(key)) {
-            Pair<String> value;
-            if (a.isEmpty() || b.isEmpty()) {
-                value = new Pair<>(a, b);
-            } else if (a.charAt(0) == b.charAt(0)) {
-                value = diffHelper(a.substring(1), b.substring(1), lookup);
-            } else {
-                Pair<String> aa = diffHelper(a.substring(1), b, lookup);
-                Pair<String> bb = diffHelper(a, b.substring(1), lookup);
-                if (aa.first.length() + aa.second.length() < bb.first.length() + bb.second.length()) {
-                    value = new Pair<>(a.charAt(0) + aa.first, aa.second);
-                } else {
-                    value = new Pair<>(bb.first, b.charAt(0) + bb.second);
-                }
-            }
-            lookup.put(key, value);
-        }
-        return lookup.get(key);
-    }
+	/**
+	 * Recursively compute a minimal set of characters while remembering already
+	 * computed substrings. Runs in O(n^2).
+	 */
+	private static Pair<String> diffHelper(String a, String b, Map<Long, Pair<String>> lookup) {
+		long key = ((long) a.length()) << 32 | b.length();
+		if (!lookup.containsKey(key)) {
+			Pair<String> value;
+			if (a.isEmpty() || b.isEmpty()) {
+				value = new Pair<>(a, b);
+			} else if (a.charAt(0) == b.charAt(0)) {
+				value = diffHelper(a.substring(1), b.substring(1), lookup);
+			} else {
+				Pair<String> aa = diffHelper(a.substring(1), b, lookup);
+				Pair<String> bb = diffHelper(a, b.substring(1), lookup);
+				if (aa.first.length() + aa.second.length() < bb.first.length() + bb.second.length()) {
+					value = new Pair<>(a.charAt(0) + aa.first, aa.second);
+				} else {
+					value = new Pair<>(bb.first, b.charAt(0) + bb.second);
+				}
+			}
+			lookup.put(key, value);
+		}
+		return lookup.get(key);
+	}
 
-    public static class Pair<T> {
-        public Pair(T first, T second) {
-            this.first = first;
-            this.second = second;
-        }
+	public static class Pair<T> {
+		public Pair(T first, T second) {
+			this.first = first;
+			this.second = second;
+		}
 
-        public final T first, second;
+		public final T first, second;
 
-        public String toString() {
-            return "(" + first + "," + second + ")";
-        }
-    }
+		public String toString() {
+			return "(" + first + "," + second + ")";
+		}
+	}
 
 }
