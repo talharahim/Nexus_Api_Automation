@@ -1,0 +1,18 @@
+{
+    "Connection": {
+        "MeterGroupId": "MTGR00000000001",
+        "FixedChargeId": 1,
+        "MinimumCalculationId": 3,
+        "DemandHandlingId": 2,
+        "Equipment": [
+            {
+                "Id": "EQUIPMENT008",
+                "ConnectionSequence": 2
+            },
+            {
+                "Id": "EQUIPMENT006",
+                "ConnectionSequence": 3
+            }
+        ]
+    }
+}
