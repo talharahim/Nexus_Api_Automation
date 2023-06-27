@@ -468,8 +468,8 @@ public class CommonMethods {
 		 */
 
 		String expe = new String(Files.readAllBytes(Paths.get(jpath)));
-		System.out.println("Expected Response as in file : " + jpath);
-		System.out.println(expe);
+		System.out.println("Expected Response as in file : " + jpath +" = "+expe);
+		System.out.println();
 		ValidatableResponse response = httpRequest.get().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
 		return response.extract().asString();
@@ -681,6 +681,58 @@ public class CommonMethods {
 
 	}
 
+	
+	public static ValidatableResponse putMethodNofile(String uri, String version, String payload, String jsonDataInFile)
+			throws InterruptedException, IOException {
+
+		switch (version) {
+		case "1":
+			RestAssured.baseURI = urlv1;
+			break;
+		case "2":
+			RestAssured.baseURI = urlv2;
+			break;
+		case "2.1":
+			RestAssured.baseURI = urlv210;
+			break;
+		case "2.2":
+			RestAssured.baseURI = urlv220;
+			break;
+		case "2.3":
+			RestAssured.baseURI = urlv230;
+			break;
+		case "2.3.1":
+			RestAssured.baseURI = urlv231;
+			break;
+		case "2.4":
+			RestAssured.baseURI = urlv240;
+			break;
+		case "3.0":
+			RestAssured.baseURI = urlv3;
+			break;
+		case "4.0":
+			RestAssured.baseURI = urlv4;
+			break;
+
+		default:
+			version = "Invalid version";
+			break;
+		}
+
+		RestAssured.baseURI = RestAssured.baseURI + uri;
+		System.out.println(RestAssured.baseURI.toString());
+		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
+				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
+				.body(payload);
+
+		ValidatableResponse response = 	httpRequest.put().then().assertThat()
+		.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jsonDataInFile)))));
+		
+		System.out.println("** PUT call Response **");
+		System.out.println(response.extract().asString());
+		return response;
+
+	}
 	public static JsonPath getMethodTest() throws InterruptedException, IOException {
 
 		String version = "2.4";

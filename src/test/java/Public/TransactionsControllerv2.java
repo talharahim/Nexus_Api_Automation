@@ -48,7 +48,7 @@ public class TransactionsControllerv2 {
 		 params.put("Water", "true");
 		 params.put("OtherCharge", "true");
 		 String result = CommonMethods.getMethod(uri, ver, params, jpath);
-		System.out.println(result);
+         System.out.println(result);
 
 	}
 

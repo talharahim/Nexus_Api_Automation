@@ -32,12 +32,23 @@ public class checkControllerv4 {
 	}
 	
 
-	@Test(priority = 1, groups = "Cashering", dependsOnMethods = "getCheckv4" )
+	@Test(priority = 2, groups = "Cashering")
 	public void delCheckv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/check/CHEQ00000000009";
 		String ver = "4.0";
 		String jpath = "/\\TestData\\delCheckv4.json";
+		ValidatableResponse result = CommonMethods.deleteMethod(uri, ver, jpath);
+		System.out.println(result.toString());
+
+	}
+	
+	@Test(priority = 3, groups = "Cashering")
+	public void getCheckSetupv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/check/setup";
+		String ver = "4.0";
+		String jpath = "/\\TestData\\getCheckvsetup4.json";
 		ValidatableResponse result = CommonMethods.deleteMethod(uri, ver, jpath);
 		System.out.println(result.toString());
 

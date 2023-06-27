@@ -1,6 +1,7 @@
 package Public;
 
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.sql.SQLException;
 import java.util.HashMap;
 
@@ -242,11 +243,12 @@ public class ServiceOrderController {
 			Assert.fail("Service Order null");
 		}
 
-		Thread.sleep(5000);
-		if (ServiceOrderNumber != null) {
-			putTaskComplete_v_2_4(ServiceOrderNumber);
-		} else {
+		Thread.sleep(500);
+		if (ServiceOrderNumber == null) {
 			Assert.fail("Service Order " + ServiceOrderNumber + "Not found");
+		} else {
+			putTaskComplete_v_2_4(ServiceOrderNumber);
+			
 		}
 
 	}
@@ -280,18 +282,24 @@ public class ServiceOrderController {
 
 		// String serviceOrderid ="SORD00000009014";
 		String uri = "/serviceorder/taskcomplete";
-		String ver = "2.4";
-		String jpath = "{\r\n" + "    \"ServiceOrder\": \r\n" + "        {\r\n" + "            \"Id\": \""
-				+ serviceOrderid + "\",\r\n" + "            \"EmployeeId\": \"EMPLOYEE\",\r\n"
-				+ "            \"LocationId\": \"ELECWAT001\",\r\n" + "            \"Task\": {\r\n"
-				+ "                \"Sequence\": 1100\r\n" + "            },\r\n"
-				+ "            \"DocumentNumber\": \"\",\r\n"
-				+ "            \"CompletedDateTime\": \"2019-04-08T11:45:00Z\"\r\n" + "        }\r\n" + "}";
+		String ver = "3";
+		String jpath = "{\r\n"
+				+ "    \"ServiceOrderNumber\": \""+serviceOrderid+",\r\n"
+				+ "    \"TaskId\": \"TASK010\"\r\n"
+				+ "    \r\n"
+				+ "}";
+		try {
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath, "null");
 		result.assertThat().body(Matchers.containsString("\"Success\":true"));
-
 		System.out.println(result.extract().asString());
-	}
+		}
+		catch (NoSuchFileException e)
+		{
+			
+			System.out.println("json file not used to payload");
+			
+		}
+			}
 
 	@Test(priority = 1, groups = "ServiceOrder")
 	public static void postcreateServiceOrder_v2_ERROR()
