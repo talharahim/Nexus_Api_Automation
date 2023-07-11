@@ -71,9 +71,23 @@ public class checkControllerv4 {
 			}
 	}
 	
+	@Test(priority = 5, groups = "check")
+	public static void lookupChecksv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	
+		String uri = "/lookupChecks";
+		String ver = "4.0";
+		JsonPath  result = CommonMethods.getMethod(uri, ver);
+		System.out.println(result.getString("Check"));
+		String j = result.getString("Check");
+		if (!j.contains("[[CustomerId:, LocationId:, DocumentNumber:]]"))
+				{
+			Assert.fail("lookupChecks API is failed");
+				}
+	}
+	
 	public static void main (String args[]) throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		
-		getNextCheckv4();
+		lookupChecksv4();
 		
 	}
 		
