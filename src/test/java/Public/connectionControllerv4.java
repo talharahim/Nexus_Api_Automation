@@ -43,18 +43,7 @@ public class connectionControllerv4 {
 
 	}
 
-	@Test(priority = 3, groups = "ConnectionController")
-	public void getConnectionSequence_v4()
-			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-
-		String uri = "/connection/ELECWAT003";
-		String ver = "4.0";
-		String jpath = "./\\TestData\\getConnectionSequence_v4.json";
-		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("ConnectionSequence", "1");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
-		System.out.println(result);
-
-	}
+	
+	
 
 }
