@@ -1,6 +1,8 @@
 package Public;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.HashMap;
 
@@ -8,9 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.NexustAPIAutomation.java.CommonMethods;
-
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
 public class checkControllerv4 {
@@ -71,9 +71,21 @@ public class checkControllerv4 {
 			}
 	}
 	
+	@Test(priority = 5, groups = "check")
+	public static void putCheckv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	
+		String uri = "/check";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\putCheckv4.json";
+		String params = new String(Files.readAllBytes(Paths.get(jpath)));
+		String expected = "./\\TestData\\putCheckv4expected_v4.json";
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, params, expected);
+			
+	}
+	
 	public static void main (String args[]) throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		
-		getNextCheckv4();
+		putCheckv4();
 		
 	}
 		

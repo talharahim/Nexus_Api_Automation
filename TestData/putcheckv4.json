@@ -1,0 +1,10 @@
+{
+    "Check": {
+        "DocumentNumber": "CHEQ00000000009",
+        "CheckDate": "2023-07-13",
+        "CreatedDate": "2023-07-13",
+        "CheckAmount": 120.50,
+        "CheckbookId": "FIRST NATIONAL",
+        "Comment": "Example Comment Example"
+    }
+}

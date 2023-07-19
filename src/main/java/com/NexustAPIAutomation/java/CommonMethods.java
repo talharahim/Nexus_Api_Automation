@@ -67,10 +67,15 @@ public class CommonMethods {
 				.contentType("application/x-www-form-urlencoded").log().all().formParam("grant_type", "password")
 				.formParam("username", userName).formParam("password", Password).when().post(url); // authorization_token
 		CommonMethods.Delay(100); // value is not
-		System.out.println(response.path("error").toString());
-		if ((response.path("error").toString()).contains("invalid_grant")) {
-			//Comment Following to Test Authorization
-			//Assert.fail("Authorization failed/Invalid Token/Check User Name");
+		// System.out.println(response.path("error").toString());
+		try {
+			boolean f = (response.path("error").toString()).contains("invalid_grant");
+			if (f == true) {
+				// Comment Following to Test Authorization
+				 Assert.fail("Authorization failed/Invalid Token/Check User Name");
+			}
+		} catch (NullPointerException e) {
+
 		}
 		// The auth token could then be set to a string variable
 		String auth_token = response.path("access_token").toString();
@@ -471,7 +476,7 @@ public class CommonMethods {
 		 */
 
 		String expe = new String(Files.readAllBytes(Paths.get(jpath)));
-		System.out.println("Expected Response as in file : " + jpath +" = "+expe);
+		System.out.println("Expected Response as in file : " + jpath + " = " + expe);
 		System.out.println();
 		ValidatableResponse response = httpRequest.get().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
@@ -675,16 +680,15 @@ public class CommonMethods {
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(payload);
 
-		ValidatableResponse response = 	httpRequest.put().then().assertThat()
-		.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jsonDataInFile)))));
-		
+		ValidatableResponse response = httpRequest.put().then().assertThat()
+				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jsonDataInFile)))));
+
 		System.out.println("** PUT call Response **");
 		System.out.println(response.extract().asString());
 		return response;
 
 	}
 
-	
 	public static ValidatableResponse putMethodNofile(String uri, String version, String payload, String jsonDataInFile)
 			throws InterruptedException, IOException {
 
@@ -728,14 +732,15 @@ public class CommonMethods {
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(payload);
 
-		ValidatableResponse response = 	httpRequest.put().then().assertThat()
-		.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jsonDataInFile)))));
-		
+		ValidatableResponse response = httpRequest.put().then().assertThat()
+				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jsonDataInFile)))));
+
 		System.out.println("** PUT call Response **");
 		System.out.println(response.extract().asString());
 		return response;
 
 	}
+
 	public static JsonPath getMethodTest() throws InterruptedException, IOException {
 
 		String version = "2.4";
@@ -999,7 +1004,6 @@ public class CommonMethods {
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.queryParams(params);
 
-	
 		ValidatableResponse response;
 		String validate = new String(Files.readAllBytes(Paths.get(jpath)));
 		System.out.println("Veriying String =" + validate);
@@ -1057,7 +1061,8 @@ public class CommonMethods {
 		}
 	}
 
-	public static ValidatableResponse deleteMethod(String uri, String version, String jpath) throws InterruptedException, IOException {
+	public static ValidatableResponse deleteMethod(String uri, String version, String jpath)
+			throws InterruptedException, IOException {
 		switch (version) {
 		case "1":
 			RestAssured.baseURI = urlv1;
@@ -1094,11 +1099,10 @@ public class CommonMethods {
 		System.out.println(RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br");
-		
-		ValidatableResponse response = 	httpRequest.delete().then().assertThat().statusCode(200);
-		
+
+		ValidatableResponse response = httpRequest.delete().then().assertThat().statusCode(200);
+
 		return response;
 	}
-	
 
 }
