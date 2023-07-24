@@ -145,7 +145,7 @@ public class ServiceOrderControllerV3 {
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, jpath);
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("READ"));
-		result.assertThat().body(Matchers.containsString("created"));
+		result.assertThat().body(Matchers.containsString("Created"));
 		//System.out.println(result.extract().asString());
 
 	}

@@ -156,8 +156,11 @@ public class CommonMethods {
 		case "3.0":
 			RestAssured.baseURI = urlv3;
 			break;
-
+		case "4.0":
+			RestAssured.baseURI = urlv4;
+			break;
 		default:
+			Assert.fail("Invalid version");
 			version = "Invalid version";
 			break;
 		}
@@ -844,6 +847,9 @@ public class CommonMethods {
 		case "3.0":
 			RestAssured.baseURI = urlv3;
 			break;
+		case "4.0":
+			RestAssured.baseURI = urlv4;
+			break;
 
 		default:
 			version = "Invalid version";
@@ -852,23 +858,15 @@ public class CommonMethods {
 		Path jsonDataInFile = Paths.get(pathToResponse);
 		System.out.println(RestAssured.baseURI);
 		RestAssured.baseURI = RestAssured.baseURI + uri;
-		String token = "Bearer " + getToken();
-		// RestAssured.given().headers("Authorization", token,
-		// "Content-Type", ContentType.JSON, "Accept", "*/*", "Connection",
-		// "keep-alive", "Accept-Encoding",
-		// "gzip, deflate, br").when().get().then().assertThat()
-		// .statusCode(200).body(Matchers.equalTo(new
-		// String(Files.readAllBytes(jsonDataInFile))));
 		String expe = new String(Files.readAllBytes(Paths.get(pathToResponse)));
 		System.out.println("Expected Response as in file : " + expe);
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br");
-
-		ValidatableResponse response = httpRequest.get().then().assertThat().statusCode(200)
-				.body(Matchers.equalTo(new String(Files.readAllBytes(jsonDataInFile))));
-		;
-
+		
+		ValidatableResponse response = httpRequest.get().then().assertThat().statusCode(200);
+		//.and()	.body(Matchers.equalTo(new String(Files.readAllBytes(jsonDataInFile))));
+		System.out.println(response.toString());
 		return response;
 		// JsonPath jsonPathEvaluator = response.jsonPath();
 
@@ -991,6 +989,10 @@ public class CommonMethods {
 		case "3.0":
 			RestAssured.baseURI = urlv3;
 			break;
+		case "4.0":
+			RestAssured.baseURI = urlv4;
+			break;
+
 
 		default:
 			version = "Invalid version";

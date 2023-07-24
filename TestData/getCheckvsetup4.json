@@ -1,1 +1,1 @@
-{"Check":{"Success":true,"Data":{"ChargeType":"CHEQUE","CheckBook":"FIRST NATIONAL","Comment":"Misc charge for printed cheque","RepeatChecks":false,"MinAutoRefund":0,"VendorIntegration":{"Id":3,"Description":"Send to External AP"},"APVoucher":{"Id":2,"Description":"Location + Check Date"},"FilePath":"C:\\_temp\\","FileSequence":0,"BatchId":"CH06272023sa"},"Messages":[]}}
+{"Check":{"Success":false,"Data":null,"Messages":[{"Enabled":1,"Info":"Vendor Integration has to be set to Send to AP.","Level":3}]}}
