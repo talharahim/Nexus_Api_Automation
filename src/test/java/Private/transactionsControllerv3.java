@@ -59,15 +59,13 @@ public class transactionsControllerv3 {
 		String uri = "/transactions/getRecentTransactions";
 		String ver = "3.0";
 		String jpath = "./\\TestData\\getrecentTransactionsv2.json";
-				
-	
-		HashMap<String, String> params = new HashMap<String, String>();
+
+	 	 HashMap<String, String> params = new HashMap<String, String>();
 		 params.put("CustomerId", "CUSTOMER012"); 
 		 params.put("LocationId", "LOCATION011"); 
 		 String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		 System.out.println(result);
 
-	
 		
 	}
 	
@@ -77,12 +75,11 @@ public class transactionsControllerv3 {
 		String uri = "/transaction/bill/BILL00000000001";
 		String ver = "3.0";
 		String jpath = "./\\TestData\\getBillInquiryv3.json";
-		
-	     HashMap<String, String> params = new HashMap<String, String>();
-		 params.put("CustomerId", "CUSTOMER012"); 
-		 params.put("LocationId", "LOCATION011"); 
-		 String result = CommonMethods.getMethod(uri, ver, params, jpath);
-		 System.out.println(result);
+        HashMap<String, String> params = new HashMap<String, String>();
+	    params.put("CustomerId", "CUSTOMER012"); 
+		params.put("LocationId", "LOCATION011"); 
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
 
 	
 		

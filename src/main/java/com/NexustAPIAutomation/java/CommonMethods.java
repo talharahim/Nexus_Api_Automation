@@ -463,6 +463,8 @@ public class CommonMethods {
 			Assert.fail("Invalid version");
 			break;
 		}
+		String expe = new String(Files.readAllBytes(Paths.get(jpath)));
+		System.out.println("Expected Response as in file : " + jpath + " = " + expe);
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		System.out.println("Tesing URI:" + RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
@@ -478,8 +480,7 @@ public class CommonMethods {
 		 * (ClassCastException e) { e.printStackTrace(); }/
 		 */
 
-		String expe = new String(Files.readAllBytes(Paths.get(jpath)));
-		System.out.println("Expected Response as in file : " + jpath + " = " + expe);
+
 		System.out.println();
 		ValidatableResponse response = httpRequest.get().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
