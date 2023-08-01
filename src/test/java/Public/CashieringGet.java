@@ -103,7 +103,6 @@ public class CashieringGet extends BaseClass {
 
 	@Test(priority = 4, groups = "Cashering", dependsOnMethods = "TC003_getnextReceipt")
 	public void TC004_getReceipt() throws ClassNotFoundException, SQLException, InterruptedException {
-		extent.createTest("Test", "");
 		String uri = "/cashiering/receipt/004270412000001";
 		String ver = "2.4";
 		String payload = "";
