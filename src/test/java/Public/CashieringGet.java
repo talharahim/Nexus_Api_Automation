@@ -125,7 +125,7 @@ public class CashieringGet extends BaseClass {
 
 	@Test(priority = 5, groups = "Cashering", dependsOnMethods = "TC004_getReceipt")
 	public void TC005_getRegisterInfo() throws ClassNotFoundException, SQLException, InterruptedException {
-		extent.createTest("Test", "");
+		//extent.createTest("Test", "");
 		String uri = "/cashiering/register/TRREG000001/info";
 		String ver = "2.4";
 		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
