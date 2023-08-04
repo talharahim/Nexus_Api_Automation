@@ -234,33 +234,18 @@ public class CommonMethods {
 			break;
 		}
 		// File jsonDataInFile = new File(payload);
-		// System.out.println(RestAssured.baseURI);
+		System.out.println(payload);
 		Response response;
 		JsonPath jsonPathEvaluator;
+		//CharSequence i="\\";
+		//payload.replace(i,"");
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		RequestSpecification httpRequest = RestAssured.given()
 				.headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON, "Accept", "*/*",
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(payload);
-		File jsonDataInFile = new File(payload);
-		try (FileReader reader = new FileReader(jsonDataInFile)) {
-			// Read JSON file
-			JSONParser jsonParser = new JSONParser();
-			Object obj = jsonParser.parse(reader);
-			JSONObject bodycontent = (JSONObject) obj;
-
-			System.out.println("Posting uri :" + RestAssured.baseURI.toString());
-			System.out.println("with Body Content  =" + bodycontent.toString());
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		
 
 		response = httpRequest.post();
 		System.out.println(response.asString());

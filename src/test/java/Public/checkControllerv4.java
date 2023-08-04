@@ -1,11 +1,13 @@
 package Public;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.HashMap;
 
+import org.apache.hc.core5.http.nio.ssl.SecurePortStrategy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,18 +25,26 @@ public class checkControllerv4 {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/check";
 		String ver = "4.0";
-		String payload = "./\\TestData\\postcheckv4.json";
-		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
-		Boolean Result = jsonPathEvaluator.get("Check.Success");
-		chq = jsonPathEvaluator.get("Check.Data.DocumentNumber");
+		String nextCheck = getNextCheckv4();
+		if (nextCheck!=null) {
+		String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test Batch\",\"Comment\":\"Example Comment\"}}";
+		String filepath = "./\\TestData\\PostCheckv4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		String Result = jsonPathEvaluator.get("Check.Data.DocumentNumber");
 		System.out.println(Result);
-		System.out.println(chq);
-		if (Result != null) {
-			if (Result == false) {
-				System.out.println("Unable to post check, check data" + Result);
-			}
+		if(Result==null)
+		{
+			
+			Assert.fail("Check Posting Failed");
+		
 		}
-		getCheckv4(chq);
+		else {
+			getCheckv4(nextCheck);
+		}
+		}
 
 	}
 
@@ -50,7 +60,8 @@ public class checkControllerv4 {
 		HashMap<String, String> params = new HashMap<String, String>();
 		// params.put("SearchQuery", "sally");
 		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
-		System.out.println(result);
+		System.out.println("get Check API RESPONSE "+result);
+		putCheckv4(str);
 		delCheckv4(str);
 
 	}
@@ -74,14 +85,14 @@ public class checkControllerv4 {
 		String ver = "4.0";
 		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
 		Boolean Result = jsonPathEvaluator.get("Check.Success");
-		if (!Result.equals(false)) {
+		if (Result.equals(false)) {
 			Assert.fail(null);
 		}
 
 	}
 
 	@Test(priority = 5, groups = "check")
-	public static void getNextCheckv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static String getNextCheckv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/check/nextCheck";
 		String ver = "4.0";
@@ -94,16 +105,35 @@ public class checkControllerv4 {
 		if (!j.contains("Success:true")) {
 			Assert.fail("next Check API is failed");
 		}
+		System.out.println(result.getString("Check.Data.NextDocumentNumber"));
+		return result.getString("Check.Data.NextDocumentNumber");
 	}
 
-	@Test(priority = 5, groups = "check")
-	public static void putCheckv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	//@Test(priority = 6, groups = "check")
+	public static void putCheckv4(String str) throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/check";
 		String ver = "4.0";
-		String jpath = "./\\TestData\\putCheckv4.json";
+	//	String jpath = "./\\TestData\\putCheckv4.json";
+		String params = "{\"Check\": {\"DocumentNumber\": \""+str+"\",\"CheckDate\": \"2023-07-13\",\"CreatedDate\": \"2023-07-13\",\"CheckAmount\": 120.50,\"CheckbookId\": \"FIRST NATIONAL\",    \"Comment\": \"Example Comment Example\" }}";
+		String expected = "{\"Check\":{\"Success\":true,\"Data\":{\"DocumentNumber\":\""+str+"\"},\"Messages\":[{\"Enabled\":1,\"Info\":\"Updated\",\"Level\":1}]}}";
+		String filepath = "./\\TestData\\PUTCheckv4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(expected);
+		file.close();
+		ValidatableResponse result = CommonMethods.putMethod(uri, ver, params, filepath);
+
+	}
+	
+	
+	@Test(priority = 7, groups = "check")
+	public static void putChecksendtoAPv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/check/sendtoAP";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\putChecksendtoAPv4.json";
 		String params = new String(Files.readAllBytes(Paths.get(jpath)));
-		String expected = "./\\TestData\\putCheckv4expected_v4.json";
+		String expected = "./\\TestData\\putCheckexpectedsendtoApi_v4.json";
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, params, expected);
 
 	}
