@@ -137,11 +137,42 @@ public class checkControllerv4 {
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, params, expected);
 
 	}
+	
+	@Test(priority =8, groups = "check")
+	public static void postingReceivable4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/check/postingReceivable";
+		String ver = "4.0";
+		String nextCheck = getNextCheckv4();
+		if (nextCheck!=null) {
+		//String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test Batch\",\"Comment\":\"Example Comment\"}}";
+		String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\"}}";
+		String filepath = "./\\TestData\\postingReceivablev4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		String Result = jsonPathEvaluator.get("Check.Data.DocumentNumber");
+		System.out.println(Result);
+		if(Result==null)
+		{
+			
+			Assert.fail("Check Posting Failed");
+		
+		}
+		else {
+			getCheckv4(nextCheck);
+		}
+		}
 
+	}
+
+	
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		PostCheckv4();
+		//PostCheckv4();
+		postingReceivable4();
 
 	}
 

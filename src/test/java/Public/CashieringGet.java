@@ -148,7 +148,7 @@ public class CashieringGet extends BaseClass {
 
 	@Test(priority = 6, groups = "Cashering", dependsOnMethods = "TC005_getRegisterInfo")
 	public void TC006_gettransactions() throws ClassNotFoundException, SQLException, InterruptedException {
-		extent.createTest("Test", "");
+		//extent.createTest("Test", "");
 		String uri = "/cashiering/transactions/customer017";
 		String ver = "2.4";
 		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
@@ -163,7 +163,7 @@ public class CashieringGet extends BaseClass {
 
 	@Test(priority = 7, groups = "Cashering", dependsOnMethods = "TC006_gettransactions")
 	public void TC007_getAutoApply() throws ClassNotFoundException, SQLException, InterruptedException {
-		extent.createTest("Test", "");
+	//	extent.createTest("Test", "");
 		String uri = "/cashiering/autoApply";
 		String ver = "2.4";
 		Map<String, String> responseMap = new HashMap<String, String>();

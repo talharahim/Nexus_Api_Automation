@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse--1037831743\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse--138711730\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -125,6 +125,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.CashieringGet" hash-for-method="TC005_getRegisterInfo">TC005_getRegisterInfo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.CashieringGet" hash-for-method="TC006_gettransactions">TC006_gettransactions</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -180,12 +185,19 @@
                   <span class="method-name">TC005_getRegisterInfo</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC006_gettransactions">
+                  </a> <!-- TC006_gettransactions -->
+                  <span class="method-name">TC006_gettransactions</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse--1037831743\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse--138711730\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -200,6 +212,7 @@
           &lt;include name=&quot;TC003_getCashin&quot;/&gt;
           &lt;include name=&quot;TC004_getReceipt&quot;/&gt;
           &lt;include name=&quot;TC005_getRegisterInfo&quot;/&gt;
+          &lt;include name=&quot;TC006_gettransactions&quot;/&gt;
           &lt;include name=&quot;TC004_balances&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- Public.CashieringGet --&gt;
@@ -249,6 +262,10 @@
                 <span class="method-in-group-name">TC005_getRegisterInfo</span>
                 <br/>
               </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">TC006_gettransactions</span>
+                <br/>
+              </div> <!-- method-in-group -->
             </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -266,27 +283,31 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TC003_getCashin')
 data.setCell(0, 2, 'Public.CashieringGet')
-data.setCell(0, 3, 1537);
+data.setCell(0, 3, 1463);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TC004_balances')
+data.setCell(1, 1, 'TC006_gettransactions')
 data.setCell(1, 2, 'Public.CashieringGet')
-data.setCell(1, 3, 257);
+data.setCell(1, 3, 276);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TC005_getRegisterInfo')
+data.setCell(2, 1, 'TC004_balances')
 data.setCell(2, 2, 'Public.CashieringGet')
-data.setCell(2, 3, 248);
+data.setCell(2, 3, 226);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'TC004_getReceipt')
 data.setCell(3, 2, 'Public.CashieringGet')
-data.setCell(3, 3, 223);
+data.setCell(3, 3, 218);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'TC003_getnextReceipt')
+data.setCell(4, 1, 'TC005_getRegisterInfo')
 data.setCell(4, 2, 'Public.CashieringGet')
-data.setCell(4, 3, 216);
+data.setCell(4, 3, 199);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'TC003_getnextReceipt')
+data.setCell(5, 2, 'Public.CashieringGet')
+data.setCell(5, 3, 198);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -306,7 +327,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -315,8 +336,6 @@ return data;
                 <span class="ignored-method-name">TC003_1_getCashin</span>
                 <br/>
                 <span class="ignored-method-name">TC007_getAutoApply</span>
-                <br/>
-                <span class="ignored-method-name">TC006_gettransactions</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -335,27 +354,31 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">TC003_getCashin</span>
-                <span class="method-start">32 ms</span>
+                <span class="method-start">29 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC004_balances</span>
-                <span class="method-start">1617 ms</span>
+                <span class="method-start">1535 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC003_getnextReceipt</span>
-                <span class="method-start">1877 ms</span>
+                <span class="method-start">1763 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC004_getReceipt</span>
-                <span class="method-start">2095 ms</span>
+                <span class="method-start">1963 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC005_getRegisterInfo</span>
-                <span class="method-start">2320 ms</span>
+                <span class="method-start">2183 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC006_gettransactions</span>
+                <span class="method-start">2384 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">flush</span>
-                <span class="method-start">2588 ms</span>
+                <span class="method-start">2677 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
