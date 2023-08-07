@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import com.NexustAPIAutomation.java.CommonMethods;
 import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
 public class checkControllerv4 {
@@ -84,8 +85,9 @@ public class checkControllerv4 {
 		String uri = "/check/setup";
 		String ver = "4.0";
 		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
+		System.out.println(jsonPathEvaluator.prettyPrint());
 		Boolean Result = jsonPathEvaluator.get("Check.Success");
-		if (Result.equals(false)) {
+		if (!Result.equals(false)) {
 			Assert.fail(null);
 		}
 
@@ -139,7 +141,34 @@ public class checkControllerv4 {
 	}
 	
 	@Test(priority =8, groups = "check")
-	public static void postingReceivable4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void postingReceivable4Error() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/check/postingReceivable";
+		String ver = "4.0";
+		String nextCheck = "CHEQ00000000009";
+		if (nextCheck!=null) {
+		//String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test Batch\",\"Comment\":\"Example Comment\"}}";
+		String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\"}}";
+		String filepath = "./\\TestData\\postingReceivablev4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		//jsonPathEvaluator = CommonMethods.postMethodResponseasString(filepath, uri, ver);
+		Response response =  CommonMethods.postMethodResponseasString(filepath, uri, ver);
+		String result = response.asString();
+		result.replaceAll("\\s", "");
+		System.out.println(result);
+		String expected = "{\"Check\":{\"Success\":false,\"Data\":{\"DocumentNumber\":\"CHEQ00000000009\",\"Receivable\":null,\"PostingReport\":false,\"PostingError\":false,\"ReportList\":[],\"ReportErrorList\":[]},\"Messages\":[{\"Enabled\":1,\"Info\":\"Check must be sent to AP before posting.\",\"Level\":3}]}}";
+		System.out.println(expected);
+		if(!result.trim().contentEquals(expected.trim()) )
+		{
+		Assert.fail();
+		}}
+
+	}
+	
+	@Test(priority =8, groups = "check")
+	public static void postingReceivable4RefundError() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/check/postingReceivable";
 		String ver = "4.0";
@@ -151,28 +180,29 @@ public class checkControllerv4 {
 		FileWriter file = new FileWriter(filepath);
 		file.write(payload);
 		file.close();
-		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
-		String Result = jsonPathEvaluator.get("Check.Data.DocumentNumber");
-		System.out.println(Result);
-		if(Result==null)
+		//jsonPathEvaluator = CommonMethods.postMethodResponseasString(filepath, uri, ver);
+		Response response =  CommonMethods.postMethodResponseasString(filepath, uri, ver);
+		String result = response.asString();
+		result.replaceAll("\\s", "");
+		System.out.println(result);
+		String expected = "{\"Check\":{\"Success\":false,\"Data\":{\"DocumentNumber\":\"CHEQ00000000013\",\"Receivable\":null,\"PostingReport\":false,\"PostingError\":true,\"ReportList\":[],\"ReportErrorList\":[{\"Name\":\"Post Check Refund Error List\",\"PrintOrder\":1}]},\"Messages\":[{\"Enabled\":1,\"Info\":\"Posting validation error found. Refer to posting error report.\",\"Level\":3}]}}";
+		System.out.println(expected);
+		if(!result.trim().contentEquals(expected.trim()) )
 		{
-			
-			Assert.fail("Check Posting Failed");
-		
-		}
-		else {
-			getCheckv4(nextCheck);
-		}
-		}
+		Assert.fail();
+		}}
 
 	}
+
+
+
 
 	
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		//PostCheckv4();
-		postingReceivable4();
+		postingReceivable4RefundError();
 
 	}
 

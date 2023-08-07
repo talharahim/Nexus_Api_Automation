@@ -1,0 +1,24 @@
+{
+    "Check": {
+        "Success": false,
+        "Data": {
+            "DocumentNumber": "CHEQ00000000009",
+            "Receivable": null,
+            "PostingReport": false,
+            "PostingError": false,
+            "ReportList": [
+                
+            ],
+            "ReportErrorList": [
+                
+            ]
+        },
+        "Messages": [
+            {
+                "Enabled": 1,
+                "Info": "Check must be sent to AP before posting.",
+                "Level": 3
+            }
+        ]
+    }
+}
