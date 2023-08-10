@@ -143,7 +143,7 @@ public class ServiceOrderController {
 
 		result.assertThat().body(Matchers.containsString("true"));
 		result.assertThat().body(Matchers.containsString("Created"));
-		// System.out.println(result.extract().asString());
+		System.out.println(result.extract().asString());
 
 	}
 

@@ -147,6 +147,7 @@ public class ServiceOrderControllerV3 {
 		result.assertThat().body(Matchers.containsString("READ"));
 		result.assertThat().body(Matchers.containsString("Created"));
 		//System.out.println(result.extract().asString());
+		System.out.println(result.toString());
 
 	}
 

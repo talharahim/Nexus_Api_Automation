@@ -21,11 +21,12 @@ public class PaymentExtension {
 		String payload = "./\\TestData\\PostPayment2_1.json";
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		Boolean Result = jsonPathEvaluator.get("result[0].Success");
-		System.out.println(jsonPathEvaluator.toString());
+		
 		if (Result == false) {
+			System.out.println(jsonPathEvaluator.toString());
 			Assert.fail();
 		}
-
+		System.out.println(jsonPathEvaluator.toString());
 	}
 
 	@Test(priority = 2, groups = "Cashering")
