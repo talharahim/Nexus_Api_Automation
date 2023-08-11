@@ -57,4 +57,16 @@ public class lookupControllerv4 {
 		System.out.println(result);
 	}
 	
+	@Test(priority = 1, groups = "lookup")
+	public void lookupCheckBookv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri3 = "/lookupCheckBook";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\lookupCheckBookv4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+		// params.put("Batchsource", "NONE");  //params.put("LocationId", "LOCATION011"); 
+		String result = CommonMethods.getMethod(uri3, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+	
 }

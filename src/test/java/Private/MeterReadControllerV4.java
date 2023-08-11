@@ -44,6 +44,26 @@ public class MeterReadControllerV4 {
 		System.out.println(result);
 
 	}
+	
+	
+	@Test(priority = 3, groups = "MeterRead")
+	public void getmeterReadingnextv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/meterReading/next";
+		String ver = "4.0";
+		String expected = "{\"MeterReading\":{\"Success\":true,\"Data\":{\"PreviousDocumentNumber\":\"\",\"NextDocumentNumber\":\"READREAD000000";
+		String expected2 = "\"},\"Messages\":[]}}";
+		HashMap<String, String> params = new HashMap<String, String>();
+		   
+		String result = CommonMethods.getMethodasString(uri, ver, params);
+		if (!result.contains(expected) && !result.contains(expected2))
+		{
+			Assert.fail();
+		}
+			System.out.println(result);
+		System.out.println(result);
+
+	}
 
 	
 
