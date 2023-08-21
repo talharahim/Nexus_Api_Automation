@@ -1,0 +1,45 @@
+{
+    "MeterReading": [
+        {
+            "LocationId": "Z100036",
+            "Connection": 1,
+            "EquipmentId": "EE1",
+            "RemoteId": "",
+            "BatchId": "NewBatch",
+            "ReadDocumentLocation": 2,
+            "ServiceOrder": 
+                {
+                    "Id": "",
+                    "Task": {
+                            "Sequence": 0
+                    }
+                },
+            "MeterReadInfo": 
+                {
+                    "EmployeeId": "BANK0001",
+                    "Description": "Meter Read from street",
+                    "ReadingType": 1,
+                    "ReadingDateTime": "2022-05-31T10:11:23",
+                    "ReasonCode": "",
+                    "Periods": 
+                        [
+                            {
+                                "Index": 1,
+                                "ConsumptionOverride": "true",
+                                "Rollover": 0,
+                                "NetRollover": 0,
+                                "ConsumptionReading": 3.3,
+                                "Consumption": 2.2,
+                                "KW": 0,
+                                "KVA": 0,
+                                "NetMeterReceived": 0,
+                                "NetMeterPreviousReceived": 0,
+                                "PowerFactor": 0,
+                                "LoadFactor": 0
+                            }
+                        ]
+                }
+            
+        }
+    ]
+}

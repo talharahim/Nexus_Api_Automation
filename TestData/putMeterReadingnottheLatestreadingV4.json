@@ -1,0 +1,56 @@
+{
+    "MeterReading": {
+        "DocumentNumber": "READ00000000905",
+        "BatchId": "NAPIMR~20230815",
+        "EmployeeId": "BANK0001",
+        "Description": "Meter Read from street",
+        "AdjustedDate": "2028-03-13T10:50:42",
+        "ReadingType": 1,
+        "ReadingDateTime": "2028-02-14T10:11:23",
+        "ReasonCode": "ELECTRICREAD",
+        "Periods": [
+            {
+                "Index": 1,
+                "ConsumptionOverride": 1,
+                "Rollover": 0,
+                "ConsumptionReading": 0,
+                "Consumption": 0,
+                "KW": 0,
+                "KVA": 0,
+                "NetRollover": 0,
+                "NetMeterReceived": 8.000,
+                "NetMeterPreviousReceived": 0,
+                "PowerFactor": 0,
+                "LoadFactor": 0
+            },
+            {
+                "Index": 2,
+                "ConsumptionOverride": 0,
+                "Rollover": 0,
+                "ConsumptionReading": 80.00000,
+                "Consumption": 0,
+                "KW": 0,
+                "KVA": 0,
+                "NetRollover": 0,
+                "NetMeterReceived": 0,
+                "NetMeterPreviousReceived": 0,
+                "PowerFactor": 0,
+                "LoadFactor": 0
+            },
+            {
+                "Index": 3,
+                "ConsumptionOverride": 0,
+                "Rollover": 0,
+                "ConsumptionReading": 80,
+                "Consumption": 0,
+                "KW": 0,
+                "KVA": 0,
+                "NetRollover": 0,
+                "NetMeterReceived": 0,
+                "NetMeterPreviousReceived": 0,
+                "PowerFactor": 0,
+                "LoadFactor": 0
+            }
+        ]
+    }
+}
