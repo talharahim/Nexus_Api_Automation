@@ -75,7 +75,7 @@ public class ServiceOrderControllerV3 {
 		// ServiceOrderId DESC
 		String uri = "/serviceOrder/getServiceOrders";
 		String ver = "3.0";
-		String jpath = "./\\TestData\\getserviceordersv2.json";
+		String jpath = "./\\TestData\\getserviceordersv3.json";
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("LocationId", "WATER002");
