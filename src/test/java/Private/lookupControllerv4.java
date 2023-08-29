@@ -87,5 +87,19 @@ public class lookupControllerv4 {
 	}
 	
 	
+	@Test(priority = 7, groups = "lookup")
+	public void lookupNsfReasonCodev4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri3 = "/lookupNsfReasonCode";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\lookupNsfReasonCodev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+		// params.put("Batchsource", "NONE");  //params.put("LocationId", "LOCATION011"); 
+		String result = CommonMethods.getMethod(uri3, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+	
+	
+	
 	
 }
