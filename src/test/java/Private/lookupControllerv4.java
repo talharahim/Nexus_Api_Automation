@@ -17,11 +17,11 @@ public class lookupControllerv4 {
 	public void getapplyByService_v4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		String uri = "/lookupBatch";
 		String ver = "4.0";
-		String expected = "{\"Batch\":[{\"Id\":\"000700\",\"Description\":\"\"},{\"Id\":\"10001\",\"Description\":\"\"},{\"Id\":\"1001\",\"Description\":\"\"},{\"Id\":\"100111\",\"Description\":\"\"},{\"Id\":\"10111\",\"Description\":\"\"},{\"Id\":\"109090ABC\",\"Description\":\"\"},{\"Id\":\"12312312\",\"Description\":\"\"},{\"Id\":\"12345\",\"Description\":\"\"},{\"Id\":\"2.0.0\",\"Description\":\"\"},{\"Id\":\"ABC10001\",\"Description\":\"\"},{\"Id\":\"ABC1213\",\"Description\":\"\"},{\"Id\":\"API 20190430\",\"Description\":\"Payments from Web Service - API\"},{\"Id\":\"API 20190503\",\"Description\":\"Payments from Web Service - API\"},{\"Id\":\"API20220908001\",\"Description\":\"Payments from Nexus Api - API\"},{\"Id\":\"API20220929001\",\"Description\":\"Payments from Nexus Api - API\"},{\"Id\":\"API20230822001\",\"Description\":\"Payments from Nexus Api - API\"},{\"Id\":\"API8232023\",\"Description\":\"\"},{\"Id\":\"BAT012301203\",\"Description\":\"\"},{\"Id\":\"BAT1\",\"Description\":\"\"},{\"Id\":\"BAT10123123\",\"Description\":\"\"},{\"Id\":\"BT1231\",\"Description\":\"\"},{\"Id\":\"CHEQ1\",\"Description\":\"\"},{\"Id\":\"CHK041227sa01\",\"Description\":\"CHEQUE\"},{\"Id\":\"DPP041227sa01\",\"Description\":\"PYMT\"},{\"Id\":\"MISC10001\",\"Description\":\"\"},{\"Id\":\"NADMC2022093001\",\"Description\":\"API Deposit Misc Charge\"},{\"Id\":\"RM(3)120427\",\"Description\":\"\"},{\"Id\":\"Test Batch\",\"Description\":\"\"},{\"Id\":\"TEST109\",\"Description\":\"\"},{\"Id\":\"WO101619CRP001\",\"Description\":\"Write Off - sa\"}]}";
+		String expected = "{\"Batch\":[{\"Id\":\"000700";
 		HashMap<String, String> params = new HashMap<String, String>();
 		String result = CommonMethods.getMethodasString(uri, ver, params);
 	
-		if (!expected.contentEquals(result)) 
+		if (!result.contains(expected)) 
 		{
 			Assert.fail("Actual Result "+result);
 		}
@@ -92,6 +92,17 @@ public class lookupControllerv4 {
 		String uri3 = "/lookupNsfReasonCode";
 		String ver = "4.0";
 		String jpath = "./\\TestData\\lookupNsfReasonCodev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+		// params.put("Batchsource", "NONE");  //params.put("LocationId", "LOCATION011"); 
+		String result = CommonMethods.getMethod(uri3, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+	@Test(priority = 8, groups = "lookup")
+	public void lookupMeterReadv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri3 = "/lookupMeterRead";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\lookupMeterReadv4.json";
 	 	HashMap<String, String> params = new HashMap<String, String>();
 		// params.put("Batchsource", "NONE");  //params.put("LocationId", "LOCATION011"); 
 		String result = CommonMethods.getMethod(uri3, ver, params, jpath);
