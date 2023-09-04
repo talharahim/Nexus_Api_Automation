@@ -87,10 +87,9 @@ public class checkControllerv4 {
 		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
 		System.out.println(jsonPathEvaluator.prettyPrint());
 		Boolean Result = jsonPathEvaluator.get("Check.Success");
-		if (!Result.equals(false)) {
+		if (Result.equals(false)) {
 			Assert.fail(null);
 		}
-
 	}
 
 	@Test(priority = 5, groups = "check")
