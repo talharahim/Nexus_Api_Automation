@@ -157,11 +157,11 @@ public class checkControllerv4 {
 		String result = response.asString();
 		result.replaceAll("\\s", "");
 		System.out.println(result);
-		String expected = "{\"Check\":{\"Success\":false,\"Data\":{\"DocumentNumber\":\"CHEQ00000000009\",\"Receivable\":null,\"PostingReport\":false,\"PostingError\":false,\"ReportList\":[],\"ReportErrorList\":[]},\"Messages\":[{\"Enabled\":1,\"Info\":\"Check must be sent to AP before posting.\",\"Level\":3}]}}";
+		String expected = " {\"Check\":{\"Success\":true,\"Data\":{\"FileName\":\"C:\\Csm_sendtoapi\\APCHE0000.TXT\"},\"Messages\":[{\"Enabled\":1,\"Info\":\"Sent To AP updated\",\"Level\":1}]}}";
 		System.out.println(expected);
 		if(!result.trim().contentEquals(expected.trim()) )
 		{
-		Assert.fail();
+		Assert.fail(result);
 		}}
 
 	}

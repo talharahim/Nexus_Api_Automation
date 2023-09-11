@@ -1,0 +1,27 @@
+{
+    "Void": {
+        "LocationId": "LOC001",
+        "CustomerId": "CUST001",
+        "BatchId": "BatchId",
+        "PostingDate": "2023-01-01",
+        "ReasonCodeId": 1,
+        "Comment": "",
+        "HasNsf": true,
+        "Nsf": {
+            "TransactionDate": "2023-01-01",
+            "PaymentRequiredByDate": "2023-01-01",
+            "ReasonCodeId": 0,
+            "ServiceChargeAmount": 25.12
+        },
+        "Document": [
+            {
+                "Number": "PYMT00000001263",
+                "VoidStatement": false
+            },
+            {
+                "Number": "MISC00000001463",
+                "VoidStatement": false
+            }
+        ]
+    }
+}
