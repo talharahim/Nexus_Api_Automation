@@ -188,7 +188,7 @@ public class checkControllerv4 {
 		System.out.println(expected);
 		if(!result.trim().contentEquals(expected.trim()) )
 		{
-		Assert.fail();
+		Assert.fail(result);
 		}}
 
 	}
