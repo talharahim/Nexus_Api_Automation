@@ -68,6 +68,25 @@ public class voidController {
 	}
 	
 	
+	
+	@Test(priority = 2, groups = "void")
+	public void getlinkedDocumentv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/void/linkedDocument/BILL00000000496";
+		String ver = "4.0";
+		String expected = "{\"Void\":{\"Success\":true,\"Data\":{\"LinkedDocument\":{\"Spa\":null,\"Penalty\":null,\"WriteOffExport\":[{\"Number\":\"PYMT00000000505\"}],\"CollectionImport\":null,\"DepositReceivable\":null,\"NegativeBill\":null,\"BillCreditNote\":null,\"TransferBalanceDocument\":null,\"CashieringCheckCreditCard\":null}},\"Messages\":[]}}";
+		HashMap<String, String> params = new HashMap<String, String>();
+	    String result = CommonMethods.getMethodasString(uri, ver, params);
+	    if (!result.contentEquals(expected))
+	    {
+	    	Assert.fail();
+	    }
+		System.out.println(result);
+		 
+	}
+	
+	
+	
+		
 
 	
 
