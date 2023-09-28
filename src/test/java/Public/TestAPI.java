@@ -70,7 +70,7 @@ public class TestAPI {
 		String info = jsonPathEvaluator.get("SmartlistFavorite.Messages[0].Info");
 		System.out.println(jsonPathEvaluator.prettyPrint());
 		if (Result != true) {
-			Assert.fail();
+			Assert.fail(jsonPathEvaluator.prettyPrint());
 		}
 		if(!info.contains("( 2 ) of the ( 2 ) smartlist favorites have been save."))
 		{

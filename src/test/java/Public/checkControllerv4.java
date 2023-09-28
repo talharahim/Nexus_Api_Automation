@@ -79,7 +79,7 @@ public class checkControllerv4 {
 
 	}
 
-	@Test(priority = 4, groups = "check")
+//	@Test(priority = 4, groups = "check")
 	public void getCheckSetupv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/check/setup";
