@@ -1,0 +1,131 @@
+{
+    "Equipment": {
+        "EquipmentId": "EQUIP0101",
+        "EquipmentClass": "ELECMETER",
+        "EquipmentType": 1,
+        "StatusId": 1,
+        "Description": "",
+        "SerialNumber": "45455-89",
+        "Model": "",
+        "NetMeterType": 3,
+        "Diameter": 1.00000,
+        "TypeDescription": "",
+        "Multiplier": 3,
+        "RemoteType": "1",
+        "TransmitterType": "",
+        "DeviceSize": "",
+        "AcquisitionDate": "1900-01-01",
+        "SealedDate": "1900-01-01",
+        "InstallationDate": "1900-01-01",
+        "RemovalDate": "1900-01-01",
+        "TestDueDate": "1900-01-01",
+        "Cost": 0.00,
+        "EquipmentLot": "",
+        "KvaReadingType": 0,
+        "Attribute": {
+            "StatisticalNumber": "",
+            "Manufacturer": "",
+            "DevicePassword": "",
+            "Recorder": "",
+            "ReadLoadProfile": "",
+			"Locator": "",
+            "GisIdentifier": "",
+            "GisX": "",
+            "GisY": "",
+            "AccuracyClass": "",
+            "NumberOfWires": 0,
+            "Voltage": 0.00,
+            "SecondaryVoltage": 0.00,
+            "Amperage": 0.00,
+            "SecondaryAmperage": 0.00,
+            "Phase": 0.00000,
+            "Kh": "",
+            "Elem": "",
+            "Protection": 0,
+            "ExcludeFromEmrExport": true,
+            "SmartMeter": false,
+            "AutoConnectDisconnect": false,
+            "DaylightSavingTime": false,
+            "ResetDemandIndicator": false,
+            "CumulativeDemand": false,
+            "PrimaryThru": false,
+            "SelfReadAndTrip": false,
+            "SelfReadDay": false
+        },
+        "Period": [
+            {
+                "Id": 1,
+                "Attribute": [
+                    {
+                        "ReadingType": 1,
+                        "NumberOfDigit": 3,
+                        "NumberOfDecimal": 2,
+                        "ReadMultiplier": 1,
+                        "RemoteId": "",
+                        "RemoteType": "",
+                        "EffectiveDate": "1900-01-01"
+                    },
+                    {
+                        "ReadingType": 2,
+                        "NumberOfDigit": 6,
+                        "NumberOfDecimal": 0,
+                        "ReadMultiplier": 1,
+                        "RemoteId": "",
+                        "RemoteType": "",
+                        "EffectiveDate": "1900-01-01"
+                    },
+                    {
+                        "ReadingType": 3,
+                        "NumberOfDigit": 6,
+                        "NumberOfDecimal": 0,
+                        "ReadMultiplier": 1,
+                        "RemoteId": "",
+                        "RemoteType": "",
+                        "EffectiveDate": "1900-01-01"
+                    },
+                    {
+                        "ReadingType": 4,
+                        "NumberOfDigit": 6,
+                        "NumberOfDecimal": 0,
+                        "ReadMultiplier": 1,
+                        "RemoteId": "",
+                        "RemoteType": "",
+                        "EffectiveDate": "1900-01-01"
+                    },
+                    {
+                        "ReadingType": 5,
+                        "NumberOfDigit": 6,
+                        "NumberOfDecimal": 0,
+                        "ReadMultiplier": 1,
+                        "RemoteId": "",
+                        "RemoteType": "",
+                        "EffectiveDate": "1900-01-01"
+                    },
+                    {
+                        "ReadingType": 6,
+                        "NumberOfDigit": 6,
+                        "NumberOfDecimal": 0,
+                        "ReadMultiplier": 1,
+                        "RemoteId": "",
+                        "RemoteType": "",
+                        "EffectiveDate": "1900-01-01"
+                    }
+                ]
+            },
+            {
+                "Id": 2,
+                "Attribute": [
+                    {
+                        "ReadingType": 1,
+                        "NumberOfDigit": 3,
+                        "NumberOfDecimal": 2,
+                        "ReadMultiplier": 1,
+                        "RemoteId": "",
+                        "RemoteType": "",
+                        "EffectiveDate": "1900-01-01"
+                    }
+                ]
+            }
+        ]
+    }
+}
