@@ -1,0 +1,37 @@
+{
+    "Connection": {
+        "ConnectionDate": "2022-02-02",
+        "DisconnectionDate": "1900-01-01",
+        "DiscountRate": "",
+        "EquipmentId": "EQUIPMENT006",
+        "InstallationDate": "2022-02-02",
+        "IsSubtractConnection":false,
+        "LocationId": "LOCATION001",
+        "Multiplier": {
+            "Rate": 1,
+            "Fixed": 1,
+            "Loss": 1,
+            "Consumption": 1,
+            "RangeAndMinimum": 1
+        },
+        "NetMeterDeliveryMeter": "",
+        "Rate": [
+            {
+                "Consumption": "RES-ELEC",
+                "KVA": "",
+                "KW": "",
+                "NetMeterReceived": "",
+                "PeriodIndex": 1
+            }
+        ],
+        "RouteId": "ROUTEE001",
+        "SequenceNumber": 0,
+        "ServiceTypeId": "ELECTRIC",
+        "Status": "2",
+        "SubtractBaseConnectionSequence": 0,
+        "TaxDiscountPercent": 1.00000,
+        "Confirm": {
+            "IgnoreEquipmentReinstallValidation":false
+        }
+    }
+}

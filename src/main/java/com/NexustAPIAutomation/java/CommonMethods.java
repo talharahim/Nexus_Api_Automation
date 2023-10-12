@@ -72,7 +72,7 @@ public class CommonMethods {
 			boolean f = (response.path("error").toString()).contains("invalid_grant");
 			if (f == true) {
 				// Comment Following to Test Authorization
-				 Assert.fail("Authorization failed/Invalid Token/Check User Name");
+				Assert.fail("Authorization failed/Invalid Token/Check User Name");
 			}
 		} catch (NullPointerException e) {
 
@@ -172,7 +172,7 @@ public class CommonMethods {
 			JSONObject bodycontent = (JSONObject) obj;
 
 			System.out.println("Posting uri :" + RestAssured.baseURI.toString());
-		
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -199,8 +199,9 @@ public class CommonMethods {
 		return jsonPathEvaluator;
 
 	}
-	
-	public static Response postMethodResponseasString(String payload, String uri, String version) throws InterruptedException {
+
+	public static Response postMethodResponseasString(String payload, String uri, String version)
+			throws InterruptedException {
 
 		switch (version) {
 		case "1":
@@ -236,27 +237,7 @@ public class CommonMethods {
 			break;
 		}
 		File jsonDataInFile = new File(payload);
-		try (FileReader reader = new FileReader(jsonDataInFile)) {
-			// Read JSON file
-			JSONParser jsonParser = new JSONParser();
-			Object obj = jsonParser.parse(reader);
-			JSONObject bodycontent = (JSONObject) obj;
-
-			System.out.println("Posting uri :" + RestAssured.baseURI.toString());
-		
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		} catch (ClassCastException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 		Response response;
-		JsonPath jsonPathEvaluator;
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		RequestSpecification httpRequest = RestAssured.given()
 				.headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON, "Accept", "*/*",
@@ -264,8 +245,7 @@ public class CommonMethods {
 				.body(jsonDataInFile);
 
 		response = httpRequest.post();
-		
-
+		System.out.println("Response :" + response.asString());
 		return response;
 
 	}
@@ -307,15 +287,13 @@ public class CommonMethods {
 		System.out.println(payload);
 		Response response;
 		JsonPath jsonPathEvaluator;
-		//CharSequence i="\\";
-		//payload.replace(i,"");
+		// CharSequence i="\\";
+		// payload.replace(i,"");
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		RequestSpecification httpRequest = RestAssured.given()
 				.headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON, "Accept", "*/*",
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.body(payload);
-		
-		
 
 		response = httpRequest.post();
 		System.out.println(response.asString());
@@ -537,7 +515,6 @@ public class CommonMethods {
 		 * e.printStackTrace(); } catch (IOException e) { e.printStackTrace(); } catch
 		 * (ClassCastException e) { e.printStackTrace(); }/
 		 */
-
 
 		System.out.println();
 		ValidatableResponse response = httpRequest.get().then().assertThat()
@@ -922,9 +899,10 @@ public class CommonMethods {
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br");
-		
+
 		ValidatableResponse response = httpRequest.get().then().assertThat().statusCode(200);
-		//.and()	.body(Matchers.equalTo(new String(Files.readAllBytes(jsonDataInFile))));
+		// .and() .body(Matchers.equalTo(new
+		// String(Files.readAllBytes(jsonDataInFile))));
 		System.out.println(response.toString());
 		return response;
 		// JsonPath jsonPathEvaluator = response.jsonPath();
@@ -1052,7 +1030,6 @@ public class CommonMethods {
 			RestAssured.baseURI = urlv4;
 			break;
 
-
 		default:
 			version = "Invalid version";
 			Assert.fail("Invalid version");
@@ -1072,7 +1049,7 @@ public class CommonMethods {
 		System.out.println(response.extract().asString());
 		return response.extract().asString();
 	}
-	
+
 	public static String getMethodasString(String uri, String version, HashMap<String, String> params)
 			throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
@@ -1105,7 +1082,6 @@ public class CommonMethods {
 			RestAssured.baseURI = urlv4;
 			break;
 
-
 		default:
 			version = "Invalid version";
 			Assert.fail("Invalid version");
@@ -1119,8 +1095,8 @@ public class CommonMethods {
 
 		String response;
 		response = httpRequest.get().asString();
-		System.out.println("URI :"+RestAssured.baseURI.toString());
-		System.out.println("Response :"+response);
+		System.out.println("URI :" + RestAssured.baseURI.toString());
+		System.out.println("Response :" + response);
 		return response;
 	}
 
@@ -1214,10 +1190,8 @@ public class CommonMethods {
 
 		return response;
 	}
-	
-	
-	public static String deleteMethodasString(String uri, String version)
-			throws InterruptedException, IOException {
+
+	public static String deleteMethodasString(String uri, String version) throws InterruptedException, IOException {
 		switch (version) {
 		case "1":
 			RestAssured.baseURI = urlv1;
@@ -1256,9 +1230,22 @@ public class CommonMethods {
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br");
 
 		String response = httpRequest.delete().asString();
-        System.out.println(response);
+		System.out.println(response);
 		return response;
 	}
 
-
+	public static void postcall(String uri, String payload, String ver, String exResult) throws InterruptedException {
+		Response jsonPathResponse;
+		jsonPathResponse = CommonMethods.postMethodResponseasString(payload, uri, ver);
+		if (jsonPathResponse.asString().contentEquals(exResult)) {
+			System.out.print(jsonPathResponse.asString());
+		} else {
+			Assert.fail(jsonPathResponse.asString());
+		}
+		/*
+		 * Boolean Result = jsonPathEvaluator.get(exResult);
+		 * System.out.println(jsonPathEvaluator.prettyPrint()); if (Result != true) {
+		 * Assert.fail(jsonPathEvaluator.prettyPrint()); }
+		 */
+	}
 }
