@@ -49,6 +49,18 @@ public class equipmentControllerV4 {
 	}
 	
 	
-
+	@Test(priority = 3, groups = "equipmentController")
+	public void getequipmentControllerClassv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		
+		String uri = "/equipment/class/EQUIPCLASS002";
+		String ver = "4.0";
+		String expresult = "./\\TestData\\/getEquipmentclassv4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		String result = CommonMethods.getMethod(uri, ver, params, expresult);
+		System.out.println(result);
+		
+	}
+	
 
 }
