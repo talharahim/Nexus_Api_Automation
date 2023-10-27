@@ -152,6 +152,17 @@ public class lookupControllerv4 {
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 	}
+	
+	@Test(priority = 13, groups = "lookup")
+	public void lookupequipmentTypev4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/Lookup/EquipmentType";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\EquipmentType_v4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	params.put("ServiceCategoryId", "1");
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
 }
 
 	
