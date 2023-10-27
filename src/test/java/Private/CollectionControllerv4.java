@@ -38,5 +38,19 @@ public class CollectionControllerv4 {
 	}
 	
 
+	@Test(priority = 3, groups = "Collection")
+	public void postcollectionGeneratev4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		//JsonPath jsonPathEvaluator;
+		String uri = "/collection/generate";
+		String ver = "4.0";
+		String payload = "./\\TestData\\postcollectionv4.json";
+		String exResponse = "{\"Collection\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Collection Notices Calculated.\",\"Level\":1}]}}";
+		CommonMethods.postcall(uri, payload, ver, exResponse);
+		
+	}
+
+	
+
 	
 }
