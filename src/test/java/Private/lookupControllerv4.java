@@ -181,12 +181,53 @@ public class lookupControllerv4 {
 		String ver = "4.0";
 		String jpath = "./\\TestData\\equipmentNetMeter_v4.json";
 	 	HashMap<String, String> params = new HashMap<String, String>();
-	 	//params.put("EquipmentClass", "ELECMETER");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+	
+	@Test(priority = 15, groups = "lookup")
+	public void lookupEquipmentRegisterCode4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/EquipmentRegisterCode";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\EquipmentRegisterCodev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 	}
 
 	
+
+	@Test(priority = 16, groups = "lookup")
+	public void lookupEquipmentAttributeProtection4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/EquipmentAttributeProtection";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\EquipmentAttributeProtectionv4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+	@Test(priority = 17, groups = "lookup")
+	public void lookupbillType() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/billType";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\billTypev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+	
+	@Test(priority = 18, groups = "lookup")
+	public void lookupbillingPrepareType() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/billingPrepareType";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\billingPrepareTypev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
 	
 }
 

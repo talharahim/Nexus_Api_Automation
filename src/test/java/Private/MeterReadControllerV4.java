@@ -157,4 +157,25 @@ public class MeterReadControllerV4 {
 
 	}
 
+	@Test(priority = 8, groups = "MeterRead")
+	public void getmeterlastDocumentv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/meterReading/lastDocument/EQUIPMENT015";
+		String ver = "4.0";
+		String expected = "{\"MeterReading\":{\"Success\":true,\"Data\":{\"LastDocumentNumber\":\"";
+		String expected2 = "\"},\"Messages\":[]}}";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("ConnectionSequence", "1");
+		params.put("LocationId", "ELECWAT003");
+
+		String result = CommonMethods.getMethodasString(uri, ver, params);
+		if (!result.contains(expected) && !result.contains(expected2)) {
+			Assert.fail("actual" + result);
+		}
+
+		System.out.println(result);
+
+	}
+
 }
