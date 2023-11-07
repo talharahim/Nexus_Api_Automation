@@ -1,17 +1,18 @@
 {
     "Equipment": {
-        "EquipmentId": "EQUIP0101",
-        "EquipmentClass": "ELECMETER",
+        "EquipmentId": "EQUIP001",
+        "EquipmentClass": "EQUIPCLASS001",
         "EquipmentType": 1,
         "StatusId": 1,
+        "PhysicalLocation": "",
         "Description": "",
         "SerialNumber": "45455-89",
         "Model": "",
-        "NetMeterType": 3,
-        "Diameter": 1.00000,
+        "NetMeterType": 1,
+        "Diameter": 0.00000,
         "TypeDescription": "",
-        "Multiplier": 3,
-        "RemoteType": "1",
+        "Multiplier": 1,
+        "RemoteType": "",
         "TransmitterType": "",
         "DeviceSize": "",
         "AcquisitionDate": "1900-01-01",
@@ -28,10 +29,8 @@
             "DevicePassword": "",
             "Recorder": "",
             "ReadLoadProfile": "",
-			"Locator": "",
+            "Locator": "",
             "GisIdentifier": "",
-            "GisX": "",
-            "GisY": "",
             "AccuracyClass": "",
             "NumberOfWires": 0,
             "Voltage": 0.00,
@@ -42,7 +41,7 @@
             "Kh": "",
             "Elem": "",
             "Protection": 0,
-            "ExcludeFromEmrExport": true,
+            "ExcludeFromEmrExport": false,
             "SmartMeter": false,
             "AutoConnectDisconnect": false,
             "DaylightSavingTime": false,
@@ -50,82 +49,7 @@
             "CumulativeDemand": false,
             "PrimaryThru": false,
             "SelfReadAndTrip": false,
-            "SelfReadDay": false
-        },
-        "Period": [
-            {
-                "Id": 1,
-                "Attribute": [
-                    {
-                        "ReadingType": 1,
-                        "NumberOfDigit": 3,
-                        "NumberOfDecimal": 2,
-                        "ReadMultiplier": 1,
-                        "RemoteId": "",
-                        "RemoteType": "",
-                        "EffectiveDate": "1900-01-01"
-                    },
-                    {
-                        "ReadingType": 2,
-                        "NumberOfDigit": 6,
-                        "NumberOfDecimal": 0,
-                        "ReadMultiplier": 1,
-                        "RemoteId": "",
-                        "RemoteType": "",
-                        "EffectiveDate": "1900-01-01"
-                    },
-                    {
-                        "ReadingType": 3,
-                        "NumberOfDigit": 6,
-                        "NumberOfDecimal": 0,
-                        "ReadMultiplier": 1,
-                        "RemoteId": "",
-                        "RemoteType": "",
-                        "EffectiveDate": "1900-01-01"
-                    },
-                    {
-                        "ReadingType": 4,
-                        "NumberOfDigit": 6,
-                        "NumberOfDecimal": 0,
-                        "ReadMultiplier": 1,
-                        "RemoteId": "",
-                        "RemoteType": "",
-                        "EffectiveDate": "1900-01-01"
-                    },
-                    {
-                        "ReadingType": 5,
-                        "NumberOfDigit": 6,
-                        "NumberOfDecimal": 0,
-                        "ReadMultiplier": 1,
-                        "RemoteId": "",
-                        "RemoteType": "",
-                        "EffectiveDate": "1900-01-01"
-                    },
-                    {
-                        "ReadingType": 6,
-                        "NumberOfDigit": 6,
-                        "NumberOfDecimal": 0,
-                        "ReadMultiplier": 1,
-                        "RemoteId": "",
-                        "RemoteType": "",
-                        "EffectiveDate": "1900-01-01"
-                    }
-                ]
-            },
-            {
-                "Id": 2,
-                "Attribute": [
-                    {
-                        "ReadingType": 1,
-                        "NumberOfDigit": 3,
-                        "NumberOfDecimal": 2,
-                        "ReadMultiplier": 1,
-                        "RemoteId": "",
-                        "RemoteType": "",
-                        "EffectiveDate": "1900-01-01"
-                    }
-                ]
-            }
-        ]
+            "SelfReadDay": ""
+        }
     }
 }
