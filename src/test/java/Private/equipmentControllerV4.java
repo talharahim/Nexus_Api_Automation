@@ -41,7 +41,7 @@ public class equipmentControllerV4 {
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		Boolean Result = jsonPathEvaluator.get("Equipment.Success");
 		System.out.println(jsonPathEvaluator.prettyPrint());
-		if (Result != true) {
+		if (Result == true) {
 			Assert.fail(jsonPathEvaluator.prettyPrint());
 		}
 		
