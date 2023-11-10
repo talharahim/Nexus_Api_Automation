@@ -29,9 +29,7 @@
         "ServiceTypeId": "ELECTRIC",
         "Status": "2",
         "SubtractBaseConnectionSequence": 0,
-        "TaxDiscountPercent": 1.00000,
-        "Confirm": {
-            "IgnoreEquipmentReinstallValidation":false
-        }
+        "TaxDiscountPercent": 1.00000
+      
     }
 }
