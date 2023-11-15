@@ -178,4 +178,47 @@ public class MeterReadControllerV4 {
 
 	}
 
+	@Test(priority = 9, groups = "MeterRead")
+	public static void postMeterReadPostInvalidv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/meterReading/post";
+		String ver = "4.0";
+
+		String payload = "{\r\n" + "    \"MeterReading\": \r\n" + "        {\r\n"
+				+ "            \"DocumentNumber\": \"READ00000000418\",\r\n" + "            \"BatchId\": \"MIKEA\",\r\n"
+				+ "            \"UserId\": \"sa\",\r\n" + "            \"MeterReadInfo\":[ \r\n"
+				+ "                {\r\n" + "                    \"EmployeeId\": \"sa\",\r\n"
+				+ "                    \"Description\": \"Test meter reading\",\r\n"
+				+ "                    \"ReadingType\": 1,\r\n"
+				+ "                    \"ReadingDateTime\": \"2027-04-12 23:56:25.000\",\r\n"
+				+ "                    \"ReasonCode\": \"WATERREAD\" \r\n" + "                }\r\n"
+				+ "            ]\r\n" + "        }\r\n" + "}";
+		String filepath = "./\\TestData\\PostMeterReadPost_invalidv4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		JsonPath jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("MeterReading.Success");
+		if (Result == true) {
+
+			Assert.fail("Meter Reading posting should not be done.Meter Reading in open or history ");
+
+		} else {
+
+			System.out.print(jsonPathEvaluator.prettyPrint());
+		}
+
+		String info = jsonPathEvaluator.get("MeterReading.Messages[0].Info");
+
+		if (!info.contentEquals("Meter Reading in open or history.  Unable to post Meter Reading.")) {
+
+			Assert.fail("Meter Reading posting should not be done.Meter Reading in open or history ");
+
+		} else {
+
+			System.out.print(jsonPathEvaluator.prettyPrint());
+		}
+	}
+
 }

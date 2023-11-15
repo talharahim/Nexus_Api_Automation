@@ -1,5 +1,6 @@
 package Public;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -34,4 +35,62 @@ public class billingControllerv4 extends BaseClass {
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 	}
+	
+	
+	@Test(priority = 2, groups = "Billing")
+	public void TC002_getbillBatchStatus() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		//extent.createTest("Test", "");
+		String uri = "/billing/billBatchStatus/BAT012301203";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\billBatchStatus_v4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		//params.put("ConnectionSequence", "1");
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+
+	@Test(priority = 3, groups = "Billing")
+	public static void PostBillingcalculatev4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/billing/calculate";
+		String ver = "4.0";
+		String payload = "{\n"
+				+ "    \"Billing\": {\n"
+				+ "        \"BatchId\": \"DUMMY\",\n"
+				+ "        \"BillingType\": 2,\n"
+				+ "        \"PrepareType\": 2,\n"
+				+ "        \"PrepareValue\": [\n"
+				+ "            \"002\"\n"
+				+ "        ],\n"
+				+ "        \"PeriodStartDate\": \"2000-04-01\",\n"
+				+ "        \"PeriodEndDate\": \"2000-05-01\",\n"
+				+ "        \"ReadingDate\": \"2000-05-01\",\n"
+				+ "        \"BillingDate\": \"2000-05-01\",\n"
+				+ "        \"PowerFactor\": 0,\n"
+				+ "        \"BtuPgaFactorDate\": \"2000-01-01\",\n"
+				+ "        \"Cycle\": {\n"
+				+ "            \"Id\": \"\",\n"
+				+ "            \"BillingPeriod\": 0\n"
+				+ "        }\n"
+				+ "    }\n"
+				+ "}";
+		String filepath = "./\\TestData\\PostBillingcalculatev4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Billing.Success");
+		System.out.println(Result);
+		if(!Result)
+		{
+			
+			Assert.fail("Bill Calculation Failed");
+		
+		}
+		
+		
+
+	}
+	   
 }

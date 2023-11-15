@@ -1,0 +1,17 @@
+{
+    "MeterReading": 
+        {
+            "DocumentNumber": "READ00000000418",
+            "BatchId": "MIKEA",
+            "UserId": "sa",
+            "MeterReadInfo":[ 
+                {
+                    "EmployeeId": "sa",
+                    "Description": "Test meter reading",
+                    "ReadingType": 1,
+                    "ReadingDateTime": "2027-04-12 23:56:25.000",
+                    "ReasonCode": "WATERREAD" 
+                }
+            ]
+        }
+}
