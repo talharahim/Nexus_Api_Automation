@@ -49,6 +49,21 @@ public class CollectionControllerv4 {
 		CommonMethods.postcall(uri, payload, ver, exResponse);
 		
 	}
+	
+	
+	@Test(priority = 4, groups = "Collection")
+	public void getcollectionCriteriav4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		//JsonPath jsonPathEvaluator;
+		String uri = "/collection/criteria";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\getcollectionCriteriav4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+		
+	}
+	
 
 	
 
