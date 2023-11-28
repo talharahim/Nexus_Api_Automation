@@ -229,6 +229,29 @@ public class lookupControllerv4 {
 		System.out.println(result);
 	}
 	
+	
+	@Test(priority = 19, groups = "lookup")
+	public void lookupcollectionnoticeType() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/collection/noticeType";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\collectionnoticeTypev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
+	
+	
+	
+	@Test(priority = 20, groups = "lookup")
+	public void lookupkvaReadingType() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/kvaReadingType";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\lookupkvaReadingTypev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	
+}
 }
 
 	
