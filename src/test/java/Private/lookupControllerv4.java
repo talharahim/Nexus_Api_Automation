@@ -250,8 +250,19 @@ public class lookupControllerv4 {
 	 	HashMap<String, String> params = new HashMap<String, String>();
 	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
+	}
 	
-}
+	
+	
+	@Test(priority = 21, groups = "lookup")
+	public void lookupchargeType() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/chargeType";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\lookupchargeTypev4.json";
+	 	HashMap<String, String> params = new HashMap<String, String>();
+	 	String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
 }
 
 	

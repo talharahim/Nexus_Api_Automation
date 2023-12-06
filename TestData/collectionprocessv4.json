@@ -1,0 +1,17 @@
+{
+    "Collection": {
+        "Notice": [
+            {
+                "CustomerId": "CUSTOMER007",
+                "LocationId": "ELECWAT001",
+                "NoticeTypeId": 1,
+                "DueDate": "2022-02-22",
+                "PendingDisconnect": 0,
+                "DisconnectDateTime": "2023-12-05T16:00:00",
+                "CurrentFormer": 0,
+                "NoticeOverDueAmount": 16.27,
+                "TotalOverDueAmount": 16.27
+            }
+        ]
+    }
+}
