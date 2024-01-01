@@ -1,0 +1,8 @@
+{
+    "Billing":{
+        "BatchId":"BT1231",
+        "Confirm": {
+            "IgnoreMiscChargeOrCreditValidation": false
+        }
+    }
+}

@@ -89,5 +89,92 @@ public class billingControllerv4 extends BaseClass {
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 	}
+	
+	
+	@Test(priority = 5, groups = "Billing")
+	public static void postBillingStatementv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/billing/createStatement";
+		String ver = "4.0";
+		String payload = "{\n"
+				+ "    \"Billing\":{\n"
+				+ "        \"BatchId\":\"BT1231\",\n"
+				+ "        \"Confirm\": {\n"
+				+ "            \"IgnoreMiscChargeOrCreditValidation\": false\n"
+				+ "        }\n"
+				+ "    }\n"
+				+ "}";
+		String filepath = "./\\TestData\\postBillingStatementv4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Billing.Success");
+		System.out.println(Result);
+		if (!Result) {
+
+			Assert.fail("Bill Posting Failed");
+
+		}
+	}
+	
+	@Test(priority = 6, groups = "Billing")
+	public static void postcreateStatementv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/billing/createStatement";
+		String ver = "4.0";
+		String payload = "{\n"
+				+ "    \"Billing\":{\n"
+				+ "        \"BatchId\":\"BT1231\",\n"
+				+ "        \"Confirm\": {\n"
+				+ "            \"IgnoreMiscChargeOrCreditValidation\": false\n"
+				+ "        }\n"
+				+ "    }\n"
+				+ "}";
+		String filepath = "./\\TestData\\postBillingStatementv4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Billing.Success");
+		System.out.println(Result);
+		if (!Result) {
+
+			Assert.fail("Bill Posting Failed");
+
+		}
+	}
+	
+	
+	@Test(priority = 7, groups = "Billing")
+	public static void postBillingv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/billing/postingBill";
+		String ver = "4.0";
+		String payload = "{\n"
+				+ "    \"Billing\": {\n"
+				+ "        \"BatchId\": \"BAT012301203\",\n"
+				+ "        \"Document\": []\n"
+				+ "    }\n"
+				+ "}";
+		String filepath = "./\\TestData\\postingBillv4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Billing.Success");
+		System.out.println(Result);
+		if (Result) {
+
+			Assert.fail("Bill Posting success");
+
+		}
+	}
+	
+
+	
 
 }
