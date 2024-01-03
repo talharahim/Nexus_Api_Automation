@@ -81,5 +81,29 @@ public class CollectionControllerv4 {
 
 	
 
+	@Test(priority = 6, groups = "Collection")
+	public void postcollectionprintv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		//JsonPath jsonPathEvaluator;
+		String uri = "/collection/print";
+		String ver = "4.0";
+		String payload = "./\\TestData\\collectionprintv4.json";
+		String exResponse = "{\"Collection\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Collection Notices Printed.\",\"Level\":1}]}}";
+		CommonMethods.postcall(uri, payload, ver, exResponse);
+		
+	}
+
+	
+	@Test(priority = 7, groups = "Collection")
+	public void getcollectionMessagesv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/collection/textMessage";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\getcollectionMessagesv4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		// params.put("CustomerId", "CUSTOMER012"); 
+		 //params.put("LocationId", "LOCATION011"); 
+		 String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		 System.out.println(result);
+	}
 	
 }
