@@ -168,8 +168,33 @@ public class billingControllerv4 extends BaseClass {
 		Boolean Result = jsonPathEvaluator.get("Billing.Success");
 		System.out.println(Result);
 		if (Result) {
-
 			Assert.fail("Bill Posting success");
+
+		}
+	}
+	
+	
+	@Test(priority = 8, groups = "Billing")
+	public static void generateEditReportv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/billing/generateEditReport";
+		String ver = "4.0";
+		String payload = "{\n"
+				+ "    \"Billing\": {\n"
+				+ "        \"BatchId\": \"BT1231\"\n"
+				+ "    }\n"
+				+ "}";
+		String filepath = "./\\TestData\\generateEditReportv4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Billing.Success");
+		System.out.println(Result);
+		if (!Result) {
+
+			Assert.fail("Bill Posting was success");
 
 		}
 	}
