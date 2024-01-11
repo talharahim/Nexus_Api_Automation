@@ -1,0 +1,9 @@
+{
+    "MiscellaneousCharge": {
+        "LocationId": "LOCATION013",
+        "CustomerId": "CUSTOMER017",
+        "TaxScheduleId": "ONT GST/PST",
+        "ChargeTypeId": "INSTALLELEC",
+        "ChargeAmount": 41.55
+    }
+}
