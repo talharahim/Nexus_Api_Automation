@@ -1,1 +1,1 @@
-{"EquipmentStatus":[{"EquipmentStatusDescription":"Available","EquipmentStatusId":1},{"EquipmentStatusDescription":"Scrapped","EquipmentStatusId":2},{"EquipmentStatusDescription":"Seal cancelled","EquipmentStatusId":3}]}
+{"EquipmentStatus":[{"EquipmentStatusDescription":"Available","EquipmentStatusId":1,"EquipmentClass":""},{"EquipmentStatusDescription":"Scrapped","EquipmentStatusId":2,"EquipmentClass":""},{"EquipmentStatusDescription":"Seal cancelled","EquipmentStatusId":3,"EquipmentClass":""}]}
