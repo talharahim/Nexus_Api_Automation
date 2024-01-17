@@ -1,1 +1,1 @@
-{"Void":{"Success":false,"Data":null,"Messages":[{"Enabled":1,"Info":"This Account does not allow Account Entry","Level":3}]}}
+{"Void":{"Success":true,"Data":{"BatchId":"11111","Document":[{"Number":"BILL00000000372","Void":true}],"SpaCanceled":false,"PostingReport":true,"PostingError":false,"ReportList":[{"Name":"Void Edit List","PrintOrder":1},{"Name":"Void Dist Breakdown Detail","PrintOrder":2},{"Name":"Void Dist Breakdown Summary","PrintOrder":3}],"ReportErrorList":[{"ReportName":"Void Posting Error List","PrintOrder":1}]},"Messages":[]}}

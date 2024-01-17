@@ -74,7 +74,7 @@ public class checkControllerv4 {
 		String uri = "/check/".concat(str);
 		String ver = "4.0";
 		String jpath = "./\\TestData\\delCheckv4.json";
-		ValidatableResponse result = CommonMethods.deleteMethod(uri, ver, jpath);
+		String result = CommonMethods.deleteMethod(uri, ver, jpath);
 		System.out.println(result.toString());
 
 	}

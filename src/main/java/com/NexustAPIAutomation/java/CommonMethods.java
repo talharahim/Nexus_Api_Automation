@@ -1147,7 +1147,7 @@ public class CommonMethods {
 		}
 	}
 
-	public static ValidatableResponse deleteMethod(String uri, String version, String jpath)
+	public static String deleteMethod(String uri, String version, String jpath)
 			throws InterruptedException, IOException {
 		switch (version) {
 		case "1":
@@ -1186,9 +1186,14 @@ public class CommonMethods {
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br");
 
-		ValidatableResponse response = httpRequest.delete().then().assertThat().statusCode(200);
+		ValidatableResponse response;
+		String validate = new String(Files.readAllBytes(Paths.get(jpath)));
+		System.out.println("Veriying String =" + validate);
+		response = httpRequest.delete().then().assertThat().body(Matchers.containsString(validate));
+		System.out.println(response.extract().asString());
+		return response.extract().asString();
 
-		return response;
+		
 	}
 
 	public static String deleteMethodasString(String uri, String version) throws InterruptedException, IOException {

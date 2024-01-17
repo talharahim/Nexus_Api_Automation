@@ -49,7 +49,7 @@
             "CumulativeDemand": false,
             "PrimaryThru": false,
             "SelfReadAndTrip": false,
-            "SelfReadDay": ""
+            "SelfReadDay": "1"
         }
     }
 }
