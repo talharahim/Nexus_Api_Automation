@@ -2,15 +2,15 @@
     "Collection": {
         "Notice": [
             {
-                "CustomerId": "CUSTOMER007",
-                "LocationId": "ELECWAT001",
+                "CustomerId": "03332301204",
+                "LocationId": "SPALOCATION1",
                 "NoticeTypeId": 1,
-                "DueDate": "2022-02-22",
+                "DueDate": "2020-07-30",
                 "PendingDisconnect": 0,
-                "DisconnectDateTime": "2023-12-05T16:00:00",
+                "DisconnectDateTime": "1900-01-01T00:00:00",
                 "CurrentFormer": 0,
-                "NoticeOverDueAmount": 16.27,
-                "TotalOverDueAmount": 16.27
+                "NoticeOverDueAmount": 865.41,
+                "TotalOverDueAmount": 865.41
             }
         ]
     }

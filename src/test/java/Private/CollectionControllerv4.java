@@ -119,4 +119,52 @@ public class CollectionControllerv4 {
 		 System.out.println(result);
 	}
 	
+	
+	@Test(priority = 8, groups = "Collection")
+	public void confirmNoticev4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	
+		// Postman: Private > collectionController > generateCollectionNotice
+		//Api documentation: file:///C:/apidoc-private/index.html#api-Collection-generateCollectionNotice
+
+		String uri = "/collection/generate";
+		String ver = "4.0";
+		String payload = "./\\TestData\\postcollectionv4.json";
+		String exResponse = "{\"Collection\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Collection Notices Calculated.\",\"Level\":1}]}}";
+		CommonMethods.postcall(uri, payload, ver, exResponse);
+		//Then call process api against those notices which we have to print/export.
+
+		//Postman: Private > collectionController > Collection Post Process
+		//Api documentation: file:///C:/apidoc-private/index.html#api-Collection-postCollectionProcess
+
+		uri = "/collection/process";
+		ver = "4.0";
+		payload = "./\\TestData\\collectionprocessv4.json";
+		exResponse = "{\"Collection\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Collection Notices Processed.\",\"Level\":1}]}}";
+		CommonMethods.postcall(uri, payload, ver, exResponse);
+		
+		//Now call print api
+		//Postman: Private > collectionController > Collection Post Print
+		//Api documentation: file:///C:/apidoc-private/index.html#api-Collection-postCollectionPrint
+		
+		
+		uri = "/collection/print";
+		ver = "4.0";
+		payload = "./\\TestData\\collectionprint2v4.json";
+		exResponse = "{\"Collection\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Collection Notices Printed.\",\"Level\":1}]}}";
+		CommonMethods.postcall(uri, payload, ver, exResponse);
+		
+		//	1. After print we can execute confirm API.
+		//Postman: Private > collectionController > Collection Post Confirm
+		//Api documentation: file:///C:/apidoc-private/index.html#api-Collection-postCollectionConfirm
+
+		uri = "/collection/confirm";
+		ver = "4.0";
+		payload = "./\\TestData\\collectionconfirm2v4.json";
+		exResponse = "{\"Collection\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Collection Notices Confirmed.\",\"Level\":1}]}}";
+		CommonMethods.postcall(uri, payload, ver, exResponse);
+	
+		//After the above calls, one can download the confirm report from the below endpoint.
+	}
+	
+	
 }
