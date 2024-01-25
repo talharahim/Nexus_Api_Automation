@@ -32,7 +32,7 @@ public class billingControllerv4 extends BaseClass {
 		String jpath = "./\\TestData\\getutilitySetup_v4.json";
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("ConnectionSequence", "1");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 	}
 
@@ -199,7 +199,53 @@ public class billingControllerv4 extends BaseClass {
 		}
 	}
 	
+	@Test(priority = 9, groups = "Billing")
+	public static void billingprintStatementv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/billing/printStatement";
+		String ver = "4.0";
+		String payload = "{\n"
+				+ "    \"Billing\":{\n"
+				+ "        \"ExportToCSV\": true,\n"
+				+ "        \"IncludeEbills\": true,\n"
+				+ "        \"PrintAction\": 1,\n"
+				+ "        \"BatchId\": \"BT1231\",\n"
+				+ "        \"Confirm\": {\n"
+				+ "            \"RefreshBillPrintData\": true\n"
+				+ "        }\n"
+				+ "    }\n"
+				+ "}";
+		String filepath = "./\\TestData\\billingprintStatement.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Billing.Success");
+		System.out.println(Result);
+		if (!Result) {
 
+			Assert.fail("Bill Posting was success");
+
+		}
+	}
+	
+	
+	
+
+	@Test(priority = 10, groups = "Billing")
+	public void printcsvbillingStatements()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// extent.createTest("Test", "");
+		String uri = "/print/csv/billingStatements";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\printcsvbillingStatementsv4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		// params.put("ConnectionSequence", "1");
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
+	
 	
 
 }
