@@ -165,13 +165,12 @@ public class CommonMethods {
 			break;
 		}
 		File jsonDataInFile = new File(payload);
+		JSONObject bodycontent = null ;
 		try (FileReader reader = new FileReader(jsonDataInFile)) {
 			// Read JSON file
 			JSONParser jsonParser = new JSONParser();
 			Object obj = jsonParser.parse(reader);
-			JSONObject bodycontent = (JSONObject) obj;
-
-			System.out.println("Posting uri :" + RestAssured.baseURI.toString());
+			bodycontent = (JSONObject) obj;
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -184,6 +183,8 @@ public class CommonMethods {
 			e.printStackTrace();
 		}
 
+		System.out.println("Posting uri :" + RestAssured.baseURI.toString());
+		System.out.println("Api Payload :" + bodycontent.toString());
 		Response response;
 		JsonPath jsonPathEvaluator;
 		RestAssured.baseURI = RestAssured.baseURI + uri;
