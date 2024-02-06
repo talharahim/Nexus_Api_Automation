@@ -24,7 +24,63 @@ public class MiscellaneousChargeControllerV4 {
 		CommonMethods.postcall(uri, payload, ver, exResponse);
 	}
 
+	@Test(priority = 2, groups = "misccharge")
+	public void deleteMiscellaneousChargeErr1v4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/miscellaneous/MISC00000000001";
+		String ver = "4.0";
+		String expected = "{\"MiscellaneousCharge\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Cannot delete miscellaneous charge document (MISC00000000001) in open\\/history.\",\"Level\":3}]}}";
+		String result = CommonMethods.deleteMethodasString(uri, ver);
+		if (!result.contains(expected)) {
+			Assert.fail();
+		}
+		System.out.println(result);
+}
 	
+	
+	@Test(priority = 3, groups = "misccharge")
+	public void deleteMiscellaneousChargeErrv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/miscellaneous/MISC00000000004";
+		String ver = "4.0";
+		String expected = "{\"MiscellaneousCharge\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Cannot delete miscellaneous charge document (MISC00000000004) in open\\/history.\",\"Level\":3}]}}";
+		String result = CommonMethods.deleteMethodasString(uri, ver);
+		if (!result.contains(expected)) {
+			Assert.fail();
+		}
+		System.out.println(result);
+}
+	
+
+	@Test(priority = 4, groups = "misccharge")
+	public void deleteMiscellaneousChargev4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/miscellaneous/MISC00000000350";
+		String ver = "4.0";
+		String expected = "{\"MiscellaneousCharge\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Miscellaneous charge deleted.\",\"Level\":1}]}}";
+		String result = CommonMethods.deleteMethodasString(uri, ver);
+		if (!result.contains(expected)) {
+			Assert.fail();
+		}
+		System.out.println(result);
+}
+	
+	@Test(priority = 5, groups = "misccharge")
+	public void deleteMiscellaneousChargeE2v4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/miscellaneous/MISC00000000350";
+		String ver = "4.0";
+		String expected = "{\"MiscellaneousCharge\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Invalid document number (MISC00000000350).\",\"Level\":3}]}}";
+		String result = CommonMethods.deleteMethodasString(uri, ver);
+		if (!result.contains(expected)) {
+			Assert.fail();
+		}
+		System.out.println(result);
+}
 	
 
 

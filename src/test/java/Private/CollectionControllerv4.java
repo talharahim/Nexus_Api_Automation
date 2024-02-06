@@ -74,13 +74,11 @@ public class CollectionControllerv4 {
 		String uri = "/collection/process";
 		String ver = "4.0";
 		String payload = "./\\TestData\\collectionprocessv4.json";
-		String exResponse = "{\"Collection\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"No Notice found for this customer CUSTOMER007 / location ELECWAT001 combination.\",\"Level\":3}]}}";
+		String exResponse = "{\"Collection\":{\"Success\":true,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Collection Notices Processed.\",\"Level\":1}]}}";
 		CommonMethods.postcall(uri, payload, ver, exResponse);
-		
-	}
+		}
 
 	
-
 	@Test(priority = 6, groups = "Collection")
 	public void postcollectionprintv4()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
