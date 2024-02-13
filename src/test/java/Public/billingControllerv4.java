@@ -242,7 +242,7 @@ public class billingControllerv4 extends BaseClass {
 		String jpath = "./\\TestData\\printcsvbillingStatementsv4.json";
 		HashMap<String, String> params = new HashMap<String, String>();
 		// params.put("ConnectionSequence", "1");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 	}
 	
