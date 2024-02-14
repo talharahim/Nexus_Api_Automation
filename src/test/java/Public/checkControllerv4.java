@@ -27,24 +27,23 @@ public class checkControllerv4 {
 		String uri = "/check";
 		String ver = "4.0";
 		String nextCheck = getNextCheckv4();
-		if (nextCheck!=null) {
-		String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test Batch\",\"Comment\":\"Example Comment\"}}";
-		String filepath = "./\\TestData\\PostCheckv4.json";
-		FileWriter file = new FileWriter(filepath);
-		file.write(payload);
-		file.close();
-		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
-		String Result = jsonPathEvaluator.get("Check.Data.DocumentNumber");
-		System.out.println(Result);
-		if(Result==null)
-		{
-			
-			Assert.fail("Check Posting Failed");
-		
-		}
-		else {
-			getCheckv4(nextCheck);
-		}
+		if (nextCheck != null) {
+			String payload = "{\"Check\":{\"DocumentNumber\": \"" + nextCheck
+					+ "\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test Batch\",\"Comment\":\"Example Comment\"}}";
+			String filepath = "./\\TestData\\PostCheckv4.json";
+			FileWriter file = new FileWriter(filepath);
+			file.write(payload);
+			file.close();
+			jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+			String Result = jsonPathEvaluator.get("Check.Data.DocumentNumber");
+			System.out.println(Result);
+			if (Result == null) {
+
+				Assert.fail("Check Posting Failed");
+
+			} else {
+				getCheckv4(nextCheck);
+			}
 		}
 
 	}
@@ -61,7 +60,7 @@ public class checkControllerv4 {
 		HashMap<String, String> params = new HashMap<String, String>();
 		// params.put("SearchQuery", "sally");
 		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
-		System.out.println("get Check API RESPONSE "+result);
+		System.out.println("get Check API RESPONSE " + result);
 		putCheckv4(str);
 		delCheckv4(str);
 
@@ -93,7 +92,8 @@ public class checkControllerv4 {
 	}
 
 	@Test(priority = 5, groups = "check")
-	public static String getNextCheckv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static String getNextCheckv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/check/nextCheck";
 		String ver = "4.0";
@@ -110,14 +110,17 @@ public class checkControllerv4 {
 		return result.getString("Check.Data.NextDocumentNumber");
 	}
 
-	//@Test(priority = 6, groups = "check")
-	public static void putCheckv4(String str) throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	// @Test(priority = 6, groups = "check")
+	public static void putCheckv4(String str)
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/check";
 		String ver = "4.0";
-	//	String jpath = "./\\TestData\\putCheckv4.json";
-		String params = "{\"Check\": {\"DocumentNumber\": \""+str+"\",\"CheckDate\": \"2023-07-13\",\"CreatedDate\": \"2023-07-13\",\"CheckAmount\": 120.50,\"CheckbookId\": \"FIRST NATIONAL\",    \"Comment\": \"Example Comment Example\" }}";
-		String expected = "{\"Check\":{\"Success\":true,\"Data\":{\"DocumentNumber\":\""+str+"\"},\"Messages\":[{\"Enabled\":1,\"Info\":\"Updated\",\"Level\":1}]}}";
+		// String jpath = "./\\TestData\\putCheckv4.json";
+		String params = "{\"Check\": {\"DocumentNumber\": \"" + str
+				+ "\",\"CheckDate\": \"2023-07-13\",\"CreatedDate\": \"2023-07-13\",\"CheckAmount\": 120.50,\"CheckbookId\": \"FIRST NATIONAL\",    \"Comment\": \"Example Comment Example\" }}";
+		String expected = "{\"Check\":{\"Success\":true,\"Data\":{\"DocumentNumber\":\"" + str
+				+ "\"},\"Messages\":[{\"Enabled\":1,\"Info\":\"Updated\",\"Level\":1}]}}";
 		String filepath = "./\\TestData\\PUTCheckv4.json";
 		FileWriter file = new FileWriter(filepath);
 		file.write(expected);
@@ -125,10 +128,10 @@ public class checkControllerv4 {
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, params, filepath);
 
 	}
-	
-	
+
 	@Test(priority = 7, groups = "check")
-	public static void putChecksendtoAPv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void putChecksendtoAPv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/check/sendtoAP";
 		String ver = "4.0";
@@ -138,69 +141,96 @@ public class checkControllerv4 {
 		ValidatableResponse result = CommonMethods.putMethod(uri, ver, params, expected);
 
 	}
-	
-	@Test(priority =8, groups = "check")
-	public static void postingReceivable4Error() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+	@Test(priority = 8, groups = "check")
+	public static void postingReceivable4Error()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/check/postingReceivable";
 		String ver = "4.0";
 		String nextCheck = "CHEQ00000000009";
-		if (nextCheck!=null) {
-		//String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test Batch\",\"Comment\":\"Example Comment\"}}";
-		String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\"}}";
-		String filepath = "./\\TestData\\postingReceivablev4.json";
-		FileWriter file = new FileWriter(filepath);
-		file.write(payload);
-		file.close();
-		//jsonPathEvaluator = CommonMethods.postMethodResponseasString(filepath, uri, ver);
-		Response response =  CommonMethods.postMethodResponseasString(filepath, uri, ver);
-		String result = response.asString();
-		result.replaceAll("\\s", "");
-		System.out.println(result);
-		String expected = "{\"Check\":{\"Success\":false,\"Data\":{\"DocumentNumber\":\"CHEQ00000000009\",\"Receivable\":[{\"ChargeDocument\":\"MISC00000000391\",\"Posted\":false}],\"PostingReport\":true,\"PostingError\":true,\"ReportList\":[{\"Name\":\"Post Check Refund Edit List\",\"PrintOrder\":1}],\"ReportErrorList\":[{\"Name\":\"Post Check Refund Error List\",\"PrintOrder\":1}]},\"Messages\":[{\"Enabled\":1,\"Info\":\"Posting validation warning found. Refer to posting error report.\",\"Level\":2},{\"Enabled\":1,\"Info\":\"csmApi_spCheckPostingReceivableCreate - Cannot insert the value NULL into column 'umTotalTaxes', table 'TWO.dbo.UTX'; column does not allow nulls. INSERT fails.\",\"Level\":3}]}}";
-		System.out.println(expected);
-		if(!result.trim().contentEquals(expected.trim()) )
-		{
-		Assert.fail(result);
-		}}
+		if (nextCheck != null) {
+			// String payload = "{\"Check\":{\"DocumentNumber\":
+			// \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST
+			// NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test
+			// Batch\",\"Comment\":\"Example Comment\"}}";
+			String payload = "{\"Check\":{\"DocumentNumber\": \"CHEQ00000000009\"}}";
+			String filepath = "./\\TestData\\postingReceivablev4.json";
+			FileWriter file = new FileWriter(filepath);
+			file.write(payload);
+			file.close();
+			// jsonPathEvaluator = CommonMethods.postMethodResponseasString(filepath, uri,
+			// ver);
+			Response response = CommonMethods.postMethodResponseasString(filepath, uri, ver);
+			String result = response.asString();
+			// result.replaceAll("\\s", "");
+			System.out.println("Response " + result);
+			String expected = "Cannot insert the value NULL into column 'umTotalTaxes', table 'TWO.dbo.UTX'; column does not allow nulls. INSERT fails";
+
+			if (!result.contains(expected)) {
+				Assert.fail();
+			}
+
+			expected = "Success\":false,\"Data\":{\"DocumentNumber\":\"CHEQ00000000009\""; // ,"Receivable":[{"ChargeDocument":"MISC00000000391","Posted":false}],"PostingReport":true,"PostingError":true,"ReportList":[{"Name":"Post
+																							// Check Refund Edit
+																							// List","PrintOrder":1}],"ReportErrorList":[{"Name":"Post
+																							// Check Refund Error
+																							// List","PrintOrder":1}]},"Messages":[{"Enabled":1,"Info":"Posting
+																							// validation warning found.
+																							// Refer to posting error
+																							// report.","Level":2},{"Enabled":1,"Info":"csmApi_spCheckPostingReceivableCreate
+																							// - Cannot insert the value
+																							// NULL into column
+																							// 'umTotalTaxes', table
+																							// 'TWO.dbo.UTX'; column
+																							// does not allow nulls.
+																							// INSERT
+																							// fails.","Level":3}]}}
+
+			if (!result.contains(expected)) {
+				Assert.fail();
+			}
+
+		}
 
 	}
-	
-	@Test(priority =8, groups = "check")
-	public static void postingReceivable4RefundError() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+	@Test(priority = 8, groups = "check")
+	public static void postingReceivable4RefundError()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/check/postingReceivable";
 		String ver = "4.0";
 		String nextCheck = getNextCheckv4();
-		if (nextCheck!=null) {
-		//String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test Batch\",\"Comment\":\"Example Comment\"}}";
-		String payload = "{\"Check\":{\"DocumentNumber\": \""+nextCheck+"\"}}";
-		String filepath = "./\\TestData\\postingReceivablev4.json";
-		FileWriter file = new FileWriter(filepath);
-		file.write(payload);
-		file.close();
-		//jsonPathEvaluator = CommonMethods.postMethodResponseasString(filepath, uri, ver);
-		Response response =  CommonMethods.postMethodResponseasString(filepath, uri, ver);
-		String result = response.asString();
-		result.replaceAll("\\s", "");
-		System.out.println(result);
-		String expected = "{\"Check\":{\"Success\":false,\"Data\":{\"DocumentNumber\":\"CHEQ00000000013\",\"Receivable\":null,\"PostingReport\":false,\"PostingError\":true,\"ReportList\":[],\"ReportErrorList\":[{\"Name\":\"Post Check Refund Error List\",\"PrintOrder\":1}]},\"Messages\":[{\"Enabled\":1,\"Info\":\"Posting validation error found. Refer to posting error report.\",\"Level\":3}]}}";
-		System.out.println(expected);
-		if(!result.trim().contentEquals(expected.trim()) )
-		{
-		Assert.fail(result);
-		}}
+		if (nextCheck != null) {
+			// String payload = "{\"Check\":{\"DocumentNumber\":
+			// \""+nextCheck+"\",\"CheckDate\":\"2023-07-13\",\"CreatedDate\":\"2023-07-13\",\"CheckAmount\":120.50,\"LocationId\":\"WATER005\",\"CustomerId\":\"500300\",\"IssuedToCustomerId\":\"500200\",\"CheckbookId\":\"FIRST
+			// NATIONAL\",\"MiscChargeId\":\"CHEQUE\",\"BatchId\":\"Test
+			// Batch\",\"Comment\":\"Example Comment\"}}";
+			String payload = "{\"Check\":{\"DocumentNumber\": \"" + nextCheck + "\"}}";
+			String filepath = "./\\TestData\\postingReceivablev4.json";
+			FileWriter file = new FileWriter(filepath);
+			file.write(payload);
+			file.close();
+			// jsonPathEvaluator = CommonMethods.postMethodResponseasString(filepath, uri,
+			// ver);
+			Response response = CommonMethods.postMethodResponseasString(filepath, uri, ver);
+			String result = response.asString();
+			result.replaceAll("\\s", "");
+			System.out.println(result);
+			String expected = "{\"Check\":{\"Success\":false,\"Data\":{\"DocumentNumber\":\"CHEQ00000000013\",\"Receivable\":null,\"PostingReport\":false,\"PostingError\":true,\"ReportList\":[],\"ReportErrorList\":[{\"Name\":\"Post Check Refund Error List\",\"PrintOrder\":1}]},\"Messages\":[{\"Enabled\":1,\"Info\":\"Posting validation error found. Refer to posting error report.\",\"Level\":3}]}}";
+			System.out.println(expected);
+			if (!result.trim().contentEquals(expected.trim())) {
+				Assert.fail(result);
+			}
+		}
 
 	}
 
-
-
-
-	
 	public static void main(String args[])
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		//PostCheckv4();
+		// PostCheckv4();
 		postingReceivable4RefundError();
 
 	}
