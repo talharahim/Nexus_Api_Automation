@@ -1,0 +1,11 @@
+{
+        "CustomerID" : "CUSTOMER009",
+          "LocationID": "LOCATION008",
+          "Type": 2,
+          "PaymentDate": "2020-01-15",
+          "PaymentAmount": 90.99,
+          "OriginID": "NexusApi",
+          "PaidBy": 1,
+          "PaidByID": "CUSTOMER009",
+          "AuthorizationCode": "AUTH: 12345"
+}
