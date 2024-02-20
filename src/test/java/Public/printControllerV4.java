@@ -1,30 +1,24 @@
 package Public;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.HashMap;
-
-import org.apache.pdfbox.text.PDFTextStripper;
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
-import com.NexustAPIAutomation.java.CommonMethods;
-
-import io.restassured.response.ValidatableResponse;
+import com.NexustAPIAutomation.java.verifyPDFReports;
 
 public class printControllerV4 {
 
 	@Test(priority = 1, groups = "printController")
-	public void getprintreportPaymentPostEditListv3()
-			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public void getprintreportPaymentPostEditListv3() throws Exception {
 
 		String uri = "/print/report/PaymentPostEditList";
-		String ver = "4.0";
-		String jpath = "./\\TestData\\paymentPostEditlistv4.json";
-		HashMap<String, String> params = new HashMap<String, String>();
+		String expected = "User Id: saPayment Edit List";
+		verifyPDFReports.verifyPDF(expected, uri);
+		expected = "Batch Id: API20240219001";
+		verifyPDFReports.verifyPDF(expected, uri);
+		expected = "1/15/2020PYMT00000000528";
+		verifyPDFReports.verifyPDF(expected, uri);
+		expected = "1/15/2020BILL00000000373 LOCATION008 : CUSTOMER009 ELECTRIC  21.52";
+		verifyPDFReports.verifyPDF(expected, uri);
 
-		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
-		System.out.println(result);
 	}
 
 }

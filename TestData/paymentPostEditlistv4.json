@@ -1,1 +1,27 @@
-PDF-1.7
+Page: 1System Date: 2/20/2024  4:03:15AM
+User Id: saPayment Edit List
+Fabrikam, Inc.
+Sorted by Document number
+Range: API20240219001 only
+NameTime
+UnappliedAmountCustomer IDLocation IDDateDocument Number
+Batch Id: API20240219001
+1/15/2020PYMT00000000528
+01:13:09 AM
+General Ledger Distribution
+Account Number Debit Amount Credit AmountAccount Description
+LOCATION008 CUSTOMER009 $90.99 $69.47
+Contour
+Type
+Credit Card
+$0.00$90.99Cash - Operating Account000-1100-00 CASH
+$21.52$0.00Variance - Labor000-4750-04 RECV
+$69.47$0.00Customer Accounts Receivable - Electric900-1410-00 RECV
+Document Number Date Location:Customer Number Service Type Amount Applied
+Applied to
+1/15/2020BILL00000000373 LOCATION008 : CUSTOMER009 ELECTRIC  21.52
+$90.99$90.99D / Cr
+$21.52Applied
+Totals
+$69.47$90.99Batch Totals:
+Amount Unapplied
