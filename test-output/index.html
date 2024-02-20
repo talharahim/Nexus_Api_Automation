@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse-841642445\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse-329130075\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Public.printControllerV4" hash-for-method="getprintreportPaymentPostEditListv3">getprintreportPaymentPostEditListv3</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Private.MiscellaneousChargeControllerV4" hash-for-method="miscellaneousChargeSimulatev4">miscellaneousChargeSimulatev4</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -122,14 +122,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Public.printControllerV4</span>
+              <span class="class-name">Private.MiscellaneousChargeControllerV4</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getprintreportPaymentPostEditListv3">
-                  </a> <!-- getprintreportPaymentPostEditListv3 -->
-                  <span class="method-name">getprintreportPaymentPostEditListv3</span>
+                  <a name="miscellaneousChargeSimulatev4">
+                  </a> <!-- miscellaneousChargeSimulatev4 -->
+                  <span class="method-name">miscellaneousChargeSimulatev4</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse-841642445\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\1\testng-eclipse-329130075\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +146,11 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Public.printControllerV4&quot;/&gt;
+      &lt;class name=&quot;Private.MiscellaneousChargeControllerV4&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;miscellaneousChargeSimulatev4&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- Private.MiscellaneousChargeControllerV4 --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -171,10 +175,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">printController</span>
+              <span class="test-group-name">misccharge</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">getprintreportPaymentPostEditListv3</span>
+                <span class="method-in-group-name">miscellaneousChargeSimulatev4</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -196,14 +200,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'getprintreportPaymentPostEditListv3')
-data.setCell(0, 2, 'Public.printControllerV4')
-data.setCell(0, 3, 6363);
+data.setCell(0, 1, 'miscellaneousChargeSimulatev4')
+data.setCell(0, 2, 'Private.MiscellaneousChargeControllerV4')
+data.setCell(0, 3, 1528);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -218,9 +222,22 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Private.MiscellaneousChargeControllerV4</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">deleteMiscellaneousChargeErrv4</span>
+                <br/>
+                <span class="ignored-method-name">deleteMiscellaneousChargeErr1v4</span>
+                <br/>
+                <span class="ignored-method-name">deleteMiscellaneousChargeE2v4</span>
+                <br/>
+                <span class="ignored-method-name">deleteMiscellaneousChargev4</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -229,9 +246,9 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Public.printControllerV4</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Private.MiscellaneousChargeControllerV4</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">getprintreportPaymentPostEditListv3</span>
+                <span class="method-name">miscellaneousChargeSimulatev4</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
