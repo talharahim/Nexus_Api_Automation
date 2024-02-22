@@ -669,7 +669,7 @@ public class CommonMethods {
 				.body(jsonDataInFile);
 		String expe = new String(Files.readAllBytes(Paths.get(fresponse)));
 		System.out.println("Expected Response as in file : " + expe);
-		System.out.println(httpRequest.put().prettyPrint());
+		//System.out.println(httpRequest.put().prettyPrint());
 		ValidatableResponse response = httpRequest.put().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(fresponse))))).assertThat()
 				.statusCode(200);

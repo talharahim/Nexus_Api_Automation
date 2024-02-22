@@ -1,0 +1,89 @@
+{
+   "DocumentNumber":"MISC00000000350",
+   "BatchId":"NADMC2022093001",
+  "LocationId": "SPALOCATION1",
+	"CustomerId": "03332301204",
+	"MiscCharge":{
+        "TypeId":"SERVICEELEC",
+        "Amount": 80.00,
+        "Description":"Charge for electric service",
+        "Date":"2022-04-17",
+        "DueDate":""
+    },
+    "TaxScheduleId": "ONT GST/PST",
+    "ServiceDetail": [
+        {
+            "ServiceType": "ELECTRIC",
+            "ChargeAmount": 80.00,
+            "TaxAmount": 12.00,
+            "TotalAmount": 92.00,
+            "OutstandingAmount": 92.00
+        }
+    ],
+    "ServiceTotal": {
+        "ChargeAmount": 80.00,
+        "TaxAmount": 12.00,
+        "TotalAmount": 92.00,
+        "OutstandingAmount": 92.00
+    },
+    "DistributionDetail": [
+        {
+            "TypeId": 3,
+            "Type": "RECV",
+            "Description": "Customer Accounts Receivable - Electric",
+            "Index": 506,
+            "Number": "900-1410-00",
+            "DebitAmount": 92.00,
+            "CreditAmount": 0.00
+        },
+        {
+            "TypeId": 9,
+            "Type": "SALES",
+            "Description": "Metered Sales to Residential - Electric",
+            "Index": 515,
+            "Number": "900-4611-00",
+            "DebitAmount": 0.00,
+            "CreditAmount": 80.00
+        },
+        {
+            "TypeId": 13,
+            "Type": "TAXES",
+            "Description": "Federal Income Tax Payable",
+            "Index": 96,
+            "Number": "000-2600-00",
+            "DebitAmount": 0.00,
+            "CreditAmount": 5.60
+        },
+        {
+            "TypeId": 13,
+            "Type": "TAXES",
+            "Description": "IL Income Tax Payable",
+            "Index": 97,
+            "Number": "000-2610-00",
+            "DebitAmount": 0.00,
+            "CreditAmount": 6.40
+        }
+    ],
+    "DistributionTotal": {
+        "DebitAmount": 92.00,
+        "CreditAmount": 92.00
+    },
+    "TaxDetail": [
+        {
+            "TaxDetailId": "GST",
+            "TransactionAmount": 80.00,
+            "TaxAmount": 5.60000,
+            "TaxAccountIndex": 96,
+            "ServiceType": "",
+            "ServiceTypeReceivableAccountIndex": 0
+        },
+        {
+            "TaxDetailId": "PST",
+            "TransactionAmount": 80.00,
+            "TaxAmount": 6.40000,
+            "TaxAccountIndex": 97,
+            "ServiceType": "",
+            "ServiceTypeReceivableAccountIndex": 0
+        }
+    ]
+}
