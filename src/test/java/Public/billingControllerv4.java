@@ -225,7 +225,7 @@ public class billingControllerv4 extends BaseClass {
 		System.out.println(Result);
 		if (!Result) {
 
-			Assert.fail("Bill Posting was success");
+			Assert.fail("Bill Posting was Not successful");
 
 		}
 	}

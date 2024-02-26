@@ -85,10 +85,10 @@ public class MiscellaneousChargeControllerV4 {
 	@Test(priority = 6, groups = "misccharge")
 	public void miscellaneousChargepostv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
-		String uri = "//miscellaneous/post";
+		String uri = "/miscellaneous/post";
 		String ver = "4.0";
 		String payload = "./\\TestData\\//miscellaneouspostv4.json";
-		String exResponse = "{\"MiscellaneousCharge\":{\"Success\":true,\"Data\":{\"LocationId\":\"LOCATION013\",\"CustomerId\":\"CUSTOMER017\",\"MiscChargeType\":\"INSTALLELEC\",\"MiscChargeAmount\":41.55,\"TaxScheduleId\":\"ONT GST\\/PST\",\"ServiceDetail\":[{\"ServiceType\":\"ELECTRIC\",\"ChargeAmount\":41.55,\"TaxAmount\":0.00,\"TotalAmount\":41.55,\"OutstandingAmount\":41.55}],\"ServiceTotal\":{\"ChargeAmount\":41.55,\"TaxAmount\":0.00,\"TotalAmount\":41.55,\"OutstandingAmount\":41.55},\"DistributionDetail\":[{\"TypeId\":3,\"Type\":\"RECV\",\"Description\":\"Customer Accounts Receivable - Electric\",\"Index\":506,\"Number\":\"900-1410-00\",\"DebitAmount\":41.55,\"CreditAmount\":0.00},{\"TypeId\":9,\"Type\":\"SALES\",\"Description\":\"Metered Sales to Residential - Electric\",\"Index\":515,\"Number\":\"900-4611-00\",\"DebitAmount\":0.00,\"CreditAmount\":41.55}],\"DistributionTotal\":{\"DebitAmount\":41.55,\"CreditAmount\":41.55},\"TaxDetail\":[]},\"Messages\":[]}}";
+		String exResponse = "{\"MiscellaneousCharge\":{\"Success\":true,\"Data\":{\"UserId\":\"\",\"VersionNumber\":\"1.0.0\",\"PostDate\":\"2022-09-30\",\"BatchId\":\"NADMC2022093001\",\"MiscCharge\":{\"Document\":[{\"DocType\":\"MISC\",\"DocumentNumber\":\"MISC00000000351\",\"CustomerId\":\"03332301204\",\"LocationId\":\"SPALOCATION1\",\"DocumentDate\":\"2022-09-30\",\"TransactionAmount\":10.00,\"TaxAmount\":0.00,\"TotalChargeAmount\":10.00,\"ServiceType\":\"WATER\",\"OutstandingAmount\":10.00,\"MiscChargeType\":\"SERVICE WATER\",\"TransactionDescription\":\"Charge for water service\",\"TaxSchedule\":\"EXEMPT\"}]},\"MiscChargeDistribution\":{\"DocumentDistribution\":[{\"DocType\":\"MISC\",\"DocumentNumber\":\"MISC00000000351\",\"DistributionType\":9,\"DistributionIndex\":401,\"OriginalDebitAmount\":0.00,\"OriginalCreditAmount\":10.00},{\"DocType\":\"MISC\",\"DocumentNumber\":\"MISC00000000351\",\"DistributionType\":3,\"DistributionIndex\":508,\"OriginalDebitAmount\":10.00,\"OriginalCreditAmount\":0.00}]},\"Payment\":null,\"PaymentDistribution\":null,\"Bill\":null,\"BillDistribution\":null,\"Document\":[{\"DocumentNumber\":\"MISC00000000351\"}],\"PostedDistribution\":[{\"DocumentNumber\":\"MISC00000000351\",\"LineSequence\":1,\"DistributionIndex\":401,\"TransactionAmount\":-10.00,\"LocationId\":\"\"},{\"DocumentNumber\":\"MISC00000000351\",\"LineSequence\":2,\"DistributionIndex\":508,\"TransactionAmount\":10.00,\"LocationId\":\"\"}]},\"Messages\":[]}}";
 		CommonMethods.postcall(uri, payload, ver, exResponse);
 	}
 
@@ -191,5 +191,15 @@ public class MiscellaneousChargeControllerV4 {
 		CommonMethods.putMethod(uri, ver, payload, exResponse);
 	}
 
+	
+	@Test(priority = 8, groups = "misccharge")
+	public void miscellaneousChargepostv4err() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/miscellaneous/post";
+		String ver = "4.0";
+		String payload = "./\\TestData\\//miscellaneouspostv4.json";
+		String exResponse = "{\"MiscellaneousCharge\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Document Number (MISC00000000351) already posted\",\"Level\":3}]}}";
+		CommonMethods.postcall(uri, payload, ver, exResponse);
+	}
 
 }
