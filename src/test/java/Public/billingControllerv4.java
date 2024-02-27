@@ -55,11 +55,11 @@ public class billingControllerv4 extends BaseClass {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/billing/calculate";
 		String ver = "4.0";
-		String payload = "{\n" + "    \"Billing\": {\n" + "        \"BatchId\": \"DUMMY\",\n"
-				+ "        \"BillingType\": 2,\n" + "        \"PrepareType\": 2,\n" + "        \"PrepareValue\": [\n"
-				+ "            \"002\"\n" + "        ],\n" + "        \"PeriodStartDate\": \"2000-04-01\",\n"
-				+ "        \"PeriodEndDate\": \"2000-05-01\",\n" + "        \"ReadingDate\": \"2000-05-01\",\n"
-				+ "        \"BillingDate\": \"2000-05-01\",\n" + "        \"PowerFactor\": 0,\n"
+		String payload = "{\n" + "    \"Billing\": {\n" + "        \"BatchId\": \"BT1231\",\n"
+				+ "        \"BillingType\": 1,\n" + "        \"PrepareType\": 1,\n" + "        \"PrepareValue\": [\n"
+				+ "            \"LOCATION002\"\n" + "        ],\n" + "        \"PeriodStartDate\": \"2000-06-01\",\n"
+				+ "        \"PeriodEndDate\": \"2000-06-30\",\n" + "        \"ReadingDate\": \"2000-06-30\",\n"
+				+ "        \"BillingDate\": \"2000-07-01\",\n" + "        \"PowerFactor\": 0,\n"
 				+ "        \"BtuPgaFactorDate\": \"2000-01-01\",\n" + "        \"Cycle\": {\n"
 				+ "            \"Id\": \"\",\n" + "            \"BillingPeriod\": 0\n" + "        }\n" + "    }\n"
 				+ "}";
@@ -76,8 +76,34 @@ public class billingControllerv4 extends BaseClass {
 
 		}
 	}
+	
+	
+	@Test(priority = 4, groups = "Billing", dependsOnMethods = "PostBillingcalculatev4")
+	public static void PostgenerateEditReportv4()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/billing/generateEditReport";
+		String ver = "4.0";
+		String payload = "{\n"
+				+ "    \"Billing\": {\n"
+				+ "        \"BatchId\": \"BT1231\"\n"
+				+ "    }\n"
+				+ "}";
+		String filepath = "./\\TestData\\PostBillingcalculatev4.json";
+		FileWriter file = new FileWriter(filepath);
+		file.write(payload);
+		file.close();
+		jsonPathEvaluator = CommonMethods.postMethod(filepath, uri, ver);
+		Boolean Result = jsonPathEvaluator.get("Billing.Success");
+		System.out.println(Result);
+		if (!Result) {
 
-	@Test(priority = 4, groups = "Billing")
+			Assert.fail("Bill Calculation Failed");
+
+		}
+	}
+
+	@Test(priority = 5, groups = "Billing")
 	public void getbillprintTemplatePath()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// extent.createTest("Test", "");
@@ -91,8 +117,8 @@ public class billingControllerv4 extends BaseClass {
 	}
 	
 	
-	@Test(priority = 5, groups = "Billing")
-	public static void postBillingStatementv4()
+	//@Test(priority = 5, groups = "Billing")
+	public static void postBillingCreateStatementv4()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/billing/createStatement";
@@ -114,7 +140,7 @@ public class billingControllerv4 extends BaseClass {
 		System.out.println(Result);
 		if (!Result) {
 
-			Assert.fail("Bill Posting Failed");
+			Assert.fail("Bill Posting Failed \n"+ jsonPathEvaluator.prettyPrint());
 
 		}
 	}
@@ -142,7 +168,7 @@ public class billingControllerv4 extends BaseClass {
 		System.out.println(Result);
 		if (!Result) {
 
-			Assert.fail("Bill Posting Failed");
+			Assert.fail("Bill Posting Failed \n"+ jsonPathEvaluator.prettyPrint());
 
 		}
 	}
@@ -194,7 +220,7 @@ public class billingControllerv4 extends BaseClass {
 		System.out.println(Result);
 		if (!Result) {
 
-			Assert.fail("Bill Posting was success");
+			Assert.fail("Bill Posting Failed \n"+ jsonPathEvaluator.prettyPrint());
 
 		}
 	}
@@ -225,7 +251,7 @@ public class billingControllerv4 extends BaseClass {
 		System.out.println(Result);
 		if (!Result) {
 
-			Assert.fail("Bill Posting was Not successful");
+			Assert.fail("Bill Posting Failed \n"+ jsonPathEvaluator.prettyPrint());
 
 		}
 	}

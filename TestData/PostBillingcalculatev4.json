@@ -1,20 +1,5 @@
 {
     "Billing": {
-        "BatchId": "DUMMY",
-        "BillingType": 2,
-        "PrepareType": 2,
-        "PrepareValue": [
-            "002"
-        ],
-        "PeriodStartDate": "2000-04-01",
-        "PeriodEndDate": "2000-05-01",
-        "ReadingDate": "2000-05-01",
-        "BillingDate": "2000-05-01",
-        "PowerFactor": 0,
-        "BtuPgaFactorDate": "2000-01-01",
-        "Cycle": {
-            "Id": "",
-            "BillingPeriod": 0
-        }
+        "BatchId": "BT1231"
     }
 }
