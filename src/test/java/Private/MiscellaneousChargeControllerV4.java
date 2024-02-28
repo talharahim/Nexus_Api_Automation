@@ -198,7 +198,7 @@ public class MiscellaneousChargeControllerV4 {
 		String uri = "/miscellaneous/post";
 		String ver = "4.0";
 		String payload = "./\\TestData\\//miscellaneouspostv4.json";
-		String exResponse = "{\"MiscellaneousCharge\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Document Number (MISC00000000351) already posted\",\"Level\":3}]}}";
+		String exResponse = "{\"MiscellaneousCharge\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Document supplied does not belong to batch (MISC00000000351).\",\"Level\":3},{\"Enabled\":1,\"Info\":\"Document Number (MISC00000000351) already posted\",\"Level\":3}]}}";
 		CommonMethods.postcall(uri, payload, ver, exResponse);
 	}
 
