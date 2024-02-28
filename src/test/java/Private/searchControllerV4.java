@@ -16,7 +16,7 @@ import org.testng.Assert;
 public class searchControllerV4 {
 
 	// This will create elastic search index if not already
-	//@Test(priority = 1, groups = "Search")
+	@Test(priority = 1, groups = "Search")
 	public void elascticsearchcreateindex_v_4()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
@@ -28,7 +28,7 @@ public class searchControllerV4 {
 
 	}
 
-	@Test(priority = 2, groups = "Search")
+	@Test(priority = 2, groups = "Search", dependsOnMethods = "elascticsearchcreateindex_v_4")
 	public void searchMatchPhrasePrefixv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 
 		String uri = "/search";
@@ -39,7 +39,7 @@ public class searchControllerV4 {
 		params.put("index", "accounts");
 		params.put("searchQuery", "{\"LocationId\":\"Master\"},{\"CustomerId\":\"Master\"}");
 		params.put("searchType", "MatchPhrasePrefix");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 
 	}
@@ -56,7 +56,38 @@ public class searchControllerV4 {
 		params.put("index", "accounts");
 		params.put("searchQuery", "{\"LocationId\":\"Mas\"},{\"CustomerId\":\"Mas\"}");
 		params.put("searchType", "MatchPhrasePrefix");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
+		System.out.println(result);
+
+	}
+	
+	@Test(priority = 4, groups = "Search", dependsOnMethods = "part_searchMatchPhrasePrefixv4")
+	public void part4_searchMatchPhrasePrefixv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/search";
+		String ver = "4.0";
+
+		String jpath = "./\\TestData\\searchMatchPhrasePrefixv4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("index", "accounts");
+		params.put("searchQuery", "{\"LocationId\":\"Mas\"},{\"CustomerId\":\"Mas\"}");
+		params.put("searchType", "MatchPhrasePrefix");
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
+		System.out.println(result);
+
+	}
+	@Test(priority = 4, groups = "Search", dependsOnMethods = "part4_searchMatchPhrasePrefixv4")
+	public void part2_searchMatchPhrasePrefixv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
+		String uri = "/search";
+		String ver = "4.0";
+
+		String jpath = "./\\TestData\\2searchMatchPhrasePrefixv4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("index", "accounts");
+		params.put("searchQuery", "{\"LocationId\":\"loc\"},{\"CustomerId\":\"mas\"}");
+		params.put("searchType", "MatchPhrasePrefix");
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 
 	}
