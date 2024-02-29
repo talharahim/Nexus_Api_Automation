@@ -23,10 +23,11 @@ public class PaymentControllerV4 {
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		Boolean Result = jsonPathEvaluator.get("result[0].Success");
 		if (Result == false) {
-			System.out.println(jsonPathEvaluator.toString());
-			Assert.fail();
+			System.out.println(jsonPathEvaluator.prettyPrint());
+			Assert.fail(jsonPathEvaluator.prettyPrint());
 		}
-		System.out.println(jsonPathEvaluator.toString());
+		//System.out.println(jsonPathEvaluator.toString());
+		System.out.println();
 	}
 
 	@Test(priority = 2, groups = "Payment")
@@ -38,10 +39,10 @@ public class PaymentControllerV4 {
 		jsonPathEvaluator = CommonMethods.postMethod(payload, uri, ver);
 		Boolean Result = jsonPathEvaluator.get("Payment.Success");
 		if (Result == false) {
-			System.out.println(jsonPathEvaluator.toString());
-			Assert.fail();
+			System.out.println(jsonPathEvaluator.prettyPrint());
+			Assert.fail(jsonPathEvaluator.prettyPrint());
 		}
-		System.out.println(jsonPathEvaluator.toString());
+	//	System.out.println(jsonPathEvaluator.toString());
 	}
 	
 	

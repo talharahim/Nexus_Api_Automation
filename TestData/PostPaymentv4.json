@@ -7,5 +7,5 @@
           "OriginID": "NexusApi",
           "PaidBy": 1,
           "PaidByID": "CUSTOMER009",
-          "AuthorizationCode": "AUTH: 12345"
+          "AuthorizationCode": "AUTH: 123456"
 }

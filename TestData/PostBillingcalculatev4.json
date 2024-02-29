@@ -1,5 +1,20 @@
 {
     "Billing": {
-        "BatchId": "BT1231"
+        "BatchId": "BT1231",
+        "BillingType": 1,
+        "PrepareType": 1,
+        "PrepareValue": [
+            "LOCATION002"
+        ],
+        "PeriodStartDate": "2000-06-01",
+        "PeriodEndDate": "2000-06-30",
+        "ReadingDate": "2000-06-30",
+        "BillingDate": "2000-07-01",
+        "PowerFactor": 0,
+        "BtuPgaFactorDate": "2000-01-01",
+        "Cycle": {
+            "Id": "",
+            "BillingPeriod": 0
+        }
     }
 }

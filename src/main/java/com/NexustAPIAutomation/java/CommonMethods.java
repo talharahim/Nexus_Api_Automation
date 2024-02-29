@@ -183,11 +183,12 @@ public class CommonMethods {
 			e.printStackTrace();
 		}
 
-		System.out.println("Posting uri :" + RestAssured.baseURI.toString());
+		
 		System.out.println("Api Payload :" + bodycontent.toString());
 		Response response;
 		JsonPath jsonPathEvaluator;
 		RestAssured.baseURI = RestAssured.baseURI + uri;
+		System.out.println("Posting uri :" + RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given()
 				.headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON, "Accept", "*/*",
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
@@ -196,7 +197,7 @@ public class CommonMethods {
 		response = httpRequest.post();
 		System.out.println(response.asString());
 		jsonPathEvaluator = response.jsonPath();
-
+		
 		return jsonPathEvaluator;
 
 	}
@@ -240,6 +241,7 @@ public class CommonMethods {
 		File jsonDataInFile = new File(payload);
 		Response response;
 		RestAssured.baseURI = RestAssured.baseURI + uri;
+		System.out.println("Posting uri :" + RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given()
 				.headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON, "Accept", "*/*",
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
@@ -291,6 +293,7 @@ public class CommonMethods {
 		// CharSequence i="\\";
 		// payload.replace(i,"");
 		RestAssured.baseURI = RestAssured.baseURI + uri;
+		System.out.println("Posting uri :" + RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given()
 				.headers("Authorization", "Bearer " + getToken(), "Content-Type", ContentType.JSON, "Accept", "*/*",
 						"Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
@@ -346,7 +349,7 @@ public class CommonMethods {
 		// File jsonDataInFile = new File(payload);
 		System.out.println(RestAssured.baseURI);
 		RestAssured.baseURI = RestAssured.baseURI + uri;
-		System.out.println("Get URI :" + RestAssured.baseURI);
+		System.out.println("Get URI :" + RestAssured.baseURI.toString());
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Accept", "*/*", "Connection", "keep-alive", "Accept-Encoding",
 				"gzip, deflate, br", "Cache-Control", "no-cache", "urlEncodingEnabled", "false");
@@ -893,8 +896,9 @@ public class CommonMethods {
 			break;
 		}
 		Path jsonDataInFile = Paths.get(pathToResponse);
-		System.out.println(RestAssured.baseURI);
+		
 		RestAssured.baseURI = RestAssured.baseURI + uri;
+		System.out.println("Posting uri :" + RestAssured.baseURI.toString());
 		String expe = new String(Files.readAllBytes(Paths.get(pathToResponse)));
 		System.out.println("Expected Response as in file : " + expe);
 		RestAssured.baseURI = RestAssured.baseURI + uri;
