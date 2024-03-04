@@ -2,6 +2,7 @@ package Public;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -26,7 +27,7 @@ public class PaymentControllerV4 {
 			System.out.println(jsonPathEvaluator.prettyPrint());
 			Assert.fail(jsonPathEvaluator.prettyPrint());
 		}
-		//System.out.println(jsonPathEvaluator.toString());
+		// System.out.println(jsonPathEvaluator.toString());
 		System.out.println();
 	}
 
@@ -42,11 +43,20 @@ public class PaymentControllerV4 {
 			System.out.println(jsonPathEvaluator.prettyPrint());
 			Assert.fail(jsonPathEvaluator.prettyPrint());
 		}
-	//	System.out.println(jsonPathEvaluator.toString());
+		// System.out.println(jsonPathEvaluator.toString());
 	}
-	
-	
-	
-	
+
+	@Test(priority = 3, groups = "Payment")
+	public void gettPaymentNextv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		// CommonMethods.CompanyDBRestore();
+		String uri = "/payment/next";
+		String ver = "4.0";
+		String expected = "./\\TestData\\gettPaymentNextv4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		// params.put("ConnectionSequence", "1");
+		String result = CommonMethods.getMethod(uri, ver, params, expected);
+		System.out.println(result);
+
+	}
 
 }

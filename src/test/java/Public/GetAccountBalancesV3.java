@@ -33,14 +33,14 @@ public class GetAccountBalancesV3 {
 		params.put("LocationId", "LOCATION008");
 		params.put("CustomerId", "CUSTOMER009");
 		params.put("UserDate", "2027-04-12");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 
 	}
 
-	
 	@Test(priority = 3, groups = "Account Balances")
-	public void getAccountBalancesPortalv3() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public void getAccountBalancesPortalv3()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		String uri = "/AccountBalance/portal";
 		String ver = "3.0";
 		String jpath = "./TestData\\accountBalancePortal3.json";
@@ -48,14 +48,14 @@ public class GetAccountBalancesV3 {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("LocationId", "LOCATION008");
 		params.put("CustomerId", "CUSTOMER009");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 	}
-	
-	
+
 	@Test(priority = 4, groups = "Account Balances")
-	public void getAccountBalancesPortalv3Paymentatwork() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
-		
+	public void getAccountBalancesPortalv3Paymentatwork()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+
 		String uri = "/accountBalance/getAccountBalances";
 		String ver = "3.0";
 		String jpath = "./TestData\\accountBalancev3OpenWork.json";
@@ -63,7 +63,7 @@ public class GetAccountBalancesV3 {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("LocationId", "ELECWAT001");
 		params.put("CustomerId", "CUSTOMER007");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 	}
 
