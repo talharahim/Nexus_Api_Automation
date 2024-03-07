@@ -855,12 +855,6 @@ public class CommonMethods {
 
 	}
 
-	public static void main(String args[])
-			throws InterruptedException, IOException, ClassNotFoundException, SQLException {
-		// Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		getSPAIndex("500300");
-	}
-
 	public static ValidatableResponse getMethod(String uri, String version, String pathToResponse)
 			throws InterruptedException, IOException {
 		switch (version) {
@@ -1247,32 +1241,32 @@ public class CommonMethods {
 	public static void postcall(String uri, String payload, String ver, String exResult) throws InterruptedException {
 		Response jsonPathResponse;
 		jsonPathResponse = CommonMethods.postMethodResponseasString(payload, uri, ver);
-		if (jsonPathResponse.asString().contentEquals(exResult)) {
-			System.out.print(jsonPathResponse.asString());
-		} else {
-			Assert.fail(jsonPathResponse.asString());
-		}
-		/*
-		 * Boolean Result = jsonPathEvaluator.get(exResult);
-		 * System.out.println(jsonPathEvaluator.prettyPrint()); if (Result != true) {
-		 * Assert.fail(jsonPathEvaluator.prettyPrint()); }
-		 */
+		Assert.assertEquals(jsonPathResponse.asString(), exResult);
+
 	}
 
-	public static void Matched(String[] ss, String tomatch) throws Exception {
+	public static void Match(String ss, String tomatch) throws Exception {
 		// String[] ss = { "aabb", "aa", "cc", "aac" };
 		Pattern p = Pattern.compile(tomatch);
 		Matcher m = p.matcher("");
 
-		for (String s : ss) {
-			m.reset(s);
-			if (m.matches()) {
-				System.out.printf("%-4s : match%n", s);
-			} else if (m.hitEnd()) {
-				System.out.printf("%-4s : partial match%n", s);
-			} else {
-				System.out.printf("%-4s : no match%n", s);
-			}
+		if (m.matches()) {
+			System.out.printf("%-4s : match%n", ss);
+		} else {
+			System.out.printf("%-4s : no match%n", ss);
+		}
+
+	}
+
+	public static void main(String args[]) {
+		String str1 = "{\"MiscellaneousCharge\":{\"Success\":true,\"Data\":{\"DocumentNumber\":\"MISC00000000382\",\"BatchId\":\"auto\",\"LocationId\":\"TRANSACTION001\",\"CustomerId\":\"TRS0001\"},\"Messages\":[{\"Enabled\":1,\"Info\":\"Miscellaneous Charge Saved Successfully\",\"Level\":1}]}}";
+		String str2 = "{\"MiscellaneousCharge\":{\"Success\":true,\"Data\":{\"DocumentNumber\":\"MISC00000000382\",\"BatchId\":\"auto\",\"LocationId\":\"TRANSACTION001\",\"CustomerId\":\"TRS0001\"},\"Messages\":[{\"Enabled\":1,\"Info\":\"Miscellaneous Charge Saved Successfully\",\"Level\":1}]}}";
+
+		try {
+			Match(str1, str2);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
