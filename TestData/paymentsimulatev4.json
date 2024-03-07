@@ -1,0 +1,9 @@
+{
+    "LocationId": "000000000523000",
+    "CustomerId": "0012200",
+    "Amount": 5.00,
+    "DocumentDate": "2024-02-15",
+    "CreditNoteId": "RMGT-OTH-000002",
+    "TaxScheduleId": "ONT GST/PST",
+    "BatchId": "PAYMENTBATCH"
+}
