@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.NexustAPIAutomation.java.CommonMethods;
 
 import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
 public class MiscellaneousChargeControllerV4 {
@@ -201,5 +202,19 @@ public class MiscellaneousChargeControllerV4 {
 		String exResponse = "{\"MiscellaneousCharge\":{\"Success\":false,\"Data\":null,\"Messages\":[{\"Enabled\":1,\"Info\":\"Document supplied does not belong to batch (MISC00000000351).\",\"Level\":3},{\"Enabled\":1,\"Info\":\"Document Number (MISC00000000351) already posted\",\"Level\":3}]}}";
 		CommonMethods.postcall(uri, payload, ver, exResponse);
 	}
+	
+	
+	@Test(priority = 9, groups = "misccharge")
+	public void postmiscellaneousPaymentv4() throws ClassNotFoundException, SQLException, InterruptedException {
+		String uri = "/miscellaneous";
+		String ver = "4.0";
+		String payload = "./\\TestData\\miscellaneousv4.json";
+		String exptected = "{\"MiscellaneousCharge\":{\"Success\":true,\"Data\":{\"DocumentNumber\":\"MISC00000000386\",\"BatchId\":\"auto\",\"LocationId\":\"TRANSACTION001\",\"CustomerId\":\"TRS0001\"},\"Messages\":[{\"Enabled\":1,\"Info\":\"Miscellaneous Charge Saved Successfully\",\"Level\":1}]}}";
+		Response result = CommonMethods.postMethodResponseasString(payload, uri, ver);
+		String actualResult = result.print();
+		Assert.assertEquals(actualResult, exptected);
+
+	}
+
 
 }

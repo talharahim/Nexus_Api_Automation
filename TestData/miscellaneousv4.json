@@ -1,0 +1,13 @@
+{
+   "BatchId":"auto",
+   "LocationId":"TRANSACTION001",
+   "CustomerId":"TRS0001",
+   "MiscCharge":{
+      "TypeId":"SERVICEELEC",
+      "Amount": 80,
+      "Description":"Charge for electric service",
+      "Date":"2022-04-17",
+      "DueDate":""
+   },
+   "TaxScheduleId":"ONT GST/PST"
+}

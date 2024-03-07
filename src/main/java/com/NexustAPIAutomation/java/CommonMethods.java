@@ -20,6 +20,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.security.sasl.SaslException;
 
@@ -165,7 +167,7 @@ public class CommonMethods {
 			break;
 		}
 		File jsonDataInFile = new File(payload);
-		JSONObject bodycontent = null ;
+		JSONObject bodycontent = null;
 		try (FileReader reader = new FileReader(jsonDataInFile)) {
 			// Read JSON file
 			JSONParser jsonParser = new JSONParser();
@@ -183,7 +185,6 @@ public class CommonMethods {
 			e.printStackTrace();
 		}
 
-		
 		System.out.println("Api Payload :" + bodycontent.toString());
 		Response response;
 		JsonPath jsonPathEvaluator;
@@ -197,7 +198,7 @@ public class CommonMethods {
 		response = httpRequest.post();
 		System.out.println(response.asString());
 		jsonPathEvaluator = response.jsonPath();
-		
+
 		return jsonPathEvaluator;
 
 	}
@@ -672,7 +673,7 @@ public class CommonMethods {
 				.body(jsonDataInFile);
 		String expe = new String(Files.readAllBytes(Paths.get(fresponse)));
 		System.out.println("Expected Response as in file : " + expe);
-		//System.out.println(httpRequest.put().prettyPrint());
+		// System.out.println(httpRequest.put().prettyPrint());
 		ValidatableResponse response = httpRequest.put().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(fresponse))))).assertThat()
 				.statusCode(200);
@@ -896,7 +897,7 @@ public class CommonMethods {
 			break;
 		}
 		Path jsonDataInFile = Paths.get(pathToResponse);
-		
+
 		RestAssured.baseURI = RestAssured.baseURI + uri;
 		System.out.println("Posting uri :" + RestAssured.baseURI.toString());
 		String expe = new String(Files.readAllBytes(Paths.get(pathToResponse)));
@@ -1198,7 +1199,6 @@ public class CommonMethods {
 		System.out.println(response.extract().asString());
 		return response.extract().asString();
 
-		
 	}
 
 	public static String deleteMethodasString(String uri, String version) throws InterruptedException, IOException {
@@ -1257,5 +1257,22 @@ public class CommonMethods {
 		 * System.out.println(jsonPathEvaluator.prettyPrint()); if (Result != true) {
 		 * Assert.fail(jsonPathEvaluator.prettyPrint()); }
 		 */
+	}
+
+	public static void Matched(String[] ss, String tomatch) throws Exception {
+		// String[] ss = { "aabb", "aa", "cc", "aac" };
+		Pattern p = Pattern.compile(tomatch);
+		Matcher m = p.matcher("");
+
+		for (String s : ss) {
+			m.reset(s);
+			if (m.matches()) {
+				System.out.printf("%-4s : match%n", s);
+			} else if (m.hitEnd()) {
+				System.out.printf("%-4s : partial match%n", s);
+			} else {
+				System.out.printf("%-4s : no match%n", s);
+			}
+		}
 	}
 }
