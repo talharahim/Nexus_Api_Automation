@@ -511,15 +511,6 @@ public class CommonMethods {
 		RequestSpecification httpRequest = RestAssured.given().headers("Authorization", "Bearer " + getToken(),
 				"Content-Type", ContentType.JSON, "Connection", "keep-alive", "Accept-Encoding", "gzip, deflate, br")
 				.queryParams(params);
-		/*
-		 * File jsonDataInFile = new File(jpath); try (FileReader reader = new
-		 * FileReader(jsonDataInFile)) { JSONParser jsonParser = new JSONParser();
-		 * Object obj = JSON.parse(reader); String expected = obj.toString();
-		 * System.out.println("Expected Response as in file : "+jpath);
-		 * System.out.println(expected); } catch (FileNotFoundException e) {
-		 * e.printStackTrace(); } catch (IOException e) { e.printStackTrace(); } catch
-		 * (ClassCastException e) { e.printStackTrace(); }/
-		 */
 
 		System.out.println();
 		ValidatableResponse response = httpRequest.get().then().assertThat()
