@@ -515,6 +515,7 @@ public class CommonMethods {
 		System.out.println();
 		ValidatableResponse response = httpRequest.get().then().assertThat()
 				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
+		
 		return response.extract().asString();
 	}
 
