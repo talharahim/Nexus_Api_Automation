@@ -513,10 +513,12 @@ public class CommonMethods {
 				.queryParams(params);
 
 		System.out.println();
-		ValidatableResponse response = httpRequest.get().then().assertThat()
-				.body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
-		
-		return response.extract().asString();
+		// ValidatableResponse response = httpRequest.get().then().assertThat()
+		// .body(Matchers.equalTo(new String(Files.readAllBytes(Paths.get(jpath)))));
+
+		Response response = httpRequest.get();
+		Assert.assertEquals(response.asString(), new String(Files.readAllBytes(Paths.get(jpath))));
+		return response.asString();
 	}
 
 	public static String putMethod(String uri, String version, HashMap<String, String> params, String payload,
@@ -1035,10 +1037,12 @@ public class CommonMethods {
 				.queryParams(params);
 
 		ValidatableResponse response;
+		// Response response;
 		String validate = new String(Files.readAllBytes(Paths.get(jpath)));
 		System.out.println("Veriying String =" + validate);
 		response = httpRequest.get().then().assertThat().body(Matchers.containsString(validate));
-		System.out.println(response.extract().asString());
+		// System.out.println(response.extract().asString());
+		// Assert.assertEquals(response.asString(), validate);
 		return response.extract().asString();
 	}
 

@@ -102,14 +102,10 @@ public class lookupControllerv4 {
 		String uri3 = "/lookupMeterRead";
 		String ver = "4.0";
 		String jpath = "./\\TestData\\lookupMeterRead_v4.json";
-		String jpath2 = "./\\TestData\\lookupMeterRead_v4_2.json";
-		String jpath3 = "./\\TestData\\lookupMeterRead_v4_3.json";
 		HashMap<String, String> params = new HashMap<String, String>();
 		// params.put("Batchsource", "NONE"); //params.put("LocationId", "LOCATION011");
-		String result = CommonMethods.getMethodContains(uri3, ver, params, jpath);
-		String result2 = CommonMethods.getMethodContains(uri3, ver, params, jpath2);
-		String result3 = CommonMethods.getMethodContains(uri3, ver, params, jpath3);
-		System.out.println(result);
+		String result = CommonMethods.getMethod(uri3, ver, params, jpath);
+		
 	}
 
 	@Test(priority = 9, groups = "lookup")
