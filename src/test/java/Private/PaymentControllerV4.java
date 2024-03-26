@@ -14,7 +14,6 @@ import io.restassured.response.Response;
 
 public class PaymentControllerV4 {
 
-	
 	@Test(priority = 1, groups = "Payment")
 	public void gettPaymentNextv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
@@ -30,6 +29,8 @@ public class PaymentControllerV4 {
 
 	@Test(priority = 2, groups = "Payment")
 	public void postPaymentSimulatev4() throws ClassNotFoundException, SQLException, InterruptedException {
+
+		CommonMethods.Bug("CPDEV-17140");
 		String uri = "/payment/simulate";
 		String ver = "4.0";
 		String payload = "./\\TestData\\paymentsimulatev4.json";
@@ -39,10 +40,9 @@ public class PaymentControllerV4 {
 		Assert.assertEquals(actualResult, exptected);
 
 	}
-	
+
 	@Test(priority = 3, groups = "Payment")
-	public static void delPaymentv4()
-			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+	public static void delPaymentv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		// CommonMethods.CompanyDBRestore();
 		String uri = "/payment/PYMT00000000431";
 		String ver = "4.0";
@@ -51,7 +51,7 @@ public class PaymentControllerV4 {
 		System.out.println(result.toString());
 
 	}
-	
+
 	@Test(priority = 4, groups = "Payment")
 	public static void delPaymentv4Err()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
@@ -63,7 +63,7 @@ public class PaymentControllerV4 {
 		System.out.println(result.toString());
 
 	}
-	
+
 	@Test(priority = 5, groups = "Payment")
 	public static void delPaymentv4CreditNote()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
@@ -75,6 +75,5 @@ public class PaymentControllerV4 {
 		System.out.println(result.toString());
 
 	}
-	
 
 }

@@ -18,6 +18,7 @@ public class connectionControllerV4 {
 	public void postconnectionmeterv4()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
 		//JsonPath jsonPathEvaluator;
+		CommonMethods.Bug("CPDEV-17054");
 		String uri = "/connection/meter";
 		String ver = "4.0";
 		String payload = "./\\TestData\\/postconnectionv4.json";
@@ -26,6 +27,7 @@ public class connectionControllerV4 {
 	
 		
 	}
+
 
 	@Test(priority = 2, groups = "connectionController")
 	public void postconnectionmeterv4Error()

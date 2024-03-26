@@ -34,6 +34,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.mortbay.util.ajax.JSON;
 import org.testng.Assert;
+import org.testng.SkipException;
 
 import com.google.gson.Gson;
 import com.profesorfalken.jpowershell.PowerShell;
@@ -1265,4 +1266,11 @@ public class CommonMethods {
 			e.printStackTrace();
 		}
 	}
+
+	public static void Bug(String str1) {
+		// TODO Auto-generated method stub
+
+		throw new SkipException("Skipping this due to bug" + str1);
+	}
+
 }
