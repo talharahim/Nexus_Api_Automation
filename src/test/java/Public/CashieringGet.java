@@ -154,7 +154,6 @@ public class CashieringGet extends BaseClass {
 		jsonPathEvaluator = CommonMethods.getMethod(uri, ver);
 		System.out.println(jsonPathEvaluator.get().toString());
 		String Result = jsonPathEvaluator.get("CashieringTransaction[0].CustomerId");
-
 		if (!Result.contentEquals("customer017")) {
 			testStatus(false);
 		}

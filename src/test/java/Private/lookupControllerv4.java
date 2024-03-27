@@ -281,5 +281,20 @@ public class lookupControllerv4 {
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 	}
+	
+	
+	@Test(priority = 24, groups = "lookup")
+	public void lookupPaymentDocuments()
+			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		String uri = "/lookup/paymentDocuments";
+		String ver = "4.0";
+		String jpath = "./\\TestData\\lookuppaymentDocumentsv4.json";
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("DocumentSource", "work");
+		params.put("PaymentType", "creditmemo");
+			
+		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		System.out.println(result);
+	}
 
 }
