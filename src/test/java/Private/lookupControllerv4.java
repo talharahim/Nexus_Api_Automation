@@ -9,8 +9,6 @@ import org.testng.annotations.Test;
 
 import com.NexustAPIAutomation.java.CommonMethods;
 
-import io.restassured.response.ValidatableResponse;
-
 public class lookupControllerv4 {
 
 	@Test(priority = 4, groups = "lookup")
@@ -99,13 +97,14 @@ public class lookupControllerv4 {
 
 	@Test(priority = 8, groups = "lookup")
 	public void lookupMeterReadv4() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		CommonMethods.Bug("CPDEV-17166");
 		String uri3 = "/lookupMeterRead";
 		String ver = "4.0";
 		String jpath = "./\\TestData\\lookupMeterRead_v4.json";
 		HashMap<String, String> params = new HashMap<String, String>();
 		// params.put("Batchsource", "NONE"); //params.put("LocationId", "LOCATION011");
 		String result = CommonMethods.getMethod(uri3, ver, params, jpath);
-		
+
 	}
 
 	@Test(priority = 9, groups = "lookup")
@@ -251,6 +250,7 @@ public class lookupControllerv4 {
 
 	@Test(priority = 21, groups = "lookup")
 	public void lookupchargeType() throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		CommonMethods.Bug("CPDEV-17064");
 		String uri = "/lookup/chargeType";
 		String ver = "4.0";
 		String jpath = "./\\TestData\\lookupchargeTypev4.json";
@@ -273,6 +273,7 @@ public class lookupControllerv4 {
 	@Test(priority = 23, groups = "lookup")
 	public void lookupMiscChargeDocuments()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
+		CommonMethods.Bug(" CPDEV-17161 ");
 		String uri = "/lookup/miscChargeDocuments";
 		String ver = "4.0";
 		String jpath = "./\\TestData\\lookupMiscChargeDocumentsv4.json";
@@ -281,8 +282,7 @@ public class lookupControllerv4 {
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 	}
-	
-	
+
 	@Test(priority = 24, groups = "lookup")
 	public void lookupPaymentDocuments()
 			throws ClassNotFoundException, SQLException, InterruptedException, IOException {
@@ -292,7 +292,7 @@ public class lookupControllerv4 {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("DocumentSource", "work");
 		params.put("PaymentType", "creditmemo");
-			
+
 		String result = CommonMethods.getMethod(uri, ver, params, jpath);
 		System.out.println(result);
 	}

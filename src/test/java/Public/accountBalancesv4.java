@@ -33,7 +33,7 @@ public class accountBalancesv4 {
 		params.put("LocationId", "LOCATION008");
 		params.put("CustomerId", "CUSTOMER009");
 		params.put("UserDate", "2027-04-12");
-		String result = CommonMethods.getMethod(uri, ver, params, jpath);
+		String result = CommonMethods.getMethodContains(uri, ver, params, jpath);
 		System.out.println(result);
 
 	}
